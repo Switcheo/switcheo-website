@@ -17,7 +17,7 @@ const Features: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
     <ContentSection {...rest} className={cls(classes.root, className)}>
       <ContentTitle>Key features</ContentTitle>
       <Box flex={1} />
-      <CTAButton>Find out more</CTAButton>
+      <CTAButton href="/features">Find out more</CTAButton>
     </ContentSection>
   );
 };

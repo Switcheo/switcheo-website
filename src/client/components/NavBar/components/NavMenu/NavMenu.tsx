@@ -82,13 +82,13 @@ const NavMenu: React.FC<NavMenuProps> = (props: any) => {
         </Box>
 
         <Box className={classes.navContainer} display="flex" flexDirection="column">
-          <NavLink onClick={() => closeMenu()} anchorLink="#features">Key features</NavLink>
+          <NavLink onClick={() => closeMenu()} href="/features">Key features</NavLink>
           <NavLink onClick={() => closeMenu()} target="_blank" href="https://switcheo.exchange/">Exchange</NavLink>
-          <NavLink onClick={() => closeMenu()} anchorLink="#story">Our story</NavLink>
-          <NavLink onClick={() => closeMenu()} anchorLink="#culture">Our culture</NavLink>
-          <NavLink onClick={() => closeMenu()} anchorLink="#press">Press</NavLink>
-          <NavLink onClick={() => closeMenu()} anchorLink="#blog">Blog</NavLink>
-          <NavLink onClick={() => closeMenu()} anchorLink="#support">Support</NavLink>
+          <NavLink onClick={() => closeMenu()} href="/#story">Our story</NavLink>
+          <NavLink onClick={() => closeMenu()} href="/#culture">Our culture</NavLink>
+          <NavLink onClick={() => closeMenu()} href="/#press">Press</NavLink>
+          <NavLink onClick={() => closeMenu()} href="/#blog">Blog</NavLink>
+          <NavLink onClick={() => closeMenu()} href="/#support">Support</NavLink>
         </Box>
       </Box>
     </Box>

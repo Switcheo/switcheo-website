@@ -65,7 +65,7 @@ const Products: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
         </Box>
 
         <Box flex={1} />
-        <CTAButton white>Explore products</CTAButton>
+        <CTAButton href="/features#products" white>Explore products</CTAButton>
       </Box>
     </ContentSection>
   );

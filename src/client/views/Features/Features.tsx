@@ -16,8 +16,8 @@ const Features: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
   const classes = useStyles();
   return (
     <Container maxWidth="xl" {...rest} className={cls(classes.root, className)}>
-      <KeyFeatures />
-      <OurProducts />
+      <KeyFeatures id="features" />
+      <OurProducts id="products" />
     </Container>
   );
 };
