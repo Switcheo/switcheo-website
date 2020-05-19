@@ -1,12 +1,12 @@
-import { Typography, Box, Button } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
-import urlSwitcheoIcon from "./assets/switcheo-logo.svg";
-import urlFoundationIcon from "./assets/foundation-logo.svg";
+import { ContentSection, ContentTitle, CTAButton } from "../../../../components";
 import urlDemexIcon from "./assets/demex-logo.svg";
+import urlFoundationIcon from "./assets/foundation-logo.svg";
+import urlSwitcheoIcon from "./assets/switcheo-logo.svg";
 import urlZilswapIcon from "./assets/zilswap-logo.svg";
-import { ContentSection, TwinSection, SwitcheoLogo, ContentTitle, CTAButton } from "../../../../components";
 import ProductEntry from "./components";
 
 const useStyles = makeStyles(theme => ({
