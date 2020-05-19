@@ -9,6 +9,8 @@ import ContentSection from "../ContentSection";
 import SwitcheoBrand from "../SwitcheoBrand";
 import { FooterTitle, FooterLink, SubscribeBox } from "./components";
 
+import { minBlockHeight } from "../../contants";
+
 const useStyles = makeStyles(theme => ({
   root: {
     [theme.breakpoints.down("sm")]: {
@@ -18,7 +20,7 @@ const useStyles = makeStyles(theme => ({
   content: {
     margin: theme.spacing(3, 0),
     backgroundColor: "#DEDEDE",
-    minHeight: "calc(100vh - 84px - 50px)",
+    minHeight: minBlockHeight,
     [theme.breakpoints.down("sm")]: {
       minHeight: 0,
       margin: 0,

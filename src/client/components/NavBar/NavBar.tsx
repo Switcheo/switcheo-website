@@ -8,16 +8,18 @@ import SwitcheoBrand from "../SwitcheoBrand";
 import { NavLink } from "./components";
 import SwitcheoLogo from "../SwitcheoLogo";
 
+import { Dim } from "../../contants";
+
 const useStyles = makeStyles(theme => ({
   container: {
     display: "flex",
     flexDirection: "row",
     width: "100%",
-    maxWidth: 1920,
+    maxWidth: Dim.maxViewWidth,
     margin: "auto",
-    height: 88,
+    height: Dim.headerHeight,
     [theme.breakpoints.down("xs")]: {
-      height: 64,
+      height: Dim.mobileHeaderHeight,
       paddingBottom: 0,
     },
   },

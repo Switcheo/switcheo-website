@@ -2,6 +2,7 @@ import { Container, ContainerProps, Hidden } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
+import { minBlockHeight } from "../../contants";
 
 export interface TwinSectionProps extends ContainerProps {
   mobileReverse?: boolean;
@@ -13,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "row",
     padding: theme.spacing(0, 1.5),
-    minHeight: "calc(100vh - 84px - 48px)",
+    minHeight: minBlockHeight,
     marginTop: theme.spacing(3),
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
