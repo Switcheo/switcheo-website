@@ -6,7 +6,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import { Body, Footer, NavBar } from "./components";
 import "./index.css";
 import AppTheme from "./theme";
-import { Home } from "./views";
+import { Home, Features } from "./views";
 
 const App = () => {
 
@@ -17,7 +17,7 @@ const App = () => {
       <Body>
         <Switch>
           <Route path="/features" exact>
-
+            <Features />
           </Route>
           <Route path="/">
             <Home />
