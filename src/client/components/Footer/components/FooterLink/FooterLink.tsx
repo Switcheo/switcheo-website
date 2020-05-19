@@ -3,6 +3,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
 
+export interface FooterLinkProps extends ButtonProps {
+  target?: string;
+}
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,12 +27,12 @@ const useStyles = makeStyles(theme => ({
     },
   },
 }));
-const FooterLink: React.FC<ButtonProps> = (props: any) => {
-  const { children, href, className, ...rest } = props;
+const FooterLink: React.FC<FooterLinkProps> = (props: any) => {
+  const { children, className, ...rest } = props;
   const classes = useStyles();
 
   return (
-    <Button variant="a" href={href} {...rest} className={cls(classes.root, className)} >
+    <Button {...rest} className={cls(classes.root, className)} >
       {children}
     </Button>
   );

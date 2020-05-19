@@ -3,6 +3,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
 import urlSwitcheoIcon from "./assets/switcheo-logo.svg";
+import urlFoundationIcon from "./assets/foundation-logo.svg";
+import urlDemexIcon from "./assets/demex-logo.svg";
+import urlZilswapIcon from "./assets/zilswap-logo.svg";
 import { ContentSection, TwinSection, SwitcheoLogo, ContentTitle, CTAButton } from "../../../../components";
 import ProductEntry from "./components";
 
@@ -56,9 +59,9 @@ const Products: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
 
         <Box className={classes.products}>
           <ProductEntry iconUrl={urlSwitcheoIcon}>Switcheo Exchange</ProductEntry>
-          <ProductEntry iconUrl={urlSwitcheoIcon}>Demex</ProductEntry>
-          <ProductEntry iconUrl={urlSwitcheoIcon}>ZilSwap</ProductEntry>
-          <ProductEntry iconUrl={urlSwitcheoIcon}>Switcheo Foundation</ProductEntry>
+          <ProductEntry iconUrl={urlDemexIcon}>Demex</ProductEntry>
+          <ProductEntry iconUrl={urlZilswapIcon}>ZilSwap</ProductEntry>
+          <ProductEntry iconUrl={urlFoundationIcon}>Switcheo Foundation</ProductEntry>
         </Box>
 
         <Box flex={1} />

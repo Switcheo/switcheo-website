@@ -4,10 +4,15 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
 import ClientApp from '../../client/app';
+import { StaticRouter } from "react-router-dom";
 
 const renderMiddleware = () => (req: Request, res: Response) => {
   let html = req.html || '';
-  const htmlContent = ReactDOMServer.renderToString(<ClientApp />);
+  const htmlContent = ReactDOMServer.renderToString(
+    <StaticRouter>
+      <ClientApp />
+    </StaticRouter>
+  );
   const htmlReplacements: StringMap = {
     HTML_CONTENT: htmlContent,
   };

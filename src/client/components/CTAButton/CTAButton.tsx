@@ -7,6 +7,7 @@ import SwitcheoLogo from "../SwitcheoLogo";
 export interface CTAButtonProps extends ButtonProps {
   secondary?: boolean;
   white?: boolean;
+  target?: string;
 };
 
 const useStyles = makeStyles(theme => ({

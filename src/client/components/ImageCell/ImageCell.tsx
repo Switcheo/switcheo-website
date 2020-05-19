@@ -12,7 +12,7 @@ export interface ImageCellProps extends BoxProps {
 
 const useStyles = makeStyles(theme => ({
   root: {
-    margin: theme.spacing(0, 1.5, 1.5),
+    margin: theme.spacing(0, 1.5),
     flex: 1,
     flexBasis: "50%",
     backgroundColor: "#fafafa",

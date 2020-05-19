@@ -69,7 +69,7 @@ const Home: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
       </TwinSection>
 
       <TwinSection>
-        <FeaturedIn />
+        <FeaturedIn id="featured" />
         <Blog id="blog" />
       </TwinSection>
 

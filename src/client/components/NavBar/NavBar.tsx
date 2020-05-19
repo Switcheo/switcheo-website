@@ -118,8 +118,8 @@ const NavBar: React.FC<React.HTMLAttributes<HTMLDivElement>> = () => {
         <Box className={classes.container} maxWidth="xl">
           <SwitcheoBrand className={classes.brandIcon} />
           <Box flex={1} />
-          <IconButton className={classes.menuIcon} size="medium">
-            <MenuIcon onClick={() => toggleMenu()} />
+          <IconButton className={classes.menuIcon} size="medium" onClick={() => toggleMenu()}>
+            <MenuIcon />
           </IconButton>
         </Box>
       </AppBar>
@@ -128,8 +128,8 @@ const NavBar: React.FC<React.HTMLAttributes<HTMLDivElement>> = () => {
           <Box display="flex" flexDirection="row">
             <SwitcheoLogo className={classes.logoIcon} />
             <Box flex={1} />
-            <IconButton className={classes.closeIcon} size="medium">
-              <CloseIcon onClick={() => toggleMenu(false)} />
+            <IconButton className={classes.closeIcon} size="medium" onClick={() => toggleMenu(false)}>
+              <CloseIcon />
             </IconButton>
           </Box>
 

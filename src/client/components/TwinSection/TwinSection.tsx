@@ -12,18 +12,14 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     flexDirection: "row",
-    padding: theme.spacing(0, 1.5, 1.5),
-    minHeight: "calc(100vh - 84px - 24px)",
-    "&:first-child": {
-      marginTop: theme.spacing(3),
-    },
+    padding: theme.spacing(0, 1.5),
+    minHeight: "calc(100vh - 84px - 48px)",
+    marginTop: theme.spacing(3),
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
       minHeight: 0,
       padding: 0,
-      "&:first-child": {
-        marginTop: 0,
-      },
+      marginTop: 0,
     },
   },
   mobileReverse: {

@@ -1,4 +1,4 @@
-import { Box, Button, Typography, TextField, Grid, Checkbox, FormControlLabel, Hidden } from "@material-ui/core";
+import { Box, Button, Typography, TextField, Grid, Checkbox, FormControlLabel, Hidden, Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
@@ -11,9 +11,14 @@ import { FooterTitle, FooterLink, SubscribeBox } from "./components";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    minHeight: "calc(100vh - 84px - 50px)",
-    margin: theme.spacing(0, 3, 3),
+    [theme.breakpoints.down("sm")]: {
+      padding: 0,
+    },
+  },
+  content: {
+    margin: theme.spacing(3, 0),
     backgroundColor: "#DEDEDE",
+    minHeight: "calc(100vh - 84px - 50px)",
     [theme.breakpoints.down("sm")]: {
       minHeight: 0,
       margin: 0,
@@ -41,48 +46,50 @@ const Footer: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   const { children, className, ...rest } = props;
   const classes = useStyles();
   return (
-    <ContentSection {...rest} className={cls(classes.root, className)}>
-      <Grid container className={classes.container}>
-        <Hidden mdUp>
-          <Grid item className={classes.cell} xs={12}>
-            <SubscribeBox />
-          </Grid>
-        </Hidden>
-        <Grid item className={cls(classes.cell, classes.links)} xl={2} md={3} sm={6}>
-          <FooterTitle>Sitemap</FooterTitle>
+    <Container maxWidth="xl" {...rest} className={cls(classes.root, className)}>
+      <ContentSection className={classes.content}>
+        <Grid container className={classes.container}>
+          <Hidden mdUp>
+            <Grid item className={classes.cell} xs={12}>
+              <SubscribeBox />
+            </Grid>
+          </Hidden>
+          <Grid item className={cls(classes.cell, classes.links)} xl={2} md={3} xs={6}>
+            <FooterTitle>Sitemap</FooterTitle>
 
-          <FooterLink>Home</FooterLink>
-          <FooterLink>Start trading</FooterLink>
-          <FooterLink>Key features</FooterLink>
-          <FooterLink>Our story</FooterLink>
-          <FooterLink>Our culture</FooterLink>
-          <FooterLink>Press</FooterLink>
-          <FooterLink>As featured in</FooterLink>
-          <FooterLink>Blog</FooterLink>
-          <FooterLink>Support</FooterLink>
-        </Grid>
-        <Grid item className={cls(classes.cell, classes.links)} xl={2} md={3} sm={6}>
-          <FooterTitle>Resources</FooterTitle>
-
-          <FooterLink>Security</FooterLink>
-          <FooterLink>Whitepapers</FooterLink>
-          <FooterLink>API docs</FooterLink>
-          <FooterLink>Apply to list</FooterLink>
-          <FooterLink>Media kit</FooterLink>
-          <FooterLink>Terms of policy</FooterLink>
-          <FooterLink>Privacy policy</FooterLink>
-          <FooterLink>Listing policy</FooterLink>
-        </Grid>
-        <Hidden smDown>
-          <Grid item xl={4} md={1} />
-          <Grid item className={classes.cell} xl={4} md={5}>
-            <SubscribeBox />
+            <FooterLink href="/">Home</FooterLink>
+            <FooterLink target="_blank" href="https://switcheo.exchange/">Start trading</FooterLink>
+            <FooterLink href="/features">Key features</FooterLink>
+            <FooterLink href="/story">Our story</FooterLink>
+            <FooterLink href="/culture">Our culture</FooterLink>
+            <FooterLink href="/press">Press</FooterLink>
+            <FooterLink href="/#featured">As featured in</FooterLink>
+            <FooterLink href="/#blog">Blog</FooterLink>
+            <FooterLink href="/#support">Support</FooterLink>
           </Grid>
-        </Hidden>
-      </Grid>
-      <Box flex={1} />
-      <SwitcheoBrand className={classes.brand} />
-    </ContentSection>
+          <Grid item className={cls(classes.cell, classes.links)} xl={2} md={3} xs={6}>
+            <FooterTitle>Resources</FooterTitle>
+
+            <FooterLink>Security</FooterLink>
+            <FooterLink>Whitepapers</FooterLink>
+            <FooterLink>API docs</FooterLink>
+            <FooterLink>Apply to list</FooterLink>
+            <FooterLink>Media kit</FooterLink>
+            <FooterLink>Terms of policy</FooterLink>
+            <FooterLink>Privacy policy</FooterLink>
+            <FooterLink>Listing policy</FooterLink>
+          </Grid>
+          <Hidden smDown>
+            <Grid item xl={4} xs={1} />
+            <Grid item className={classes.cell} xl={4} xs={5}>
+              <SubscribeBox />
+            </Grid>
+          </Hidden>
+        </Grid>
+        <Box flex={1} />
+        <SwitcheoBrand className={classes.brand} />
+      </ContentSection>
+    </Container>
   );
 };
 
