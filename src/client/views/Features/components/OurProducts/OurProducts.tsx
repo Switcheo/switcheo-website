@@ -14,6 +14,7 @@ const PRODUCTS: Product[] = [{
   descriptor: "The Preferred Exchange Available on Ethereum, EOS and NEO Blockchains.",
   description: "Switcheo paves the way for a trustless and secure multi-chain trading experience. No mandatory registration. Connect and trade freely.",
   highlight: true,
+  link: "https://switcheo.exchange/",
   icon: urlSwitcheoIcon,
 }, {
   title: "Demex",
@@ -29,6 +30,7 @@ const PRODUCTS: Product[] = [{
   title: "Switcheo Foundation",
   descriptor: "An Initiative to Democratize Financial Markets",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  link: "https://switcheo.foundation/",
   icon: urlFoundationIcon,
 }];
 

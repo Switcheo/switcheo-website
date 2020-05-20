@@ -41,7 +41,7 @@ const Hero: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
         assets freely across chains.
       </Typography>
       <Box flex={1} />
-      <CTAButton secondary>Start trading</CTAButton>
+      <CTAButton secondary href="https://switcheo.exchange">Start trading</CTAButton>
     </ContentSection>
   );
 };

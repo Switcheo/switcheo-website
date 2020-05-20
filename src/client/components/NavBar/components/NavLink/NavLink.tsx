@@ -34,18 +34,28 @@ const useStyles = makeStyles(theme => ({
     flex: 1,
     display: "flex",
     flexDirection: "row",
-    padding: theme.spacing(2),
     color: theme.palette.primary.main,
-    fontWeight: "bold",
-    fontSize: "12px",
     transition: "color .2s ease-in-out",
     textDecoration: "none",
+    padding: 0,
     "&:hover": {
       color: theme.palette.secondary.main,
       cursor: "pointer",
     },
+    
+    fontSize: 133,
+    letterSpacing: "-7px",
+    lineHeight: "100px",
+    fontWeight: "bold",
+    [theme.breakpoints.down("lg")]: {
+      fontSize: 96,
+      letterSpacing: "-5px",
+      lineHeight: "100px",
+    },
     [theme.breakpoints.down("md")]: {
-      padding: theme.spacing(1),
+      fontSize: 58,
+      letterSpacing: "-3.05px",
+      lineHeight: "55px",
     },
   },
   icon: {

@@ -28,43 +28,35 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     overflow: "auto",
-    "& a": {
-      padding: 0,
-      fontSize: 133,
-      letterSpacing: "-7px",
-      lineHeight: "100px",
-      fontWeight: "bold",
-      [theme.breakpoints.down("lg")]: {
-        fontSize: 96,
-        letterSpacing: "-5px",
-        lineHeight: "100px",
-      },
-      [theme.breakpoints.down("md")]: {
-        fontSize: 58,
-        letterSpacing: "-3.05px",
-        lineHeight: "55px",
-      },
-    },
   },
   navContainer: {
     padding: theme.spacing(0, 3),
   },
-  closeIcon: {
+  iconButton: {
     color: theme.palette.primary.main,
-    padding: theme.spacing(2),
+    padding: theme.spacing(3),
     "& svg": {
-      height: 40,
-      width: 40,
+      height: 56,
+      width: 56,
+      [theme.breakpoints.down("sm")]: {
+        height: 48,
+        width: 48,
+      },
     },
   },
+  closeIcon: {
+    padding: theme.spacing(2),
+  },
   logoIcon: {
-    padding: theme.spacing(3),
-    height: 40,
-    width: 40,
+    color: theme.palette.primary.main,
     "& svg": {
-      height: 24,
-      width: 24,
-    },
+      height: 32,
+      width: 32,
+      [theme.breakpoints.down("sm")]: {
+        height: 24,
+        width: 24,
+      },
+    }
   },
 }));
 const NavMenu: React.FC<NavMenuProps> = (props: any) => {
@@ -74,9 +66,11 @@ const NavMenu: React.FC<NavMenuProps> = (props: any) => {
     <Box {...rest} className={cls(classes.root, className)} style={{ height: showMenu ? "100%" : 0 }}>
       <Box className={classes.navMenu}>
         <Box display="flex" flexDirection="row">
-          <SwitcheoLogo className={classes.logoIcon} />
+          <IconButton className={classes.iconButton} href="/">
+            <SwitcheoLogo className={classes.logoIcon} />
+          </IconButton>
           <Box flex={1} />
-          <IconButton className={classes.closeIcon} size="medium" onClick={() => closeMenu()}>
+          <IconButton className={cls(classes.iconButton, classes.closeIcon)} onClick={() => closeMenu()}>
             <CloseIcon />
           </IconButton>
         </Box>

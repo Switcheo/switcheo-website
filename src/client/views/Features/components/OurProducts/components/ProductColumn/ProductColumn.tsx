@@ -11,6 +11,7 @@ export type Product = {
   description: string;
   highlight?: boolean;
   icon: string;
+  link?: string;
 };
 
 export interface ProductColumnProps extends BoxProps {
@@ -47,6 +48,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "row",
     color: theme.palette.primary.main,
+    textDecoration: "none",
     "& span": {
       fontWeight: "bold",
     },
@@ -82,7 +84,7 @@ const ProductColumn: React.FC<ProductColumnProps> = (props: any) => {
       <SVGComponent className={classes.icon} url={product.icon} />
       <Divider className={classes.divider} />
       <Box className={classes.content}>
-        <Typography component="a" className={classes.title}>
+        <Typography component="a" target="_blank" href={product.link} className={classes.title}>
           <Typography component="span" variant="body2" color="primary">{product.title}</Typography>
           <SwitcheoLogo className={classes.extLinkIcon} />
         </Typography>
