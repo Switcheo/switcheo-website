@@ -8,6 +8,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     height: 24,
     width: 24,
+    "& svg": {
+      verticalAlign: "top",
+    },
     "& path,polygon": {
       fill: "currentColor",
     },

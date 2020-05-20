@@ -8,13 +8,14 @@ import urlDemexIcon from "./assets/demex-logo.svg";
 import urlFoundationIcon from "./assets/foundation-logo.svg";
 import urlSwitcheoIcon from "./assets/switcheo-logo.svg";
 import urlZilswapIcon from "./assets/zilswap-logo.svg";
+import { Paths } from "../../../../contants";
 
 const PRODUCTS: Product[] = [{
   title: "Switcheo Exchange",
   descriptor: "The Preferred Exchange Available on Ethereum, EOS and NEO Blockchains.",
   description: "Switcheo paves the way for a trustless and secure multi-chain trading experience. No mandatory registration. Connect and trade freely.",
   highlight: true,
-  link: "https://switcheo.exchange/",
+  link: Paths.exchange,
   icon: urlSwitcheoIcon,
 }, {
   title: "Demex",
@@ -30,7 +31,7 @@ const PRODUCTS: Product[] = [{
   title: "Switcheo Foundation",
   descriptor: "An Initiative to Democratize Financial Markets",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  link: "https://switcheo.foundation/",
+  link: Paths.foundation,
   icon: urlFoundationIcon,
 }];
 

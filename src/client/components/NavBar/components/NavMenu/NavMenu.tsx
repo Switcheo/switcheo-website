@@ -5,6 +5,7 @@ import cls from "classnames";
 import CloseIcon from "@material-ui/icons/Close";
 import NavLink from "../NavLink";
 import SwitcheoLogo from "../../../SwitcheoLogo";
+import { Paths } from "../../../../contants";
 
 export interface NavMenuProps extends BoxProps {
   showMenu?: boolean;
@@ -66,7 +67,7 @@ const NavMenu: React.FC<NavMenuProps> = (props: any) => {
     <Box {...rest} className={cls(classes.root, className)} style={{ height: showMenu ? "100%" : 0 }}>
       <Box className={classes.navMenu}>
         <Box display="flex" flexDirection="row">
-          <IconButton className={classes.iconButton} href="/">
+          <IconButton className={classes.iconButton} href={Paths.home}>
             <SwitcheoLogo className={classes.logoIcon} />
           </IconButton>
           <Box flex={1} />
@@ -76,13 +77,13 @@ const NavMenu: React.FC<NavMenuProps> = (props: any) => {
         </Box>
 
         <Box className={classes.navContainer} display="flex" flexDirection="column">
-          <NavLink onClick={() => closeMenu()} href="/features">Key features</NavLink>
-          <NavLink onClick={() => closeMenu()} target="_blank" href="https://switcheo.exchange/">Exchange</NavLink>
-          <NavLink onClick={() => closeMenu()} href="/#story">Our story</NavLink>
-          <NavLink onClick={() => closeMenu()} href="/#culture">Our culture</NavLink>
-          <NavLink onClick={() => closeMenu()} href="/#press">Press</NavLink>
-          <NavLink onClick={() => closeMenu()} href="/#blog">Blog</NavLink>
-          <NavLink onClick={() => closeMenu()} href="/#support">Support</NavLink>
+          <NavLink onClick={() => closeMenu()} href={Paths.features}>Key features</NavLink>
+          <NavLink onClick={() => closeMenu()} href={Paths.exchange} target="_blank">Exchange</NavLink>
+          <NavLink onClick={() => closeMenu()} href={Paths.story}>Our story</NavLink>
+          <NavLink onClick={() => closeMenu()} href={Paths.culture}>Our culture</NavLink>
+          <NavLink onClick={() => closeMenu()} href={Paths.press}>Press</NavLink>
+          <NavLink onClick={() => closeMenu()} href={Paths.blog} target="_blank">Blog</NavLink>
+          <NavLink onClick={() => closeMenu()} href={Paths.support} target="_blank">Support</NavLink>
         </Box>
       </Box>
     </Box>

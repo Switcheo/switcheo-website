@@ -9,7 +9,7 @@ import ContentSection from "../ContentSection";
 import SwitcheoBrand from "../SwitcheoBrand";
 import { FooterTitle, FooterLink, SubscribeBox } from "./components";
 
-import { minBlockHeight } from "../../contants";
+import { minBlockHeight, Paths } from "../../contants";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -59,15 +59,15 @@ const Footer: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
           <Grid item className={cls(classes.cell, classes.links)} xl={2} md={3} xs={6}>
             <FooterTitle>Sitemap</FooterTitle>
 
-            <FooterLink href="/">Home</FooterLink>
-            <FooterLink target="_blank" href="https://switcheo.exchange/">Start trading</FooterLink>
-            <FooterLink href="/features">Key features</FooterLink>
-            <FooterLink href="/story">Our story</FooterLink>
-            <FooterLink href="/culture">Our culture</FooterLink>
-            <FooterLink href="/press">Press</FooterLink>
-            <FooterLink href="/#featured">As featured in</FooterLink>
-            <FooterLink href="/#blog">Blog</FooterLink>
-            <FooterLink href="/#support">Support</FooterLink>
+            <FooterLink href={Paths.home}>Home</FooterLink>
+            <FooterLink href={Paths.exchange} target="_blank">Start trading</FooterLink>
+            <FooterLink href={Paths.features}>Key features</FooterLink>
+            <FooterLink href={Paths.story}>Our story</FooterLink>
+            <FooterLink href={Paths.culture}>Our culture</FooterLink>
+            <FooterLink href={Paths.press}>Press</FooterLink>
+            <FooterLink href={Paths.featured}>As featured in</FooterLink>
+            <FooterLink href={Paths.blog} target="_blank">Blog</FooterLink>
+            <FooterLink href={Paths.support} target="_blank">Support</FooterLink>
           </Grid>
           <Grid item className={cls(classes.cell, classes.links)} xl={2} md={3} xs={6}>
             <FooterTitle>Resources</FooterTitle>

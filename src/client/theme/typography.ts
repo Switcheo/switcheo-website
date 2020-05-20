@@ -66,12 +66,27 @@ const typography = (theme: Theme): TypographyOptions => ({
     lineHeight: "20px"
   },
   subtitle1: {
-    color: palette.text.primary,
-    fontSize: "12px",
-    letterSpacing: "0.6px",
-    lineHeight: "14px",
-    fontWeight: "bold",
-    textTransform: "uppercase",
+    fontSize: 64,
+    lineHeight: "70px",
+    letterSpacing: "-2px",
+
+    [theme.breakpoints.down("lg")]: {
+      fontSize: 42,
+      lineHeight: "44px",
+      letterSpacing: "-1.2px",
+    },
+
+    [theme.breakpoints.down("md")]: {
+      fontSize: 32,
+      lineHeight: "36px",
+      letterSpacing: "-.5px",
+    },
+
+    [theme.breakpoints.down("sm")]: {
+      fontSize: 16,
+      lineHeight: "20px",
+      letterSpacing: "-.5px",
+    },
   },
   subtitle2: {
     color: palette.text.secondary,

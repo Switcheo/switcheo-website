@@ -27,9 +27,9 @@ const useStyles = makeStyles(theme => ({
       minHeight: 0,
     },
     ...props.feature.inverse && {
-      [theme.breakpoints.only("lg")]: {
+      [theme.breakpoints.between("md", "lg")]: {
         marginLeft: theme.spacing(-1.5),
-        paddingLeft: theme.spacing(3),
+        paddingLeft: theme.spacing(1.5),
       },
     },
   }),

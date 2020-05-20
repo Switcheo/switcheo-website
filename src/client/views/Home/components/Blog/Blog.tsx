@@ -3,6 +3,7 @@ import cls from "classnames";
 import React from "react";
 import { ContentSection, ContentTitle, CTAButton } from "../../../../components";
 import { Box } from "@material-ui/core";
+import { Paths } from "../../../../contants";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -17,7 +18,7 @@ const Blog: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
     <ContentSection {...rest} className={cls(classes.root, className)}>
       <ContentTitle>Blog</ContentTitle>
       <Box flex={1} />
-      <CTAButton white>Read more</CTAButton>
+      <CTAButton white href={Paths.blog} target="_blank">Read more</CTAButton>
     </ContentSection>
   );
 };

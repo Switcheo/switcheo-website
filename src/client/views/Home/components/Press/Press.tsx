@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
 import { ContentSection, ContentTitle, SwitcheoLogo, CTAButton } from "../../../../components";
+import { Paths } from "../../../../contants";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,7 +21,7 @@ const Press: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
     <ContentSection {...rest} className={cls(classes.root, className)}>
       <ContentTitle>Press</ContentTitle>
       <Box flex={1} />
-      <CTAButton>Read more</CTAButton>
+      <CTAButton href={Paths.press}>Read more</CTAButton>
     </ContentSection>
   );
 };

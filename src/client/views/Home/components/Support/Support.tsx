@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
 import { ContentSection, ContentTitle, CTAButton } from "../../../../components";
+import { Paths } from "../../../../contants";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -31,7 +32,7 @@ const Support: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => 
         Sitiis ni ut odis dolut evelit aut quodi blaut harchictor atectat vitatioreped maximil luptat laborem laccateni quoditaecum et es molo exerae voluptatquia sam error restionsecta que simeni ommoluptate cone perferi busape veror aut volore rehenis delliqui opti.
       </Typography>
       <Box flex={1} />
-      <CTAButton white>Get support</CTAButton>
+      <CTAButton white href={Paths.support} target="_blank">Get support</CTAButton>
     </ContentSection>
   );
 };

@@ -4,6 +4,7 @@ import cls from "classnames";
 import React from "react";
 import { ContentSection, ContentTitle, CTAButton, ImageCell } from "../../../../components";
 import urlImageCulture from "../../assets/culture-square.png";
+import { Paths } from "../../../../contants";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -52,13 +53,13 @@ const Culture: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => 
         </Typography>
         <Hidden smDown>
           <Box flex={1} />
-          <CTAButton secondary>Join us</CTAButton>
+          <CTAButton secondary href={Paths.culture}>Join us</CTAButton>
         </Hidden>
       </ContentSection>
       <Hidden mdUp>
         <Box className={classes.imageContainer} style={{ backgroundImage: `url(${urlImageCulture})` }}>
           <Box className={classes.volume} />
-          <CTAButton className={classes.floatButton} secondary>Join us</CTAButton>
+          <CTAButton className={classes.floatButton} secondary href={Paths.culture}>Join us</CTAButton>
         </Box>
       </Hidden>
     </>

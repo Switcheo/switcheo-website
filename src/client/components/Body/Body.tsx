@@ -5,7 +5,7 @@ import cls from "classnames";
 const useStyles = makeStyles(theme => ({
   root: {
     paddingTop: 88,
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("xs")]: {
       paddingTop: 64,
     },
   },
