@@ -3,15 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";
 import { SVGComponent } from "../../../../../../components";
-import { minBlockHeight } from "../../../../../../contants";
-
-export type Feature = {
-  label: string;
-  descriptors: string[];
-  description: string;
-  icon: string;
-  inverse?: boolean;
-};
+import { minBlockHeight, Feature } from "../../../../../../contants";
 
 export interface FeatureColumnProps extends BoxProps {
   feature: Feature;

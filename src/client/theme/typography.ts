@@ -105,9 +105,9 @@ const typography = (theme: Theme): TypographyOptions => ({
       lineHeight: "32px",
     },
     [theme.breakpoints.down("md")]: {
-      fontSize: "16px",
+      fontSize: "22px",
       letterSpacing: "-0.75px",
-      lineHeight: "20px",
+      lineHeight: "24px",
     },
   },
   body2: {
@@ -116,9 +116,9 @@ const typography = (theme: Theme): TypographyOptions => ({
     letterSpacing: "-0.75px",
     lineHeight: "32px",
     [theme.breakpoints.down("md")]: {
-      fontSize: "16px",
+      fontSize: "18px",
       letterSpacing: "-0.75px",
-      lineHeight: "20px",
+      lineHeight: "22px",
     },
   },
   button: {

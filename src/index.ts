@@ -1,13 +1,14 @@
-import express, { Request, Response } from 'express';
+import express, { Request, Response } from "express";
 
-let app = require('./server').default;
+require("dotenv").config();
+let app = require("./server").default;
 
 if (module.hot) {
-  module.hot.accept('./server', () => {
-    console.log('Server reloading...');
+  module.hot.accept("./server", () => {
+    console.log("Server reloading...");
 
     try {
-      app = require('./server').default;
+      app = require("./server").default;
     } catch (error) {
       // Do nothing
     }
@@ -17,7 +18,5 @@ if (module.hot) {
 express()
   .use((req: Request, res: Response) => app.handle(req, res))
   .listen(process.env.PORT || 3000, () => {
-    console.log(
-      `Switcheo Website is running: http://localhost:${process.env.PORT || 3000}`
-    );
+    console.log(`Switcheo Website is running: http://localhost:${process.env.PORT || 3000}`);
   });

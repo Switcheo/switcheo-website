@@ -2,7 +2,9 @@ import { Box, Container, Divider, Typography, Grid, Button, Hidden } from "@mate
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";
-import { ContentTitle, SwitcheoLogo } from "../../components";
+import { useSelector } from "react-redux";
+import { ContentTitle, SwitcheoLogo, DateLabel } from "../../components";
+import { RootState } from "../../store/types";
 
 const PRESS = [{
   title: "The journey of a blockchain pioneer",
@@ -48,13 +50,19 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.primary.main,
     flex: 1,
     flexBasis: "50%",
+    whiteSpace: "nowrap",
+    textOverflow: "ellipsis",
+    overflow: "hidden",
+    marginRight: theme.spacing(2),
     [theme.breakpoints.down("md")]: {
       fontSize: "22px",
       lineHeight: "25px",
     },
     [theme.breakpoints.down("xs")]: {
+      marginRight: 0,
       marginBottom: theme.spacing(6),
       marginTop: theme.spacing(1),
+      whiteSpace: "unset",
     },
   },
   type: {
@@ -98,21 +106,27 @@ const useStyles = makeStyles(theme => ({
 const Press: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   const { children, className, ...rest } = props;
   const classes = useStyles();
+
+  // @ts-ignore
+  const pressData = useSelector((store: RootState) => store.Content.press);
+
   return (
     <Container maxWidth="xl" {...rest} className={cls(classes.root, className)}>
       <Box className={classes.content}>
         <ContentTitle>Press</ContentTitle>
 
-        {PRESS.map((item, index) => (
+        {pressData.map((item: any, index: number) => (
           <Box className={classes.itemContainer} key={index}>
             <Hidden smUp>
               <Typography className={classes.type} variant="body2">{item.type}</Typography>
             </Hidden>
-            <Typography className={classes.title} variant="body1">{item.title}</Typography>
+            <Typography title={item.title} className={classes.title} variant="body1">{item.title}</Typography>
             <Hidden xsDown>
               <Typography className={classes.type} variant="body2">{item.type}</Typography>
             </Hidden>
-            <Typography className={classes.date} variant="body2">{item.date}</Typography>
+            <Typography className={classes.date} variant="body2">
+              <DateLabel>{item.date}</DateLabel>
+            </Typography>
             <SwitcheoLogo className={classes.icon} />
           </Box>
         ))}
