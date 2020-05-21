@@ -4,7 +4,7 @@ import React from "react";
 import { ContentSection, ContentTitle, CTAButton } from "../../../../components";
 import { Box, Grid, Hidden } from "@material-ui/core";
 import { Paths, FEATURES, minBlockHeight } from "../../../../contants";
-import { FeatureColumn } from "./components";
+import { HomeFeatureColumn } from "./components";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -35,7 +35,7 @@ const Features: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
           {FEATURES.slice(0, 4).map((feature, index) => (
             <Hidden key={index} smDown={index >= 2}>
               <Grid item md={3} xs={6}>
-                <FeatureColumn feature={feature} index={index + 1} key={index} />
+                <HomeFeatureColumn feature={feature} index={index + 1} key={index} />
               </Grid>
             </Hidden>
           ))}

@@ -1,1 +1,1 @@
-export { default as FeatureColumn } from "./FeatureColumn";
+export { default as HomeFeatureColumn } from "./HomeFeatureColumn";

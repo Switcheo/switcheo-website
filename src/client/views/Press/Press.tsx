@@ -106,8 +106,6 @@ const useStyles = makeStyles(theme => ({
 const Press: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   const { children, className, ...rest } = props;
   const classes = useStyles();
-
-  // @ts-ignore
   const pressData = useSelector((store: RootState) => store.Content.press);
 
   return (

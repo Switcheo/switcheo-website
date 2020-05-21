@@ -5,7 +5,7 @@ import React from "react";
 import { SVGComponent, SwitcheoLogo } from "../../../../../../components";
 import { Feature } from "../../../../../../contants";
 
-export interface FeatureColumnProps extends BoxProps {
+export interface HomeFeatureColumnProps extends BoxProps {
   feature: Feature;
   index: number;
 };
@@ -59,7 +59,7 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1.5, 0),
   },
 }));
-const FeatureColumn: React.FC<FeatureColumnProps> = (props: any) => {
+const HomeFeatureColumn: React.FC<HomeFeatureColumnProps> = (props: any) => {
   const { children, feature, hidden, index, className, ...rest } = props;
   const classes = useStyles(props);
 
@@ -93,4 +93,4 @@ const FeatureColumn: React.FC<FeatureColumnProps> = (props: any) => {
   );
 };
 
-export default FeatureColumn;
+export default HomeFeatureColumn;
