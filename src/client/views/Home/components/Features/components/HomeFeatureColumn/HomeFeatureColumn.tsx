@@ -31,6 +31,16 @@ const useStyles = makeStyles(theme => ({
     fontSize: "173px",
     lineHeight: "150px",
     letterSpacing: "-5.41px",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "100px",
+      lineHeight: "98px",
+      letterSpacing: "-3.5px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "66px",
+      lineHeight: "68px",
+      letterSpacing: "-2.2px",
+    },
   },
   description: {
     marginBottom: theme.spacing(2),

@@ -14,6 +14,9 @@ const useStyles = makeStyles(theme => ({
   wrapper: {
     margin: theme.spacing(0, -1.5),
     flex: 1,
+    [theme.breakpoints.down("sm")]: {
+      width: `calc(100% + ${theme.spacing(3)}px)`,
+    },
   },
   ctaIcon: {
     marginLeft: theme.spacing(8),
@@ -44,7 +47,7 @@ const Press: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   const classes = useStyles();
   const pressData = useSelector((store: RootState) => store.Content.press);
 
-  const trimLength = (text?: string, length = 50): any => {
+  const trimLength = (text?: string, length = 70): any => {
     if (typeof text !== "string") return text;
     return text.length > length ? text.slice(0, length) + "…" : text;
   };
@@ -54,8 +57,8 @@ const Press: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
       <ContentTitle>Press</ContentTitle>
       <Box className={classes.wrapper}>
         <Grid container>
-          {pressData.map((item, index) => (
-            <Grid className={classes.item} key={index} item xs={4}>
+          {pressData.slice(0, 6).map((item, index) => (
+            <Grid className={classes.item} key={index} item xs={12} sm={6} lg={4}>
               <Divider className={classes.divider} />
               <Typography className={classes.txtType} variant="body1" color="primary">{item.type}</Typography>
               <Typography className={classes.txtTitle} component="a" href={item.link} target="_blank" variant="body1" color="primary">

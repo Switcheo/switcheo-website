@@ -1,4 +1,4 @@
-import { Box, Typography } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";
@@ -6,12 +6,15 @@ import { SVGComponent, SwitcheoLogo } from "../../../../../../components";
 
 export type ProductEntryProps = {
   iconUrl: string;
+  href?: string;
 };
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     flexDirection: "row",
+    width: "100%",
+    borderRadius: 0,
     color: theme.palette.primary.main,
     alignItems: "center",
     borderBottom: `1px solid ${theme.palette.primary.main}`,
@@ -33,6 +36,9 @@ const useStyles = makeStyles(theme => ({
   },
   text: {
     flex: 1,
+    textAlign: "left",
+    textTransform: "none",
+    fontWeight: "bold",
   },
   switcheoIcon: {
     height: 24,
@@ -47,11 +53,11 @@ const ProductEntry: React.FC<ProductEntryProps & React.HTMLAttributes<HTMLDivEle
   const { children, iconUrl, className, ...rest } = props;
   const classes = useStyles();
   return (
-    <Box {...rest} className={cls(classes.root, className)}>
+    <Button {...rest} className={cls(classes.root, className)} target="_blank">
       <SVGComponent className={classes.icon} url={iconUrl} />
       <Typography color="primary" className={classes.text} variant="body2">{children}</Typography>
       <SwitcheoLogo className={classes.switcheoIcon} />
-    </Box>
+    </Button>
   );
 };
 

@@ -1,3 +1,4 @@
+import moment from "moment";
 import escapeStringRegexp from 'escape-string-regexp';
 import { Request, Response } from 'express';
 import React from 'react';
@@ -6,9 +7,10 @@ import { Provider } from "react-redux";
 import { StaticRouter } from "react-router-dom";
 import ClientApp from '../../client/app';
 import ServerStore from '../store';
+import { SvContentful } from '../service';
 
 
-const renderMiddleware = () => async (req: Request, res: Response) => {
+const renderMiddleware = () => (req: Request, res: Response) => {
   let html = req.html || '';
   const htmlContent = ReactDOMServer.renderToString(
     // @ts-ignore
@@ -34,6 +36,10 @@ const renderMiddleware = () => async (req: Request, res: Response) => {
   });
 
   res.send(html);
+
+  const contentCacheThreshold = moment().add(-15, "second");
+  if (!preloadedState.Content.timestamp || !preloadedState.Content.timestamp!.isAfter(contentCacheThreshold))
+    SvContentful.reloadCache().catch(console.error);
 };
 
 export default renderMiddleware;

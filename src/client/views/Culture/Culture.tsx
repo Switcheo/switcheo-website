@@ -1,19 +1,11 @@
-import { Box, Container, Divider, Typography, Grid, Button } from "@material-ui/core";
+import { Box, Button, Container, Divider, Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import React from "react";
 import cls from "classnames";
-import urlBannerImage from "./assets/banner.png";
+import React from "react";
+import { useSelector } from "react-redux";
 import { ContentTitle, SwitcheoLogo } from "../../components";
-
-const JOB_POSTINGS = [{
-  title: "Developer",
-}, {
-  title: "Marketing Executive",
-}, {
-  title: "Community Manager",
-}, {
-  title: "Creative Designer",
-}];
+import { RootState } from "../../store/types";
+import urlBannerImage from "./assets/banner.png";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -65,8 +57,8 @@ const useStyles = makeStyles(theme => ({
     textTransform: "none",
 
     [theme.breakpoints.down("md")]: {
-      fontSize: 32,
-      lineHeight: "36px",
+      fontSize: 30,
+      lineHeight: "34px",
       letterSpacing: "-.5px",
     },
   },
@@ -93,6 +85,7 @@ const useStyles = makeStyles(theme => ({
 const Culture: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   const { children, className, ...rest } = props;
   const classes = useStyles();
+  const jobOpeningData = useSelector((store: RootState) => store.Content.jobOpening);
   return (
     <Container maxWidth="xl" {...rest} className={cls(classes.root, className)}>
       <Box className={classes.banner} />
@@ -111,8 +104,8 @@ const Culture: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => 
             <Grid className={classes.jobPostingContainer} item xs={12} md={6}>
               <Divider className={classes.divider} />
               <Box display="flex" flexDirection="column">
-                {JOB_POSTINGS.map((posting, index) => (
-                  <Button key={index} className={classes.jobPosting}>{posting.title}
+                {jobOpeningData.map((posting, index) => (
+                  <Button key={index} className={classes.jobPosting} href={posting.url} target="_blank">{posting.role}
                     <SwitcheoLogo className={classes.icon} />
                   </Button>
                 ))}

@@ -7,14 +7,7 @@ import { SvContentful } from "./service";
 import ServerStore from "./store";
 
 SvContentful.init();
-(async () => {
-  const result = await SvContentful.loadAll();
-  for (const key in result) {
-    const action = actions.Content.update({ key, value: result[key] });
-    ServerStore.dispatch(action);
-  }
-})().catch(console.error);
-
+SvContentful.reloadCache();
 const publicPath = path.join(__dirname, "/public");
 const app = express();
 

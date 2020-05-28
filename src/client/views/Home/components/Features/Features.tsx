@@ -18,9 +18,6 @@ const useStyles = makeStyles(theme => ({
     flex: 1,
     margin: theme.spacing(0, -1.5),
     width: `calc(100% + ${theme.spacing(3)}px)`,
-    [theme.breakpoints.down("xs")]: {
-      margin: theme.spacing(0, -3),
-    },
   },
 }));
 

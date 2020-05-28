@@ -38,12 +38,10 @@ const useStyles = makeStyles(theme => ({
   },
   brandIcon: {
     color: theme.palette.primary.main,
-    marginLeft: theme.spacing(3),
-    marginTop: theme.spacing(3),
+    margin: theme.spacing(3),
     width: 316,
     [theme.breakpoints.down("xs")]: {
-      marginLeft: theme.spacing(2.5),
-      marginTop: theme.spacing(2.5),
+      margin: theme.spacing(2.5),
       width: 170,
     },
   },

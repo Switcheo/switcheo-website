@@ -26,6 +26,16 @@ export const Paths = {
   support: "https://support.switcheo.network/",
   exchange: "https://switcheo.exchange/",
   foundation: "https://switcheo.foundation/",
+  referral: "https://blog.switcheo.network/switcheo-referral-program-invite-your-friends-get-rewarded/",
+
+  security: "https://hackerone.com/switcheo_network",
+  whitepaper: "https://switcheo.network/whitepaper_v1.pdf",
+  api_docs: "https://docs.switcheo.network/",
+  apply_to_list: "https://docs.google.com/forms/d/1Uq01pZvqxG9FtFCpKMZeIT6uhu64VT2BrB2AS1XAXuQ/edit",
+  media_kit: "https://switcheo.network/switcheo_mediakit.pdf",
+  terms_of_use: "https://switcheo.network/terms.html",
+  privacy_policy: "https://switcheo.network/privacy.html",
+  listing_policy: "https://switcheo.network/listing.html",
 };
 
 export const minBlockHeight = `calc(100vh - ${Dim.headerHeight}px - ${Dim.spacing * 2 - 2}px)`;

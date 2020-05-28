@@ -6,6 +6,9 @@ const initial_state: ContentState = {
   timestamp: undefined,
   press: [],
   team: [],
+  blogEntry: [],
+  featuredIn: [],
+  jobOpening: [],
 };
 
 const reducer = (state: ContentState = initial_state, actions: any) => {

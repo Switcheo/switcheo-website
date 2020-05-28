@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
 import { ContentSection, ContentTitle, CTAButton } from "../../../../components";
+import { Paths } from "../../../../contants";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -32,7 +33,7 @@ const Referral: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
         Invite your friends and earn 50% of their trading fees. Win from a pool of $40,000 Aqui te pa comnimus enimolum quidell uptatur sapellesti tem eos magni ipis molum eum am veris quostioris volum comnistest, volore dolupta spitas utatem qui occatem ipsa asperspita ariatusam laborec aeptass imperspit perit am enimilignim eictus.
       </Typography>
       <Box flex={1} />
-      <CTAButton>Invite friends</CTAButton>
+      <CTAButton href={Paths.referral} target="_blank">Invite friends</CTAButton>
     </ContentSection>
   );
 };

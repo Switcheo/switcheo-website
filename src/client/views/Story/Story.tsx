@@ -58,6 +58,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(0, 1.5),
     marginBottom: theme.spacing(6),
     "& img": {
+      filter: "greyscale(100%)",
       display: "block",
       width: "100%",
       marginBottom: theme.spacing(3),
@@ -129,7 +130,7 @@ const Story: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
                         <Box display="flex" flexDirection="column">
                           <Typography color="secondary">{teamMember.name}</Typography>
                           <Typography color="secondary">{teamMember.role}</Typography>
-                          {teamMember.links.map((profileLink, index) => (
+                          {!!teamMember.links && teamMember.links.map((profileLink, index) => (
                             <Typography color="secondary" key={index} component="a" target="_blank" href={profileLink.url}>{profileLink.label}</Typography>
                           ))}
                         </Box>

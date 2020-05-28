@@ -5,7 +5,7 @@ import cls from "classnames";
 import CloseIcon from "@material-ui/icons/Close";
 import NavLink from "../NavLink";
 import SwitcheoLogo from "../../../SwitcheoLogo";
-import { Paths } from "../../../../contants";
+import { Paths, Dim } from "../../../../contants";
 
 export interface NavMenuProps extends BoxProps {
   showMenu?: boolean;
@@ -21,14 +21,16 @@ const useStyles = makeStyles(theme => ({
     height: "100%",
     zIndex: 300,
     transition: "height .2s ease-in-out",
+    backgroundColor: "#fff",
   },
   navMenu: {
     color: theme.palette.primary.main,
-    backgroundColor: "#fff",
     height: "100%",
     display: "flex",
     flexDirection: "column",
     overflow: "auto",
+    maxWidth: Dim.maxViewWidth,
+    margin: "0 auto",
   },
   navContainer: {
     padding: theme.spacing(0, 3),
@@ -78,7 +80,7 @@ const NavMenu: React.FC<NavMenuProps> = (props: any) => {
 
         <Box className={classes.navContainer} display="flex" flexDirection="column">
           <NavLink onClick={() => closeMenu()} href={Paths.features}>Key features</NavLink>
-          <NavLink onClick={() => closeMenu()} anchorLink={Paths.products}>Products</NavLink>
+          <NavLink onClick={() => closeMenu()} href={Paths.products}>Products</NavLink>
           <NavLink onClick={() => closeMenu()} href={Paths.exchange} target="_blank">Exchange</NavLink>
           <NavLink onClick={() => closeMenu()} href={Paths.story}>Our story</NavLink>
           <NavLink onClick={() => closeMenu()} href={Paths.culture}>Our culture</NavLink>
