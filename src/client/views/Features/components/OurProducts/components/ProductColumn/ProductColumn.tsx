@@ -29,11 +29,9 @@ const useStyles = makeStyles(theme => ({
       padding: theme.spacing(0, 3, 3),
       minHeight: 0,
     },
-  },
-  highlightBackground: {
-    [theme.breakpoints.up("sm")]: {
+    "&:hover": {
       backgroundColor: theme.palette.secondary.main,
-    }
+    },
   },
   content: {
     color: theme.palette.primary.main,
@@ -80,7 +78,7 @@ const ProductColumn: React.FC<ProductColumnProps> = (props: any) => {
   const { children, product, className, ...rest } = props;
   const classes = useStyles();
   return (
-    <Box {...rest} className={cls(classes.root, className, { [classes.highlightBackground]: product.highlight })}>
+    <Box {...rest} className={cls(classes.root, className)}>
       <SVGComponent className={classes.icon} url={product.icon} />
       <Divider className={classes.divider} />
       <Box className={classes.content}>
