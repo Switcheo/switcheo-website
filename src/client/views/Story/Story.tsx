@@ -15,7 +15,7 @@ export type Team = {
 
 const TEAMS: Team[] = [{
   title: "Core team",
-  description: "Opta audae quas nonsed quatur mostibus tem aceate, dae commoloreped magnist, nonsequaatur re, autaectatis vero mil iduciatur sitionet laut quia porpost voluptatenis saeporibusRat eos voluptatis senimag nation nis iditi int, volore vendi nos sequi optatem int vid qui dolupta num erum voluptatur remped quis moluptatur aut la.",
+  description: "Our management, operational, and engineering team is based in our head office in Singapore. We are supported by a round-the-clock community & support team to help you take your first step into trading, or make your first crypto purchase safely.",
   members: []
 }, {
   title: "Advisory and Community",
@@ -105,21 +105,28 @@ const Story: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   };
 
   return (
-    <Container maxWidth="xl" {...rest} className={cls(classes.root, className)}>
+    <Container maxWidth="lg" {...rest} className={cls(classes.root, className)}>
       <Box className={classes.content}>
         <ContentTitle secondary>Our story</ContentTitle>
         <Divider className={classes.divider} />
-        <Typography variant="subtitle1" color="secondary">Join the cryptocurrency exchange that’s leaving others in its wake. Trading without limits for lives without limits. We bring you a platform so speedy, so safe and so user-friendly for anyone to trade assets freely across chains. There’s nothing cryptic about crypto on Switcheo. You bring possibilities. Together, nothing can stop us. </Typography>
+        <Typography variant="subtitle1" color="secondary">
+          You bring the possibilities. We bring the platforms that 
+          enable finance without limits. Whether you’re here to make 
+          your first purchase, or are a battle-weary trader, there’s 
+          nothing cryptic about crypto on Switcheo. From humble 
+          beginnings, we’ll keep going forward together. Let’s keep 
+          living lives without limits. Together, nothing can stop us.
+        </Typography>
 
         {TEAMS.map((team, index) => (
           <Box key={index} className={classes.teamContent}>
             <ContentTitle secondary>{team.title}</ContentTitle>
             <Grid container>
-              <Grid item md={12} lg={4} xl={6}>
+              <Grid item md={12} lg={4}>
                 <Divider className={classes.divider} />
                 <Typography variant="body1" color="secondary">{team.description}</Typography>
               </Grid>
-              <Grid item md={12} lg={8} xl={6}>
+              <Grid item md={12} lg={8}>
                 <Box className={classes.memberContainer}>
                   <Grid container>
                     {teamMembers.filter(filterMembers(team.title)).map((teamMember, index) => (

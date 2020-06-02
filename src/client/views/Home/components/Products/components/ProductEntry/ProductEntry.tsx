@@ -20,7 +20,10 @@ const useStyles = makeStyles(theme => ({
     borderBottom: `1px solid ${theme.palette.primary.main}`,
     "&:first-child": {
       borderTop: `1px solid ${theme.palette.primary.main}`,
-    }
+    },
+    "&:hover $switcheoIcon": {
+      transform: "rotate(0)",
+    },
   },
   icon: {
     color: theme.palette.primary.main,
@@ -43,9 +46,14 @@ const useStyles = makeStyles(theme => ({
   switcheoIcon: {
     height: 24,
     width: 24,
+    transition: "transform .05s ease-in-out",
+    transform: "rotate(45deg)",
     [theme.breakpoints.down("md")]: {
       height: 20,
       width: 20,
+    },
+    [theme.breakpoints.down("sm")]: {
+      transform: "rotate(0)",
     },
   },
 }));

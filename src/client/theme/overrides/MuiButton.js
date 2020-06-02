@@ -11,7 +11,7 @@ export default theme => ({
       fontSize: "20px",
       lineHeight: "26px",
     },
-    "&:hover": {
+    "&:hover,:active": {
       boxShadow: "none",
     },
   },

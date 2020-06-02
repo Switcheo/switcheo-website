@@ -7,7 +7,7 @@ import Section from "../Section";
 import SVGComponent from "../SVGComponent";
 import ContentSection from "../ContentSection";
 import SwitcheoBrand from "../SwitcheoBrand";
-import { FooterTitle, FooterLink, SubscribeBox } from "./components";
+import { FooterTitle, FooterLink, SubscribeBox, SocialLinkGroup } from "./components";
 
 import { minBlockHeight, Paths } from "../../contants";
 
@@ -29,7 +29,6 @@ const useStyles = makeStyles(theme => ({
   brand: {
     width: 158,
     height: 23,
-    marginTop: theme.spacing(3),
     color: theme.palette.primary.main,
   },
   container: {
@@ -42,6 +41,17 @@ const useStyles = makeStyles(theme => ({
   },
   links: {
     paddingRight: theme.spacing(3),
+  },
+  bottom: {
+    marginTop: theme.spacing(3),
+    width: "100%",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+    },
   },
 }));
 const Footer: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
@@ -56,7 +66,7 @@ const Footer: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
               <SubscribeBox />
             </Grid>
           </Hidden>
-          <Grid item className={cls(classes.cell, classes.links)} xl={2} md={3} xs={6}>
+          <Grid item className={cls(classes.cell, classes.links)} md={3} xs={6}>
             <FooterTitle>Sitemap</FooterTitle>
 
             <FooterLink href={Paths.home}>Home</FooterLink>
@@ -65,11 +75,12 @@ const Footer: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
             <FooterLink href={Paths.story}>Our story</FooterLink>
             <FooterLink href={Paths.culture}>Our culture</FooterLink>
             <FooterLink href={Paths.press}>Press</FooterLink>
-            <FooterLink href={Paths.featured}>As featured in</FooterLink>
+            <FooterLink href={Paths.featured}>As featured on</FooterLink>
             <FooterLink href={Paths.blog} target="_blank">Blog</FooterLink>
             <FooterLink href={Paths.support} target="_blank">Support</FooterLink>
+            <FooterLink href={Paths.careers}>Careers</FooterLink>
           </Grid>
-          <Grid item className={cls(classes.cell, classes.links)} xl={2} md={3} xs={6}>
+          <Grid item className={cls(classes.cell, classes.links)} md={3} xs={6}>
             <FooterTitle>Resources</FooterTitle>
 
             <FooterLink href={Paths.security} target="_blank">Security</FooterLink>
@@ -82,14 +93,17 @@ const Footer: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
             <FooterLink href={Paths.listing_policy} target="_blank">Listing policy</FooterLink>
           </Grid>
           <Hidden smDown>
-            <Grid item xl={4} xs={1} />
-            <Grid item className={classes.cell} xl={4} xs={5}>
+            <Grid item xs={1} />
+            <Grid item className={classes.cell} xs={5}>
               <SubscribeBox />
             </Grid>
           </Hidden>
         </Grid>
         <Box flex={1} />
-        <SwitcheoBrand className={classes.brand} />
+        <Box className={classes.bottom}>
+          <SocialLinkGroup />
+          <SwitcheoBrand className={classes.brand} />
+        </Box>
       </ContentSection>
     </Container>
   );

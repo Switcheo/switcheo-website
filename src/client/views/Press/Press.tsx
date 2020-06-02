@@ -109,7 +109,7 @@ const Press: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   const pressData = useSelector((store: RootState) => store.Content.press);
 
   return (
-    <Container maxWidth="xl" {...rest} className={cls(classes.root, className)}>
+    <Container maxWidth="lg" {...rest} className={cls(classes.root, className)}>
       <Box className={classes.content}>
         <ContentTitle>Press</ContentTitle>
 

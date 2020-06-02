@@ -41,7 +41,7 @@ const Blog: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   const blogEntryData = useSelector((store: RootState) => store.Content.blogEntry);
   return (
     <ContentSection {...rest} className={cls(classes.root, className)}>
-      <ContentTitle>Blog</ContentTitle>
+      <ContentTitle>Our blog</ContentTitle>
       <Box className={classes.wrapper}>
         <Grid container>
           {blogEntryData.map((item, index) => (
@@ -54,7 +54,9 @@ const Blog: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
                 <Divider className={classes.divider} />
                 <Typography className={classes.txtLink} variant="body2" component="a" href={item.url} target="_blank">{item.title}</Typography>
                 <Divider className={classes.divider} />
-                <Typography color="primary" variant="body2">{item.preview}</Typography>
+                <Typography color="primary" variant="body2">
+                  <span style={{ fontSize: ".8em" }}>{item.preview}</span>
+                </Typography>
               </Grid>
             </Hidden>
           ))}

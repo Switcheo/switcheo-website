@@ -35,8 +35,8 @@ const Story: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   return (
     <ContentSection {...rest} className={cls(classes.root, className)}>
       <ContentTitle secondary>Our story</ContentTitle>
-      <Typography className={classes.bigNumber} color="secondary">34800</Typography>
-      <Typography variant="body1" color="secondary">Otatibus eossusam dendictet pratur aborionsendi dolut od quo tes eatios volorrum es dit ut es ulparcienda deloUpta cum erat fugia.</Typography>
+      <Typography className={classes.bigNumber} color="secondary">42800</Typography>
+      <Typography variant="body1" color="secondary">Trusted by over 42800 traders around the world. And growing by the day.</Typography>
       <Box flex={1} />
       <CTAButton secondary href={Paths.story}>Learn more</CTAButton>
     </ContentSection>

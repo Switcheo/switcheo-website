@@ -50,12 +50,12 @@ const Products: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
   return (
     <ContentSection {...rest} className={cls(classes.root, className)}>
       <Box className={classes.container}>
-        <ContentTitle large>Our products</ContentTitle>
+        <ContentTitle large>Our ecosystem</ContentTitle>
         <Typography className={classes.description} color="primary" variant="body1">
-          Built to enable trustless transfers across
-          blockchains in a practical manner and deliver a
-          world-class trading experience without
-          compromising on trustlessness.
+          As pioneers of the decentralized world, we constantly 
+          dive headfirst into new realms. We build unstoppable 
+          products that enable a global financial ecosystem 
+          without unjust barriers or unnecessary intermediaries.
         </Typography>
 
         <Box className={classes.products}>

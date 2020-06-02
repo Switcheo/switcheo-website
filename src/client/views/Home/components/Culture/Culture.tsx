@@ -49,7 +49,13 @@ const Culture: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => 
       <ContentSection {...rest} className={cls(classes.root, className)}>
         <ContentTitle secondary>Our culture</ContentTitle>
         <Typography variant="body1" color="secondary" className={classes.description}>
-          Join the cryptocurrency exchange that’s leaving others in its wake. Trading without limits for lives without limits. Accatem fugiat volorit adis maionsedi solorro rruntur. Mus de volupienis sim estiisci ommoluptate raturior sus.Pa voloriam, cum, int doluptus dolestiam que dolesto riorectem autem a nonsecto tem quaecta et eossi volorit iorupta etiam, exceri ipsapis nes ducias etur.
+          At Switcheo, we start small, think big, and learn fast.
+          We strive to create a diverse workspace that is
+          encouraging, positive, and inclusive. We are a team of
+          agile, bold, and innovative individuals with unshakable
+          values. Our flexibility and diversity creates a culture
+          where people share knowledge and ideas freely and bring 
+          out the best in each other.
         </Typography>
         <Hidden smDown>
           <Box flex={1} />

@@ -29,7 +29,9 @@ const Support: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => 
     <ContentSection {...rest} className={cls(classes.root, className)}>
       <ContentTitle>Need support?</ContentTitle>
       <Typography variant="body1" color="primary" className={classes.description}>
-        Sitiis ni ut odis dolut evelit aut quodi blaut harchictor atectat vitatioreped maximil luptat laborem laccateni quoditaecum et es molo exerae voluptatquia sam error restionsecta que simeni ommoluptate cone perferi busape veror aut volore rehenis delliqui opti.
+      We listen to your needs and we are available 24/7. 
+      Visit our support center for advice and answers 
+      from the Switcheo team.
       </Typography>
       <Box flex={1} />
       <CTAButton white href={Paths.support} target="_blank">Get support</CTAButton>

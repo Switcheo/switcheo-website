@@ -66,7 +66,8 @@ const typography = (theme: Theme): TypographyOptions => ({
     lineHeight: "20px"
   },
   subtitle1: {
-    fontSize: 42,
+    fontSize: 40,
+    marginBottom: theme.spacing(3),
     lineHeight: "44px",
     letterSpacing: "-1.2px",
 
@@ -74,6 +75,7 @@ const typography = (theme: Theme): TypographyOptions => ({
       fontSize: 32,
       lineHeight: "36px",
       letterSpacing: "-.5px",
+      marginBottom: theme.spacing(2),
     },
 
     [theme.breakpoints.down("sm")]: {
@@ -83,6 +85,7 @@ const typography = (theme: Theme): TypographyOptions => ({
     },
   },
   subtitle2: {
+    marginBottom: theme.spacing(1),
     color: palette.text.secondary,
     fontSize: "16px",
     letterSpacing: "0.2px",
@@ -93,6 +96,7 @@ const typography = (theme: Theme): TypographyOptions => ({
     fontSize: "24px",
     letterSpacing: "-0.75px",
     lineHeight: "32px",
+    marginBottom: theme.spacing(1),
     // [theme.breakpoints.up("xl")]: {
     //   fontSize: "32px",
     //   letterSpacing: "-1px",

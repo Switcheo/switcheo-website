@@ -33,7 +33,7 @@ const FeaturedIn: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) 
   const featuredInData = useSelector((store: RootState) => store.Content.featuredIn);
   return (
     <ContentSection {...rest} className={cls(classes.root, className)}>
-      <ContentTitle secondary>As featured in</ContentTitle>
+      <ContentTitle secondary>As featured on</ContentTitle>
       <Box className={classes.wrapper}>
         <Grid container>
           {featuredInData.map((item, index) => (

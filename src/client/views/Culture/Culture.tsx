@@ -61,6 +61,9 @@ const useStyles = makeStyles(theme => ({
       lineHeight: "34px",
       letterSpacing: "-.5px",
     },
+    "&:hover $icon": {
+      transform: "rotate(0)",
+    },
   },
   jobPostingContainer: {
     paddingLeft: theme.spacing(3),
@@ -74,10 +77,14 @@ const useStyles = makeStyles(theme => ({
     marginLeft: "auto",
     height: theme.spacing(4.5),
     width: theme.spacing(4.5),
-
+    transition: "transform .05s ease-in-out",
+    transform: "rotate(45deg)",
     [theme.breakpoints.down("md")]: {
       height: theme.spacing(3),
       width: theme.spacing(3),
+    },
+    [theme.breakpoints.down("sm")]: {
+      transform: "rotate(0)",
     },
   },
 }));
@@ -87,19 +94,45 @@ const Culture: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => 
   const classes = useStyles();
   const jobOpeningData = useSelector((store: RootState) => store.Content.jobOpening);
   return (
-    <Container maxWidth="xl" {...rest} className={cls(classes.root, className)}>
+    <Container maxWidth="lg" {...rest} className={cls(classes.root, className)}>
       <Box className={classes.banner} />
       <Box className={classes.content}>
         <ContentTitle secondary>Our culture</ContentTitle>
         <Divider className={classes.divider} />
-        <Typography variant="subtitle1" color="secondary">Ad evenim eos quo ilibus aspedigniste sus ilicatior ad mos apiende rferchic te porro dem quia quo que con plat officiusdam velitatet modipsus. Lenimodissin peri audanducipis expedis a diciat. Et parum audi iundae laborro et enderferum quis et quaeped exero od quo que pa quat re aut la cum sinvel in entotat iuribus quatem laborit alitio tem quam senditaque dendunt velluptatiur aut. Agnientio omnienderro bea cullo con res re venis in reprero conseque delitius, conecusam hil eos et omnis imi, quae. Editium sunt.</Typography>
+        <Typography variant="subtitle1" color="secondary">
+          At Switcheo, we start small, think big, and learn fast.
+          We strive to create a diverse workspace that is encouraging,
+          positive, and inclusive. We are a team of agile, bold, and
+          innovative individuals in a growth-oriented environment. Our
+          flexibility and diversity create a culture where people share
+          knowledge and ideas freely and bring out the best in each
+          other.
+        </Typography>
+        <Typography variant="subtitle1" color="secondary">
+          Our culture extends beyond good business practices. It
+          is essential to us that the Switcheo work environment is one
+          in which employees feel valued, heard, and inspired. We
+          respect each others’ opinions and never waver on our
+          fundamental beliefs.
+        </Typography>
 
-        <Box className={classes.jobContent}>
-          <ContentTitle secondary>Join the team</ContentTitle>
+        <Box id="careers" className={classes.jobContent}>
+          <ContentTitle secondary>Join us</ContentTitle>
           <Grid container>
             <Grid item xs={12} md={6}>
               <Divider className={classes.divider} />
-              <Typography variant="body1" color="secondary">Opta audae quas nonsed quatur mostibus tem aceate, dae commoloreped magnist, nonsequaatur re, autaectatis vero mil iduciatur sitionet laut quia porpost voluptatenis saeporibus.</Typography>
+              <Typography variant="body1" color="secondary">
+                Like what you’ve seen? Come to Switcheo, where we try
+                new things in ways others haven’t, and pave the routes
+                not yet taken.
+              </Typography>
+              <Typography variant="body1" color="secondary">
+                Don’t see a role but think you belong here?
+                Drop us a message at{" "}
+                <Typography component="a" href="mailto:careers@switcheo.network">
+                  careers@switcheo.network
+                </Typography>.
+              </Typography>
             </Grid>
             <Grid className={classes.jobPostingContainer} item xs={12} md={6}>
               <Divider className={classes.divider} />

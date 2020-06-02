@@ -27,6 +27,9 @@ const useStyles = makeStyles(theme => ({
     marginLeft: "auto",
     transition: "transform .05s ease-in-out",
     transform: "rotate(45deg)",
+    [theme.breakpoints.down("sm")]: {
+      transform: "rotate(0)",
+    },
   },
   whiteText: {
     color: "#fff",

@@ -12,25 +12,24 @@ import { Paths } from "../../../../contants";
 
 const PRODUCTS: Product[] = [{
   title: "Switcheo Exchange",
-  descriptor: "The Preferred Exchange Available on Ethereum, EOS and NEO Blockchains.",
-  description: "Switcheo paves the way for a trustless and secure multi-chain trading experience. No mandatory registration. Connect and trade freely.",
-  highlight: true,
+  descriptor: "The Preferred Exchange, trading on Ethereum, Neo, and more.",
+  description: "Switcheo paves the way for a secure multi-chain trading experience that is practical even for a crypto beginner. Trade while retaining control of your funds. No mandatory registration.",
   link: Paths.exchange,
   icon: urlSwitcheoIcon,
 }, {
   title: "Demex",
   descriptor: "The Decentralised Mercantile Exchange",
-  description: "Demex is the first fully decentralized platform that supports any type of financial market possible. ",
+  description: "Demex is the first fully decentralized platform that supports any type of financial market possible. It is set to run on the Switcheo TradeHub decentralized trading protocol.",
   icon: urlDemexIcon,
-}, {
-  title: "ZilSwap",
-  descriptor: "Atomic Swaps",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  icon: urlZilswapIcon,
+// }, {
+//   title: "ZilSwap",
+//   descriptor: "Atomic Swaps",
+//   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+//   icon: urlZilswapIcon,
 }, {
   title: "Switcheo Foundation",
-  descriptor: "An Initiative to Democratize Financial Markets",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  descriptor: "An Initiative to Democratize Financial Markets.",
+  description: "Switcheo Foundation is a not-for-profit endeavor. Its mission is to champion the growth of a radically decentralized financial system that is truly open. ",
   link: Paths.foundation,
   icon: urlFoundationIcon,
 }];
@@ -63,14 +62,19 @@ const OurProducts: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any)
   return (
     <Box {...rest} className={cls(classes.root, className)}>
       <Grid container className={classes.container}>
-        <Grid item xl={4} sm={8} xs={12}>
+        <Grid item sm={8} xs={12}>
           <Box className={classes.intro}>
-            <Typography variant="h2" color="primary">Our products</Typography>
-            <Typography variant="body1" color="primary">Built to enable trustless transfers across blockchains in a practical manner and deliver a world-class trading experience without compromising on trustlessness.</Typography>
+            <Typography variant="h2" color="primary">Our ecosystem</Typography>
+            <Typography variant="body1" color="primary">
+              As pioneers of the decentralized world, we constantly dive
+              headfirst into new realms, building unstoppable products
+              that enable a global financial ecosystem without unjust
+              barriers and unnecessary intermediaries.
+            </Typography>
           </Box>
         </Grid>
         {PRODUCTS.map((product, index) => (
-          <Grid key={index} item className={classes.item} xl={2} sm={4} xs={6}>
+          <Grid key={index} item className={classes.item} sm={4} xs={6}>
             <ProductColumn product={product} key={index} />
           </Grid>
         ))}

@@ -28,9 +28,13 @@ const Referral: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
   const classes = useStyles();
   return (
     <ContentSection {...rest} className={cls(classes.root, className)}>
-      <ContentTitle>Switcheo referral program</ContentTitle>
+      <ContentTitle>Switcheo Referral Program</ContentTitle>
       <Typography variant="body1" color="primary" className={classes.description}>
-        Invite your friends and earn 50% of their trading fees. Win from a pool of $40,000 Aqui te pa comnimus enimolum quidell uptatur sapellesti tem eos magni ipis molum eum am veris quostioris volum comnistest, volore dolupta spitas utatem qui occatem ipsa asperspita ariatusam laborec aeptass imperspit perit am enimilignim eictus.
+      Invite your friends and get handsomely rewarded. 
+      Receive 50% in rebates when your friend successfully 
+      signs up with your referral. Your friend will also 
+      receive a 25% discount on their trading fees for 
+      3 months.
       </Typography>
       <Box flex={1} />
       <CTAButton href={Paths.referral} target="_blank">Invite friends</CTAButton>
