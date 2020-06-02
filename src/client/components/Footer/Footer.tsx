@@ -48,7 +48,7 @@ const Footer: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   const { children, className, ...rest } = props;
   const classes = useStyles();
   return (
-    <Container maxWidth="xl" {...rest} className={cls(classes.root, className)}>
+    <Container maxWidth="lg" {...rest} className={cls(classes.root, className)}>
       <ContentSection className={classes.content}>
         <Grid container className={classes.container}>
           <Hidden mdUp>

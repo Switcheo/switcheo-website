@@ -11,11 +11,11 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.primary.main,
   },
   description: {
-    maxWidth: 600,
+    maxWidth: 480,
     marginRight: "auto",
-    [theme.breakpoints.down("lg")]: {
-      maxWidth: 480,
-    },
+    // [theme.breakpoints.up("xl")]: {
+    //   maxWidth: 600,
+    // },
     [theme.breakpoints.down("sm")]: {
       maxWidth: "unset",
     },

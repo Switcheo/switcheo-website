@@ -10,7 +10,7 @@ export const Dim = {
   spacing: 24,
   headerHeight: 88,
   mobileHeaderHeight: 64,
-  maxViewWidth: 1920,
+  maxViewWidth: 1280,
 };
 
 export const Paths = {
@@ -38,7 +38,7 @@ export const Paths = {
   listing_policy: "https://switcheo.network/listing.html",
 };
 
-export const minBlockHeight = `calc(100vh - ${Dim.headerHeight}px - ${Dim.spacing * 2 - 2}px)`;
+export const minBlockHeight = `calc(min(50vw, 640px) - ${Dim.spacing * 1.5 + 1}px)`;
 
 
 

@@ -45,7 +45,7 @@ const Blog: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
       <Box className={classes.wrapper}>
         <Grid container>
           {blogEntryData.map((item, index) => (
-            <Hidden xsDown={index >= 1}>
+            <Hidden key={index} xsDown={index >= 1}>
               <Grid className={classes.item} key={index} item xs={12} sm={6}>
                 <Divider className={classes.divider} />
                 <Typography color="primary" variant="body2">

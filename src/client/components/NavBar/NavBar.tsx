@@ -59,7 +59,7 @@ const NavBar: React.FC<React.HTMLAttributes<HTMLDivElement>> = () => {
   return (
     <>
       <AppBar className={classes.header} elevation={isScrollTop ? 0 : 4}>
-        <Box className={classes.container} maxWidth="xl">
+        <Box className={classes.container} maxWidth="lg">
           <a href="/">
             <SwitcheoBrand className={classes.brandIcon} />
           </a>

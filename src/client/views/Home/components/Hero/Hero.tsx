@@ -12,9 +12,9 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.primary.main,
   },
   description: {
-    maxWidth: 570,
-    [theme.breakpoints.down("lg")]: {
-      maxWidth: 440,
+    maxWidth: 440,
+    [theme.breakpoints.up("xl")]: {
+      maxWidth: 570,
     },
     [theme.breakpoints.down("md")]: {
       maxWidth: 280,
@@ -33,12 +33,12 @@ const Hero: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   const classes = useStyles();
   return (
     <ContentSection {...rest} className={cls(classes.root, className)}>
-      <ContentTitle secondary large>Time <br/>well <br/>invested.</ContentTitle>
+      <ContentTitle secondary large>We <br />go <br />forward.</ContentTitle>
       <Typography variant="body1" color="secondary" className={classes.description}>
-        Trading without limits for lives without limits.
-        We bring you a platform so speedy, so safe
-        and so user-friendly for anyone to trade
-        assets freely across chains.
+        Finance without limits, for lives without limits.
+        We bring you platforms that break new ground. There’s
+        nothing cryptic about crypto on Switcheo. Your time
+        spent with us will be a worthwhile investment.
       </Typography>
       <Box flex={1} />
       <CTAButton secondary href="https://switcheo.exchange" target="_blank">Start trading</CTAButton>

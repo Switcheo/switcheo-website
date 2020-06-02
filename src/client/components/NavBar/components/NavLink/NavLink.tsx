@@ -22,10 +22,7 @@ const useStyles = makeStyles(theme => ({
     "&:last-child": {
       borderBottom: `1px solid ${theme.palette.primary.main}`,
     },
-    padding: theme.spacing(1, 0, 3),
-    [theme.breakpoints.down("lg")]: {
-      padding: theme.spacing(0, 0, 1.5),
-    },
+    padding: theme.spacing(0, 0, 1.5),
     [theme.breakpoints.down("md")]: {
       padding: theme.spacing(0, 0, 1),
     },
@@ -42,16 +39,9 @@ const useStyles = makeStyles(theme => ({
       color: theme.palette.secondary.main,
       cursor: "pointer",
     },
-    
-    fontSize: 133,
-    letterSpacing: "-7px",
+    fontSize: 96,
+    letterSpacing: "-5px",
     lineHeight: "100px",
-    fontWeight: "bold",
-    [theme.breakpoints.down("lg")]: {
-      fontSize: 96,
-      letterSpacing: "-5px",
-      lineHeight: "100px",
-    },
     [theme.breakpoints.down("md")]: {
       fontSize: 58,
       letterSpacing: "-3.05px",
@@ -61,15 +51,15 @@ const useStyles = makeStyles(theme => ({
   icon: {
     marginLeft: "auto",
     padding: theme.spacing(1),
-    height: 100,
-    width: 100,
+    height: 75,
+    width: 75,
     "& svg": {
       verticalAlign: "top",
     },
-    [theme.breakpoints.down("lg")]: {
-      height: 75,
-      width: 75,
-    },
+    // [theme.breakpoints.up("xl")]: {
+    //   height: 100,
+    //   width: 100,
+    // },
     [theme.breakpoints.down("md")]: {
       height: 48,
       width: 48,
@@ -81,7 +71,7 @@ const NavLink: React.FC<NavLinkProps & React.HTMLAttributes<HTMLAnchorElement>> 
   const classes = useStyles();
 
   const getScrollOffset = () => {
-    return window.innerWidth <= 600 ? 64: (88 + 24);
+    return window.innerWidth <= 600 ? 64 : (88 + 24);
   };
 
   return (

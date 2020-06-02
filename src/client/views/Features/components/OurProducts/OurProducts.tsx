@@ -70,7 +70,7 @@ const OurProducts: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any)
           </Box>
         </Grid>
         {PRODUCTS.map((product, index) => (
-          <Grid item className={classes.item} xl={2} sm={4} xs={6}>
+          <Grid key={index} item className={classes.item} xl={2} sm={4} xs={6}>
             <ProductColumn product={product} key={index} />
           </Grid>
         ))}

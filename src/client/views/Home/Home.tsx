@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 const Home: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
-  const { children, className, ...rest } = props;
+  const { children, className, staticContext, ...rest } = props;
   const classes = useStyles();
   return (
     <Box {...rest} className={cls(classes.root, className)}>

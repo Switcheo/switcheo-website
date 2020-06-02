@@ -9,10 +9,10 @@ const useStyles = makeStyles(theme => ({
   root: {
   },
   description: {
-    maxWidth: 600,
-    [theme.breakpoints.down("lg")]: {
-      maxWidth: 480,
-    },
+    maxWidth: 480,
+    // [theme.breakpoints.up("xl")]: {
+    //   maxWidth: 600,
+    // },
     [theme.breakpoints.down("md")]: {
       maxWidth: 280,
     },

@@ -12,14 +12,9 @@ const useStyles = makeStyles(theme => ({
   root: {
   },
   large: {
-    fontSize: "133px",
-    letterSpacing: "-7px",
-    lineHeight: "120px",
-    [theme.breakpoints.down("lg")]: {
-      fontSize: "72px",
-      lineHeight: "74px",
-      letterSpacing: "-1px",
-    },
+    fontSize: "72px",
+    lineHeight: "74px",
+    letterSpacing: "-1px",
     [theme.breakpoints.down("md")]: {
       fontSize: "48px",
       lineHeight: "50px",

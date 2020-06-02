@@ -11,30 +11,14 @@ export interface FeatureColumnProps extends BoxProps {
 };
 
 const useStyles = makeStyles(theme => ({
-  root: (props: FeatureColumnProps) => ({
+  root: {
     color: theme.palette.primary.main,
     minHeight: minBlockHeight,
     "@media (max-width: 459.95px)": {
       padding: theme.spacing(0, 1.5),
       minHeight: 0,
     },
-    ...props.feature.inverse && {
-      [theme.breakpoints.between("md", "lg")]: {
-        marginLeft: theme.spacing(-1.5),
-        paddingLeft: theme.spacing(1.5),
-      },
-    },
-    "&:hover": {
-      backgroundColor: theme.palette.primary.main,
-      color: theme.palette.secondary.main,
-    },
-    "&:hover p,:hover svg": {
-      color: theme.palette.secondary.main,
-    },
-    "&:hover .MuiDivider-root": {
-      backgroundColor: theme.palette.secondary.main,
-    },
-  }),
+  },
   container: {
     padding: theme.spacing(1.5),
     paddingTop: 116,

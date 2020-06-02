@@ -20,11 +20,9 @@ const useStyles = makeStyles(theme => ({
   },
   checkboxText: {
     fontWeight: "bold",
-    [theme.breakpoints.down("lg")]: {
-      fontSize: "18px",
-      letterSpacing: "-0.5px",
-      lineHeight: "20px",
-    },
+    fontSize: "18px",
+    letterSpacing: "-0.5px",
+    lineHeight: "20px",
   },
   logoIcon: {
     color: "#fff",

@@ -17,9 +17,7 @@ const App = () => {
       <NavBar />
       <Body>
         <Switch>
-          <Route path={Paths.home} exact>
-            <Home />
-          </Route>
+          <Route path={Paths.home} exact component={Home} />
           <Route path={Paths.features} exact>
             <Features />
           </Route>

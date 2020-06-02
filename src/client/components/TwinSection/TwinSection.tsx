@@ -39,7 +39,7 @@ const TwinSection: React.FC<TwinSectionProps> = (props: any) => {
   };
   return (
     <Hidden {...hiddenProps}>
-      <Container maxWidth="xl" {...rest} className={cls(classes.root, className, { [classes.mobileReverse]: mobileReverse })}>
+      <Container maxWidth="lg" {...rest} className={cls(classes.root, className, { [classes.mobileReverse]: mobileReverse })}>
         {children}
       </Container>
     </Hidden>

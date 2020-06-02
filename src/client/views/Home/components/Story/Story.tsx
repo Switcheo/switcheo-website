@@ -12,12 +12,8 @@ const useStyles = makeStyles(theme => ({
   },
   bigNumber: {
     textAlign: "center",
-    fontSize: "657px",
-    lineHeight: "557px",
-    [theme.breakpoints.down("lg")]: {
-      fontSize: "427px",
-      lineHeight: "350px",
-    },
+    fontSize: "427px",
+    lineHeight: "350px",
     [theme.breakpoints.down("md")]: {
       fontSize: "312px",
       lineHeight: "268px",
