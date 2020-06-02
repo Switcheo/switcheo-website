@@ -18,6 +18,11 @@ const useStyles = makeStyles(theme => ({
       marginBottom: theme.spacing(1),
     },
   },
+  form: {
+    "&>span": {
+      marginBottom: 0,
+    }
+  },
   checkboxText: {
     fontWeight: "bold",
     fontSize: "18px",
@@ -48,6 +53,7 @@ const SubscribeBox: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any
       />
       <FormControlLabel
         control={<Checkbox color="primary" />}
+        className={classes.form}
         label={<Typography className={classes.checkboxText} variant="body2" color="primary">I understand and consent to the Privacy Policy</Typography>} />
     </Box>
   );

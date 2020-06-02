@@ -1,12 +1,12 @@
-import { AppBar, Box, IconButton } from "@material-ui/core";
+import { AppBar, Box, IconButton, Hidden, Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState } from "react";
 import useScroll from "../../utils/useScroll";
 import SwitcheoBrand from "../SwitcheoBrand";
 
-import { Dim } from "../../contants";
-import { NavMenu } from "./components";
+import { Dim, minBlockHeight, Paths } from "../../contants";
+import { NavMenu, HeaderLink } from "./components";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -45,6 +45,13 @@ const useStyles = makeStyles(theme => ({
       width: 170,
     },
   },
+  navContainer: {
+    width: `calc(min(50vw, 640px) - ${Dim.spacing * 1.5 + 1}px + ${theme.spacing(3)}px)`,
+    marginRight: theme.spacing(3 - 1.5),
+    marginLeft: theme.spacing(-1.5),
+    marginTop: theme.spacing(1.5),
+    marginBottom: theme.spacing(1.5),
+  },
 }));
 const NavBar: React.FC<React.HTMLAttributes<HTMLDivElement>> = () => {
   const classes = useStyles();
@@ -65,9 +72,31 @@ const NavBar: React.FC<React.HTMLAttributes<HTMLDivElement>> = () => {
             <SwitcheoBrand className={classes.brandIcon} />
           </a>
           <Box flex={1} />
-          <IconButton className={classes.menuIcon} size="medium" onClick={() => toggleMenu()}>
-            <MenuIcon />
-          </IconButton>
+          <Hidden smDown>
+            <Box className={classes.navContainer}>
+              <Grid container>
+                <Grid item xs={4}>
+                  <HeaderLink href={Paths.home}>Home</HeaderLink>
+                  <HeaderLink href={Paths.exchange} target="_blank">Start trading</HeaderLink>
+                  <HeaderLink href={Paths.features}>Key features</HeaderLink>
+                </Grid>
+                <Grid item xs={4}>
+                  <HeaderLink href={Paths.story}>Our story</HeaderLink>
+                  <HeaderLink href={Paths.culture}>Our culture</HeaderLink>
+                  <HeaderLink href={Paths.press}>Press</HeaderLink>
+                </Grid>
+                <Grid item xs={4}>
+                  <HeaderLink href={Paths.blog} target="_blank">Blog</HeaderLink>
+                  <HeaderLink href={Paths.support} target="_blank">Support</HeaderLink>
+                </Grid>
+              </Grid>
+            </Box>
+          </Hidden>
+          <Hidden mdUp>
+            <IconButton className={classes.menuIcon} size="medium" onClick={() => toggleMenu()}>
+              <MenuIcon />
+            </IconButton>
+          </Hidden>
         </Box>
       </AppBar>
       <NavMenu showMenu={showMenu} closeMenu={() => toggleMenu(false)} />

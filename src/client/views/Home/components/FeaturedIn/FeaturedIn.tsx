@@ -17,6 +17,12 @@ const useStyles = makeStyles(theme => ({
   item: {
     padding: theme.spacing(0, 1.5),
     marginBottom: theme.spacing(3),
+    "&:hover $divider": {
+      borderTop: `1px solid ${theme.palette.primary.dark}`,
+    },
+    "&:hover $txtLink": {
+      color: theme.palette.primary.dark,
+    },
   },
   divider: {
     borderTop: `1px solid ${theme.palette.secondary.main}`,

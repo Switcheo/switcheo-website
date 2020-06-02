@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   txtTitle: {
     textDecoration: "none",
     "&:hover": {
-      textDecoration: "underline",
+      color: theme.palette.primary.light,
     },
   },
   item: {

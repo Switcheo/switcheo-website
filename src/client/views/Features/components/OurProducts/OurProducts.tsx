@@ -62,7 +62,7 @@ const OurProducts: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any)
   return (
     <Box {...rest} className={cls(classes.root, className)}>
       <Grid container className={classes.container}>
-        <Grid item sm={8} xs={12}>
+        <Grid item xs={12}>
           <Box className={classes.intro}>
             <Typography variant="h2" color="primary">Our ecosystem</Typography>
             <Typography variant="body1" color="primary">

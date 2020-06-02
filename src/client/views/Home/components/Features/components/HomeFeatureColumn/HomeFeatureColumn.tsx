@@ -46,8 +46,30 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(2),
     lineHeight: 1.2,
   },
+  descriptor: {
+    marginBottom: 0,
+  },
+  link: {
+    textDecoration: "none",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    fontWeight: "bold",
+    "&:hover": {
+      color: theme.palette.primary.light,
+    },
+    "&:hover $linkIcon": {
+      transform: "rotate(0)",
+      color: theme.palette.primary.light,
+    },
+  },
   linkIcon: {
-    marginLeft: "auto",
+    display: "inline-block",
+    marginLeft: theme.spacing(1.5),
+    height: ".5em",
+    width: ".5em",
+    transition: "transform .05s ease-in-out",
+    transform: "rotate(45deg)",
   },
   head: {
     position: "relative",
@@ -79,19 +101,15 @@ const HomeFeatureColumn: React.FC<HomeFeatureColumnProps> = (props: any) => {
         <Typography className={classes.index} color="primary">{index}</Typography>
         <Divider className={classes.divider} />
         <Box className={classes.head}>
+          <Typography className={classes.label} variant="body1" color="primary">{feature.label}</Typography>
+          {feature.descriptors.map((descriptor: string, index: number) => (
+            <Typography className={classes.descriptor} variant="body1" color="primary" key={index}>{descriptor}</Typography>
+          ))}
           {!!feature.link && (
-            <Typography className={classes.label} component="a"
-              variant="body1" color="primary" target="_blank" href={feature.link}>
-              {feature.label}
-              <SwitcheoLogo className={classes.linkIcon} />
+            <Typography className={classes.link} component="a" variant="body1" color="primary" target="_blank" href={feature.link}>
+              View <SwitcheoLogo className={classes.linkIcon} />
             </Typography>
           )}
-          {!feature.link && (
-            <Typography className={classes.label} variant="body1" color="primary">{feature.label}</Typography>
-          )}
-          {feature.descriptors.map((descriptor: string, index: number) => (
-            <Typography variant="body1" color="primary" key={index}>{descriptor}</Typography>
-          ))}
         </Box>
         <Hidden smDown>
           <Divider className={classes.divider} />

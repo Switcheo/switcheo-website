@@ -11,6 +11,8 @@ const black = '#000000';
 const palette: MyPaletteOptions = {
   primary: {
     main: "#063C4F",
+    dark: "#517684",
+    light: "#5E8871"
   },
   secondary: {
     main: "#E2FCA4",

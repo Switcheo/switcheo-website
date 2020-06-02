@@ -29,9 +29,6 @@ const useStyles = makeStyles(theme => ({
       padding: theme.spacing(0, 3, 3),
       minHeight: 0,
     },
-    "&:hover": {
-      backgroundColor: theme.palette.secondary.main,
-    },
   },
   content: {
     color: theme.palette.primary.main,
@@ -61,16 +58,27 @@ const useStyles = makeStyles(theme => ({
     height: 100,
     width: 100,
   },
-  extLinkIcon: {
-    color: theme.palette.primary.main,
-    height: 20,
-    width: 20,
-    marginLeft: "auto",
-    flexShrink: 0,
-    [theme.breakpoints.down("md")]: {
-      height: 18,
-      width: 18,
-    }
+  link: {
+    textDecoration: "none",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    fontWeight: "bold",
+    "&:hover": {
+      color: theme.palette.primary.dark,
+    },
+    "&:hover $linkIcon": {
+      transform: "rotate(0)",
+      color: theme.palette.primary.dark,
+    },
+  },
+  linkIcon: {
+    display: "inline-block",
+    marginLeft: theme.spacing(1.5),
+    height: ".5em",
+    width: ".5em",
+    transition: "transform .05s ease-in-out",
+    transform: "rotate(45deg)",
   },
 }));
 
@@ -82,11 +90,11 @@ const ProductColumn: React.FC<ProductColumnProps> = (props: any) => {
       <SVGComponent className={classes.icon} url={product.icon} />
       <Divider className={classes.divider} />
       <Box className={classes.content}>
-        <Typography component="a" target="_blank" href={product.link} className={classes.title}>
-          <Typography component="span" variant="body2" color="primary">{product.title}</Typography>
-          <SwitcheoLogo className={classes.extLinkIcon} />
-        </Typography>
+        <Typography className={classes.title} variant="body2" color="primary">{product.title}</Typography>
         <Typography variant="body2" color="primary">{product.descriptor}</Typography>
+        <Typography className={classes.link} component="a" variant="body1" color="primary" target="_blank" href={product.link}>
+          View <SwitcheoLogo className={classes.linkIcon} />
+        </Typography>
         <Box flex={1} />
         <Typography variant="body2" color="primary">{product.description}</Typography>
       </Box>

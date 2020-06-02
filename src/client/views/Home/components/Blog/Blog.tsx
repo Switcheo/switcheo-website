@@ -23,6 +23,12 @@ const useStyles = makeStyles(theme => ({
       display: "block",
       paddingBottom: theme.spacing(3),
     },
+    "&:hover $divider": {
+      borderTop: `1px solid ${theme.palette.primary.dark}`,
+    },
+    "&:hover $txtLink": {
+      color: theme.palette.primary.dark,
+    },
   },
   divider: {
     borderTop: `1px solid ${theme.palette.primary.main}`,
