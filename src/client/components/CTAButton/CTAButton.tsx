@@ -19,9 +19,14 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("sm")]: {
       marginTop: theme.spacing(3),
     },
+    "&:hover $ctaIcon": {
+      transform: "rotate(0)",
+    },
   },
   ctaIcon: {
     marginLeft: "auto",
+    transition: "transform .05s ease-in-out",
+    transform: "rotate(45deg)",
   },
   whiteText: {
     color: "#fff",

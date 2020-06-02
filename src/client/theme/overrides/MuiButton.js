@@ -1,5 +1,6 @@
 export default theme => ({
   contained: {
+    boxShadow: "none",
     borderRadius: 0,
     textTransform: "none",
     fontWeight: "bold",
@@ -9,6 +10,9 @@ export default theme => ({
     [theme.breakpoints.down("md")]: {
       fontSize: "20px",
       lineHeight: "26px",
+    },
+    "&:hover": {
+      boxShadow: "none",
     },
   },
   containedSecondary: {

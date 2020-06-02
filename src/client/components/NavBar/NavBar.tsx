@@ -56,9 +56,10 @@ const NavBar: React.FC<React.HTMLAttributes<HTMLDivElement>> = () => {
     setShowMenu(newState);
   };
 
+  // elevation={isScrollTop ? 0 : 4} for topbar boxshadow
   return (
     <>
-      <AppBar className={classes.header} elevation={isScrollTop ? 0 : 4}>
+      <AppBar className={classes.header} elevation={0}>
         <Box className={classes.container} maxWidth="lg">
           <a href="/">
             <SwitcheoBrand className={classes.brandIcon} />
