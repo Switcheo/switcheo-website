@@ -58,7 +58,7 @@ const Press: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
       <Box className={classes.wrapper}>
         <Grid container>
           {pressData.slice(0, 6).map((item, index) => (
-            <Grid className={classes.item} key={index} item xs={12} sm={6} lg={4}>
+            <Grid className={classes.item} key={index} item xs={12} sm={6}>
               <Divider className={classes.divider} />
               <Typography className={classes.txtType} variant="body1" color="primary">{item.type}</Typography>
               <Typography className={classes.txtTitle} component="a" href={item.link} target="_blank" variant="body1" color="primary">

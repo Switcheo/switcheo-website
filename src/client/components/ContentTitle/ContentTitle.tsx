@@ -12,8 +12,8 @@ const useStyles = makeStyles(theme => ({
   root: {
   },
   large: {
-    fontSize: "72px",
-    lineHeight: "74px",
+    fontSize: "84px",
+    lineHeight: "84px",
     letterSpacing: "-1px",
     [theme.breakpoints.down("md")]: {
       fontSize: "48px",

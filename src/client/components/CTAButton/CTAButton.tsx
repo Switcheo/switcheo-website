@@ -12,6 +12,7 @@ export interface CTAButtonProps extends ButtonProps {
 
 const useStyles = makeStyles(theme => ({
   root: {
+    marginTop: theme.spacing(6),
     minWidth: 300,
     [theme.breakpoints.down("md")]: {
       minWidth: 260,
@@ -27,6 +28,8 @@ const useStyles = makeStyles(theme => ({
     marginLeft: "auto",
     transition: "transform .05s ease-in-out",
     transform: "rotate(45deg)",
+    height: "22px",
+    width: "22px",
     [theme.breakpoints.down("sm")]: {
       transform: "rotate(0)",
     },

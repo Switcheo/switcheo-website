@@ -36,7 +36,6 @@ const useStyles = makeStyles(theme => ({
   products: {
     flex: 1,
     width: "100%",
-    marginBottom: theme.spacing(8),
   },
   ctaIcon: {
     marginLeft: theme.spacing(8),

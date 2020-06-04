@@ -12,16 +12,19 @@ const useStyles = makeStyles(theme => ({
     },
   },
   textfield: {
-    marginBottom: theme.spacing(6),
+    marginTop: theme.spacing(4),
     width: "100%",
     [theme.breakpoints.down("sm")]: {
-      marginBottom: theme.spacing(1),
+      marginTop: theme.spacing(1),
+    },
+    "&:hover $logoIcon": {
+      transform: "rotate(0)",
     },
   },
   form: {
     "&>span": {
       marginBottom: 0,
-    }
+    },
   },
   checkboxText: {
     fontWeight: "bold",
@@ -31,6 +34,11 @@ const useStyles = makeStyles(theme => ({
   },
   logoIcon: {
     color: "#fff",
+    transition: "transform .05s ease-in-out",
+    transform: "rotate(45deg)",
+    [theme.breakpoints.down("sm")]: {
+      transform: "rotate(0)",
+    },
   },
 }));
 const SubscribeBox: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
@@ -39,6 +47,11 @@ const SubscribeBox: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any
   return (
     <Box {...rest} className={cls(classes.root, className)}>
       <FooterTitle>Subscribe to our mailing list</FooterTitle>
+
+      <FormControlLabel
+        control={<Checkbox color="primary" />}
+        className={classes.form}
+        label={<Typography className={classes.checkboxText} variant="body2" color="primary">I understand and consent to the Privacy Policy</Typography>} />
 
       <TextField className={classes.textfield} variant="filled" placeholder="john@example.com"
         InputProps={{
@@ -51,10 +64,6 @@ const SubscribeBox: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any
           )
         }}
       />
-      <FormControlLabel
-        control={<Checkbox color="primary" />}
-        className={classes.form}
-        label={<Typography className={classes.checkboxText} variant="body2" color="primary">I understand and consent to the Privacy Policy</Typography>} />
     </Box>
   );
 };

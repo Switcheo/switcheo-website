@@ -2,7 +2,7 @@ import { Box, BoxProps, Divider, Hidden, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
-import { SVGComponent, SwitcheoLogo } from "../../../../../../components";
+import { SVGComponent, ViewLink } from "../../../../../../components";
 import { Feature } from "../../../../../../contants";
 
 export interface HomeFeatureColumnProps extends BoxProps {
@@ -44,32 +44,9 @@ const useStyles = makeStyles(theme => ({
   },
   description: {
     marginBottom: theme.spacing(2),
-    lineHeight: 1.2,
   },
   descriptor: {
     marginBottom: 0,
-  },
-  link: {
-    textDecoration: "none",
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    fontWeight: "bold",
-    "&:hover": {
-      color: theme.palette.primary.light,
-    },
-    "&:hover $linkIcon": {
-      transform: "rotate(0)",
-      color: theme.palette.primary.light,
-    },
-  },
-  linkIcon: {
-    display: "inline-block",
-    marginLeft: theme.spacing(1.5),
-    height: ".5em",
-    width: ".5em",
-    transition: "transform .05s ease-in-out",
-    transform: "rotate(45deg)",
   },
   head: {
     position: "relative",
@@ -106,9 +83,7 @@ const HomeFeatureColumn: React.FC<HomeFeatureColumnProps> = (props: any) => {
             <Typography className={classes.descriptor} variant="body1" color="primary" key={index}>{descriptor}</Typography>
           ))}
           {!!feature.link && (
-            <Typography className={classes.link} component="a" variant="body1" color="primary" target="_blank" href={feature.link}>
-              View <SwitcheoLogo className={classes.linkIcon} />
-            </Typography>
+            <ViewLink target="_blank" href={feature.link} />
           )}
         </Box>
         <Hidden smDown>

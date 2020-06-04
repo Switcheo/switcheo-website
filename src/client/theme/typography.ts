@@ -24,12 +24,12 @@ const typography = (theme: Theme): TypographyOptions => ({
     fontSize: "48px",
     letterSpacing: "-1.5px",
     lineHeight: "48px",
-    marginBottom: "52px",
+    marginBottom: "30px",
     [theme.breakpoints.down("md")]: {
       fontSize: "32px",
       letterSpacing: "-1px",
       lineHeight: "32px",
-      marginBottom: "32px",
+      marginBottom: "23px",
     },
   },
   h3: {
@@ -95,7 +95,7 @@ const typography = (theme: Theme): TypographyOptions => ({
     color: palette.text.secondary,
     fontSize: "24px",
     letterSpacing: "-0.75px",
-    lineHeight: "32px",
+    lineHeight: "30px",
     marginBottom: theme.spacing(1),
     // [theme.breakpoints.up("xl")]: {
     //   fontSize: "32px",

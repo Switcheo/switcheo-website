@@ -26,18 +26,28 @@ const useStyles = makeStyles(theme => ({
     "&:hover $divider": {
       borderTop: `1px solid ${theme.palette.primary.dark}`,
     },
-    "&:hover $txtLink": {
-      color: theme.palette.primary.dark,
-    },
   },
   divider: {
     borderTop: `1px solid ${theme.palette.primary.main}`,
   },
+  preview: {
+    fontSize: "20px",
+    lineHeight: "22px",
+  },
+  dateLabel: {
+    fontSize: "16px",
+    lineHeight: "20px",
+  },
   txtLink: {
+    fontSize: "20px",
+    lineHeight: "24px",
     textDecoration: "none",
     fontWeight: "bold",
     color: theme.palette.primary.main,
     minHeight: theme.spacing(10),
+    "&:hover": {
+      color: theme.palette.primary.dark,
+    },
   },
 }));
 
@@ -54,14 +64,14 @@ const Blog: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
             <Hidden key={index} xsDown={index >= 1}>
               <Grid className={classes.item} key={index} item xs={12} sm={6}>
                 <Divider className={classes.divider} />
-                <Typography color="primary" variant="body2">
-                  <DateLabel>{item.date}</DateLabel>
-                </Typography>
-                <Divider className={classes.divider} />
                 <Typography className={classes.txtLink} variant="body2" component="a" href={item.url} target="_blank">{item.title}</Typography>
                 <Divider className={classes.divider} />
-                <Typography color="primary" variant="body2">
-                  <span style={{ fontSize: ".8em" }}>{item.preview}</span>
+                <Typography className={classes.preview} color="primary" variant="body2">
+                  {item.preview}
+                </Typography>
+                <Divider className={classes.divider} />
+                <Typography className={classes.dateLabel} color="primary" variant="body2">
+                  <DateLabel capitalize>{item.date}</DateLabel>
                 </Typography>
               </Grid>
             </Hidden>

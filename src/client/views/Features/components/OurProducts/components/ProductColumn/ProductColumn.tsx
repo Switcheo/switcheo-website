@@ -2,7 +2,7 @@ import { Box, BoxProps, Divider, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";
-import { SVGComponent, SwitcheoLogo } from "../../../../../../components";
+import { SVGComponent, SwitcheoLogo, ViewLink } from "../../../../../../components";
 import { minBlockHeight } from "../../../../../../contants";
 
 export type Product = {
@@ -92,9 +92,7 @@ const ProductColumn: React.FC<ProductColumnProps> = (props: any) => {
       <Box className={classes.content}>
         <Typography className={classes.title} variant="body2" color="primary">{product.title}</Typography>
         <Typography variant="body2" color="primary">{product.descriptor}</Typography>
-        <Typography className={classes.link} component="a" variant="body1" color="primary" target="_blank" href={product.link}>
-          View <SwitcheoLogo className={classes.linkIcon} />
-        </Typography>
+        <ViewLink target="_blank" href={product.link} />
         <Box flex={1} />
         <Typography variant="body2" color="primary">{product.description}</Typography>
       </Box>

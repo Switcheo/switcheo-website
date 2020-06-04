@@ -11,6 +11,9 @@ const useStyles = makeStyles(theme => ({
     alignItems: "flex-start",
     backgroundColor: theme.palette.primary.main,
   },
+  title: {
+    maxWidth: 300,
+  },
   description: {
     maxWidth: 440,
     [theme.breakpoints.up("xl")]: {
@@ -33,7 +36,9 @@ const Hero: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   const classes = useStyles();
   return (
     <ContentSection {...rest} className={cls(classes.root, className)}>
-      <ContentTitle secondary large>We <br />go <br />forward.</ContentTitle>
+      <ContentTitle secondary large className={classes.title}>
+        We go forward.
+      </ContentTitle>
       <Typography variant="body1" color="secondary" className={classes.description}>
         Finance without limits, for lives without limits.
         We bring you platforms that break new ground. There’s

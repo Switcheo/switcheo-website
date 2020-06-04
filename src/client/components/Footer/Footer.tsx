@@ -13,13 +13,16 @@ import { minBlockHeight, Paths } from "../../contants";
 
 const useStyles = makeStyles(theme => ({
   root: {
+    backgroundColor: "#DEDEDE",
+    paddingBottom: 1,
+  },
+  container: {
     [theme.breakpoints.down("sm")]: {
       padding: 0,
     },
   },
   content: {
     margin: theme.spacing(3, 0),
-    backgroundColor: "#DEDEDE",
     minHeight: minBlockHeight,
     [theme.breakpoints.down("sm")]: {
       minHeight: 0,
@@ -31,7 +34,7 @@ const useStyles = makeStyles(theme => ({
     height: 23,
     color: theme.palette.primary.main,
   },
-  container: {
+  gridContainer: {
     flex: 1,
   },
   cell: {
@@ -58,54 +61,53 @@ const Footer: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   const { children, className, ...rest } = props;
   const classes = useStyles();
   return (
-    <Container maxWidth="lg" {...rest} className={cls(classes.root, className)}>
-      <ContentSection className={classes.content}>
-        <Grid container className={classes.container}>
-          <Hidden mdUp>
-            <Grid item className={classes.cell} xs={12}>
-              <SubscribeBox />
-            </Grid>
-          </Hidden>
-          <Grid item className={cls(classes.cell, classes.links)} md={3} xs={6}>
-            <FooterTitle>Sitemap</FooterTitle>
+    <Box {...rest} className={cls(classes.root, className)}>
+      <Container className={classes.container} maxWidth="lg">
+        <ContentSection className={classes.content}>
+          <Grid container className={classes.gridContainer}>
+            <Hidden mdUp>
+              <Grid item className={classes.cell} xs={12}>
+                <SubscribeBox />
+              </Grid>
+            </Hidden>
+            <Grid item className={cls(classes.cell, classes.links)} md={3} xs={6}>
+              <FooterTitle>Sitemap</FooterTitle>
 
-            <FooterLink href={Paths.home}>Home</FooterLink>
-            <FooterLink href={Paths.exchange} target="_blank">Start trading</FooterLink>
-            <FooterLink href={Paths.features}>Key features</FooterLink>
-            <FooterLink href={Paths.story}>Our story</FooterLink>
-            <FooterLink href={Paths.culture}>Our culture</FooterLink>
-            <FooterLink href={Paths.press}>Press</FooterLink>
-            <FooterLink href={Paths.featured}>As featured on</FooterLink>
-            <FooterLink href={Paths.blog} target="_blank">Blog</FooterLink>
-            <FooterLink href={Paths.support} target="_blank">Support</FooterLink>
-            <FooterLink href={Paths.careers}>Careers</FooterLink>
-          </Grid>
-          <Grid item className={cls(classes.cell, classes.links)} md={3} xs={6}>
-            <FooterTitle>Resources</FooterTitle>
-
-            <FooterLink href={Paths.security} target="_blank">Security</FooterLink>
-            <FooterLink href={Paths.whitepaper} target="_blank">Whitepapers</FooterLink>
-            <FooterLink href={Paths.api_docs} target="_blank">API docs</FooterLink>
-            <FooterLink href={Paths.apply_to_list} target="_blank">Apply to list</FooterLink>
-            <FooterLink href={Paths.media_kit} target="_blank">Media kit</FooterLink>
-            <FooterLink href={Paths.terms_of_use} target="_blank">Terms of policy</FooterLink>
-            <FooterLink href={Paths.privacy_policy} target="_blank">Privacy policy</FooterLink>
-            <FooterLink href={Paths.listing_policy} target="_blank">Listing policy</FooterLink>
-          </Grid>
-          <Hidden smDown>
-            <Grid item xs={1} />
-            <Grid item className={classes.cell} xs={5}>
-              <SubscribeBox />
+              <FooterLink href={Paths.home}>Home</FooterLink>
+              <FooterLink href={Paths.exchange} target="_blank">Start trading</FooterLink>
+              <FooterLink href={Paths.features}>Key features</FooterLink>
+              <FooterLink href={Paths.story}>Our story</FooterLink>
+              <FooterLink href={Paths.press}>Press</FooterLink>
+              <FooterLink href={Paths.culture}>Careers</FooterLink>
+              <FooterLink href={Paths.blog} target="_blank">Blog</FooterLink>
+              <FooterLink href={Paths.support} target="_blank">Support</FooterLink>
             </Grid>
-          </Hidden>
-        </Grid>
-        <Box flex={1} />
-        <Box className={classes.bottom}>
-          <SocialLinkGroup />
-          <SwitcheoBrand className={classes.brand} />
-        </Box>
-      </ContentSection>
-    </Container>
+            <Grid item className={cls(classes.cell, classes.links)} md={3} xs={6}>
+              <FooterTitle>Resources</FooterTitle>
+
+              <FooterLink href={Paths.security} target="_blank">Security</FooterLink>
+              <FooterLink href={Paths.api_docs} target="_blank">Developer</FooterLink>
+              <FooterLink href={Paths.apply_to_list} target="_blank">Apply to list</FooterLink>
+              <FooterLink href={Paths.media_kit} target="_blank">Media kit</FooterLink>
+              <FooterLink href={Paths.terms_of_use} target="_blank">Terms of policy</FooterLink>
+              <FooterLink href={Paths.privacy_policy} target="_blank">Privacy policy</FooterLink>
+              <FooterLink href={Paths.listing_policy} target="_blank">Listing policy</FooterLink>
+            </Grid>
+            <Hidden smDown>
+              <Grid item xs={1} />
+              <Grid item className={classes.cell} xs={5}>
+                <SubscribeBox />
+              </Grid>
+            </Hidden>
+          </Grid>
+          <Box flex={1} />
+          <Box className={classes.bottom}>
+            <SocialLinkGroup />
+            <SwitcheoBrand className={classes.brand} />
+          </Box>
+        </ContentSection>
+      </Container>
+    </Box>
   );
 };
 

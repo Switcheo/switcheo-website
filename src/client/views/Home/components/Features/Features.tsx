@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.secondary.main,
     [theme.breakpoints.down("sm")]: {
       minHeight: 0,
-    }
+    },
   },
   wrapper: {
     flex: 1,

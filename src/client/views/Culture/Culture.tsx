@@ -34,6 +34,13 @@ const useStyles = makeStyles(theme => ({
   divider: {
     backgroundColor: theme.palette.secondary.main,
   },
+  margin: {
+    marginBottom: theme.spacing(1),
+  },
+  link: {
+    color: theme.palette.secondary.main,
+    fontWeight: "bold",
+  },
   jobContent: {
     marginTop: 200,
 
@@ -50,8 +57,8 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.secondary.main,
     borderRadius: 0,
     borderBottom: `1px solid ${theme.palette.secondary.main}`,
-    fontSize: 48,
-    lineHeight: "60px",
+    fontSize: 40,
+    lineHeight: "50px",
     letterSpacing: "-1px",
     paddingLeft: 0,
     textTransform: "none",
@@ -61,9 +68,13 @@ const useStyles = makeStyles(theme => ({
       lineHeight: "34px",
       letterSpacing: "-.5px",
     },
-    "&:hover $icon": {
-      transform: "rotate(0)",
-    },
+    "&:hover": {
+      color: theme.palette.secondary.dark,
+      borderBottom: `1px solid ${theme.palette.secondary.dark}`,
+      "& $icon": {
+        transform: "rotate(0)",
+      },
+    }
   },
   jobPostingContainer: {
     paddingLeft: theme.spacing(3),
@@ -75,13 +86,13 @@ const useStyles = makeStyles(theme => ({
   },
   icon: {
     marginLeft: "auto",
-    height: theme.spacing(4.5),
-    width: theme.spacing(4.5),
+    height: theme.spacing(3),
+    width: theme.spacing(3),
     transition: "transform .05s ease-in-out",
     transform: "rotate(45deg)",
     [theme.breakpoints.down("md")]: {
-      height: theme.spacing(3),
-      width: theme.spacing(3),
+      height: theme.spacing(2),
+      width: theme.spacing(2),
     },
     [theme.breakpoints.down("sm")]: {
       transform: "rotate(0)",
@@ -98,7 +109,7 @@ const Culture: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => 
       <Box className={classes.banner} />
       <Box className={classes.content}>
         <ContentTitle secondary>Our culture</ContentTitle>
-        <Divider className={classes.divider} />
+        <Divider className={cls(classes.divider, classes.margin)} />
         <Typography variant="subtitle1" color="secondary">
           At Switcheo, we start small, think big, and learn fast.
           We strive to create a diverse workspace that is encouraging,
@@ -120,16 +131,17 @@ const Culture: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => 
           <ContentTitle secondary>Join us</ContentTitle>
           <Grid container>
             <Grid item xs={12} md={6}>
-              <Divider className={classes.divider} />
+              <Divider className={cls(classes.divider, classes.margin)} />
               <Typography variant="body1" color="secondary">
                 Like what you’ve seen? Come to Switcheo, where we try
                 new things in ways others haven’t, and pave the routes
                 not yet taken.
               </Typography>
+              <div style={{ height: 16 }} />
               <Typography variant="body1" color="secondary">
                 Don’t see a role but think you belong here?
                 Drop us a message at{" "}
-                <Typography component="a" href="mailto:careers@switcheo.network">
+                <Typography className={classes.link} component="a" href="mailto:careers@switcheo.network">
                   careers@switcheo.network
                 </Typography>.
               </Typography>

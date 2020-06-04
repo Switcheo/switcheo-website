@@ -11,6 +11,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.primary.main,
   },
   bigNumber: {
+    fontWeight: "bold",
     textAlign: "center",
     fontSize: "427px",
     lineHeight: "350px",

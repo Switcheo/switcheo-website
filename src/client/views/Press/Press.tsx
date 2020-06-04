@@ -36,14 +36,23 @@ const useStyles = makeStyles(theme => ({
     },
   },
   itemContainer: {
+    cursor: "pointer",
     position: "relative",
-    padding: theme.spacing(2, 0, 1),
+    padding: theme.spacing(1, 0, .5),
     display: "flex",
     flexDirection: "row",
     borderTop: `1px solid ${theme.palette.primary.main}`,
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
       marginBottom: theme.spacing(6)
+    },
+    "&:hover": {
+      "& $title,$date,$type,$icon": {
+        color: theme.palette.primary.light,
+      },
+      "& $icon": {
+        transform: "rotate(0)",
+      },
     },
   },
   title: {
@@ -54,6 +63,7 @@ const useStyles = makeStyles(theme => ({
     textOverflow: "ellipsis",
     overflow: "hidden",
     marginRight: theme.spacing(2),
+    marginBottom: 0,
     [theme.breakpoints.down("md")]: {
       fontSize: "22px",
       lineHeight: "25px",
@@ -86,19 +96,24 @@ const useStyles = makeStyles(theme => ({
   },
   icon: {
     position: "absolute",
-    top: theme.spacing(2),
-    right: 0,
-    height: theme.spacing(3),
-    width: theme.spacing(3),
+    top: theme.spacing(1),
+    right: 4,
+    height: "22px",
+    width: "22px",
+    transform: "rotate(45deg)",
+    transition: "transform .05s ease-in-out",
     [theme.breakpoints.down("md")]: {
       height: theme.spacing(2),
       width: theme.spacing(2),
     },
+    [theme.breakpoints.down("sm")]: {
+      transform: "rotate(0)",
+    },
     [theme.breakpoints.down("xs")]: {
       top: "unset",
       bottom: 0,
-      height: theme.spacing(4),
-      width: theme.spacing(4),
+      height: "22px",
+      width: "22px",
     },
   },
 }));

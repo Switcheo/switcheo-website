@@ -46,7 +46,8 @@ const useStyles = makeStyles(theme => ({
   },
   intro: {
     padding: theme.spacing(3),
-    maxWidth: 480,
+    // maxWidth: 480,
+    maxWidth: 800,
   },
   item: {
     "@media (max-width: 459.95px)": {

@@ -43,7 +43,7 @@ const FeaturedIn: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) 
       <Box className={classes.wrapper}>
         <Grid container>
           {featuredInData.map((item, index) => (
-            <Grid className={classes.item} key={index} item xs={12} sm={6}>
+            <Grid className={classes.item} key={index} item xs={12}>
               <Divider className={classes.divider} />
               <Typography className={classes.txtLink} variant="body1" component="a" href={item.link} target="_blank">{item.title}</Typography>
             </Grid>

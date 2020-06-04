@@ -2,7 +2,7 @@ import { Box, BoxProps, Typography, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";
-import { SVGComponent, SwitcheoLogo } from "../../../../../../components";
+import { SVGComponent, SwitcheoLogo, ViewLink } from "../../../../../../components";
 import { minBlockHeight, Feature } from "../../../../../../contants";
 
 export interface FeatureColumnProps extends BoxProps {
@@ -52,7 +52,10 @@ const useStyles = makeStyles(theme => ({
     },
   },
   head: {
-    minHeight: 175,
+    minHeight: 200,
+    [theme.breakpoints.down("sm")]: {
+      minHeight: 100,
+    },
   },
   label: {
     color: theme.palette.primary.main,
@@ -62,28 +65,6 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.primary.main,
     height: 146,
     width: 146,
-  },
-  link: {
-    textDecoration: "none",
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    fontWeight: "bold",
-    "&:hover": {
-      color: theme.palette.primary.light,
-    },
-    "&:hover $linkIcon": {
-      transform: "rotate(0)",
-      color: theme.palette.primary.light,
-    },
-  },
-  linkIcon: {
-    display: "inline-block",
-    marginLeft: theme.spacing(1.5),
-    height: ".5em",
-    width: ".5em",
-    transition: "transform .05s ease-in-out",
-    transform: "rotate(45deg)",
   },
 }));
 const FeatureColumn: React.FC<FeatureColumnProps> = (props: any) => {
@@ -101,9 +82,7 @@ const FeatureColumn: React.FC<FeatureColumnProps> = (props: any) => {
             <Typography className={classes.descriptor} variant="body2" key={index}>{descriptor}</Typography>
           ))}
           {!!feature.link && (
-            <Typography className={classes.link} component="a" variant="body1" color="primary" target="_blank" href={feature.link}>
-              View <SwitcheoLogo className={classes.linkIcon} />
-            </Typography>
+            <ViewLink target="_blank" href={feature.link} />
           )}
         </Box>
         <Typography className={classes.description} variant="body2">{feature.description}</Typography>

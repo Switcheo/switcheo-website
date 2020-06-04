@@ -24,6 +24,7 @@ const useStyles = makeStyles(theme => ({
     "&:hover $switcheoIcon": {
       transform: "rotate(0)",
     },
+    padding: theme.spacing(0, 1),
   },
   icon: {
     color: theme.palette.primary.main,
@@ -44,8 +45,8 @@ const useStyles = makeStyles(theme => ({
     fontWeight: "bold",
   },
   switcheoIcon: {
-    height: 24,
-    width: 24,
+    height: 22,
+    width: 22,
     transition: "transform .05s ease-in-out",
     transform: "rotate(45deg)",
     [theme.breakpoints.down("md")]: {
