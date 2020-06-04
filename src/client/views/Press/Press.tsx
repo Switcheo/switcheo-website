@@ -22,13 +22,10 @@ const PRESS = [{
 
 const useStyles = makeStyles(theme => ({
   root: {
-    [theme.breakpoints.down("sm")]: {
-      padding: 0,
-    }
+    backgroundColor: theme.palette.secondary.main,
   },
   content: {
     marginTop: theme.spacing(3),
-    backgroundColor: theme.palette.secondary.main,
     color: theme.palette.primary.main,
     padding: theme.spacing(3),
     [theme.breakpoints.down("md")]: {
@@ -124,8 +121,8 @@ const Press: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   const pressData = useSelector((store: RootState) => store.Content.press);
 
   return (
-    <Container maxWidth="lg" {...rest} className={cls(classes.root, className)}>
-      <Box className={classes.content}>
+    <Box {...rest} className={cls(classes.root, className)}>
+      <Container maxWidth="lg"  className={classes.content}>
         <ContentTitle>Press</ContentTitle>
 
         {pressData.map((item: any, index: number) => (
@@ -143,8 +140,8 @@ const Press: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
             <SwitcheoLogo className={classes.icon} />
           </Box>
         ))}
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 };
 

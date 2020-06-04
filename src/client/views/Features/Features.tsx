@@ -15,10 +15,10 @@ const Features: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
   const { children, className, ...rest } = props;
   const classes = useStyles();
   return (
-    <Container maxWidth="lg" {...rest} className={cls(classes.root, className)}>
+    <Box {...rest} className={cls(classes.root, className)}>
       <KeyFeatures id="features" />
       <OurProducts id="products" />
-    </Container>
+    </Box>
   );
 };
 

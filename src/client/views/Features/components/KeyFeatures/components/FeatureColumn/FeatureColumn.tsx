@@ -19,9 +19,26 @@ const useStyles = makeStyles(theme => ({
       minHeight: 0,
     },
   },
+  inverse: {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.secondary.main,
+    "& $divider": {
+      backgroundColor: theme.palette.secondary.main,
+    },
+    "& $index,$descriptor,$description,$lanel,$icon": {
+      color: theme.palette.secondary.main,
+    },
+  },
   container: {
     padding: theme.spacing(1.5),
     paddingTop: 116,
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: 40,
+      paddingBottom: 90,
+      "&:first-child": {
+        paddingTop: 116,
+      },
+    },
   },
   index: {
     color: theme.palette.primary.main,
@@ -41,6 +58,12 @@ const useStyles = makeStyles(theme => ({
   },
   descriptor: {
     color: theme.palette.primary.main,
+  },
+  inverseLink: {
+    color: theme.palette.secondary.main,
+    "&:hover": {
+      color: theme.palette.secondary.dark,
+    },
   },
   description: {
     color: theme.palette.primary.main,
@@ -71,8 +94,9 @@ const FeatureColumn: React.FC<FeatureColumnProps> = (props: any) => {
   const { children, feature, index, className, ...rest } = props;
   const classes = useStyles(props);
 
+  const inversed = index % 2 === 0;
   return (
-    <Box {...rest} className={cls(classes.root, className)}>
+    <Box {...rest} className={cls(classes.root, { [classes.inverse]: inversed }, className)}>
       <Box className={classes.container}>
         <Typography className={classes.index}>{index}</Typography>
         <Divider className={classes.divider} />
@@ -82,7 +106,7 @@ const FeatureColumn: React.FC<FeatureColumnProps> = (props: any) => {
             <Typography className={classes.descriptor} variant="body2" key={index}>{descriptor}</Typography>
           ))}
           {!!feature.link && (
-            <ViewLink target="_blank" href={feature.link} />
+            <ViewLink className={cls({ [classes.inverseLink]: inversed })} target="_blank" href={feature.link} />
           )}
         </Box>
         <Typography className={classes.description} variant="body2">{feature.description}</Typography>

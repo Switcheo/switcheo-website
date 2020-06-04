@@ -1,4 +1,4 @@
-import { Box, Typography, Grid } from "@material-ui/core";
+import { Box, Typography, Grid, Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";
@@ -14,12 +14,18 @@ const useStyles = makeStyles(theme => ({
       marginTop: 0,
     },
   },
+  container: {
+    position: "relative",
+    [theme.breakpoints.down("sm")]: {
+      padding: 0,
+    },
+  },
   title: {
     position: "absolute",
     left: theme.spacing(3),
     top: theme.spacing(3),
   },
-  container: {
+  featureContainer: {
     padding: theme.spacing(0, 1.5),
     [theme.breakpoints.down("sm")]: {
       padding: 0,
@@ -37,14 +43,16 @@ const KeyFeatures: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any)
   const classes = useStyles();
   return (
     <Box {...rest} className={cls(classes.root, className)}>
-      <Typography className={classes.title} variant="h2">Key features</Typography>
-      <Grid className={classes.container} container>
-        {FEATURES.map((feature, index) => (
-          <Grid key={index} className={classes.item} item sm={4} xs={6}>
-            <FeatureColumn feature={feature} index={index + 1} key={index} />
-          </Grid>
-        ))}
-      </Grid>
+      <Container className={classes.container} maxWidth="lg">
+        <Typography className={classes.title} variant="h2">Key features</Typography>
+        <Grid className={classes.featureContainer} container>
+          {FEATURES.map((feature, index) => (
+            <Grid key={index} className={classes.item} item sm={4} xs={6}>
+              <FeatureColumn feature={feature} index={index + 1} key={index} />
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
     </Box>
   );
 };

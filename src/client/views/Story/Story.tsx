@@ -24,16 +24,13 @@ const TEAMS: Team[] = [{
 
 const useStyles = makeStyles(theme => ({
   root: {
-    [theme.breakpoints.down("sm")]: {
-      padding: 0,
-    }
+    backgroundColor: theme.palette.primary.main,
   },
   description: {
     marginTop: 4,
   },
   content: {
     marginTop: theme.spacing(3),
-    backgroundColor: theme.palette.primary.main,
     padding: theme.spacing(3),
     [theme.breakpoints.down("sm")]: {
       marginTop: 0,
@@ -149,8 +146,8 @@ const Story: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   };
 
   return (
-    <Container maxWidth="lg" {...rest} className={cls(classes.root, className)}>
-      <Box className={classes.content}>
+    <Box {...rest} className={cls(classes.root, className)}>
+      <Container maxWidth="lg" className={classes.content}>
         <ContentTitle secondary>Our story</ContentTitle>
         <Divider className={classes.divider} />
         <Typography className={classes.description} variant="subtitle1" color="secondary">
@@ -196,8 +193,8 @@ const Story: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
             </Grid>
           </Box>
         ))}
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 };
 

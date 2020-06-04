@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@material-ui/core";
+import { Box, Grid, Typography, Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";
@@ -40,6 +40,7 @@ const useStyles = makeStyles(theme => ({
     position: "relative",
     [theme.breakpoints.down("sm")]: {
       marginTop: 0,
+      padding: 0,
     },
   },
   container: {
@@ -61,7 +62,7 @@ const OurProducts: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any)
   const { children, className, ...rest } = props;
   const classes = useStyles();
   return (
-    <Box {...rest} className={cls(classes.root, className)}>
+    <Container maxWidth="lg" {...rest} className={cls(classes.root, className)}>
       <Grid container className={classes.container}>
         <Grid item xs={12}>
           <Box className={classes.intro}>
@@ -80,7 +81,7 @@ const OurProducts: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any)
           </Grid>
         ))}
       </Grid>
-    </Box>
+    </Container>
   );
 };
 

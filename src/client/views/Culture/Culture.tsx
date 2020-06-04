@@ -9,6 +9,9 @@ import urlBannerImage from "./assets/banner.png";
 
 const useStyles = makeStyles(theme => ({
   root: {
+    maxWidth: 2275,
+    backgroundColor: theme.palette.primary.main,
+    margin: "0 auto",
     [theme.breakpoints.down("sm")]: {
       padding: 0,
     }
@@ -19,16 +22,15 @@ const useStyles = makeStyles(theme => ({
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     backgroundImage: `url(${urlBannerImage})`,
-
     paddingTop: "33%",
-
+    maxHeight: "40vh",
     [theme.breakpoints.down("sm")]: {
       marginTop: 0,
+      maxHeight: "unset",
       paddingTop: "50%",
     }
   },
   content: {
-    backgroundColor: theme.palette.primary.main,
     padding: theme.spacing(3),
   },
   divider: {
@@ -79,7 +81,7 @@ const useStyles = makeStyles(theme => ({
   jobPostingContainer: {
     paddingLeft: theme.spacing(3),
 
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       paddingLeft: 0,
       marginTop: theme.spacing(3),
     },
@@ -105,9 +107,9 @@ const Culture: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => 
   const classes = useStyles();
   const jobOpeningData = useSelector((store: RootState) => store.Content.jobOpening);
   return (
-    <Container maxWidth="lg" {...rest} className={cls(classes.root, className)}>
+    <Box {...rest} className={cls(classes.root, className)}>
       <Box className={classes.banner} />
-      <Box className={classes.content}>
+      <Container maxWidth="lg" className={classes.content}>
         <ContentTitle secondary>Our culture</ContentTitle>
         <Divider className={cls(classes.divider, classes.margin)} />
         <Typography variant="subtitle1" color="secondary">
@@ -158,8 +160,8 @@ const Culture: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => 
             </Grid>
           </Grid>
         </Box>
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 };
 
