@@ -93,7 +93,7 @@ const useStyles = makeStyles(theme => ({
   },
   icon: {
     position: "absolute",
-    top: theme.spacing(1),
+    top: 10,
     right: 4,
     height: "22px",
     width: "22px",
