@@ -35,12 +35,14 @@ const useStyles = makeStyles(theme => ({
   itemContainer: {
     cursor: "pointer",
     position: "relative",
-    padding: theme.spacing(1, 0, .5),
+    alignItems: "center",
+    padding: theme.spacing(1, 0, 1),
     display: "flex",
     flexDirection: "row",
     borderTop: `1px solid ${theme.palette.primary.main}`,
     [theme.breakpoints.down("xs")]: {
       flexDirection: "column",
+      alignItems: "unset",
       marginBottom: theme.spacing(6)
     },
     "&:hover": {
@@ -92,25 +94,18 @@ const useStyles = makeStyles(theme => ({
     },
   },
   icon: {
-    position: "absolute",
-    top: 10,
-    right: 4,
     height: "22px",
     width: "22px",
     transform: "rotate(45deg)",
     transition: "transform .05s ease-in-out",
-    [theme.breakpoints.down("md")]: {
-      height: theme.spacing(2),
-      width: theme.spacing(2),
-    },
     [theme.breakpoints.down("sm")]: {
       transform: "rotate(0)",
     },
     [theme.breakpoints.down("xs")]: {
-      top: "unset",
+      position: "absolute",
+      right: 4,
       bottom: 0,
-      height: "22px",
-      width: "22px",
+      top: "unset",
     },
   },
 }));
@@ -122,7 +117,7 @@ const Press: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
 
   return (
     <Box {...rest} className={cls(classes.root, className)}>
-      <Container maxWidth="lg"  className={classes.content}>
+      <Container maxWidth="lg" className={classes.content}>
         <ContentTitle>Press</ContentTitle>
 
         {pressData.map((item: any, index: number) => (

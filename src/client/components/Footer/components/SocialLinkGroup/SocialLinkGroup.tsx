@@ -34,9 +34,12 @@ const useStyles = makeStyles(theme => ({
           fill: theme.palette.primary.main,
         }
       },
-      "&:hover svg path": {
-        fill: "#666666"
-      }
+      "&:hover": {
+        backgroundColor: "transparent",
+        "& svg path": {
+          fill: theme.palette.primary.dark,
+        }
+      },
     },
   },
 }));

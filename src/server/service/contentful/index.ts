@@ -5,6 +5,7 @@ const contentful = require("contentful");
 
 let _client: Contentful.ContentfulClientApi | null = null;
 
+
 const getClient = (): Contentful.ContentfulClientApi => {
   if (_client === null)
     throw new Error("not initialized");
@@ -14,13 +15,15 @@ const getClient = (): Contentful.ContentfulClientApi => {
 
 
 export const init = (): void => {
-  if (!process.env.CONTENTFUL_SPACE_ID)
+  const env = require("dotenv").config().parsed;
+  const space = process.env.CONTENTFUL_SPACE_ID || env.CONTENTFUL_SPACE_ID;
+  const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN || env.CONTENTFUL_ACCESS_TOKEN;
+
+  if (!space)
     throw new Error("process.env.CONTENTFUL_SPACE_ID not set");
-  if (!process.env.CONTENTFUL_ACCESS_TOKEN)
+  if (!accessToken)
     throw new Error("process.env.CONTENTFUL_ACCESS_TOKEN not set");
 
-  const space = process.env.CONTENTFUL_SPACE_ID!;
-  const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN!;
 
   _client = contentful.createClient({ space, accessToken });
 };

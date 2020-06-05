@@ -14,6 +14,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     color: theme.palette.primary.main,
     minHeight: minBlockHeight,
+    paddingBottom: theme.spacing(2),
     "@media (max-width: 459.95px)": {
       padding: theme.spacing(0, 1.5),
       minHeight: 0,
@@ -25,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     "& $divider": {
       backgroundColor: theme.palette.secondary.main,
     },
-    "& $index,$descriptor,$description,$lanel,$icon": {
+    "& $index,$descriptor,$description,$label,$icon": {
       color: theme.palette.secondary.main,
     },
   },
@@ -112,7 +113,6 @@ const FeatureColumn: React.FC<FeatureColumnProps> = (props: any) => {
         <Typography className={classes.description} variant="body2">{feature.description}</Typography>
         <Divider className={cls(classes.divider, classes.mobileDownHide)} />
         <SVGComponent className={cls(classes.icon)} url={feature.icon} />
-        <Divider className={cls(classes.divider, classes.mobileDownHide)} />
       </Box>
     </Box>
   );

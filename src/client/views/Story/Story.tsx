@@ -101,6 +101,7 @@ const useStyles = makeStyles(theme => ({
       borderTop: `1px solid ${theme.palette.secondary.dark}`,
       color: theme.palette.secondary.dark,
       borderBottom: `1px solid ${theme.palette.secondary.dark}`,
+      backgroundColor: "transparent",
       "& $linkIcon": {
         transform: "rotate(0)",
       }
