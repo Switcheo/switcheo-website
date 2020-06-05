@@ -1,7 +1,8 @@
 module.exports = {
   apps : [{
     script: 'index.js',
-    watch: '.',
+    instances : "max",
+    exec_mode : "cluster",
     env_production : {
       "PORT": 5000,
       "ENV": "production",
