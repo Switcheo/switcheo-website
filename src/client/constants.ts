@@ -49,8 +49,11 @@ export const Paths = {
 };
 
 export const minBlockHeight = `calc(min(50vw, 640px) - ${Dim.spacing * 1.5 + 1}px)`;
-
-
+export const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+export const SendGridAPI = {
+  endpoint: "https://app.sgwidget.com/v2/api/newsletter-signup",
+  token: "52447a454fad5b9fe4973c939fbae918",
+};
 
 export type Feature = {
   label: string;
