@@ -1,15 +1,13 @@
-import { Box, Button, Typography, TextField, Grid, Checkbox, FormControlLabel, Hidden, Container } from "@material-ui/core";
+import { Box, Container, Grid, Hidden } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
-import Section from "../Section";
-
-import SVGComponent from "../SVGComponent";
+import { minBlockHeight, Paths } from "../../constants";
 import ContentSection from "../ContentSection";
 import SwitcheoBrand from "../SwitcheoBrand";
-import { FooterTitle, FooterLink, SubscribeBox, SocialLinkGroup } from "./components";
+import { FooterLink, FooterTitle, SocialLinkGroup, SubscribeBox } from "./components";
 
-import { minBlockHeight, Paths } from "../../contants";
+
 
 const useStyles = makeStyles(theme => ({
   root: {

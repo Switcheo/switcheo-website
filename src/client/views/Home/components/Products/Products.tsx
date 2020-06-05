@@ -8,7 +8,7 @@ import urlFoundationIcon from "./assets/foundation-logo.svg";
 import urlSwitcheoIcon from "./assets/switcheo-logo.svg";
 import urlZilswapIcon from "./assets/zilswap-logo.svg";
 import ProductEntry from "./components";
-import { Paths } from "../../../../contants";
+import { Paths } from "../../../../constants";
 
 const useStyles = makeStyles(theme => ({
   root: {

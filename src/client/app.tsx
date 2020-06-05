@@ -7,7 +7,7 @@ import { Body, Footer, NavBar } from "./components";
 import "./index.css";
 import AppTheme from "./theme";
 import { Home, Features, Culture, Story, Press } from "./views";
-import { Paths } from "./contants";
+import { Paths } from "./constants";
 
 const App = () => {
 

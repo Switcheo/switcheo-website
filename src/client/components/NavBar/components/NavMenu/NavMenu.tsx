@@ -5,7 +5,7 @@ import cls from "classnames";
 import CloseIcon from "@material-ui/icons/Close";
 import NavLink from "../NavLink";
 import SwitcheoLogo from "../../../SwitcheoLogo";
-import { Paths, Dim } from "../../../../contants";
+import { Paths, Dim } from "../../../../constants";
 
 export interface NavMenuProps extends BoxProps {
   showMenu?: boolean;

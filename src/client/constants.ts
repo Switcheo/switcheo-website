@@ -37,6 +37,15 @@ export const Paths = {
   terms_of_use: "https://switcheo.network/terms.html",
   privacy_policy: "https://switcheo.network/privacy.html",
   listing_policy: "https://switcheo.network/listing.html",
+
+  social_github: "https://github.com/switcheo",
+  social_telegram: "https://t.me/switcheo",
+  social_twitter: "https://twitter.com/switcheonetwork",
+  social_reddit: "https://www.reddit.com/r/Switcheo/",
+  social_medium: "https://medium.com/switcheo",
+  social_linkedin: "https://www.linkedin.com/company/switcheonetwork/",
+  social_facebook: "https://www.facebook.com/SwitcheoExchange/",
+  social_youtube: "https://www.youtube.com/channel/UCqZ9sxvw-0UoHzno4-d97oQ/playlists",
 };
 
 export const minBlockHeight = `calc(min(50vw, 640px) - ${Dim.spacing * 1.5 + 1}px)`;

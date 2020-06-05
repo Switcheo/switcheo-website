@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";
 import { SVGComponent, SwitcheoLogo, ViewLink } from "../../../../../../components";
-import { minBlockHeight } from "../../../../../../contants";
+import { minBlockHeight } from "../../../../../../constants";
 
 export type Product = {
   title: string;

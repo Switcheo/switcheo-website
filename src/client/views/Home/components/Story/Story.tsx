@@ -4,7 +4,7 @@ import cls from "classnames";
 import React from "react";
 import { ContentSection, ContentTitle, CTAButton } from "../../../../components";
 import { Box } from "@material-ui/core";
-import { Paths } from "../../../../contants";
+import { Paths } from "../../../../constants";
 
 const useStyles = makeStyles(theme => ({
   root: {

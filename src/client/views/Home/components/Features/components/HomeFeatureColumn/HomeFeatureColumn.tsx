@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
 import { SVGComponent, ViewLink } from "../../../../../../components";
-import { Feature } from "../../../../../../contants";
+import { Feature } from "../../../../../../constants";
 
 export interface HomeFeatureColumnProps extends BoxProps {
   feature: Feature;

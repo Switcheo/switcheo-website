@@ -3,7 +3,7 @@ import cls from "classnames";
 import React from "react";
 import { ContentSection, ContentTitle, CTAButton } from "../../../../components";
 import { Box, Grid, Hidden } from "@material-ui/core";
-import { Paths, FEATURES, minBlockHeight } from "../../../../contants";
+import { Paths, FEATURES, minBlockHeight } from "../../../../constants";
 import { HomeFeatureColumn } from "./components";
 
 const useStyles = makeStyles(theme => ({

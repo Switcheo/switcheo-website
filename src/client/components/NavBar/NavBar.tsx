@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import useScroll from "../../utils/useScroll";
 import SwitcheoBrand from "../SwitcheoBrand";
 
-import { Dim, minBlockHeight, Paths } from "../../contants";
+import { Dim, minBlockHeight, Paths } from "../../constants";
 import { NavMenu, HeaderLink } from "./components";
 
 const useStyles = makeStyles(theme => ({

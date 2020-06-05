@@ -2,6 +2,7 @@ import { Box, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
+import { Paths } from "../../../../constants";
 import { ReactComponent as FacebookIcon } from "./social-icons/facebook.svg";
 import { ReactComponent as LinkedInIcon } from "./social-icons/linkedin.svg";
 import { ReactComponent as MediumIcon } from "./social-icons/medium.svg";
@@ -48,25 +49,25 @@ const SocialLinkGroup: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: 
   const classes = useStyles();
   return (
     <Box {...rest} className={cls(classes.root, className)}>
-      <Button href="https://switcheo.network">
+      <Button href={Paths.social_telegram}>
         <TelegramIcon />
       </Button>
-      <Button href="https://switcheo.network">
+      <Button href={Paths.social_twitter}>
         <TwitterIcon />
       </Button>
-      <Button href="https://switcheo.network">
+      <Button href={Paths.social_medium}>
         <MediumIcon />
       </Button>
-      <Button href="https://switcheo.network">
+      <Button href={Paths.social_reddit}>
         <RedditIcon />
       </Button>
-      <Button href="https://switcheo.network">
+      <Button href={Paths.social_linkedin}>
         <LinkedInIcon />
       </Button>
-      <Button href="https://switcheo.network">
+      <Button href={Paths.social_facebook}>
         <FacebookIcon />
       </Button>
-      <Button href="https://switcheo.network">
+      <Button href={Paths.social_youtube}>
         <YouTubeIcon />
       </Button>
     </Box>

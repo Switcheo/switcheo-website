@@ -4,7 +4,7 @@ import cls from "classnames";
 import React from "react";
 import { useSelector } from "react-redux";
 import { ContentSection, ContentTitle, CTAButton } from "../../../../components";
-import { Paths } from "../../../../contants";
+import { Paths } from "../../../../constants";
 import { RootState } from "../../../../store/types";
 
 const useStyles = makeStyles(theme => ({
