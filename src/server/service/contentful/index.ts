@@ -14,16 +14,13 @@ const getClient = (): Contentful.ContentfulClientApi => {
 
 
 export const init = (): void => {
-  const space = "mozptkzollhw";
-  const accessToken = "fd3FVfxoOR7KmHpvMzWfgiveirmjYxHgzVIoMI6XyP8";
+  if (!process.env.CONTENTFUL_SPACE_ID)
+    throw new Error("process.env.CONTENTFUL_SPACE_ID not set");
+  if (!process.env.CONTENTFUL_ACCESS_TOKEN)
+    throw new Error("process.env.CONTENTFUL_ACCESS_TOKEN not set");
 
-  // if (!process.env.CONTENTFUL_SPACE_ID)
-  //   throw new Error("process.env.CONTENTFUL_SPACE_ID not set");
-  // if (!process.env.CONTENTFUL_ACCESS_TOKEN)
-  //   throw new Error("process.env.CONTENTFUL_ACCESS_TOKEN not set");
-
-  // const space = process.env.CONTENTFUL_SPACE_ID!;
-  // const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN!;
+  const space = process.env.CONTENTFUL_SPACE_ID!;
+  const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN!;
 
   _client = contentful.createClient({ space, accessToken });
 };

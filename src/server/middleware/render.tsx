@@ -42,7 +42,8 @@ const renderMiddleware = () => (req: Request, res: Response) => {
 
   res.send(html);
 
-  const contentCacheThreshold = moment().add(-15, "second");
+  const ttl = process.env.CONTENTFUL_TTL || 15;
+  const contentCacheThreshold = moment().add(-ttl, "second");
   if (!preloadedState.Content.timestamp || !preloadedState.Content.timestamp!.isAfter(contentCacheThreshold))
     SvContentful.reloadCache().catch(console.error);
 };
