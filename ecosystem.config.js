@@ -1,6 +1,7 @@
 module.exports = {
   apps : [{
-    script: 'index.js',
+    name: "switcheo-website",
+    script: 'build/index.js',
     instances : "max",
     exec_mode : "cluster",
     env_production : {
