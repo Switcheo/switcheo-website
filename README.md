@@ -42,20 +42,23 @@ The `robots.txt` ([RFC pending](https://tools.ietf.org/html/draft-koster-rep-00)
 
 ## Deployment
 
-1. Install pm2 locally:
+1. Install pm2 locally on your deployment machine:
 
     ```bash
+    # On local / CI machine:
     npm install pm2@latest -g
     ```
 
-2. If you are deploying to a new environment / host, set it up first:
+2. If you are deploying to a new environment / host, first run:
 
     ```bash
-    pm2 deploy ecosystem.config.js <environment> setup
+    # On local / CI machine:
+    pm2 deploy ecosystem.config.js <environment> setup # setup pm2 on remote server
     ```
 
 3. Deploy the code:
 
     ```bash
+    # On local / CI machine:
     pm2 deploy ecosystem.config.js production # or <environment>
     ```
