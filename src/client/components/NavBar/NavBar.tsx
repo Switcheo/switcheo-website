@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
   brandIcon: {
     color: theme.palette.primary.main,
     margin: theme.spacing(3),
-    width: 316,
+    width: 321,
     [theme.breakpoints.down("xs")]: {
       margin: theme.spacing(2.5),
       width: 170,
