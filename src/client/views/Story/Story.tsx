@@ -52,6 +52,10 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("sm")]: {
       marginTop: theme.spacing(3),
     },
+    "& h3": {
+      fontSize: 35,
+      marginBottom: theme.spacing(3),
+    },
   },
   member: {
     display: "flex",
@@ -72,6 +76,22 @@ const useStyles = makeStyles(theme => ({
       "&:last-child": {
         borderBottom: `1px solid ${theme.palette.secondary.main}`,
       }
+    },
+  },
+  image: {
+    position: "relative",
+    "& img": {
+      filter: "grayscale(100%)",
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+    },
+    "&:before": {
+      content: "''",
+      display: "block",
+      paddingTop: "100%",
     },
   },
   link: {
@@ -162,7 +182,7 @@ const Story: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
 
         {TEAMS.map((team, index) => (
           <Box key={index} className={classes.teamContent}>
-            <ContentTitle secondary>{team.title}</ContentTitle>
+            <Typography color="secondary" variant="h3">{team.title}</Typography>
             <Grid container>
               <Grid item md={12} lg={4}>
                 <Divider className={classes.divider} />
@@ -173,9 +193,14 @@ const Story: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
                   <Grid container>
                     {teamMembers.filter(filterMembers(team.title)).map((teamMember, index) => (
                       <Grid className={classes.member} key={index} item xs={6} sm={4} md={3} lg={4}>
-                        {!!teamMember.image && (
-                          <img alt={teamMember.image.title} src={teamMember.image.file.url} />
-                        )}
+                        <Box className={classes.image}>
+                          {!!teamMember.image && (
+                            <img alt={teamMember.image.title} src={teamMember.image.file.url} />
+                          )}
+                          {!teamMember.image && (
+                            <div style={{ backgroundColor: "#D8D8D8", position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} />
+                          )}
+                        </Box>
                         <Box display="flex" flexDirection="column">
                           <Typography color="secondary">{teamMember.name}</Typography>
                           <Typography color="secondary">{teamMember.role}</Typography>
