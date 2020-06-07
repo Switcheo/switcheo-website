@@ -87,9 +87,9 @@ const Footer: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
               <FooterLink href={Paths.api_docs} target="_blank">Developer</FooterLink>
               <FooterLink href={Paths.apply_to_list} target="_blank">Apply to list</FooterLink>
               <FooterLink href={Paths.media_kit} target="_blank">Media kit</FooterLink>
-              <FooterLink href={Paths.terms_of_use} target="_blank">Terms of policy</FooterLink>
-              <FooterLink href={Paths.privacy_policy} target="_blank">Privacy policy</FooterLink>
-              <FooterLink href={Paths.listing_policy} target="_blank">Listing policy</FooterLink>
+              <FooterLink href={Paths.terms_of_use}>Terms of use</FooterLink>
+              <FooterLink href={Paths.privacy_policy}>Privacy policy</FooterLink>
+              <FooterLink href={Paths.listing_policy}>Listing policy</FooterLink>
             </Grid>
             <Hidden smDown>
               <Grid item xs={1} />

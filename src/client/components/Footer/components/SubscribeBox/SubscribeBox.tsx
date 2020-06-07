@@ -33,9 +33,8 @@ const useStyles = makeStyles(theme => ({
     fontSize: "18px",
     letterSpacing: "-0.5px",
     lineHeight: "20px",
-    "& a:link": {
-      textDecoration: "none",
-      color: "inherit",
+    "& a": {
+      color: theme.palette.primary.main,
     }
   },
   logoIcon: {
@@ -87,7 +86,7 @@ const SubscribeBox: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any
         label={(
           <Typography className={classes.checkboxText} variant="body2" color="primary">
             I understand and consent to the{" "}
-            <a target="_blank" href={Paths.privacy_policy}>Privacy Policy</a>
+            <a href={Paths.privacy_policy}>Privacy Policy</a>
           </Typography>
         )} />
 

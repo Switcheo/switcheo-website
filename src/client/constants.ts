@@ -23,6 +23,10 @@ export const Paths = {
   press: "/press",
   featured: "/featured",
 
+  terms_of_use: "/terms-of-use",
+  privacy_policy: "/privacy-policy",
+  listing_policy: "/listing-policy",
+
   blog: "https://blog.switcheo.network/",
   support: "https://support.switcheo.network/",
   exchange: "https://switcheo.exchange/",
@@ -34,9 +38,9 @@ export const Paths = {
   api_docs: "https://docs.switcheo.network/",
   apply_to_list: "https://docs.google.com/forms/d/1Uq01pZvqxG9FtFCpKMZeIT6uhu64VT2BrB2AS1XAXuQ/edit",
   media_kit: "https://switcheo.network/switcheo_mediakit.pdf",
-  terms_of_use: "https://switcheo.network/terms.html",
-  privacy_policy: "https://switcheo.network/privacy.html",
-  listing_policy: "https://switcheo.network/listing.html",
+  // terms_of_use: "https://switcheo.network/terms.html",
+  // privacy_policy: "https://switcheo.network/privacy.html",
+  // listing_policy: "https://switcheo.network/listing.html",
 
   social_github: "https://github.com/switcheo",
   social_telegram: "https://t.me/switcheo",
