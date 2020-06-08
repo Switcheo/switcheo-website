@@ -4,7 +4,7 @@ import cls from "classnames";
 import React from "react";
 import { ContentSection, ContentTitle, CTAButton, ImageCell } from "../../../../components";
 import urlImageCulture from "../../assets/culture-square.png";
-import { Paths } from "../../../../contants";
+import { Paths } from "../../../../constants";
 
 const useStyles = makeStyles(theme => ({
   root: {

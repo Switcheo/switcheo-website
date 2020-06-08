@@ -8,7 +8,7 @@ import urlDemexIcon from "./assets/demex-logo.svg";
 import urlFoundationIcon from "./assets/foundation-logo.svg";
 import urlSwitcheoIcon from "./assets/switcheo-logo.svg";
 import urlZilswapIcon from "./assets/zilswap-logo.svg";
-import { Paths } from "../../../../contants";
+import { Paths } from "../../../../constants";
 
 const PRODUCTS: Product[] = [{
   title: "Switcheo Exchange",

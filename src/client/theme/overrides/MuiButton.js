@@ -17,8 +17,14 @@ export default theme => ({
   },
   containedSecondary: {
     color: theme.palette.primary.main,
+    "&:hover,:active": {
+      backgroundColor: theme.palette.secondary.main,
+    },
   },
   containedPrimary: {
     color: theme.palette.secondary.main,
+    "&:hover,:active": {
+      backgroundColor: theme.palette.primary.main,
+    },
   },
 });

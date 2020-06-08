@@ -25,6 +25,10 @@ const useStyles = makeStyles(theme => ({
       letterSpacing: "-0.75px",
       lineHeight: "20px",
     },
+    "&:hover": {
+      backgroundColor: "transparent",
+      color: theme.palette.primary.dark,
+    },
   },
 }));
 const FooterLink: React.FC<FooterLinkProps> = (props: any) => {

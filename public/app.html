@@ -5,6 +5,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+<!-- 
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{WEBSITE_URL}}/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{WEBSITE_URL}}/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{WEBSITE_URL}}/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{WEBSITE_URL}}/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="{{WEBSITE_URL}}/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{WEBSITE_URL}}/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{WEBSITE_URL}}/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{WEBSITE_URL}}/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="{{WEBSITE_URL}}/favicon-196x196.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="{{WEBSITE_URL}}/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="{{WEBSITE_URL}}/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="{{WEBSITE_URL}}/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="{{WEBSITE_URL}}/favicon-128.png" sizes="128x128" />
+  <meta name="application-name" content="Switcheo"/>
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="{{WEBSITE_URL}}/mstile-144x144.png" />
+  <meta name="msapplication-square70x70logo" content="{{WEBSITE_URL}}/mstile-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="{{WEBSITE_URL}}/mstile-150x150.png" />
+  <meta name="msapplication-wide310x150logo" content="{{WEBSITE_URL}}/mstile-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="{{WEBSITE_URL}}/mstile-310x310.png" />
+ -->
+
   <link rel="apple-touch-icon" sizes="180x180" href="{{WEBSITE_URL}}/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="{{WEBSITE_URL}}/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="{{WEBSITE_URL}}/favicon-16x16.png">
@@ -13,13 +36,32 @@
   <meta name="msapplication-TileColor" content="#e2fca4">
   <meta name="theme-color" content="#e2fca4">
 
-  <title>Switcheo | The Preferred Decentralized Cryptocurrency Exchange</title>
+  <title>Switcheo | Finance without limits.</title>
+  <meta name="title" content="Switcheo | Finance without limits.">
+  <meta name="keywords" content="switcheo, switcheo network, switcheo exchange, demex, multichain dex, multi-chain dex, crosschain dex, cross-chain dex, neo dex, nep5 dex, decentralised exchange, decentralized exchange, crypto trading, crypto exchange, cryptocurrency exchange">
+  <meta name="description" content="Switcheo is the leading DEX platform in the world. Buy or trade crypto like Ethereum, Neo and more, with live price charts and liquid order books.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{WEBSITE_URL}}">
+  <meta property="og:title" content="Switcheo | Finance without limits.">
+  <meta property="og:description" content="Switcheo is the leading DEX platform in the world. Buy or trade crypto like Ethereum, Neo and more, with live price charts and liquid order books.">
+  <meta property="og:image" content="{{WEBSITE_URL}}/assets/switcheo-finance-without-limits.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{WEBSITE_URL}}">
+  <meta property="twitter:title" content="Switcheo | Finance without limits.">
+  <meta property="twitter:description" content="Switcheo is the leading DEX platform in the world. Buy or trade crypto like Ethereum, Neo and more, with live price charts and liquid order books.">
+  <meta property="twitter:image" content="{{WEBSITE_URL}}/assets/switcheo-finance-without-limits.png">
+
   {{CSS_CONTENT}}
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root">{{HTML_CONTENT}}</div>
+  <div id="static-document" style="visibility: hidden;">{{STATIC_DOCUMENT}}</div>
   <script>
     window.__PRELOADED_STATE__ = "{{PRELOADED_STATE}}";
   </script>

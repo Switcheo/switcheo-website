@@ -3,7 +3,7 @@ import cls from "classnames";
 import React from "react";
 import { ContentSection, ContentTitle, CTAButton, DateLabel } from "../../../../components";
 import { Box, Grid, Divider, Typography, Hidden } from "@material-ui/core";
-import { Paths } from "../../../../contants";
+import { Paths } from "../../../../constants";
 import { RootState } from "../../../../store/types";
 import { useSelector } from "react-redux";
 

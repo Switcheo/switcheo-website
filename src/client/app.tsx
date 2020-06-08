@@ -6,8 +6,8 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import { Body, Footer, NavBar } from "./components";
 import "./index.css";
 import AppTheme from "./theme";
-import { Home, Features, Culture, Story, Press } from "./views";
-import { Paths } from "./contants";
+import { Home, Features, Culture, Story, Press, Terms } from "./views";
+import { Paths } from "./constants";
 
 const App = () => {
 
@@ -29,6 +29,15 @@ const App = () => {
           </Route>
           <Route path={Paths.press} exact>
             <Press />
+          </Route>
+          <Route path={Paths.terms_of_use} exact>
+            <Terms />
+          </Route>
+          <Route path={Paths.privacy_policy} exact>
+            <Terms />
+          </Route>
+          <Route path={Paths.listing_policy} exact>
+            <Terms />
           </Route>
           <Route>
             <Redirect to={Paths.home} />

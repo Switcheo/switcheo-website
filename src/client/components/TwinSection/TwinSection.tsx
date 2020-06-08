@@ -2,7 +2,7 @@ import { Container, ContainerProps, Hidden } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
-import { minBlockHeight } from "../../contants";
+import { minBlockHeight } from "../../constants";
 
 export interface TwinSectionProps extends ContainerProps {
   mobileReverse?: boolean;

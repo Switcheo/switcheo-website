@@ -23,6 +23,10 @@ export const Paths = {
   press: "/press",
   featured: "/featured",
 
+  terms_of_use: "/terms-of-use",
+  privacy_policy: "/privacy-policy",
+  listing_policy: "/listing-policy",
+
   blog: "https://blog.switcheo.network/",
   support: "https://support.switcheo.network/",
   exchange: "https://switcheo.exchange/",
@@ -34,14 +38,26 @@ export const Paths = {
   api_docs: "https://docs.switcheo.network/",
   apply_to_list: "https://docs.google.com/forms/d/1Uq01pZvqxG9FtFCpKMZeIT6uhu64VT2BrB2AS1XAXuQ/edit",
   media_kit: "https://switcheo.network/switcheo_mediakit.pdf",
-  terms_of_use: "https://switcheo.network/terms.html",
-  privacy_policy: "https://switcheo.network/privacy.html",
-  listing_policy: "https://switcheo.network/listing.html",
+  // terms_of_use: "https://switcheo.network/terms.html",
+  // privacy_policy: "https://switcheo.network/privacy.html",
+  // listing_policy: "https://switcheo.network/listing.html",
+
+  social_github: "https://github.com/switcheo",
+  social_telegram: "https://t.me/switcheo",
+  social_twitter: "https://twitter.com/switcheonetwork",
+  social_reddit: "https://www.reddit.com/r/Switcheo/",
+  social_medium: "https://medium.com/switcheo",
+  social_linkedin: "https://www.linkedin.com/company/switcheonetwork/",
+  social_facebook: "https://www.facebook.com/SwitcheoExchange/",
+  social_youtube: "https://www.youtube.com/channel/UCqZ9sxvw-0UoHzno4-d97oQ/playlists",
 };
 
 export const minBlockHeight = `calc(min(50vw, 640px) - ${Dim.spacing * 1.5 + 1}px)`;
-
-
+export const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+export const SendGridAPI = {
+  endpoint: "https://app.sgwidget.com/v2/api/newsletter-signup",
+  token: "52447a454fad5b9fe4973c939fbae918",
+};
 
 export type Feature = {
   label: string;

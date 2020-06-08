@@ -1,6 +1,8 @@
 import express, { Request, Response } from "express";
 
-require("dotenv").config();
+const env = require("dotenv").config().parsed;
+const port = process.env.PORT || env.PORT;
+
 let app = require("./server").default;
 
 if (module.hot) {
@@ -17,6 +19,6 @@ if (module.hot) {
 
 express()
   .use((req: Request, res: Response) => app.handle(req, res))
-  .listen(process.env.PORT || 3000, () => {
-    console.log(`Switcheo Website is running: http://localhost:${process.env.PORT || 3000}`);
+  .listen(port || 3000, () => {
+    console.log(`Switcheo Website is running: http://localhost:${port || 3000}`);
   });

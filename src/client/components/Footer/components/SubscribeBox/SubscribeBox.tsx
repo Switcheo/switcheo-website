@@ -1,27 +1,29 @@
-import { Box, IconButton, FormControlLabel, Checkbox, TextField, Typography, InputAdornment } from "@material-ui/core";
+import { Box, IconButton, FormControlLabel, Checkbox, TextField, Typography, InputAdornment, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
-import React from "react";
+import React, { useState } from "react";
 import FooterTitle from "../FooterTitle";
 import SwitcheoLogo from "../../../SwitcheoLogo";
+import { Paths, SendGridAPI, emailRegex } from "../../../../constants";
 
 const useStyles = makeStyles(theme => ({
   root: {
+    width: "100%",
     [theme.breakpoints.down("sm")]: {
       marginBottom: theme.spacing(6),
     },
   },
   textfield: {
-    marginTop: theme.spacing(4),
     width: "100%",
-    [theme.breakpoints.down("sm")]: {
-      marginTop: theme.spacing(1),
-    },
     "&:hover $logoIcon": {
       transform: "rotate(0)",
     },
   },
   form: {
+    marginBottom: theme.spacing(4),
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: theme.spacing(1),
+    },
     "&>span": {
       marginBottom: 0,
     },
@@ -31,6 +33,9 @@ const useStyles = makeStyles(theme => ({
     fontSize: "18px",
     letterSpacing: "-0.5px",
     lineHeight: "20px",
+    "& a": {
+      color: theme.palette.primary.main,
+    }
   },
   logoIcon: {
     color: "#fff",
@@ -44,6 +49,32 @@ const useStyles = makeStyles(theme => ({
 const SubscribeBox: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   const { children, className, ...rest } = props;
   const classes = useStyles();
+  const [ackTerms, setAckTerms] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+
+  const onSubscribe = async () => {
+    if (loading) return;
+    if (!email.match(emailRegex)) return setError("Please enter a valid email address");
+    if (!ackTerms) return setError("Please tick the box to accept our conditions");
+    setError("");
+    try {
+      const body = new FormData();
+      body.append("email", email);
+      body.append("first_name", "");
+      body.append("last_name", "");
+      body.append("token", SendGridAPI.token);
+      const response = await fetch(SendGridAPI.endpoint, { method: "POST", body });
+      setError("Check your email to confirm subscription");
+    } catch (error) {
+      if (error && error.message)
+        setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <Box {...rest} className={cls(classes.root, className)}>
       <FooterTitle>Subscribe to our mailing list</FooterTitle>
@@ -51,13 +82,24 @@ const SubscribeBox: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any
       <FormControlLabel
         control={<Checkbox color="primary" />}
         className={classes.form}
-        label={<Typography className={classes.checkboxText} variant="body2" color="primary">I understand and consent to the Privacy Policy</Typography>} />
+        onChange={(e, checked) => setAckTerms(checked)}
+        label={(
+          <Typography className={classes.checkboxText} variant="body2" color="primary">
+            I understand and consent to the{" "}
+            <a href={Paths.privacy_policy}>Privacy Policy</a>
+          </Typography>
+        )} />
 
-      <TextField className={classes.textfield} variant="filled" placeholder="john@example.com"
+        {!!error && <Typography variant="body2" color="error">{error}</Typography>}
+      <TextField
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) => setEmail(event.target.value)}
+        className={classes.textfield}
+        variant="filled"
+        placeholder="john@example.com"
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <IconButton>
+              <IconButton onClick={onSubscribe} disabled={loading}>
                 <SwitcheoLogo className={classes.logoIcon} />
               </IconButton>
             </InputAdornment>
