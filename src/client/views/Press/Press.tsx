@@ -1,14 +1,20 @@
-import { Box, Container, Divider, Typography, Grid, Button, Hidden } from "@material-ui/core";
+import { Box, Container, Link, Typography, Grid, Button, Hidden } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";
 import { useSelector } from "react-redux";
 import { ContentTitle, SwitcheoLogo, DateLabel } from "../../components";
 import { RootState } from "../../store/types";
+import { Press } from '../../store/content/types';
 
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.secondary.main,
+  },
+  link: {
+    '&:hover': {
+      textDecoration: "none",
+    },
   },
   content: {
     color: theme.palette.primary.main,
@@ -98,7 +104,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Press: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
+const _Press: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   const { children, className, ...rest } = props;
   const classes = useStyles();
   const pressData = useSelector((store: RootState) => store.Content.press);
@@ -108,24 +114,26 @@ const Press: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
       <Container maxWidth="lg" className={classes.content}>
         <ContentTitle>Press</ContentTitle>
 
-        {pressData.map((item: any, index: number) => (
-          <Box className={classes.itemContainer} key={index}>
-            <Hidden smUp>
-              <Typography className={classes.type} variant="body2">{item.type}</Typography>
-            </Hidden>
-            <Typography title={item.title} className={classes.title} variant="body1">{item.title}</Typography>
-            <Hidden xsDown>
-              <Typography className={classes.type} variant="body2">{item.type}</Typography>
-            </Hidden>
-            <Typography className={classes.date} variant="body2">
-              <DateLabel>{item.date}</DateLabel>
-            </Typography>
-            <SwitcheoLogo className={classes.icon} />
-          </Box>
+        {pressData.map((item: Press, index: number) => (
+          <Link className={classes.link} href={item.link} target="_blank">
+            <Box className={classes.itemContainer} key={index}>
+              <Hidden smUp>
+                <Typography className={classes.type} variant="body2">{item.type}</Typography>
+              </Hidden>
+              <Typography title={item.title} className={classes.title} variant="body1">{item.title}</Typography>
+              <Hidden xsDown>
+                <Typography className={classes.type} variant="body2">{item.type}</Typography>
+              </Hidden>
+              <Typography className={classes.date} variant="body2">
+                <DateLabel>{item.date}</DateLabel>
+              </Typography>
+              <SwitcheoLogo className={classes.icon} />
+            </Box>
+          </Link>
         ))}
       </Container>
     </Box>
   );
 };
 
-export default Press;
+export default _Press;
