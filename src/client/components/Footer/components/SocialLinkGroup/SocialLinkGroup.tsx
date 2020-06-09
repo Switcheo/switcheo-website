@@ -15,6 +15,8 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     flexDirection: "row",
+    flexWrap: "wrap",
+    marginLeft: `calc(-6px - ${theme.spacing(1)}px)`,
     [theme.breakpoints.down("sm")]: {
       marginLeft: -theme.spacing(2),
       marginRight: -theme.spacing(2),
@@ -24,10 +26,10 @@ const useStyles = makeStyles(theme => ({
     },
     "& a": {
       minWidth: 0,
-      padding: theme.spacing(.75),
-      margin: theme.spacing(0, .5),
+      padding: 6,
+      margin: theme.spacing(0, 1),
       [theme.breakpoints.down("sm")]: {
-        margin: theme.spacing(0, 2),
+        margin: theme.spacing(0, 2, 1.5),
       },
       "& svg": {
         width: 30,

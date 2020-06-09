@@ -46,7 +46,9 @@ const useStyles = makeStyles(theme => ({
     },
   },
   navContainer: {
-    width: `calc(min(50vw, 640px) - ${Dim.spacing * 1.5 + 1}px + ${theme.spacing(3)}px)`,
+    width: '50vw',
+    maxWidth: '640px',
+    // width: `calc(min(50vw, 640px) - ${Dim.spacing * 1.5 + 1}px + ${theme.spacing(3)}px)`,
     marginRight: theme.spacing(3 - 1.5),
     marginLeft: theme.spacing(-1.5),
     marginTop: theme.spacing(1.5),

@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<!-- 
+<!--
   <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{WEBSITE_URL}}/apple-touch-icon-57x57.png" />
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{WEBSITE_URL}}/apple-touch-icon-114x114.png" />
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{WEBSITE_URL}}/apple-touch-icon-72x72.png" />
@@ -62,6 +62,17 @@
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root">{{HTML_CONTENT}}</div>
   <div id="static-document" style="visibility: hidden;">{{STATIC_DOCUMENT}}</div>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119697219-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-119697219-1');
+  </script>
+
   <script>
     window.__PRELOADED_STATE__ = "{{PRELOADED_STATE}}";
   </script>
