@@ -114,12 +114,11 @@ const typography = (theme: Theme): TypographyOptions => ({
   },
   body2: {
     color: palette.text.secondary,
+    letterSpacing: "-0.25px",
     fontSize: "24px",
-    letterSpacing: "-0.75px",
     lineHeight: "32px",
     [theme.breakpoints.down("md")]: {
       fontSize: "18px",
-      letterSpacing: "-0.75px",
       lineHeight: "22px",
     },
   },

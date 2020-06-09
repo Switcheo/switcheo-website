@@ -69,7 +69,7 @@ const useStyles = makeStyles(theme => ({
   description: {
     color: theme.palette.primary.main,
     marginBottom: theme.spacing(2),
-    lineHeight: 1.2,
+    lineHeight: 1.25,
     minHeight: 200,
     [theme.breakpoints.down("sm")]: {
       minHeight: 0,

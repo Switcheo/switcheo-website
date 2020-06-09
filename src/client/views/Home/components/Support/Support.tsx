@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     //   maxWidth: 600,
     // },
     [theme.breakpoints.down("md")]: {
-      maxWidth: 280,
+      maxWidth: 340,
     },
     [theme.breakpoints.down("sm")]: {
       maxWidth: "unset",

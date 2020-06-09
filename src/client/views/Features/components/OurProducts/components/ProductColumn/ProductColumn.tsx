@@ -30,6 +30,22 @@ const useStyles = makeStyles(theme => ({
       minHeight: 0,
     },
   },
+  alternate: {
+    background: theme.palette.primary.main,
+    color: "#fff",
+    '& $content, & $title, & $icon': {
+      color: "#fff",
+    },
+    '& $divider': {
+      backgroundColor: "#fff",
+    },
+    '& $link': {
+      color: '#fff',
+      "&:hover svg, &:focus svg": {
+        color: '#fff',
+      },
+    }
+  },
   content: {
     color: theme.palette.primary.main,
     minHeight: 340,
@@ -59,41 +75,23 @@ const useStyles = makeStyles(theme => ({
   },
   link: {
     textDecoration: "none",
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    fontWeight: "bold",
-    "&:hover, &:focus": {
-      color: theme.palette.primary.dark,
-    },
-    "&:hover $linkIcon, &:focus $linkIcon": {
-      transform: "rotate(0)",
-      color: theme.palette.primary.dark,
-    },
-  },
-  linkIcon: {
-    display: "inline-block",
-    marginLeft: theme.spacing(1.5),
-    height: ".5em",
-    width: ".5em",
-    transition: "transform .05s ease-in-out",
-    transform: "rotate(45deg)",
   },
 }));
 
 const ProductColumn: React.FC<ProductColumnProps> = (props: any) => {
   const { children, product, className, ...rest } = props;
   const classes = useStyles();
+  const color = product.highlight ? 'textSecondary' : 'textPrimary'
   return (
-    <Box {...rest} className={cls(classes.root, className)}>
+    <Box {...rest} className={cls(classes.root, className, { [classes.alternate]: product.highlight })}>
       <SVGComponent className={classes.icon} url={product.icon} />
       <Divider className={classes.divider} />
       <Box className={classes.content}>
-        <Typography className={classes.title} variant="body2" color="primary">{product.title}</Typography>
-        <Typography variant="body2" color="primary">{product.descriptor}</Typography>
-        <ViewLink target="_blank" href={product.link} />
+        <Typography className={classes.title} variant="body2" color={color}>{product.title}</Typography>
+        <Typography variant="body2" color={color}>{product.descriptor}</Typography>
+        <ViewLink target="_blank" href={product.link} className={classes.link} />
         <Box flex={1} />
-        <Typography variant="body2" color="primary">{product.description}</Typography>
+        <Typography variant="body2" color={color}>{product.description}</Typography>
       </Box>
       <Divider className={classes.divider} />
     </Box>

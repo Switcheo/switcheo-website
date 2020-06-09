@@ -20,20 +20,20 @@ const useStyles = makeStyles(theme => ({
     fontWeight: "bold",
     cursor: "pointer",
     "&:hover, &:focus": {
-      color: theme.palette.primary.main,
-    },
-    "&:hover $icon, &:focus $icon": {
-      transform: "rotate(0)",
-      color: theme.palette.primary.main,
+      color: "inherit",
+      "& $icon": {
+        color: "inherit",
+        transform: "scale(0.5) rotate(0)",
+      },
     },
   },
   icon: {
     display: "inline-block",
-    marginLeft: theme.spacing(1),
-    height: ".5em",
-    width: ".5em",
+    marginLeft: theme.spacing(0),
     transition: "transform .05s ease-in-out",
-    transform: "rotate(45deg)",
+    transform: "scale(0.5) rotate(45deg)",
+    height: "1em",
+    width: "1em",
   },
 }));
 const ViewLink: React.FC<ViewLinkProps> = (props: ViewLinkProps) => {

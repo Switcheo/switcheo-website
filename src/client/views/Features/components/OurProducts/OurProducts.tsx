@@ -18,9 +18,10 @@ const PRODUCTS: Product[] = [{
   icon: urlSwitcheoIcon,
 }, {
   title: "Demex",
-  descriptor: "The Decentralised Mercantile Exchange",
+  descriptor: "The Decentralized Mercantile Exchange",
   description: "Demex is the first fully decentralized platform that supports any type of financial market possible. It is set to run on the Switcheo TradeHub decentralized trading protocol.",
   icon: urlDemexIcon,
+  highlight: true
 // }, {
 //   title: "ZilSwap",
 //   descriptor: "Atomic Swaps",
