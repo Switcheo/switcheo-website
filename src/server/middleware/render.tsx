@@ -38,7 +38,7 @@ const renderMiddleware = () => (req: Request, res: Response) => {
     STATIC_DOCUMENT: staticDocumentHtml,
     PRELOADED_STATE: JSON.stringify({ Content }).replace(/\"/g, "\\\""),
     WEBSITE_URL: origin || "",
-    CSS_CONTENT: `<style>${sheets.toString()}</style>`, // inline styles to initial html 
+    // CSS_CONTENT: `<style>${sheets.toString()}</style>`, // inline styles to initial html
   };
 
   Object.keys(htmlReplacements).forEach(key => {
