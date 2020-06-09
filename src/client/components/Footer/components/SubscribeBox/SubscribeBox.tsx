@@ -48,8 +48,9 @@ const useStyles = makeStyles(theme => ({
       transform: "rotate(0)",
     },
   },
-  errorText: {
-    paddingLeft: theme.spacing(2),
+  text: {
+    fontSize: "90%",
+    paddingLeft: theme.spacing(1),
   }
 }));
 const SubscribeBox: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
@@ -59,11 +60,12 @@ const SubscribeBox: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const onSubscribe = async () => {
     if (loading) return;
-    if (!email.match(emailRegex)) return setError("Please enter a valid email address");
-    if (!ackTerms) return setError("Please tick the box to accept our conditions");
+    if (!email.match(emailRegex)) return setError("Please enter a valid email address.");
+    if (!ackTerms) return setError("Please tick the checkbox to acknowledge our policy.");
     setError("");
     try {
       const body = new FormData();
@@ -72,7 +74,12 @@ const SubscribeBox: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any
       body.append("last_name", "");
       body.append("token", SendGridAPI.token);
       const response = await fetch(SendGridAPI.endpoint, { method: "POST", body });
-      setError("Check your email to confirm subscription");
+      if (response.ok) {
+        setSuccess("That worked! Check your email to confirm subscription.");
+      } else {
+        console.log(response)
+        setError("Failed to sign up, please try again later.");
+      }
     } catch (error) {
       if (error && error.message)
         setError(error.message);
@@ -111,7 +118,8 @@ const SubscribeBox: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any
           )
         }}
       />
-      {!!error && <Typography className={classes.errorText} variant="body2" color="error">{error}</Typography>}
+      {!!error && <Typography className={classes.text} variant="body2" color="error">{error}</Typography>}
+      {!!success && <Typography className={classes.text} variant="body2" color="primary">{success}</Typography>}
     </Box>
   );
 };
