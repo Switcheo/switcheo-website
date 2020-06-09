@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     textTransform: "none",
     padding: theme.spacing(.25, 0),
     lineHeight: "32px",
-    fontSize: 24,
+    fontSize: 22,
     textAlign: "left",
     justifyContent: "left",
     color: theme.palette.primary.main,

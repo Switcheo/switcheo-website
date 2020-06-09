@@ -70,6 +70,7 @@ export const loadAll = async (): Promise<{ [index: string]: any }> => {
     const key = staticDocument.key.replace(/\s+/g, "-").toLowerCase();
     documents[key] = staticDocument;
   }
+  console.log(documents)
 
   output.press = extractValues(pressResult.items);
   output.featuredIn = extractValues(featuredInResult.items);

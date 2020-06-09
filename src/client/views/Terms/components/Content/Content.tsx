@@ -34,6 +34,9 @@ const Content: React.FC<BoxProps> = (props: BoxProps) => {
   return (
     <Box {...rest} className={cls(classes.root, className)}>
       <Switch>
+        <Route path="/security-policy" exact>
+          <Typography variant="h2">Security Policy</Typography>
+        </Route>
         <Route path="/listing-policy" exact>
           <Typography variant="h2">Listing Policy</Typography>
         </Route>

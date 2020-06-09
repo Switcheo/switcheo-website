@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     borderTop: "1px solid",
     borderTopColor: "rgba(6, 60, 79, .3)",
     width: "100%",
-    marginBottom: theme.spacing(4.5),
+    marginBottom: theme.spacing(3),
     padding: theme.spacing(.5, 0),
   },
 }));

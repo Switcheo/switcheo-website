@@ -26,6 +26,7 @@ export const Paths = {
   terms_of_use: "/terms-of-use",
   privacy_policy: "/privacy-policy",
   listing_policy: "/listing-policy",
+  security_policy: "/security-policy",
 
   blog: "https://blog.switcheo.network/",
   support: "https://support.switcheo.network/",
@@ -33,14 +34,10 @@ export const Paths = {
   foundation: "https://switcheo.foundation/",
   referral: "https://blog.switcheo.network/switcheo-referral-program-invite-your-friends-get-rewarded/",
 
-  security: "https://hackerone.com/switcheo_network",
-  whitepaper: "https://switcheo.network/whitepaper_v1.pdf",
+  // whitepaper: "https://switcheo.network/whitepaper_v1.pdf",
   api_docs: "https://docs.switcheo.network/",
   apply_to_list: "https://docs.google.com/forms/d/1Uq01pZvqxG9FtFCpKMZeIT6uhu64VT2BrB2AS1XAXuQ/edit",
   media_kit: "https://switcheo.network/switcheo_mediakit.pdf",
-  // terms_of_use: "https://switcheo.network/terms.html",
-  // privacy_policy: "https://switcheo.network/privacy.html",
-  // listing_policy: "https://switcheo.network/listing.html",
 
   social_github: "https://github.com/switcheo",
   social_telegram: "https://t.me/switcheo",
