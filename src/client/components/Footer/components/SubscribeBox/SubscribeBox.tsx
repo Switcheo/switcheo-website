@@ -67,6 +67,7 @@ const SubscribeBox: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any
     if (!email.match(emailRegex)) return setError("Please enter a valid email address.");
     if (!ackTerms) return setError("Please tick the checkbox to acknowledge our policy.");
     setError("");
+    setSuccess("");
     try {
       const body = new FormData();
       body.append("email", email);
@@ -77,8 +78,8 @@ const SubscribeBox: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any
       if (response.ok) {
         setSuccess("That worked! Check your email to confirm subscription.");
       } else {
-        console.log(response)
         setError("Failed to sign up, please try again later.");
+        console.error(new Error(JSON.stringify(response, null, 4)))
       }
     } catch (error) {
       if (error && error.message)
