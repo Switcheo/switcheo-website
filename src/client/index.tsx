@@ -12,4 +12,9 @@ ReactDOM.render((
       <App />
     </BrowserRouter>
   </Provider>
-), document.getElementById("root"));
+), document.getElementById("root"), () => {
+  const ssStyles = document.getElementById('server-side-styles')
+  if (ssStyles) {
+    ssStyles.parentNode!.removeChild(ssStyles)
+  }
+});
