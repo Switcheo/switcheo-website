@@ -32,6 +32,7 @@ const useStyles = makeStyles(theme => ({
   },
   content: {
     padding: theme.spacing(3),
+    paddingTop: theme.spacing(6),
   },
   divider: {
     backgroundColor: theme.palette.secondary.main,
@@ -45,6 +46,7 @@ const useStyles = makeStyles(theme => ({
   },
   jobContent: {
     marginTop: 200,
+    marginBottom: theme.spacing(8),
 
     [theme.breakpoints.down("md")]: {
       marginTop: 100,
@@ -70,7 +72,7 @@ const useStyles = makeStyles(theme => ({
       lineHeight: "34px",
       letterSpacing: "-.5px",
     },
-    "&:hover": {
+    "&:hover, &:focus": {
       color: theme.palette.secondary.dark,
       borderBottom: `1px solid ${theme.palette.secondary.dark}`,
       "& $icon": {
@@ -115,7 +117,10 @@ const Culture: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => 
         <Typography variant="subtitle1" color="secondary">
           At Switcheo, we start small, think big, and learn fast.
           We strive to create a diverse workspace that is encouraging,
-          positive, and inclusive. We are a team of agile, bold, and
+          positive, and inclusive.
+        </Typography>
+        <Typography variant="subtitle1" color="secondary">
+          We are a team of agile, bold, and
           innovative individuals in a growth-oriented environment. Our
           flexibility and diversity create a culture where people share
           knowledge and ideas freely and bring out the best in each

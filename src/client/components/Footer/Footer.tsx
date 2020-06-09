@@ -20,7 +20,8 @@ const useStyles = makeStyles(theme => ({
     },
   },
   content: {
-    margin: theme.spacing(3, 0),
+    paddingTop: theme.spacing(8),
+    marginBottom: theme.spacing(3),
     minHeight: minBlockHeight,
     [theme.breakpoints.down("sm")]: {
       minHeight: 0,

@@ -84,6 +84,7 @@ const useStyles = makeStyles(theme => ({
   label: {
     color: theme.palette.primary.main,
     fontWeight: "bold",
+    marginBottom: theme.spacing(1),
   },
   icon: {
     color: theme.palette.primary.main,
@@ -95,7 +96,7 @@ const FeatureColumn: React.FC<FeatureColumnProps> = (props: any) => {
   const { children, feature, index, className, ...rest } = props;
   const classes = useStyles(props);
 
-  const inversed = index % 2 === 0;
+  const inversed = index === 2 || index === 4;
   return (
     <Box {...rest} className={cls(classes.root, { [classes.inverse]: inversed }, className)}>
       <Box className={classes.container}>

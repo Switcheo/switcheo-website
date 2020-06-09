@@ -6,28 +6,16 @@ import { useSelector } from "react-redux";
 import { ContentTitle, SwitcheoLogo, DateLabel } from "../../components";
 import { RootState } from "../../store/types";
 
-const PRESS = [{
-  title: "The journey of a blockchain pioneer",
-  type: "Interview",
-  date: "7 days ago",
-}, {
-  title: "The journey of a blockchain pioneer",
-  type: "Interview",
-  date: "7 days ago",
-}, {
-  title: "The journey of a blockchain pioneer",
-  type: "Interview",
-  date: "7 days ago",
-}];
-
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.secondary.main,
   },
   content: {
-    marginTop: theme.spacing(3),
     color: theme.palette.primary.main,
+    minHeight: "80vh",
+    marginTop: theme.spacing(3),
     padding: theme.spacing(3),
+    paddingTop: theme.spacing(6),
     [theme.breakpoints.down("md")]: {
       marginTop: 0,
     },
@@ -45,7 +33,7 @@ const useStyles = makeStyles(theme => ({
       alignItems: "unset",
       marginBottom: theme.spacing(6)
     },
-    "&:hover": {
+    "&:hover, &:focus": {
       "& $title,$date,$type,$icon": {
         color: theme.palette.primary.light,
       },

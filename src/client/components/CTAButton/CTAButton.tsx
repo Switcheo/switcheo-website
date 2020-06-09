@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("sm")]: {
       marginTop: theme.spacing(3),
     },
-    "&:hover $ctaIcon": {
+    "&:hover $ctaIcon, &:focus $ctaIcon": {
       transform: "rotate(0)",
     },
   },
@@ -30,6 +30,10 @@ const useStyles = makeStyles(theme => ({
     transform: "rotate(45deg)",
     height: "22px",
     width: "22px",
+    [theme.breakpoints.down("md")]: {
+      height: "16px",
+      width: "16px",
+    },
     [theme.breakpoints.down("sm")]: {
       transform: "rotate(0)",
     },

@@ -43,7 +43,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   description: {
-    marginBottom: theme.spacing(2),
+    margin: theme.spacing(2, 0),
   },
   descriptor: {
     marginBottom: 0,
@@ -60,6 +60,7 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
   },
   icon: {
+    marginTop: theme.spacing(3),
     height: 146,
     width: 146,
   },
@@ -89,7 +90,6 @@ const HomeFeatureColumn: React.FC<HomeFeatureColumnProps> = (props: any) => {
         <Hidden smDown>
           <Divider className={classes.divider} />
           <SVGComponent className={classes.icon} url={feature.icon} />
-          <Divider className={classes.divider} />
         </Hidden>
       </Box>
     </Box>

@@ -10,6 +10,9 @@ import { useSelector } from "react-redux";
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: "#DEDEDE",
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(4, 3, 6),
+    },
   },
   wrapper: {
     flex: 1,
@@ -29,6 +32,7 @@ const useStyles = makeStyles(theme => ({
   },
   divider: {
     borderTop: `1px solid ${theme.palette.primary.main}`,
+    marginBottom: 4,
   },
   preview: {
     fontSize: "20px",
@@ -65,7 +69,7 @@ const Blog: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
               <Grid className={classes.item} key={index} item xs={12} sm={6}>
                 <Divider className={classes.divider} />
                 <Typography className={classes.txtLink} variant="body2" component="a" href={item.url} target="_blank">{item.title}</Typography>
-                <Divider className={classes.divider} />
+                {/* <Divider className={classes.divider} /> */}
                 <Typography className={classes.preview} color="primary" variant="body2">
                   {item.preview}
                 </Typography>

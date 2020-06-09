@@ -9,17 +9,20 @@ import { TeamMember } from "../../store/content/types";
 
 export type Team = {
   title: string;
-  description?: string;
-  members: TeamMember[];
+  description?: string[];
 }
 
 const TEAMS: Team[] = [{
   title: "Core team",
-  description: "Our management, operational, and engineering team is based in our head office in Singapore. We are supported by a round-the-clock community & support team to help you take your first step into trading, or make your first crypto purchase safely.",
-  members: []
+  description: [
+    "Our management, operational, and engineering team is based in our head office in Singapore.",
+    "We are supported by a round-the-clock community & support team to help you take your first step into trading, or make your first crypto purchase safely.",
+  ],
 }, {
   title: "Advisory and Community",
-  members: []
+  description: [
+    "A world-class advisory board and community team welcomes you every single day."
+  ],
 }];
 
 const useStyles = makeStyles(theme => ({
@@ -27,11 +30,12 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.primary.main,
   },
   description: {
-    marginTop: 4,
+    marginTop: theme.spacing(1),
   },
   content: {
     marginTop: theme.spacing(3),
     padding: theme.spacing(3),
+    paddingTop: theme.spacing(6),
     [theme.breakpoints.down("sm")]: {
       marginTop: 0,
     }
@@ -52,10 +56,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("sm")]: {
       marginTop: theme.spacing(3),
     },
-    "& h3": {
-      fontSize: 35,
-      marginBottom: theme.spacing(3),
-    },
   },
   member: {
     display: "flex",
@@ -75,6 +75,9 @@ const useStyles = makeStyles(theme => ({
       borderTop: `1px solid ${theme.palette.secondary.main}`,
       "&:last-child": {
         borderBottom: `1px solid ${theme.palette.secondary.main}`,
+      },
+      "&:first-child": {
+        borderTop: 'none',
       }
     },
   },
@@ -107,6 +110,7 @@ const useStyles = makeStyles(theme => ({
     lineHeight: "30px",
     marginBottom: -1,
     borderBottom: `1px solid transparent`,
+    transition: "all .05s ease-in-out",
     [theme.breakpoints.down("md")]: {
       fontSize: "22px",
       letterSpacing: "-0.75px",
@@ -115,7 +119,7 @@ const useStyles = makeStyles(theme => ({
     "&:last-child": {
       borderBottom: `1px solid ${theme.palette.secondary.main}`,
     },
-    "&:hover": {
+    "&:hover, &:focus": {
       zIndex: 1,
       position: "relative",
       borderTop: `1px solid ${theme.palette.secondary.dark}`,
@@ -186,7 +190,11 @@ const Story: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
             <Grid container>
               <Grid item md={12} lg={4}>
                 <Divider className={classes.divider} />
-                <Typography variant="body1" color="secondary">{team.description}</Typography>
+                {
+                  team.description && team.description.map(d =>
+                    <Typography className={classes.description} variant="body1" color="secondary">{d}</Typography>
+                  )
+                }
               </Grid>
               <Grid item md={12} lg={8}>
                 <Box className={classes.memberContainer}>

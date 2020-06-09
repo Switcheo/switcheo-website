@@ -36,6 +36,9 @@ const App = () => {
           <Route path={Paths.privacy_policy} exact>
             <Terms />
           </Route>
+          <Route path={Paths.security_policy} exact>
+            <Terms />
+          </Route>
           <Route path={Paths.listing_policy} exact>
             <Terms />
           </Route>

@@ -19,13 +19,9 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "row",
     width: "100%",
     borderTop: `1px solid ${theme.palette.primary.main}`,
-    "&:last-child": {
-      borderBottom: `1px solid ${theme.palette.primary.main}`,
-    },
-    padding: theme.spacing(0, 0, 1.5),
-    [theme.breakpoints.down("md")]: {
-      padding: theme.spacing(0, 0, 1),
-    },
+    paddingTop: theme.spacing(0.25),
+    paddingBottom: theme.spacing(1),
+    marginBottom: theme.spacing(2),
   },
   link: {
     flex: 1,
@@ -35,17 +31,12 @@ const useStyles = makeStyles(theme => ({
     transition: "color .2s ease-in-out",
     textDecoration: "none",
     padding: 0,
+    fontSize: 42,
+    lineHeight: 1.2,
+    letterSpacing: "-1px",
     "&:hover": {
       color: theme.palette.secondary.main,
       cursor: "pointer",
-    },
-    fontSize: 96,
-    letterSpacing: "-5px",
-    lineHeight: "100px",
-    [theme.breakpoints.down("md")]: {
-      fontSize: 58,
-      letterSpacing: "-3.05px",
-      lineHeight: "55px",
     },
   },
   icon: {

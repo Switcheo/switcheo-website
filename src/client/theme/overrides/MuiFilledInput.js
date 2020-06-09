@@ -15,6 +15,6 @@ export default theme => ({
     },
   },
   input: {
-    padding: theme.spacing(3),
+    padding: theme.spacing(1.5, 2.5),
   },
 });

@@ -7,6 +7,9 @@ import { Paths } from "../../../../constants";
 
 const useStyles = makeStyles(theme => ({
   root: {
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(4, 3, 6),
+    },
   },
   description: {
     maxWidth: 480,
@@ -27,10 +30,10 @@ const Support: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => 
   const classes = useStyles();
   return (
     <ContentSection {...rest} className={cls(classes.root, className)}>
-      <ContentTitle>Need support?</ContentTitle>
+      <ContentTitle>Need help?</ContentTitle>
       <Typography variant="body1" color="primary" className={classes.description}>
-      We listen to your needs and we are available 24/7. 
-      Visit our support center for advice and answers 
+      We listen to your needs and we are available 24/7.
+      Visit our support center for advice and answers
       from the Switcheo team.
       </Typography>
       <Box flex={1} />

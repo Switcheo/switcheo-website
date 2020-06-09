@@ -10,6 +10,9 @@ import { RootState } from "../../../../store/types";
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.secondary.main,
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(4, 3, 6),
+    },
   },
   wrapper: {
     margin: theme.spacing(0, -1.5),

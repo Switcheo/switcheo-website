@@ -6,12 +6,15 @@ import { ContentSection, ContentTitle, CTAButton } from "../../../../components"
 import urlDemexIcon from "./assets/demex-logo.svg";
 import urlFoundationIcon from "./assets/foundation-logo.svg";
 import urlSwitcheoIcon from "./assets/switcheo-logo.svg";
-import urlZilswapIcon from "./assets/zilswap-logo.svg";
+// import urlZilswapIcon from "./assets/zilswap-logo.svg";
 import ProductEntry from "./components";
 import { Paths } from "../../../../constants";
 
 const useStyles = makeStyles(theme => ({
   root: {
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(4, 3, 6),
+    },
   },
   container: {
     flex: 1,
@@ -51,16 +54,16 @@ const Products: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
       <Box className={classes.container}>
         <ContentTitle large>Our ecosystem</ContentTitle>
         <Typography className={classes.description} color="primary" variant="body1">
-          As pioneers of the decentralized world, we constantly 
-          dive headfirst into new realms. We build unstoppable 
-          products that enable a global financial ecosystem 
+          As pioneers of the decentralized world, we constantly
+          dive headfirst into new realms. We build unstoppable
+          products that enable a global financial ecosystem
           without unjust barriers or unnecessary intermediaries.
         </Typography>
 
         <Box className={classes.products}>
           <ProductEntry iconUrl={urlSwitcheoIcon} href={Paths.exchange}>Switcheo Exchange</ProductEntry>
           <ProductEntry iconUrl={urlDemexIcon}>Demex</ProductEntry>
-          <ProductEntry iconUrl={urlZilswapIcon}>ZilSwap</ProductEntry>
+          {/* <ProductEntry iconUrl={urlZilswapIcon}>ZilSwap</ProductEntry> */}
           <ProductEntry iconUrl={urlFoundationIcon} href={Paths.foundation}>Switcheo Foundation</ProductEntry>
         </Box>
 

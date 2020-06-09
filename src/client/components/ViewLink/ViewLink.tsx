@@ -11,25 +11,25 @@ export interface ViewLinkProps extends React.HTMLAttributes<HTMLButtonElement> {
 
 const useStyles = makeStyles(theme => ({
   root: {
-    fontSize: "20px",
-    lineHeight: "22px",
+    fontSize: "95%",
     textDecoration: "none",
     display: "flex",
     marginTop: theme.spacing(1),
     flexDirection: "row",
     alignItems: "center",
     fontWeight: "bold",
-    "&:hover": {
-      color: theme.palette.primary.light,
+    cursor: "pointer",
+    "&:hover, &:focus": {
+      color: theme.palette.primary.main,
     },
-    "&:hover $icon": {
+    "&:hover $icon, &:focus $icon": {
       transform: "rotate(0)",
-      color: theme.palette.primary.light,
+      color: theme.palette.primary.main,
     },
   },
   icon: {
     display: "inline-block",
-    marginLeft: theme.spacing(1.5),
+    marginLeft: theme.spacing(1),
     height: ".5em",
     width: ".5em",
     transition: "transform .05s ease-in-out",

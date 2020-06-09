@@ -19,13 +19,16 @@ const useStyles = makeStyles(theme => ({
       marginLeft: -theme.spacing(2),
       marginRight: -theme.spacing(2),
       width: `calc(100% + ${theme.spacing(4)}px)`,
-      marginBottom: theme.spacing(3),
-      justifyContent: "space-between",
+      marginBottom: theme.spacing(4.5),
+      justifyContent: "center",
     },
     "& a": {
       minWidth: 0,
       padding: theme.spacing(.75),
       margin: theme.spacing(0, .5),
+      [theme.breakpoints.down("sm")]: {
+        margin: theme.spacing(0, 2),
+      },
       "& svg": {
         width: 30,
         height: 30,

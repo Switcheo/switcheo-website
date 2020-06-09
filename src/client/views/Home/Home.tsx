@@ -13,6 +13,7 @@ import urlImageSupport from "./assets/support-square.png";
 
 const useStyles = makeStyles(theme => ({
   root: {
+    paddingBottom: theme.spacing(10),
   },
   switcheoIcon: {
     height: "100%",

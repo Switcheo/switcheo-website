@@ -12,6 +12,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.secondary.main,
     [theme.breakpoints.down("sm")]: {
       minHeight: 0,
+      padding: theme.spacing(4, 3, 6),
     },
   },
   wrapper: {

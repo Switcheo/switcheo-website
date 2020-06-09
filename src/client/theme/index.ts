@@ -22,6 +22,11 @@ const flavour = (component, theme) => {
 const flavouringTheme = createMuiTheme({ palette });
 const AppTheme = createMuiTheme({
   // @ts-ignore
+  props: {
+    MuiButtonBase: {
+      disableRipple: true,
+    },
+  },
   overrides: flavour(overrides, flavouringTheme),
   palette,
   typography: flavour(typography, flavouringTheme),

@@ -10,6 +10,9 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
     alignItems: "flex-start",
     backgroundColor: theme.palette.primary.main,
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(4, 3, 6),
+    },
   },
   title: {
     maxWidth: 300,

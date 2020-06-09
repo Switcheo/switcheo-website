@@ -22,17 +22,31 @@ const typography = (theme: Theme): TypographyOptions => ({
     color: palette.text.primary,
     fontWeight: "bold",
     fontSize: "48px",
-    letterSpacing: "-1.5px",
     lineHeight: "48px",
-    marginBottom: "30px",
+    letterSpacing: "-1.5px",
+    marginBottom: theme.spacing(3),
     [theme.breakpoints.down("md")]: {
       fontSize: "32px",
       letterSpacing: "-1px",
       lineHeight: "32px",
-      marginBottom: "23px",
+      marginBottom: theme.spacing(2),
     },
   },
   h3: {
+    color: palette.text.primary,
+    fontWeight: "bold",
+    fontSize: "35px",
+    lineHeight: "35px",
+    letterSpacing: "-1.5px",
+    marginBottom: theme.spacing(3),
+    [theme.breakpoints.down("md")]: {
+      fontSize: "28px",
+      lineHeight: "28px",
+      letterSpacing: "-1px",
+      marginBottom: theme.spacing(2),
+    },
+  },
+  h4: {
     color: palette.text.primary,
     fontWeight: "bold",
     fontSize: "24px",
@@ -42,14 +56,6 @@ const typography = (theme: Theme): TypographyOptions => ({
       letterSpacing: "-0.75px",
       lineHeight: "20px",
     },
-  },
-  h4: {
-    color: palette.text.primary,
-    fontSize: "22px",
-    letterSpacing: "0",
-    lineHeight: "22px",
-    fontWeight: "bold",
-    marginBottom: 40,
   },
   h5: {
     color: palette.text.primary,
@@ -66,22 +72,21 @@ const typography = (theme: Theme): TypographyOptions => ({
     lineHeight: "20px"
   },
   subtitle1: {
-    fontSize: 40,
+    fontSize: 36,
     marginBottom: theme.spacing(3),
-    lineHeight: "44px",
-    letterSpacing: "-1.2px",
+    lineHeight: 1.25,
+    letterSpacing: "-.25px",
 
     [theme.breakpoints.down("md")]: {
-      fontSize: 32,
-      lineHeight: "36px",
-      letterSpacing: "-.5px",
+      fontSize: 28,
+      lineHeight: 1.3,
+      letterSpacing: "0",
       marginBottom: theme.spacing(2),
     },
 
     [theme.breakpoints.down("sm")]: {
-      fontSize: 16,
-      lineHeight: "20px",
-      letterSpacing: "-.5px",
+      fontSize: 22,
+      marginBottom: theme.spacing(5),
     },
   },
   subtitle2: {
@@ -94,18 +99,17 @@ const typography = (theme: Theme): TypographyOptions => ({
   body1: {
     color: palette.text.secondary,
     fontSize: "24px",
-    letterSpacing: "-0.75px",
-    lineHeight: "30px",
-    marginBottom: theme.spacing(1),
-    // [theme.breakpoints.up("xl")]: {
-    //   fontSize: "32px",
-    //   letterSpacing: "-1px",
-    //   lineHeight: "36px",
-    // },
+    letterSpacing: "-0.25px",
+    lineHeight: 1.25,
+    marginBottom: theme.spacing(1.5),
     [theme.breakpoints.down("md")]: {
       fontSize: "22px",
-      letterSpacing: "-0.75px",
-      lineHeight: "24px",
+      lineHeight: 1.3,
+      letterSpacing: "0",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "19px",
+      marginBottom: theme.spacing(2),
     },
   },
   body2: {

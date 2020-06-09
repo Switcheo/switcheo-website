@@ -15,29 +15,32 @@ const useStyles = makeStyles(theme => ({
   },
   textfield: {
     width: "100%",
-    "&:hover $logoIcon": {
+    "&:hover $logoIcon, &:focus $logoIcon": {
       transform: "rotate(0)",
     },
   },
   form: {
-    marginBottom: theme.spacing(4),
-    [theme.breakpoints.down("sm")]: {
-      marginBottom: theme.spacing(1),
-    },
+    marginBottom: theme.spacing(1),
     "&>span": {
       marginBottom: 0,
     },
   },
   checkboxText: {
     fontWeight: "bold",
-    fontSize: "18px",
+    fontSize: "19px",
+    lineHeight: "19px",
     letterSpacing: "-0.5px",
-    lineHeight: "20px",
     "& a": {
       color: theme.palette.primary.main,
-    }
+    },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "15px",
+      lineHeight: 1.2,
+    },
   },
   logoIcon: {
+    height: 16,
+    width: 16,
     color: "#fff",
     transition: "transform .05s ease-in-out",
     transform: "rotate(45deg)",
@@ -45,6 +48,9 @@ const useStyles = makeStyles(theme => ({
       transform: "rotate(0)",
     },
   },
+  errorText: {
+    paddingLeft: theme.spacing(2),
+  }
 }));
 const SubscribeBox: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   const { children, className, ...rest } = props;
@@ -90,7 +96,6 @@ const SubscribeBox: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any
           </Typography>
         )} />
 
-        {!!error && <Typography variant="body2" color="error">{error}</Typography>}
       <TextField
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => setEmail(event.target.value)}
         className={classes.textfield}
@@ -106,6 +111,7 @@ const SubscribeBox: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any
           )
         }}
       />
+      {!!error && <Typography className={classes.errorText} variant="body2" color="error">{error}</Typography>}
     </Box>
   );
 };

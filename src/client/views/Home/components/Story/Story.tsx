@@ -9,12 +9,16 @@ import { Paths } from "../../../../constants";
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.primary.main,
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(4, 3, 6),
+    },
   },
   bigNumber: {
     fontWeight: "bold",
     textAlign: "center",
     fontSize: "427px",
     lineHeight: "350px",
+    marginBottom: theme.spacing(4),
     [theme.breakpoints.down("md")]: {
       fontSize: "312px",
       lineHeight: "268px",

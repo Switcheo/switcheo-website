@@ -23,7 +23,7 @@ const FooterTitle: React.FC<FooterTitleProps> = (props: any) => {
 
   return (
     <Typography
-      variant="h3"
+      variant="h4"
       color="primary"
       {...rest}
       className={cls(classes.root, className)}>

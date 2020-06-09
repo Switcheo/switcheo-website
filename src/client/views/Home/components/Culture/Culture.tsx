@@ -9,10 +9,14 @@ import { Paths } from "../../../../constants";
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: theme.palette.primary.main,
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(4, 3, 6),
+    },
   },
   description: {
     maxWidth: 480,
     marginRight: "auto",
+    marginBottom: theme.spacing(1.5),
     // [theme.breakpoints.up("xl")]: {
     //   maxWidth: 600,
     // },
@@ -51,10 +55,15 @@ const Culture: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => 
         <Typography variant="body1" color="secondary" className={classes.description}>
           At Switcheo, we start small, think big, and learn fast.
           We strive to create a diverse workspace that is
-          encouraging, positive, and inclusive. We are a team of
-          agile, bold, and innovative individuals with unshakable
-          values. Our flexibility and diversity creates a culture
-          where people share knowledge and ideas freely and bring 
+          encouraging, positive, and inclusive.
+        </Typography>
+        <Typography variant="body1" color="secondary" className={classes.description}>
+          We are a team of agile, bold, and innovative individuals
+          with unshakable values.
+        </Typography>
+        <Typography variant="body1" color="secondary" className={classes.description}>
+          Our flexibility and diversity creates a culture
+          where people share knowledge and ideas freely and bring
           out the best in each other.
         </Typography>
         <Hidden smDown>

@@ -43,10 +43,9 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "row",
     color: theme.palette.primary.main,
+    fontWeight: "bold",
     textDecoration: "none",
-    "& span": {
-      fontWeight: "bold",
-    },
+    marginBottom: theme.spacing(1),
   },
   divider: {
     backgroundColor: theme.palette.primary.main,
@@ -64,10 +63,10 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "row",
     alignItems: "center",
     fontWeight: "bold",
-    "&:hover": {
+    "&:hover, &:focus": {
       color: theme.palette.primary.dark,
     },
-    "&:hover $linkIcon": {
+    "&:hover $linkIcon, &:focus $linkIcon": {
       transform: "rotate(0)",
       color: theme.palette.primary.dark,
     },

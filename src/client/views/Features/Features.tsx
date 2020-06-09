@@ -6,9 +6,7 @@ import { KeyFeatures, OurProducts } from "./components";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    [theme.breakpoints.down("sm")]: {
-      padding: 0,
-    }
+    paddingBottom: theme.spacing(10),
   },
 }));
 const Features: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
