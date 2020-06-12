@@ -1,14 +1,36 @@
-import { AppBar, Box, IconButton, Hidden, Grid, Typography } from "@material-ui/core";
+import { AppBar, Box, IconButton, Hidden, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState } from "react";
+import cls from "classnames";
 import useScroll from "../../utils/useScroll";
 import SwitcheoBrand from "../SwitcheoBrand";
 
-import { Dim, minBlockHeight, Paths } from "../../constants";
+import { Dim, Paths } from "../../constants";
 import { NavMenu, HeaderLink } from "./components";
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    zIndex: 100,
+    backgroundColor: "#fff",
+    transition: 'box-shadow 0.3s ease-out 0s',
+    '&.elevated': {
+      transition: 'box-shadow 0.3s ease-out 0s',
+      '& $container': {
+        height: 52,
+        transition: 'height 0.3s ease-out 0.25s',
+      },
+      '& $brandIcon': {
+        width: 150,
+        top: theme.spacing(1.5),
+        transition: 'width 0.3s ease-out 0s, top 0.3s ease-out 0s',
+      },
+      '& $gridContainer': {
+        transform: `translateY(calc(-100% - ${theme.spacing(1.5)}px))`,
+        transition: 'transform 0.3s ease-out 0.25s',
+      },
+    },
+  },
   container: {
     display: "flex",
     flexDirection: "row",
@@ -16,14 +38,18 @@ const useStyles = makeStyles(theme => ({
     maxWidth: Dim.maxViewWidth,
     margin: "auto",
     height: Dim.headerHeight,
+    transition: 'height 0.3s ease-out 0s',
     [theme.breakpoints.down("xs")]: {
       height: Dim.mobileHeaderHeight,
       paddingBottom: 0,
     },
   },
-  header: {
-    zIndex: 100,
-    backgroundColor: "#fff",
+  brandIcon: {
+    position: 'absolute',
+    width: 321,
+    top: theme.spacing(3),
+    left: theme.spacing(3),
+    transition: 'width 0.3s ease-out 0.3s, top 0.3s ease-out 0.25s',
   },
   menuIcon: {
     color: theme.palette.primary.main,
@@ -36,39 +62,35 @@ const useStyles = makeStyles(theme => ({
       padding: theme.spacing(1.5, 2.5),
     },
   },
-  brandIcon: {
-    color: theme.palette.primary.main,
-    margin: theme.spacing(3),
-    width: 321,
-    [theme.breakpoints.down("xs")]: {
-      margin: theme.spacing(2.5),
-      width: 170,
-    },
-  },
   navContainer: {
+    overflow: 'hidden',
     width: '50vw',
     maxWidth: '640px',
     // width: `calc(min(50vw, 640px) - ${Dim.spacing * 1.5 + 1}px + ${theme.spacing(3)}px)`,
     marginRight: theme.spacing(3 - 1.5),
     marginLeft: theme.spacing(-1.5),
-    marginTop: theme.spacing(1.5),
-    marginBottom: theme.spacing(1.5),
+    paddingTop: theme.spacing(1.5),
+    paddingBottom: theme.spacing(1.5),
+  },
+  gridContainer: {
+    transition: 'transform 0.3s ease-out 0s',
   },
 }));
 const NavBar: React.FC<React.HTMLAttributes<HTMLDivElement>> = () => {
   const classes = useStyles();
   const [showMenu, setShowMenu] = useState<boolean>(false);
-  const [isScrollTop] = useScroll({ defaultState: true, rangeEnd: 0 });
+  const [isScrollTop] = useScroll({ defaultState: true, rangeEnd: 50 });
 
   const toggleMenu = (hide?: boolean) => {
     const newState = hide === false ? false : !showMenu;
     setShowMenu(newState);
   };
 
-  // elevation={isScrollTop ? 0 : 4} for topbar boxshadow
+  const elevation = isScrollTop ? 0 : 4
+
   return (
     <>
-      <AppBar className={classes.header} elevation={0}>
+      <AppBar className={cls(classes.root, { elevated: !!elevation })} elevation={elevation}>
         <Box className={classes.container} maxWidth="lg">
           <a href="/">
             <SwitcheoBrand className={classes.brandIcon} />
@@ -76,7 +98,7 @@ const NavBar: React.FC<React.HTMLAttributes<HTMLDivElement>> = () => {
           <Box flex={1} />
           <Hidden smDown>
             <Box className={classes.navContainer}>
-              <Grid container>
+              <Grid className={classes.gridContainer} container>
                 <Grid item xs={4}>
                   <HeaderLink href={Paths.home}>Home</HeaderLink>
                   <HeaderLink href={Paths.exchange} target="_blank">Start trading</HeaderLink>
