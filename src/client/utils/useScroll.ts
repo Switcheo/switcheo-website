@@ -9,7 +9,7 @@ export interface ScrollListenerOptions {
   debounce?: number;
 }
 
-export default function useScroll({ defaultState = false, rangeStart, rangeEnd, onChange, debounce = 200 }: ScrollListenerOptions) {
+export default function useScroll({ defaultState = false, rangeStart, rangeEnd, onChange, debounce = 100 }: ScrollListenerOptions) {
   const [inRange, setInRange] = useState(defaultState);
   const [debounceTimeoutId, setDebounceTimeoutId] = useState<NodeJS.Timeout>();
   const [lastTimestamp, setLastTimestamp] = useState(0);

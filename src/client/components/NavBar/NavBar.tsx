@@ -16,22 +16,29 @@ const useStyles = makeStyles(theme => ({
     transition: 'box-shadow 0.3s ease-out 0s',
     '&.elevated': {
       transition: 'box-shadow 0.3s ease-out 0s',
-      '& $container': {
-        height: 52,
-        transition: 'height 0.3s ease-out 0.25s',
-      },
       '& $brandIcon': {
         width: 150,
-        top: theme.spacing(1.5),
+        top: theme.spacing(2),
         transition: 'width 0.3s ease-out 0s, top 0.3s ease-out 0s',
       },
-      '& $gridContainer': {
-        transform: `translateY(calc(-100% - ${theme.spacing(1.5)}px))`,
-        transition: 'transform 0.3s ease-out 0.25s',
-      },
+      '&:not(.expanded)': {
+        '& $container': {
+          height: 52,
+          transition: 'height 0.3s ease-out 0.25s',
+        },
+        '& $expandIcon': {
+          transform: 'translateY(-72px)',
+          transition: 'transform 0.3s ease-out 0.45s',
+        },
+        '& $gridContainer': {
+          transform: `translateY(calc(-100% - ${theme.spacing(1.5)}px))`,
+          transition: 'transform 0.3s ease-out 0.25s',
+        },
+      }
     },
   },
   container: {
+    position: 'relative',
     display: "flex",
     flexDirection: "row",
     width: "100%",
@@ -45,11 +52,18 @@ const useStyles = makeStyles(theme => ({
     },
   },
   brandIcon: {
-    position: 'absolute',
-    width: 321,
-    top: theme.spacing(3),
-    left: theme.spacing(3),
-    transition: 'width 0.3s ease-out 0.3s, top 0.3s ease-out 0.25s',
+    [theme.breakpoints.up("sm")]: {
+      position: 'absolute',
+      width: 321,
+      lineHeight: 0,
+      top: theme.spacing(3),
+      left: theme.spacing(3),
+      transition: 'width 0.3s ease-in-out 0.3s, top 0.3s ease-in-out 0.25s',
+    },
+    [theme.breakpoints.down("xs")]: {
+      margin: theme.spacing(2.5),
+      width: 170,
+    },
   },
   menuIcon: {
     color: theme.palette.primary.main,
@@ -58,12 +72,21 @@ const useStyles = makeStyles(theme => ({
       height: 40,
       width: 40,
     },
+    '&:hover': {
+      background: 'none',
+    },
     [theme.breakpoints.down("sm")]: {
       padding: theme.spacing(1.5, 2.5),
     },
   },
+  expandIcon: {
+    transition: 'transform 0.3s ease-in 0s',
+    padding: 0,
+    paddingRight: 10,
+  },
   navContainer: {
     overflow: 'hidden',
+    textAlign: 'right',
     width: '50vw',
     maxWidth: '640px',
     // width: `calc(min(50vw, 640px) - ${Dim.spacing * 1.5 + 1}px + ${theme.spacing(3)}px)`,
@@ -73,31 +96,26 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(1.5),
   },
   gridContainer: {
-    transition: 'transform 0.3s ease-out 0s',
+    transition: 'transform 0.3s ease-out 0.2s',
+    textAlign: 'left',
   },
 }));
 const NavBar: React.FC<React.HTMLAttributes<HTMLDivElement>> = () => {
   const classes = useStyles();
   const [showMenu, setShowMenu] = useState<boolean>(false);
-  const [isScrollTop] = useScroll({ defaultState: true, rangeEnd: 50 });
-
-  const toggleMenu = (hide?: boolean) => {
-    const newState = hide === false ? false : !showMenu;
-    setShowMenu(newState);
-  };
-
-  const elevation = isScrollTop ? 0 : 4
+  const [isHoverExpand, setHoverExpand] = useState<boolean>(false);
+  const [isScrollTop] = useScroll({ defaultState: true, rangeEnd: 100 });
 
   return (
     <>
-      <AppBar className={cls(classes.root, { elevated: !!elevation })} elevation={elevation}>
+      <AppBar className={cls(classes.root, { elevated: !isScrollTop, expanded: isHoverExpand })} elevation={isScrollTop ? 0 : 4}>
         <Box className={classes.container} maxWidth="lg">
           <a href="/">
             <SwitcheoBrand className={classes.brandIcon} />
           </a>
           <Box flex={1} />
           <Hidden smDown>
-            <Box className={classes.navContainer}>
+            <Box className={classes.navContainer} onMouseEnter={() => setHoverExpand(true)} onMouseLeave={() => setHoverExpand(false)}>
               <Grid className={classes.gridContainer} container>
                 <Grid item xs={4}>
                   <HeaderLink href={Paths.home}>Home</HeaderLink>
@@ -114,16 +132,19 @@ const NavBar: React.FC<React.HTMLAttributes<HTMLDivElement>> = () => {
                   <HeaderLink href={Paths.support} target="_blank">Support</HeaderLink>
                 </Grid>
               </Grid>
+              <IconButton className={cls(classes.menuIcon, classes.expandIcon)} size="medium">
+                <MenuIcon />
+              </IconButton>
             </Box>
           </Hidden>
           <Hidden mdUp>
-            <IconButton className={classes.menuIcon} size="medium" onClick={() => toggleMenu()}>
+            <IconButton className={classes.menuIcon} size="medium" onClick={() => setShowMenu(!showMenu)}>
               <MenuIcon />
             </IconButton>
           </Hidden>
         </Box>
       </AppBar>
-      <NavMenu showMenu={showMenu} closeMenu={() => toggleMenu(false)} />
+      <NavMenu showMenu={showMenu} closeMenu={() => setShowMenu(false)} />
     </>
   );
 };
