@@ -3,10 +3,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
 import { ContentSection, ContentTitle, CTAButton } from "../../../../components";
-import urlDemexIcon from "./assets/demex-logo.svg";
-import urlFoundationIcon from "./assets/foundation-logo.svg";
-import urlSwitcheoIcon from "./assets/switcheo-logo.svg";
-// import urlZilswapIcon from "./assets/zilswap-logo.svg";
+import { ReactComponent as DemexIcon } from "./assets/demex-logo.svg";
+import { ReactComponent as FoundationIcon } from "./assets/foundation-logo.svg";
+import { ReactComponent as SwitcheoIcon } from "./assets/switcheo-logo.svg";
+// import { ReactComponent as ZilswapIcon } from "./assets/zilswap-logo.svg";
 import ProductEntry from "./components";
 import { Paths } from "../../../../constants";
 
@@ -61,10 +61,10 @@ const Products: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
         </Typography>
 
         <Box className={classes.products}>
-          <ProductEntry iconUrl={urlSwitcheoIcon} href={Paths.exchange}>Switcheo Exchange</ProductEntry>
-          <ProductEntry iconUrl={urlDemexIcon}>Demex</ProductEntry>
-          {/* <ProductEntry iconUrl={urlZilswapIcon}>ZilSwap</ProductEntry> */}
-          <ProductEntry iconUrl={urlFoundationIcon} href={Paths.foundation}>Switcheo Foundation</ProductEntry>
+          <ProductEntry icon={SwitcheoIcon} href={Paths.exchange}>Switcheo Exchange</ProductEntry>
+          <ProductEntry icon={DemexIcon}>Demex</ProductEntry>
+          {/* <ProductEntry iconUrl={ZilswapIcon}>ZilSwap</ProductEntry> */}
+          <ProductEntry icon={FoundationIcon} href={Paths.foundation}>Switcheo Foundation</ProductEntry>
         </Box>
 
         <Box flex={1} />

@@ -8,7 +8,6 @@ export { default as NavBar } from "./NavBar";
 export { default as SampleComponent } from "./SampleComponent";
 export { default as CTAButton } from "./CTAButton";
 export { default as Section } from "./Section";
-export { default as SVGComponent } from "./SVGComponent";
 export { default as SwitcheoLogo } from "./SwitcheoLogo";
 export { default as TwinSection } from "./TwinSection";
 export { default as ViewLink } from "./ViewLink";

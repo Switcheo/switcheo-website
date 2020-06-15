@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+  <g stroke="currentColor" stroke-width="1" fill="currentColor" fill-rule="evenodd">
     <polygon points="2 2 2 8.73662075 22.5000526 8.73662075 2.14299232 29.093681 6.90716013 33.8570077 27.2633792 13.4999474 27.2633792 34 34 34 34 2"></polygon>
   </g>
 </svg>

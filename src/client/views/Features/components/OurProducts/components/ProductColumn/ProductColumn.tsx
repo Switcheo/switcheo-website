@@ -2,15 +2,15 @@ import { Box, BoxProps, Divider, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";
-import { SVGComponent, SwitcheoLogo, ViewLink } from "../../../../../../components";
+import { ViewLink } from "../../../../../../components";
 import { minBlockHeight } from "../../../../../../constants";
 
 export type Product = {
   title: string;
   descriptor: string;
   description: string;
+  icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   highlight?: boolean;
-  icon: string;
   link?: string;
 };
 
@@ -81,10 +81,11 @@ const useStyles = makeStyles(theme => ({
 const ProductColumn: React.FC<ProductColumnProps> = (props: any) => {
   const { children, product, className, ...rest } = props;
   const classes = useStyles();
+  const Icon = product.icon;
   const color = product.highlight ? 'textSecondary' : 'textPrimary'
   return (
     <Box {...rest} className={cls(classes.root, className, { [classes.alternate]: product.highlight })}>
-      <SVGComponent className={classes.icon} url={product.icon} />
+      <Icon className={classes.icon} />
       <Divider className={classes.divider} />
       <Box className={classes.content}>
         <Typography className={classes.title} variant="body2" color={color}>{product.title}</Typography>

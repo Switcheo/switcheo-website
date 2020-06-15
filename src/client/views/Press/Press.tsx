@@ -1,4 +1,4 @@
-import { Box, Container, Link, Typography, Grid, Button, Hidden } from "@material-ui/core";
+import { Box, Container, Link, Typography, Hidden } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";

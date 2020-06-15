@@ -4,10 +4,10 @@ import React from "react";
 import cls from "classnames";
 import { ProductColumn } from "./components";
 import { Product } from "./components/ProductColumn/ProductColumn";
-import urlDemexIcon from "./assets/demex-logo.svg";
-import urlFoundationIcon from "./assets/foundation-logo.svg";
-import urlSwitcheoIcon from "./assets/switcheo-logo.svg";
-import urlZilswapIcon from "./assets/zilswap-logo.svg";
+import { ReactComponent as DemexIcon } from "./assets/demex-logo.svg";
+import { ReactComponent as FoundationIcon } from "./assets/foundation-logo.svg";
+import { ReactComponent as SwitcheoIcon } from "./assets/switcheo-logo.svg";
+// import { ReactComponent as ZilswapIcon } from "./assets/zilswap-logo.svg";
 import { Paths } from "../../../../constants";
 
 const PRODUCTS: Product[] = [{
@@ -15,12 +15,12 @@ const PRODUCTS: Product[] = [{
   descriptor: "The Preferred Exchange, trading on Ethereum, Neo, and more.",
   description: "Switcheo paves the way for a secure multi-chain trading experience that is practical even for a crypto beginner. Trade while retaining control of your funds. No mandatory registration.",
   link: Paths.exchange,
-  icon: urlSwitcheoIcon,
+  icon: DemexIcon,
 }, {
   title: "Demex",
   descriptor: "The Decentralized Mercantile Exchange",
   description: "Demex is the first fully decentralized platform that supports any type of financial market possible. It is set to run on the Switcheo TradeHub decentralized trading protocol.",
-  icon: urlDemexIcon,
+  icon: FoundationIcon,
   highlight: true
 // }, {
 //   title: "ZilSwap",
@@ -32,7 +32,7 @@ const PRODUCTS: Product[] = [{
   descriptor: "An Initiative to Democratize Financial Markets.",
   description: "Switcheo Foundation is a not-for-profit endeavor. Its mission is to champion the growth of a radically decentralized financial system that is truly open. ",
   link: Paths.foundation,
-  icon: urlFoundationIcon,
+  icon: SwitcheoIcon,
 }];
 
 const useStyles = makeStyles(theme => ({

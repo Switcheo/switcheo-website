@@ -2,7 +2,7 @@ import { Box, BoxProps, Typography, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";
-import { SVGComponent, SwitcheoLogo, ViewLink } from "../../../../../../components";
+import { SwitcheoLogo, ViewLink } from "../../../../../../components";
 import { minBlockHeight, Feature } from "../../../../../../constants";
 
 export interface FeatureColumnProps extends BoxProps {
@@ -26,8 +26,11 @@ const useStyles = makeStyles(theme => ({
     "& $divider": {
       backgroundColor: theme.palette.secondary.main,
     },
-    "& $index,$descriptor,$description,$label,$icon": {
+    "& $index,$descriptor,$description,$label": {
       color: theme.palette.secondary.main,
+    },
+    '& $icon path': {
+      fill: theme.palette.secondary.main,
     },
   },
   container: {
@@ -87,13 +90,16 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(1),
   },
   icon: {
-    color: theme.palette.primary.main,
     height: 146,
     width: 146,
+    '& path': {
+      fill: theme.palette.primary.main,
+    },
   },
 }));
 const FeatureColumn: React.FC<FeatureColumnProps> = (props: any) => {
   const { children, feature, index, className, ...rest } = props;
+  const Icon = feature.icon;
   const classes = useStyles(props);
 
   const inversed = index === 2 || index === 4;
@@ -113,7 +119,7 @@ const FeatureColumn: React.FC<FeatureColumnProps> = (props: any) => {
         </Box>
         <Typography className={classes.description} variant="body2">{feature.description}</Typography>
         <Divider className={cls(classes.divider, classes.mobileDownHide)} />
-        <SVGComponent className={cls(classes.icon)} url={feature.icon} />
+        <Icon className={cls(classes.icon)} />
       </Box>
     </Box>
   );

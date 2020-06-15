@@ -2,7 +2,7 @@ import { Box, BoxProps, Divider, Hidden, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
-import { SVGComponent, ViewLink } from "../../../../../../components";
+import { ViewLink } from "../../../../../../components";
 import { Feature } from "../../../../../../constants";
 
 export interface HomeFeatureColumnProps extends BoxProps {
@@ -63,6 +63,9 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(3),
     height: 146,
     width: 146,
+    '& path': {
+      fill: theme.palette.primary.main,
+    },
   },
   divider: {
     backgroundColor: theme.palette.primary.main,
@@ -72,6 +75,7 @@ const useStyles = makeStyles(theme => ({
 const HomeFeatureColumn: React.FC<HomeFeatureColumnProps> = (props: any) => {
   const { children, feature, hidden, index, className, ...rest } = props;
   const classes = useStyles(props);
+  const Icon = feature.icon;
 
   return (
     <Box {...rest} className={cls(classes.root, className)}>
@@ -89,7 +93,7 @@ const HomeFeatureColumn: React.FC<HomeFeatureColumnProps> = (props: any) => {
         </Box>
         <Hidden smDown>
           <Divider className={classes.divider} />
-          <SVGComponent className={classes.icon} url={feature.icon} />
+          <Icon className={cls(classes.icon)} />
         </Hidden>
       </Box>
     </Box>

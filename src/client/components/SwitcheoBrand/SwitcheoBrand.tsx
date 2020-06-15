@@ -1,8 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
-import SVGComponent from "../SVGComponent";
-import urlBrandSvg from "./brand.svg";
+import { ReactComponent } from "./brand.svg";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -12,11 +11,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 const SwitcheoBrand = (props: any) => {
-  const { children, className, ...rest } = props;
+  const { className } = props;
   const classes = useStyles();
 
   return (
-    <SVGComponent url={urlBrandSvg} {...rest} className={cls(classes.root, className)} />
+    <ReactComponent className={cls(classes.root, className)} />
   );
 };
 

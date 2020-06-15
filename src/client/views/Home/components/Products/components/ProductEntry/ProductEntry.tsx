@@ -2,10 +2,10 @@ import { Button, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";
-import { SVGComponent, SwitcheoLogo } from "../../../../../../components";
+import { SwitcheoLogo } from "../../../../../../components";
 
 export type ProductEntryProps = {
-  iconUrl: string;
+  icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   href?: string;
 };
 
@@ -59,11 +59,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 const ProductEntry: React.FC<ProductEntryProps & React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
-  const { children, iconUrl, className, ...rest } = props;
+  const { children, icon: Icon, className, href } = props;
   const classes = useStyles();
   return (
-    <Button {...rest} className={cls(classes.root, className)} target="_blank">
-      <SVGComponent className={classes.icon} url={iconUrl} />
+    <Button className={cls(classes.root, className)} href={href} target="_blank" >
+      <Icon className={classes.icon} />
       <Typography color="primary" className={classes.text} variant="body2">{children}</Typography>
       <SwitcheoLogo className={classes.switcheoIcon} />
     </Button>

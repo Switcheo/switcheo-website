@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+  <g stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
     <path d="M34,26 L34,34 L26,34 L26,26 L34,26 Z M34,2 L34,10.0002302 L10.0002302,10.0002302 L10.0002302,34 L2,34 L2,2 L34,2 Z M26,18 L26,26 L18,26 L18,18 L26,18 Z"></path>
   </g>
 </svg>
