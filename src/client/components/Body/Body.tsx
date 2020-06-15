@@ -1,12 +1,13 @@
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";
+import { Dim } from "../../constants";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    paddingTop: 88,
+    paddingTop: Dim.headerHeight,
     [theme.breakpoints.down("xs")]: {
-      paddingTop: 64,
+      paddingTop: Dim.collapsedHeaderHeight,
     },
   },
 }));

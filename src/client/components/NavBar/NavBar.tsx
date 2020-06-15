@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
       },
       '&:not(.expanded)': {
         '& $container': {
-          height: 52,
+          height: Dim.collapsedHeaderHeight,
           transition: 'height 0.3s ease-out 0.25s',
         },
         '& $expandIcon': {
@@ -47,22 +47,19 @@ const useStyles = makeStyles(theme => ({
     height: Dim.headerHeight,
     transition: 'height 0.3s ease-out 0s',
     [theme.breakpoints.down("xs")]: {
-      height: Dim.mobileHeaderHeight,
-      paddingBottom: 0,
+      height: Dim.collapsedHeaderHeight,
     },
   },
   brandIcon: {
-    [theme.breakpoints.up("sm")]: {
-      position: 'absolute',
-      width: 321,
-      lineHeight: 0,
-      top: theme.spacing(3),
-      left: theme.spacing(3),
-      transition: 'width 0.3s ease-in-out 0.3s, top 0.3s ease-in-out 0.25s',
-    },
+    position: 'absolute',
+    width: 321,
+    lineHeight: 0,
+    top: theme.spacing(3),
+    left: theme.spacing(3),
+    transition: 'width 0.3s ease-in-out 0.3s, top 0.3s ease-in-out 0.25s',
     [theme.breakpoints.down("xs")]: {
-      margin: theme.spacing(2.5),
-      width: 170,
+      width: 150,
+      top: theme.spacing(2),
     },
   },
   menuIcon: {

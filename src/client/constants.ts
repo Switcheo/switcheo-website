@@ -9,7 +9,7 @@ import urlWalletIntegrationsIcon from "./assets/wallet-integrations.svg";
 export const Dim = {
   spacing: 24,
   headerHeight: 88,
-  mobileHeaderHeight: 64,
+  collapsedHeaderHeight: 52,
   maxViewWidth: 1280,
 };
 

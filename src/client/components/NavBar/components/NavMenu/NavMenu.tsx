@@ -4,7 +4,7 @@ import React from "react";
 import cls from "classnames";
 import CloseIcon from "@material-ui/icons/Close";
 import NavLink from "../NavLink";
-import SwitcheoLogo from "../../../SwitcheoLogo";
+import SwitcheoBrand from "../../../SwitcheoBrand";
 import { Paths, Dim } from "../../../../constants";
 
 export interface NavMenuProps extends BoxProps {
@@ -50,16 +50,13 @@ const useStyles = makeStyles(theme => ({
   closeIcon: {
     padding: theme.spacing(2),
   },
-  logoIcon: {
-    color: theme.palette.primary.main,
-    "& svg": {
-      height: 32,
-      width: 32,
-      [theme.breakpoints.down("sm")]: {
-        height: 24,
-        width: 24,
-      },
-    }
+  brandIcon: {
+    width: 150,
+    margin: theme.spacing(4.5, 3),
+    // [theme.breakpoints.down("sm")]: {
+    //   padding: theme.spacing(3, 2.5),
+    //   width: 170,
+    // },
   },
 }));
 const NavMenu: React.FC<NavMenuProps> = (props: any) => {
@@ -69,9 +66,9 @@ const NavMenu: React.FC<NavMenuProps> = (props: any) => {
     <Box {...rest} className={cls(classes.root, className)} style={{ height: showMenu ? "100%" : 0 }}>
       <Box className={classes.navMenu}>
         <Box display="flex" flexDirection="row">
-          <IconButton className={classes.iconButton} href={Paths.home}>
-            <SwitcheoLogo className={classes.logoIcon} />
-          </IconButton>
+          <a href="/">
+            <SwitcheoBrand className={classes.brandIcon} />
+          </a>
           <Box flex={1} />
           <IconButton className={cls(classes.iconButton, classes.closeIcon)} onClick={() => closeMenu()}>
             <CloseIcon />
