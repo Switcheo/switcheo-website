@@ -15,12 +15,12 @@ const PRODUCTS: Product[] = [{
   descriptor: "The Preferred Exchange, trading on Ethereum, Neo, and more.",
   description: "Switcheo paves the way for a secure multi-chain trading experience that is practical even for a crypto beginner. Trade while retaining control of your funds. No mandatory registration.",
   link: Paths.exchange,
-  icon: DemexIcon,
+  icon: SwitcheoIcon,
 }, {
   title: "Demex",
   descriptor: "The Decentralized Mercantile Exchange",
   description: "Demex is the first fully decentralized platform that supports any type of financial market possible. It is set to run on the Switcheo TradeHub decentralized trading protocol.",
-  icon: FoundationIcon,
+  icon: DemexIcon,
   highlight: true
 // }, {
 //   title: "ZilSwap",
@@ -32,7 +32,7 @@ const PRODUCTS: Product[] = [{
   descriptor: "An Initiative to Democratize Financial Markets.",
   description: "Switcheo Foundation is a not-for-profit endeavor. Its mission is to champion the growth of a radically decentralized financial system that is truly open. ",
   link: Paths.foundation,
-  icon: SwitcheoIcon,
+  icon: FoundationIcon,
 }];
 
 const useStyles = makeStyles(theme => ({
