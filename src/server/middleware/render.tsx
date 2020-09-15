@@ -36,7 +36,7 @@ const renderMiddleware = () => (req: Request, res: Response) => {
   const htmlReplacements: StringMap = {
     HTML_CONTENT: htmlContent,
     STATIC_DOCUMENT: staticDocumentHtml,
-    PRELOADED_STATE: JSON.stringify({ Content }).replace(/\"/g, "\\\""),
+    PRELOADED_STATE: JSON.stringify({ Content }).replace(/\`/g, '\`'),
     WEBSITE_URL: origin || "",
     CSS_CONTENT: `<style id="server-side-styles">${sheets.toString()}</style>`, // inline styles to initial html
   };

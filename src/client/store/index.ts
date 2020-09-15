@@ -9,7 +9,7 @@ const logger = createLogger();
 const middlewares = [thunk, logger];
 
 // @ts-ignore
-const preloadedState = JSON.parse(window.__PRELOADED_STATE__);
+const preloadedState = JSON.parse(window.__PRELOADED_STATE__.replace(/\n/g, ''));
 // @ts-ignore
 delete window.__PRELOADED_STATE__;
 
