@@ -6,7 +6,7 @@ import { ContentSection, ContentTitle, CTAButton } from "../../../../components"
 import { ReactComponent as DemexIcon } from "./assets/demex-logo.svg";
 import { ReactComponent as FoundationIcon } from "./assets/foundation-logo.svg";
 import { ReactComponent as SwitcheoIcon } from "./assets/switcheo-logo.svg";
-// import { ReactComponent as ZilswapIcon } from "./assets/zilswap-logo.svg";
+import { ReactComponent as ZilswapIcon } from "./assets/zilswap-logo.svg";
 import ProductEntry from "./components";
 import { Paths } from "../../../../constants";
 
@@ -63,7 +63,7 @@ const Products: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
         <Box className={classes.products}>
           <ProductEntry icon={SwitcheoIcon} href={Paths.exchange}>Switcheo Exchange</ProductEntry>
           <ProductEntry icon={DemexIcon}>Demex</ProductEntry>
-          {/* <ProductEntry iconUrl={ZilswapIcon}>ZilSwap</ProductEntry> */}
+          <ProductEntry icon={ZilswapIcon} href={Paths.zilswap}>ZilSwap</ProductEntry>
           <ProductEntry icon={FoundationIcon} href={Paths.foundation}>Switcheo Foundation</ProductEntry>
         </Box>
 

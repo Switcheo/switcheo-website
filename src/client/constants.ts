@@ -28,9 +28,11 @@ export const Paths = {
   listing_policy: "/listing-policy",
   security_policy: "/security-policy",
 
+  zilswap: "https://zilswap.io/",
   blog: "https://blog.switcheo.network/",
   support: "https://support.switcheo.network/",
   exchange: "https://switcheo.exchange/",
+  demex: "https://stake.switcheo.org/",
   foundation: "https://switcheo.foundation/",
   referral: "https://blog.switcheo.network/switcheo-referral-program-invite-your-friends-get-rewarded/",
 
