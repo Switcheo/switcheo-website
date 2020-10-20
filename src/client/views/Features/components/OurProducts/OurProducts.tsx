@@ -26,7 +26,7 @@ const PRODUCTS: Product[] = [{
 //   title: "ZilSwap",
 //   descriptor: "Atomic Swaps",
 //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-//   icon: urlZilswapIcon,
+//   icon: ZilswapIcon,
 }, {
   title: "Switcheo Foundation",
   descriptor: "An Initiative to Democratize Financial Markets.",
