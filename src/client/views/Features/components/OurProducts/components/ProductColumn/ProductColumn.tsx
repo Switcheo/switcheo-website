@@ -5,6 +5,7 @@ import cls from "classnames";
 import { ViewLink } from "../../../../../../components";
 import { minBlockHeight } from "../../../../../../constants";
 
+type ReponsiveGridSize = boolean | 4 | 6 | "auto" | 3 | 10 | 1 | 2 | 5 | 7 | 8 | 9 | 11 | 12 
 export type Product = {
   title: string;
   descriptor: string;
@@ -12,6 +13,13 @@ export type Product = {
   icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   highlight?: boolean;
   link?: string;
+  responsive: {
+    xs?: ReponsiveGridSize,
+    sm?: ReponsiveGridSize,
+    md?: ReponsiveGridSize,
+    lg?: ReponsiveGridSize,
+    xl?: ReponsiveGridSize,
+  }
 };
 
 export interface ProductColumnProps extends BoxProps {
@@ -26,7 +34,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
     justifyContent: "center",
     [theme.breakpoints.down("sm")]: {
-      padding: theme.spacing(0, 3, 3),
+      padding: theme.spacing(3, 3),
       minHeight: 0,
     },
   },
@@ -82,7 +90,7 @@ const ProductColumn: React.FC<ProductColumnProps> = (props: any) => {
   const { children, product, className, ...rest } = props;
   const classes = useStyles();
   const Icon = product.icon;
-  const color = product.highlight ? 'textSecondary' : 'textPrimary'
+  const color = product.highlight ? 'textSecondary' : 'textPrimary';
   return (
     <Box {...rest} className={cls(classes.root, className, { [classes.alternate]: product.highlight })}>
       <Icon className={classes.icon} />

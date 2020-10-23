@@ -7,7 +7,7 @@ import { Product } from "./components/ProductColumn/ProductColumn";
 import { ReactComponent as DemexIcon } from "./assets/demex-logo.svg";
 import { ReactComponent as FoundationIcon } from "./assets/foundation-logo.svg";
 import { ReactComponent as SwitcheoIcon } from "./assets/switcheo-logo.svg";
-// import { ReactComponent as ZilswapIcon } from "./assets/zilswap-logo.svg";
+import { ReactComponent as ZilswapIcon } from "./assets/zilswap-logo.svg";
 import { Paths } from "../../../../constants";
 
 const PRODUCTS: Product[] = [{
@@ -16,23 +16,36 @@ const PRODUCTS: Product[] = [{
   description: "Switcheo paves the way for a secure multi-chain trading experience that is practical even for a crypto beginner. Trade while retaining control of your funds. No mandatory registration.",
   link: Paths.exchange,
   icon: SwitcheoIcon,
+  responsive: {
+    md: 4, sm: 6,
+  },
+}, {
+  title: "ZilSwap",
+  descriptor: "Decentralized Atomic Swaps",
+  description: "Zilswap is a fully decentralized protocol for ZRC-2 token exchanges on Zilliqa.",
+  link: Paths.zilswap,
+  icon: ZilswapIcon,
+  responsive: {
+    md: 4, sm: 6,
+  },
 }, {
   title: "Demex",
   descriptor: "The Decentralized Mercantile Exchange",
   description: "Demex is the first fully decentralized platform that supports any type of financial market possible. It is set to run on the Switcheo TradeHub decentralized trading protocol.",
   icon: DemexIcon,
-  highlight: true
-// }, {
-//   title: "ZilSwap",
-//   descriptor: "Atomic Swaps",
-//   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-//   icon: ZilswapIcon,
+  highlight: true,
+  responsive: {
+    md: 4, sm: 6,
+  },
 }, {
   title: "Switcheo Foundation",
   descriptor: "An Initiative to Democratize Financial Markets.",
   description: "Switcheo Foundation is a not-for-profit endeavor. Its mission is to champion the growth of a radically decentralized financial system that is truly open. ",
   link: Paths.foundation,
   icon: FoundationIcon,
+  responsive: {
+    md: 4, sm: 6,
+  },
 }];
 
 const useStyles = makeStyles(theme => ({
@@ -44,12 +57,14 @@ const useStyles = makeStyles(theme => ({
       padding: 0,
     },
   },
-  container: {
+  introContainer: {
+    display: "flex",
   },
   intro: {
     padding: theme.spacing(3),
-    // maxWidth: 480,
-    maxWidth: 800,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
   },
   item: {
     "@media (max-width: 459.95px)": {
@@ -64,8 +79,8 @@ const OurProducts: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any)
   const classes = useStyles();
   return (
     <Container maxWidth="lg" {...rest} className={cls(classes.root, className)}>
-      <Grid container className={classes.container}>
-        <Grid item xs={12}>
+      <Grid container>
+        <Grid item sm={12} md={8} className={classes.introContainer}>
           <Box className={classes.intro}>
             <Typography variant="h2" color="primary">Our ecosystem</Typography>
             <Typography variant="body1" color="primary">
@@ -77,7 +92,7 @@ const OurProducts: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any)
           </Box>
         </Grid>
         {PRODUCTS.map((product, index) => (
-          <Grid key={index} item className={classes.item} sm={4} xs={6}>
+          <Grid key={index} item className={classes.item} {...product.responsive}>
             <ProductColumn product={product} key={index} />
           </Grid>
         ))}
