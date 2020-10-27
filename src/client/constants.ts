@@ -41,7 +41,7 @@ export const Paths = {
   apply_to_list: "https://docs.google.com/forms/d/1Uq01pZvqxG9FtFCpKMZeIT6uhu64VT2BrB2AS1XAXuQ/edit",
   media_kit: "https://switcheo-assets.s3-ap-southeast-1.amazonaws.com/Switcheo_MediaKit_2020.zip",
 
-  social_discord: "https://discord.gg/UGkaJAd",
+  social_discord: "https://discord.gg/SPh62Hf",
   social_github: "https://github.com/switcheo",
   social_telegram: "https://t.me/switcheo",
   social_twitter: "https://twitter.com/switcheonetwork",
