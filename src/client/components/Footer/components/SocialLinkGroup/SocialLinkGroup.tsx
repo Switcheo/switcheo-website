@@ -10,6 +10,7 @@ import { ReactComponent as RedditIcon } from "./social-icons/reddit.svg";
 import { ReactComponent as TelegramIcon } from "./social-icons/telegram.svg";
 import { ReactComponent as TwitterIcon } from "./social-icons/twitter.svg";
 import { ReactComponent as YouTubeIcon } from "./social-icons/youtube.svg";
+import { ReactComponent as DiscordIcon } from "./social-icons/discord.svg";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -54,6 +55,9 @@ const SocialLinkGroup: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: 
   const classes = useStyles();
   return (
     <Box {...rest} className={cls(classes.root, className)}>
+      <Button href={Paths.social_discord}>
+        <DiscordIcon />
+      </Button>
       <Button href={Paths.social_telegram}>
         <TelegramIcon />
       </Button>

@@ -2,11 +2,15 @@
 
 The Switcheo website, built using server-side rendered react.
 
-## Installation
+## Running
 
 1. `yarn` install dependencies
-2. `yarn build` bundle production version into `./build`
-3. `node build/` to execute node on the build folder.
+2. `yarn start` run website
+
+## Building
+
+1. `yarn build` bundle production version into `./build`
+2. `node build/` to execute node on the build folder.
 
 ## Configuration
 
@@ -55,6 +59,19 @@ The `robots.txt` ([RFC pending](https://tools.ietf.org/html/draft-koster-rep-00)
     # On local / CI machine:
     pm2 deploy ecosystem.config.js <environment> setup # setup pm2 on remote server
     ```
+
+   If you are deploying to production, add the host to your ssh config:
+
+   ```bash
+   vi ~/.ssh/config
+   ```
+
+   ```conf
+   # Add:
+   Host switcheo-website
+     User ubuntu
+     Hostname 13.251.197.177
+   ```
 
 3. Deploy the code:
 

@@ -16,13 +16,14 @@ const PRODUCTS: Product[] = [{
   description: "Switcheo paves the way for a secure multi-chain trading experience that is practical even for a crypto beginner. Trade while retaining control of your funds. No mandatory registration.",
   link: Paths.exchange,
   icon: SwitcheoIcon,
+  highlight: true,
   responsive: {
     md: 4, sm: 6,
   },
 }, {
   title: "ZilSwap",
-  descriptor: "Decentralized Atomic Swaps",
-  description: "Zilswap is a fully decentralized protocol for ZRC-2 token exchanges on Zilliqa.",
+  descriptor: "A Decentralized Token Swap Protocol",
+  description: "Zilswap is a fully decentralized AMM protocol for ZRC-2 token exchanges on Zilliqa.",
   link: Paths.zilswap,
   icon: ZilswapIcon,
   responsive: {
