@@ -62,7 +62,7 @@ const Products: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
 
         <Box className={classes.products}>
           <ProductEntry icon={SwitcheoIcon} href={Paths.exchange}>Switcheo Exchange</ProductEntry>
-          <ProductEntry icon={DemexIcon}>Demex</ProductEntry>
+          <ProductEntry icon={DemexIcon} href={Paths.demex}>Demex</ProductEntry>
           <ProductEntry icon={ZilswapIcon} href={Paths.zilswap}>ZilSwap</ProductEntry>
           <ProductEntry icon={FoundationIcon} href={Paths.foundation}>Switcheo Foundation</ProductEntry>
         </Box>

@@ -1,13 +1,12 @@
-import { AppBar, Box, IconButton, Hidden, Grid } from "@material-ui/core";
+import { AppBar, Box, Grid, Hidden, IconButton } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
-import React, { useState } from "react";
 import cls from "classnames";
-import useScroll from "../../utils/useScroll";
-import SwitcheoBrand from "../SwitcheoBrand";
-
+import React, { useState } from "react";
 import { Dim, Paths } from "../../constants";
-import { NavMenu, HeaderLink } from "./components";
+import useScroll from "../../utils/useScroll";
+import SwitcheoBrandXmas from "../SwitcheoBrandXmas";
+import { HeaderLink, NavMenu } from "./components";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -18,7 +17,7 @@ const useStyles = makeStyles(theme => ({
       transition: 'box-shadow 0.3s ease-out 0s',
       '& $brandIcon': {
         width: 150,
-        top: theme.spacing(2),
+        top: theme.spacing(1.5),
         transition: 'width 0.3s ease-out 0s, top 0.3s ease-out 0s',
       },
       '&:not(.expanded)': {
@@ -108,7 +107,7 @@ const NavBar: React.FC<React.HTMLAttributes<HTMLDivElement>> = () => {
       <AppBar className={cls(classes.root, { elevated: !isScrollTop, expanded: isHoverExpand })} elevation={isScrollTop ? 0 : 4}>
         <Box className={classes.container} maxWidth="lg">
           <a href="/">
-            <SwitcheoBrand className={classes.brandIcon} />
+            <SwitcheoBrandXmas className={classes.brandIcon} />
           </a>
           <Box flex={1} />
           <Hidden smDown>

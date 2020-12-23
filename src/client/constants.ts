@@ -32,7 +32,7 @@ export const Paths = {
   blog: "https://blog.switcheo.network/",
   support: "https://support.switcheo.network/",
   exchange: "https://switcheo.exchange/",
-  demex: "https://stake.switcheo.org/",
+  demex: "https://dem.exchange/",
   foundation: "https://switcheo.foundation/",
   referral: "https://blog.switcheo.network/switcheo-referral-program-invite-your-friends-get-rewarded/",
 
