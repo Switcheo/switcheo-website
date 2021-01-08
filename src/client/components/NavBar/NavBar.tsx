@@ -5,7 +5,7 @@ import cls from "classnames";
 import React, { useState } from "react";
 import { Dim, Paths } from "../../constants";
 import useScroll from "../../utils/useScroll";
-import SwitcheoBrandXmas from "../SwitcheoBrandXmas";
+import SwitcheoBrand from "../SwitcheoBrand";
 import { HeaderLink, NavMenu } from "./components";
 
 const useStyles = makeStyles(theme => ({
@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
       transition: 'box-shadow 0.3s ease-out 0s',
       '& $brandIcon': {
         width: 150,
-        top: theme.spacing(1.5),
+        top: theme.spacing(2),
         transition: 'width 0.3s ease-out 0s, top 0.3s ease-out 0s',
       },
       '&:not(.expanded)': {
@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
           transition: 'transform 0.3s ease-out 0.45s',
         },
         '& $gridContainer': {
-          transform: `translateY(calc(-100% - ${theme.spacing(1.5)}px))`,
+          transform: `translateY(calc(-100% - ${theme.spacing(2)}px))`,
           transition: 'transform 0.3s ease-out 0.25s',
         },
       }
@@ -107,7 +107,7 @@ const NavBar: React.FC<React.HTMLAttributes<HTMLDivElement>> = () => {
       <AppBar className={cls(classes.root, { elevated: !isScrollTop, expanded: isHoverExpand })} elevation={isScrollTop ? 0 : 4}>
         <Box className={classes.container} maxWidth="lg">
           <a href="/">
-            <SwitcheoBrandXmas className={classes.brandIcon} />
+            <SwitcheoBrand className={classes.brandIcon} />
           </a>
           <Box flex={1} />
           <Hidden smDown>
