@@ -78,6 +78,9 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("sm")]: {
       minHeight: '9rem',
     },
+    [theme.breakpoints.down("xs")]: {
+      minHeight: '5rem',
+    }
   },
   head: {
     minHeight: 80,
@@ -101,11 +104,12 @@ const useStyles = makeStyles(theme => ({
 const FeatureColumn: React.FC<FeatureColumnProps> = (props: any) => {
   const { children, feature, index, className, ...rest } = props;
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down('sm'));
+  const matchSM = useMediaQuery(theme.breakpoints.down('sm'));
+  const matchXS = useMediaQuery(theme.breakpoints.down('xs'))
   const Icon = feature.icon;
   const classes = useStyles(props);
 
-  const inversed = matches ? (index === 2 || index === 3) : (index === 2 || index === 4);
+  const inversed = matchSM && !matchXS ? (index === 2 || index === 3) : (index === 2 || index === 4);
   return (
     <Box {...rest} className={cls(classes.root, { [classes.inverse]: inversed }, className)}>
       <Box className={classes.container}>
