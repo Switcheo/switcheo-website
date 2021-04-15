@@ -3,6 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";
 import { minBlockHeight, Feature } from "../../../../../../constants";
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 export interface FeatureColumnProps extends BoxProps {
   feature: Feature;
@@ -72,9 +74,9 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.primary.main,
     marginBottom: theme.spacing(2),
     lineHeight: 1.25,
-    minHeight: 170,
+    minHeight: '16rem',
     [theme.breakpoints.down("sm")]: {
-      minHeight: 60,
+      minHeight: '9rem',
     },
   },
   head: {
@@ -98,10 +100,12 @@ const useStyles = makeStyles(theme => ({
 }));
 const FeatureColumn: React.FC<FeatureColumnProps> = (props: any) => {
   const { children, feature, index, className, ...rest } = props;
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
   const Icon = feature.icon;
   const classes = useStyles(props);
 
-  const inversed = index === 2 || index === 4;
+  const inversed = matches ? (index === 2 || index === 3) : (index === 2 || index === 4);
   return (
     <Box {...rest} className={cls(classes.root, { [classes.inverse]: inversed }, className)}>
       <Box className={classes.container}>
