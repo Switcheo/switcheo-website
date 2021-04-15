@@ -16,8 +16,24 @@ type PARTNER = {
 
 const PARTNERS: PARTNER[] = [
     {
+        logo: ZilliqaSVG,
+        name: "Zilliqa"
+    },
+    {
+        logo: NeoSVG,
+        name: "Neo"
+    },
+    {
+      logo: PolyNetworkSVG,
+      name: "Poly Network"
+    },
+    {
       logo: BoltSVG,
       name: "Bolt"
+    },
+    {
+      logo: DuskSVG,
+      name: "Dusk Network"
     },
     {
       logo: DacmSVG,
@@ -30,22 +46,6 @@ const PARTNERS: PARTNER[] = [
     {
       logo: DefinanceSVG,
       name: "Definance Capital"
-    },
-    {
-      logo: DuskSVG,
-      name: "Dusk Network"
-    },
-    {
-      logo: NeoSVG,
-      name: "Neo"
-    },
-    {
-      logo: PolyNetworkSVG,
-      name: "Poly Network"
-    },
-    {
-        logo: ZilliqaSVG,
-        name: "Zilliqa"
     },
     {
       logo: ThreeArrowsSVG,
