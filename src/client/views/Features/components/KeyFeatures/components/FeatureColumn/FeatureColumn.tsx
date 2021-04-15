@@ -2,7 +2,6 @@ import { Box, BoxProps, Typography, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";
-import { SwitcheoLogo, ViewLink } from "../../../../../../components";
 import { minBlockHeight, Feature } from "../../../../../../constants";
 
 export interface FeatureColumnProps extends BoxProps {

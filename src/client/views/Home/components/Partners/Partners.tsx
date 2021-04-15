@@ -1,10 +1,8 @@
-import { Divider, Grid, Typography } from "@material-ui/core";
+import { Divider, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
-import { ContentSection, ContentTitle, CTAButton } from "../../../../components";
-import { Box } from "@material-ui/core";
-import { Paths } from "../../../../constants";
+import { ContentSection, ContentTitle } from "../../../../components";
 import PARTNERS from "../../assets/Partners"
 
 const useStyles = makeStyles(theme => ({
@@ -72,7 +70,6 @@ const Partners: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
       <ContentTitle>Our partners</ContentTitle>
       <Grid container spacing={6} className={classes.logoContainer}>
         {PARTNERS.map((partner) => {
-          const Icon = partner.logo
           return(
             <Grid item xs={6} md={4} key={partner.name}>
               <Divider className={classes.divider} />

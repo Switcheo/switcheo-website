@@ -2,9 +2,7 @@
 import { ReactComponent as urlAccountIcon } from "./assets/account.svg";
 import { ReactComponent as urlCrossChainIcon } from "./assets/cross-chain.svg";
 import { ReactComponent as urlDecentralizationIcon } from "./assets/decentralization.svg";
-import { ReactComponent as urlSwitcheoChainIcon } from "./assets/switcheo-chain.svg";
 import { ReactComponent as urlTradehubIcon } from "./assets/tradehub.svg";
-import { ReactComponent as urlWalletIntegrationsIcon } from "./assets/wallet-integrations.svg";
 
 export const Dim = {
   spacing: 24,

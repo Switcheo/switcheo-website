@@ -2,7 +2,7 @@ import { Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
-import { ContentSection, SwitcheoLogo, TwinSection, ImageCell } from "../../components";
+import { SwitcheoLogo, TwinSection, ImageCell } from "../../components";
 import { Features, Hero, Products, Story, Press, Culture, Referral, Blog, FeaturedIn, Support, Partners } from "./components";
 
 import urlImageCulture from "./assets/culture-square.png";
