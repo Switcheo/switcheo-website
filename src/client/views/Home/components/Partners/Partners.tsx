@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(2,0,0,2),
     [theme.breakpoints.down("md")]: {
       margin: theme.spacing(2.5,0,0,0),
-      width: '18rem'
+      width: '17rem'
     },
     [theme.breakpoints.down("sm")]: {
       margin: theme.spacing(2,0,0,0),
