@@ -72,25 +72,20 @@ const Footer: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
             <Grid item className={cls(classes.cell, classes.links)} md={3} xs={6}>
               <FooterTitle>Sitemap</FooterTitle>
 
-              <FooterLink href={Paths.exchange} target="_blank">Exchange</FooterLink>
               <FooterLink href={Paths.home}>Home</FooterLink>
+              <FooterLink href={Paths.features}>What we do</FooterLink>
+              <FooterLink href={Paths.products}>Reimagine Decentralization</FooterLink>
               <FooterLink href={Paths.story}>Our Story</FooterLink>
-              <FooterLink href={Paths.features}>Our Ecosystem</FooterLink>
-              <FooterLink href={Paths.press}>Press</FooterLink>
+              <FooterLink href={Paths.partners}>Partners</FooterLink>
               <FooterLink href={Paths.culture}>Careers</FooterLink>
+              <FooterLink href={Paths.press}>Press</FooterLink>
               <FooterLink href={Paths.blog} target="_blank">Blog</FooterLink>
-              <FooterLink href={Paths.support} target="_blank">Support</FooterLink>
             </Grid>
             <Grid item className={cls(classes.cell, classes.links)} md={3} xs={6}>
               <FooterTitle>Resources</FooterTitle>
 
               <FooterLink href={Paths.api_docs} target="_blank">Developer</FooterLink>
               <FooterLink href={Paths.media_kit} target="_blank">Media Kit</FooterLink>
-              <FooterLink href={Paths.terms_of_use}>Terms of Use</FooterLink>
-              <FooterLink href={Paths.privacy_policy}>Privacy Policy</FooterLink>
-              <FooterLink href={Paths.security_policy}>Security Policy</FooterLink>
-              <FooterLink href={Paths.listing_policy}>Listing Policy</FooterLink>
-              <FooterLink href={Paths.apply_to_list} target="_blank">Apply for Listing</FooterLink>
             </Grid>
             <Hidden smDown>
               <Grid item xs={1} />

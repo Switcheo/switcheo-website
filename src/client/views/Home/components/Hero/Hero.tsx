@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
 import { ContentSection, ContentTitle, CTAButton } from "../../../../components";
+import { Paths } from "../../../../constants";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -38,12 +39,12 @@ const Hero: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
       </ContentTitle>
       <Typography variant="body1" color="secondary" className={classes.description}>
         Finance without limits, for lives without limits.
-        We bring you platforms that break new ground. There’s
-        nothing cryptic about crypto on Switcheo. Your time
+        We bring you groundbreaking platforms that pave the way for a decentralized future. 
+        There’s nothing cryptic about crypto on Switcheo. Your time
         spent with us will be a worthwhile investment.
       </Typography>
       <Box flex={1} />
-      <CTAButton secondary href="https://switcheo.exchange" target="_blank">Start trading</CTAButton>
+      <CTAButton secondary href={Paths.governance} target="_blank">Build with us</CTAButton>
     </ContentSection>
   );
 };

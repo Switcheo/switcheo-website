@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
   },
   head: {
     position: "relative",
-    minHeight: 175,
+    minHeight: 80,
   },
   label: {
     fontWeight: "bold",
@@ -84,12 +84,6 @@ const HomeFeatureColumn: React.FC<HomeFeatureColumnProps> = (props: any) => {
         <Divider className={classes.divider} />
         <Box className={classes.head}>
           <Typography className={classes.label} variant="body1" color="primary">{feature.label}</Typography>
-          {feature.descriptors.map((descriptor: string, index: number) => (
-            <Typography className={classes.descriptor} variant="body1" color="primary" key={index}>{descriptor}</Typography>
-          ))}
-          {!!feature.link && (
-            <ViewLink target="_blank" href={feature.link} />
-          )}
         </Box>
         <Hidden smDown>
           <Divider className={classes.divider} />

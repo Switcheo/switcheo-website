@@ -73,15 +73,15 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.primary.main,
     marginBottom: theme.spacing(2),
     lineHeight: 1.25,
-    minHeight: 200,
+    minHeight: 170,
     [theme.breakpoints.down("sm")]: {
-      minHeight: 0,
+      minHeight: 60,
     },
   },
   head: {
-    minHeight: 200,
+    minHeight: 80,
     [theme.breakpoints.down("sm")]: {
-      minHeight: 100,
+      minHeight: 50,
     },
   },
   label: {
@@ -110,12 +110,6 @@ const FeatureColumn: React.FC<FeatureColumnProps> = (props: any) => {
         <Divider className={classes.divider} />
         <Box className={classes.head}>
           <Typography className={classes.label} variant="body2">{feature.label}</Typography>
-          {feature.descriptors.map((descriptor: string, index: number) => (
-            <Typography className={classes.descriptor} variant="body2" key={index}>{descriptor}</Typography>
-          ))}
-          {!!feature.link && (
-            <ViewLink className={cls({ [classes.inverseLink]: inversed })} target="_blank" href={feature.link} />
-          )}
         </Box>
         <Typography className={classes.description} variant="body2">{feature.description}</Typography>
         <Divider className={cls(classes.divider, classes.mobileDownHide)} />

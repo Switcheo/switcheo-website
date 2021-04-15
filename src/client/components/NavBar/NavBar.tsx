@@ -115,7 +115,7 @@ const NavBar: React.FC<React.HTMLAttributes<HTMLDivElement>> = () => {
               <Grid className={classes.gridContainer} container>
                 <Grid item xs={4}>
                   <HeaderLink href={Paths.home}>Home</HeaderLink>
-                  <HeaderLink href={Paths.exchange} target="_blank">Start trading</HeaderLink>
+                  <HeaderLink href={Paths.governance} target="_blank">Build with us</HeaderLink>
                   <HeaderLink href={Paths.features}>Key features</HeaderLink>
                 </Grid>
                 <Grid item xs={4}>

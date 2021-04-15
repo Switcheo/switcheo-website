@@ -8,4 +8,5 @@ export { default as Culture } from "./Culture";
 export { default as Blog } from "./Blog";
 export { default as Support } from "./Support";
 export { default as FeaturedIn } from "./FeaturedIn";
+export { default as Partners } from  "./Partners";
 

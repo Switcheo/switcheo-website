@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
 import { ContentSection, SwitcheoLogo, TwinSection, ImageCell } from "../../components";
-import { Features, Hero, Products, Story, Press, Culture, Referral, Blog, FeaturedIn, Support } from "./components";
+import { Features, Hero, Products, Story, Press, Culture, Referral, Blog, FeaturedIn, Support, Partners } from "./components";
 
 import urlImageCulture from "./assets/culture-square.png";
 import urlImageHero from "./assets/hero-square.png";
@@ -50,6 +50,10 @@ const Home: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
         <Story id="story" />
       </TwinSection>
 
+      <TwinSection>
+        <Partners id="partners"/>
+      </TwinSection>
+
       <TwinSection hide="mdUp">
         <Press id="press" />
       </TwinSection>
@@ -69,15 +73,11 @@ const Home: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
         <Referral />
       </TwinSection>
 
-      <TwinSection>
+     <TwinSection>
         <FeaturedIn id="featured" />
         <Blog id="blog" />
-      </TwinSection>
+      </TwinSection> 
 
-      <TwinSection>
-        <Support id="support" />
-        <ImageCell src={urlImageSupport} />
-      </TwinSection>
     </Box>
   );
 };
