@@ -1,10 +1,8 @@
 import express from "express";
 import path from "path";
-import actions from "../client/store/actions";
 import htmlMiddleware from "./middleware/html";
 import renderMiddleware from "./middleware/render";
 import { SvContentful } from "./service";
-import ServerStore from "./store";
 
 SvContentful.init();
 SvContentful.reloadCache();

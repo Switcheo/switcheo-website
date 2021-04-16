@@ -10,7 +10,7 @@ import { StaticRouter } from "react-router-dom";
 import ClientApp from '../../client/app';
 import { SvContentful } from '../service';
 import ServerStore from '../store';
-
+import { CANONICAL_ORIGIN } from "./constants";
 
 const renderMiddleware = () => (req: Request, res: Response) => {
   let html = req.html || '';
@@ -38,6 +38,7 @@ const renderMiddleware = () => (req: Request, res: Response) => {
     STATIC_DOCUMENT: staticDocumentHtml,
     PRELOADED_STATE: JSON.stringify({ Content }).replace(/\`/g, '\`'),
     WEBSITE_URL: origin || "",
+    CANONICAL_URL: `https://${CANONICAL_ORIGIN}${req.originalUrl}`,
     CSS_CONTENT: `<style id="server-side-styles">${sheets.toString()}</style>`, // inline styles to initial html
   };
 

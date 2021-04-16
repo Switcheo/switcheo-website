@@ -1,6 +1,7 @@
+import { NextFunction, Request, Response } from 'express';
 import fs from 'fs';
 import path from 'path';
-import { Request, Response, NextFunction } from 'express';
+import { CANONICAL_ORIGIN } from './constants';
 
 const htmlMiddleware = () => (
   req: Request,
@@ -8,6 +9,12 @@ const htmlMiddleware = () => (
   next: NextFunction
 ) => {
   const publicPath = path.join(__dirname, '/public');
+
+  const host = req.header("host");
+  if (process.env.NODE_ENV === "production" && host !== CANONICAL_ORIGIN) {
+    res.redirect(`${CANONICAL_ORIGIN}${req.originalUrl}`);
+    return;
+  }
 
   fs.readFile(`${publicPath}/app.html`, 'utf8', (err, html) => {
     if (!err) {
