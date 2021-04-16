@@ -1,39 +1,43 @@
-import React from "react";
-import { default as BoltSVG } from "./Partners_Bolt.svg";
-import { default as DacmSVG } from "./Partners_DACM.svg";
-import { default as DefiSVG } from "./Partners_DeFi.svg";
-import { default as DefinanceSVG } from "./Partners_DeFinance.svg";
-import { default as DuskSVG } from "./Partners_Dusk.svg";
-import { default as NeoSVG } from "./Partners_Neo.svg";
-import { default as PolyNetworkSVG } from "./Partners_PolyNetwork.svg";
-import { default as ThreeArrowsSVG } from "./Partners_ThreeArrows.svg";
-import { default as ZilliqaSVG } from "./Partners_Zilliqa.svg";
+import { default as DacmSVG } from "./DACM.svg";
+import { default as DefiSVG } from "./DeFiCapital.svg";
+import { default as DefianceSVG } from "./DeFianceCapital.svg";
+import { default as DuskSVG } from "./DUSK.svg";
+import { default as EverstakeSVG } from "./Everstake.svg";
+import { default as HoubiPoolSVG } from "./HoubiPool.svg";
+import { default as NeoSVG } from "./neo.svg";
+import { default as PolyNetworkSVG } from "./PolyNetwork.svg";
+import { default as ThreeArrowsSVG } from "./ThreeArrowCapital.svg";
+import { default as ZilliqaSVG } from "./Zilliqa.svg";
+import { default as O3LabsSVG } from "./O3Labs.svg";
+import { default as NGCSVG } from "./NGC.svg";
+import { default as stakeWithUsSVG } from "./stakewithus.svg";
+
 
 type PARTNER = {
     logo: string;
     name: string;
-}
-
-const PARTNERS: PARTNER[] = [
+  }
+  
+  const PARTNERS: PARTNER[] = [
     {
-        logo: ZilliqaSVG,
-        name: "Zilliqa"
+      logo: ThreeArrowsSVG,
+      name: "Three Arrows Capital"
+    },
+    {
+      logo: DefianceSVG,
+      name: "Definance Capital"
+    },
+    {
+      logo: NGCSVG,
+      name: "NGC"
     },
     {
         logo: NeoSVG,
         name: "Neo"
     },
     {
-      logo: PolyNetworkSVG,
-      name: "Poly Network"
-    },
-    {
-      logo: BoltSVG,
-      name: "Bolt"
-    },
-    {
-      logo: DuskSVG,
-      name: "Dusk Network"
+      logo: ZilliqaSVG,
+      name: "Zilliqa"
     },
     {
       logo: DacmSVG,
@@ -44,12 +48,28 @@ const PARTNERS: PARTNER[] = [
       name: "DeFi Capital"
     },
     {
-      logo: DefinanceSVG,
-      name: "Definance Capital"
+      logo: PolyNetworkSVG,
+      name: "Poly Network"
     },
     {
-      logo: ThreeArrowsSVG,
-      name: "Three Arrows Capital"
+      logo: DuskSVG,
+      name: "Dusk Network"
+    },
+    {
+      logo: HoubiPoolSVG,
+      name: "Houbi Pool"
+    },
+    {
+      logo: stakeWithUsSVG,
+      name: "Stake with us"
+    },
+    {
+      logo: EverstakeSVG,
+      name: "EverStake"
+    },
+    {
+      logo: O3LabsSVG,
+      name: "O3 Labs"
     },
   ]
 

@@ -76,13 +76,10 @@ const Products: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
         </Typography>
 
         <Box className={classes.products}>
-          <ProductEntry icon={SwitcheoIcon} href={Paths.tradeHub}>Switcheo TradeHub</ProductEntry>
-          <ProductEntry icon={SwitcheoIcon} href={Paths.tradescan}>Tradescan</ProductEntry>
+          <ProductEntry icon={SwitcheoIcon} href={Paths.tradescan}>Switcheo TradeHub (Explorer)</ProductEntry>
           <ProductEntry icon={DemexIcon} href={Paths.demex}>Demex</ProductEntry>
-          <ProductEntry icon={SwitcheoTokenIcon} href={Paths.staking}>Switcheo Token</ProductEntry>
           <ProductEntry icon={ZilswapIcon} href={Paths.zilswap}>ZilSwap</ProductEntry>
-          <ProductEntry icon={FoundationIcon} href={Paths.foundation}>Switcheo Foundation</ProductEntry>
-          <ProductEntry icon={SwitcheoIcon} href={Paths.exchange}>Switcheo Exchange (Deprecated)</ProductEntry>
+          {/* <ProductEntry icon={SwitcheoTokenIcon} href={Paths.staking}>Switcheo Token</ProductEntry> */}
         </Box>
 
         <Box flex={1} />

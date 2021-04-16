@@ -20,40 +20,13 @@ const useStyles = makeStyles(theme => ({
   logo: {
     width: '13rem',
     margin: theme.spacing(2,0,0,2),
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("lg")]: {
       margin: theme.spacing(2,0,0,0),
-      width: '8rem'
-    },
-  },
-  threeACLogo:{
-    width: '21rem',
-    margin: theme.spacing(2,0,0,2),
-    [theme.breakpoints.down("md")]: {
-      margin: theme.spacing(2.5,0,0,0),
-      width: '17rem'
-    },
-    [theme.breakpoints.down("sm")]: {
-      margin: theme.spacing(2,0,0,0),
-      width: '9rem'
-    },
-  },
-  bigNumber: {
-    fontWeight: "bold",
-    textAlign: "center",
-    fontSize: "427px",
-    lineHeight: "350px",
-    marginBottom: theme.spacing(4),
-    [theme.breakpoints.down("md")]: {
-      fontSize: "312px",
-      lineHeight: "268px",
-    },
-    [theme.breakpoints.down("md")]: {
-      fontSize: "202px",
-      lineHeight: "183px",
+      width: '12rem'
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize: "120px",
-      lineHeight: "115px",
+      margin: theme.spacing(2,0,0,0),
+      width: '8rem'
     },
   },
   logoContainer: {
@@ -73,7 +46,7 @@ const Partners: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
           return(
             <Grid item xs={6} md={4} key={partner.name}>
               <Divider className={classes.divider} />
-              <img src={partner.logo} alt={partner.name} className={classes[partner.name === "Three Arrows Capital" ? "threeACLogo" : "logo"]} />
+              <img src={partner.logo} alt={partner.name} className={classes.logo} />
             </Grid>
           )
         })}
