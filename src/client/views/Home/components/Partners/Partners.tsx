@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   },
   logo: {
     width: '13rem',
-    margin: theme.spacing(2,0,0,2),
+    margin: theme.spacing(2,0,0,0),
     [theme.breakpoints.down("lg")]: {
       margin: theme.spacing(2,0,0,0),
       width: '12rem'

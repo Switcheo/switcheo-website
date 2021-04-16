@@ -43,6 +43,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: "left",
     textTransform: "none",
     fontWeight: "bold",
+    paddingRight: "3px"
   },
   switcheoIcon: {
     height: 22,
