@@ -5,10 +5,8 @@ import cls from "classnames";
 import { ProductColumn } from "./components";
 import { Product } from "./components/ProductColumn/ProductColumn";
 import { ReactComponent as DemexIcon } from "./assets/demex-logo.svg";
-import { ReactComponent as FoundationIcon } from "./assets/foundation-logo.svg";
 import { ReactComponent as SwitcheoIcon } from "./assets/switcheo-logo.svg";
 import { ReactComponent as ZilswapIcon } from "./assets/zilswap-logo.svg";
-import { ReactComponent as SwitcheoTokenIcon } from "./assets/switcheo-token.svg";
 import { Paths } from "../../../../constants";
 
 const PRODUCTS: Product[] = [
@@ -69,7 +67,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
   },
   intro: {
-    padding: theme.spacing(3,3),
+    padding: theme.spacing(3),
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -110,7 +108,7 @@ const OurProducts: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any)
         </Grid>
         {PRODUCTS.map((product, index) => (
           <Grid key={index} item className={classes.item} {...product.responsive}>
-            <ProductColumn product={product} key={index} />
+            <ProductColumn product={product} index={index} />
           </Grid>
         ))}
       </Grid>

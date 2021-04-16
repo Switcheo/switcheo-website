@@ -4,6 +4,9 @@ import React from "react";
 import cls from "classnames";
 import { ViewLink } from "../../../../../../components";
 import { minBlockHeight, minProductBlockHeight } from "../../../../../../constants";
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+
 
 type ReponsiveGridSize = boolean | 4 | 6 | "auto" | 3 | 10 | 1 | 2 | 5 | 7 | 8 | 9 | 11 | 12 
 export type Product = {
@@ -24,11 +27,12 @@ export type Product = {
 
 export interface ProductColumnProps extends BoxProps {
   product: Product;
+  index: number;
 };
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: theme.spacing(1.5),
+    padding: theme.spacing(6, 1.5),
     height: '100%',
     minHeight: minProductBlockHeight,
     display: "flex",
@@ -92,12 +96,16 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const ProductColumn: React.FC<ProductColumnProps> = (props: any) => {
-  const { children, product, className, ...rest } = props;
   const classes = useStyles();
+  const { children, product, className, index, ...rest } = props;
   const Icon = product.icon;
-  const color = product.highlight ? 'textSecondary' : 'textPrimary';
+  const theme = useTheme();
+  const matchSM = useMediaQuery(theme.breakpoints.down('sm'));
+  const matchXS = useMediaQuery(theme.breakpoints.down('xs'))
+  const inversed = matchSM && !matchXS ? (index === 1 || index === 2) : (index === 0 || index === 2);
+  const color = inversed ? 'textSecondary' : 'textPrimary';
   return (
-    <Box {...rest} className={cls(classes.root, className, { [classes.alternate]: product.highlight })}>
+    <Box {...rest} className={cls(classes.root, className, { [classes.alternate]: inversed })}>
       <Icon className={classes.icon} />
       <Divider className={classes.divider} />
       <Box className={classes.content}>

@@ -12,6 +12,9 @@ import urlImagePress from "./assets/press-square.png";
 const useStyles = makeStyles(theme => ({
   root: {
     paddingBottom: theme.spacing(10),
+    [theme.breakpoints.down("sm")]: {
+     paddingBottom: theme.spacing(2)
+    }, 
   },
   switcheoIcon: {
     height: "100%",
