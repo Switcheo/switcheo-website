@@ -16,20 +16,20 @@ const useStyles = makeStyles(theme => ({
   bigNumber: {
     fontWeight: "bold",
     textAlign: "center",
-    fontSize: "427px",
+    fontSize: "327px",
     lineHeight: "350px",
     marginBottom: theme.spacing(4),
     [theme.breakpoints.down("md")]: {
-      fontSize: "312px",
-      lineHeight: "268px",
+      fontSize: "25vw",
+      lineHeight: "280px",
     },
-    [theme.breakpoints.down("md")]: {
-      fontSize: "202px",
-      lineHeight: "183px",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "27vw",
+      lineHeight: "163px",
     },
     [theme.breakpoints.down("xs")]: {
-      fontSize: "120px",
-      lineHeight: "115px",
+      fontSize: "27vw",
+      lineHeight: "120px",
     },
   },
 }));
@@ -40,7 +40,7 @@ const Story: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   return (
     <ContentSection {...rest} className={cls(classes.root, className)}>
       <ContentTitle secondary>Our story</ContentTitle>
-      <Typography className={classes.bigNumber} color="secondary">96000</Typography>
+      <Typography className={classes.bigNumber} color="secondary">96000+</Typography>
       <Typography variant="body1" color="secondary">Trusted by over 96000 users around the world. And growing by the day.</Typography>
       <Box flex={1} />
       <CTAButton secondary href={Paths.story}>Our story</CTAButton>

@@ -77,13 +77,11 @@ const NavMenu: React.FC<NavMenuProps> = (props: any) => {
 
         <Box className={classes.navContainer} display="flex" flexDirection="column">
           <NavLink onClick={() => closeMenu()} href={Paths.features}>What we do</NavLink>
-          <NavLink onClick={() => closeMenu()} href={Paths.products}>Products</NavLink>
-          <NavLink onClick={() => closeMenu()} href={Paths.exchange} target="_blank">Exchange</NavLink>
+          <NavLink onClick={() => closeMenu()} href={Paths.products}>Reimagine Decentralization</NavLink>
           <NavLink onClick={() => closeMenu()} href={Paths.story}>Our story</NavLink>
           <NavLink onClick={() => closeMenu()} href={Paths.culture}>Our culture</NavLink>
           <NavLink onClick={() => closeMenu()} href={Paths.press}>Press</NavLink>
           <NavLink onClick={() => closeMenu()} href={Paths.blog} target="_blank">Blog</NavLink>
-          <NavLink onClick={() => closeMenu()} href={Paths.support} target="_blank">Support</NavLink>
         </Box>
       </Box>
     </Box>
