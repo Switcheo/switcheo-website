@@ -3,13 +3,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
 import { SwitcheoLogo, TwinSection, ImageCell } from "../../components";
-import { Features, Hero, Products, Story, Press, Culture, Referral, Blog, FeaturedIn, Support, Partners } from "./components";
+import { Features, Hero, Products, Story, Press, Culture, Blog, FeaturedIn, Partners } from "./components";
 
 import urlImageCulture from "./assets/culture-square.png";
 import urlImageHero from "./assets/hero-square.png";
 import urlImagePress from "./assets/press-square.png";
-import urlImageReferral from "./assets/referral-square.png";
-import urlImageSupport from "./assets/support-square.png";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -67,12 +65,7 @@ const Home: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
         <Press id="press" />
         <ImageCell src={urlImagePress} />
       </TwinSection>
-
-      <TwinSection mobileReverse>
-        <ImageCell src={urlImageReferral} />
-        <Referral />
-      </TwinSection>
-
+      
      <TwinSection>
         <FeaturedIn id="featured" />
         <Blog id="blog" />

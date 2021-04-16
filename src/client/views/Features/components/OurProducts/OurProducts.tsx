@@ -14,7 +14,7 @@ import { Paths } from "../../../../constants";
 const PRODUCTS: Product[] = [
   {
   title: "Switcheo TradeHub",
-  descriptor: "A fully decentralized layer 2 cross-chain trading protocol .",
+  descriptor: "A fully decentralized layer 2 cross-chain trading protocol.",
   description: "Switcheo TradeHub is a custom-built sidechain for trading that utilizes Cosmos SDK as its primary building block. It is designed to support high-performance trading of any financial asset, at scale.",
   link: Paths.tradeHub,
   icon: SwitcheoIcon,
@@ -56,7 +56,7 @@ const PRODUCTS: Product[] = [
 }, 
 {
   title: "ZilSwap",
-  descriptor: "A Decentralized Token Swap Protocol",
+  descriptor: "A Decentralized Token Swap Protocol.",
   description: "Built by Switcheo Labs, ZilSwap is an on-chain DEX on Zilliqa. Swap assets directly or provide liquidity to earn passively. Switcheo TradeHub will soon integrate Zilliqa to leverage ZilSwap liquidity.",
   link: Paths.zilswap,
   icon: ZilswapIcon,

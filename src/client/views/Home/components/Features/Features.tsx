@@ -27,7 +27,7 @@ const Features: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
   const classes = useStyles();
   return (
     <ContentSection {...rest} className={cls(classes.root, className)}>
-      <ContentTitle>Key features</ContentTitle>
+      <ContentTitle>What we do</ContentTitle>
       <Box className={classes.wrapper}>
         <Grid container>
           {FEATURES.slice(0, 4).map((feature, index) => (

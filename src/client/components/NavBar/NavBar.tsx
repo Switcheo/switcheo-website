@@ -116,7 +116,7 @@ const NavBar: React.FC<React.HTMLAttributes<HTMLDivElement>> = () => {
                 <Grid item xs={4}>
                   <HeaderLink href={Paths.home}>Home</HeaderLink>
                   <HeaderLink href={Paths.governance} target="_blank">Build with us</HeaderLink>
-                  <HeaderLink href={Paths.features}>Key features</HeaderLink>
+                  <HeaderLink href={Paths.features}>What we do</HeaderLink>
                 </Grid>
                 <Grid item xs={4}>
                   <HeaderLink href={Paths.story}>Our story</HeaderLink>
