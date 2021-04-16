@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";
 import { ViewLink } from "../../../../../../components";
-import { minBlockHeight } from "../../../../../../constants";
+import { minBlockHeight, minProductBlockHeight } from "../../../../../../constants";
 
 type ReponsiveGridSize = boolean | 4 | 6 | "auto" | 3 | 10 | 1 | 2 | 5 | 7 | 8 | 9 | 11 | 12 
 export type Product = {
@@ -29,13 +29,17 @@ export interface ProductColumnProps extends BoxProps {
 const useStyles = makeStyles(theme => ({
   root: {
     padding: theme.spacing(1.5),
-    minHeight: minBlockHeight,
+    height: '100%',
+    minHeight: minProductBlockHeight,
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     [theme.breakpoints.down("sm")]: {
       padding: theme.spacing(3, 3),
       minHeight: 0,
+    },
+    [theme.breakpoints.down("md")]: {
+      minHeight: minBlockHeight,
     },
   },
   alternate: {
@@ -56,8 +60,9 @@ const useStyles = makeStyles(theme => ({
   },
   content: {
     color: theme.palette.primary.main,
-    minHeight: 340,
+    minHeight: 420,
     display: "flex",
+    flexGrow: 1,
     flexDirection: "column",
     [theme.breakpoints.down("md")]: {
       minHeight: 250,
@@ -74,7 +79,7 @@ const useStyles = makeStyles(theme => ({
   divider: {
     backgroundColor: theme.palette.primary.main,
     marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(1),
+    marginBottom: theme.spacing(4),
   },
   icon: {
     color: theme.palette.primary.main,

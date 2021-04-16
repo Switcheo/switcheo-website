@@ -47,7 +47,7 @@ const KeyFeatures: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any)
         <Typography className={classes.title} variant="h2">Key features</Typography>
         <Grid className={classes.featureContainer} container>
           {FEATURES.map((feature, index) => (
-            <Grid key={index} className={classes.item} item sm={4} xs={6}>
+            <Grid key={index} className={classes.item} item md={3} sm={6}>
               <FeatureColumn feature={feature} index={index + 1} key={index} />
             </Grid>
           ))}

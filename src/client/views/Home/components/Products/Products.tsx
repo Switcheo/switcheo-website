@@ -7,6 +7,7 @@ import { ReactComponent as DemexIcon } from "./assets/demex-logo.svg";
 import { ReactComponent as FoundationIcon } from "./assets/foundation-logo.svg";
 import { ReactComponent as SwitcheoIcon } from "./assets/switcheo-logo.svg";
 import { ReactComponent as ZilswapIcon } from "./assets/zilswap-logo.svg";
+import { ReactComponent as SwitcheoTokenIcon } from "./assets/switcheo-token.svg";
 import ProductEntry from "./components";
 import { Paths } from "../../../../constants";
 
@@ -14,6 +15,20 @@ const useStyles = makeStyles(theme => ({
   root: {
     [theme.breakpoints.down("sm")]: {
       padding: theme.spacing(4, 3, 6),
+    },
+  },
+  title: {
+    fontSize: "84px",
+    lineHeight: "84px",
+    letterSpacing: "-1px",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "48px",
+      lineHeight: "50px",
+      letterSpacing: "-.5px",
+    },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "32px",
+      lineHeight: "32px",
     },
   },
   container: {
@@ -52,23 +67,26 @@ const Products: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
   return (
     <ContentSection {...rest} className={cls(classes.root, className)}>
       <Box className={classes.container}>
-        <ContentTitle large>Our ecosystem</ContentTitle>
+        <ContentTitle className={classes.title}>Reimagine decentralization</ContentTitle>
         <Typography className={classes.description} color="primary" variant="body1">
           As pioneers of the decentralized world, we constantly
           dive headfirst into new realms. We build unstoppable
-          products that enable a global financial ecosystem
+          platforms that enable a global financial ecosystem
           without unjust barriers or unnecessary intermediaries.
         </Typography>
 
         <Box className={classes.products}>
-          <ProductEntry icon={SwitcheoIcon} href={Paths.exchange}>Switcheo Exchange</ProductEntry>
+          <ProductEntry icon={SwitcheoIcon} href={Paths.tradeHub}>Switcheo TradeHub</ProductEntry>
+          <ProductEntry icon={SwitcheoIcon} href={Paths.tradescan}>Tradescan</ProductEntry>
           <ProductEntry icon={DemexIcon} href={Paths.demex}>Demex</ProductEntry>
+          <ProductEntry icon={SwitcheoTokenIcon} href={Paths.staking}>Switcheo Token</ProductEntry>
           <ProductEntry icon={ZilswapIcon} href={Paths.zilswap}>ZilSwap</ProductEntry>
           <ProductEntry icon={FoundationIcon} href={Paths.foundation}>Switcheo Foundation</ProductEntry>
+          <ProductEntry icon={SwitcheoIcon} href={Paths.exchange}>Switcheo Exchange (Deprecated)</ProductEntry>
         </Box>
 
         <Box flex={1} />
-        <CTAButton href={Paths.products} white>Explore products</CTAButton>
+        <CTAButton href={Paths.products} white>Explore ecosystem</CTAButton>
       </Box>
     </ContentSection>
   );

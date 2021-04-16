@@ -8,47 +8,85 @@ import { ReactComponent as DemexIcon } from "./assets/demex-logo.svg";
 import { ReactComponent as FoundationIcon } from "./assets/foundation-logo.svg";
 import { ReactComponent as SwitcheoIcon } from "./assets/switcheo-logo.svg";
 import { ReactComponent as ZilswapIcon } from "./assets/zilswap-logo.svg";
+import { ReactComponent as SwitcheoTokenIcon } from "./assets/switcheo-token.svg";
 import { Paths } from "../../../../constants";
 
-const PRODUCTS: Product[] = [{
-  title: "Switcheo Exchange",
-  descriptor: "The Preferred Exchange, trading on Ethereum, Neo, and more.",
-  description: "Switcheo paves the way for a secure multi-chain trading experience that is practical even for a crypto beginner. Trade while retaining control of your funds. No mandatory registration.",
-  link: Paths.exchange,
+const PRODUCTS: Product[] = [
+  {
+  title: "Switcheo TradeHub",
+  descriptor: "A fully decentralized layer 2 cross-chain trading protocol .",
+  description: "Switcheo TradeHub is a custom-built sidechain for trading that utilizes Cosmos SDK as its primary building block. It is designed to support high-performance trading of any financial asset, at scale.",
+  link: Paths.tradeHub,
   icon: SwitcheoIcon,
   highlight: true,
   responsive: {
     md: 4, sm: 6,
-  },
-}, {
-  title: "ZilSwap",
-  descriptor: "A Decentralized Token Swap Protocol",
-  description: "Zilswap is a fully decentralized AMM protocol for ZRC-2 token exchanges on Zilliqa.",
-  link: Paths.zilswap,
-  icon: ZilswapIcon,
+  }, 
+ }, 
+ {
+  title: "Tradescan",
+  descriptor: "Switcheo TradeHub’s native block explorer.",
+  description: "Tradescan is Switcheo TradeHub’s block explorer that provides visibility on the protocol’s inner workings. Track the latest staking APRs, SWTH supply and average block times or participate in Switcheo’s on-chain governance.",
+  link: Paths.tradescan,
+  icon: SwitcheoIcon,
   responsive: {
     md: 4, sm: 6,
   },
-}, {
+ }, 
+ {
   title: "Demex",
-  descriptor: "The Decentralized Mercantile Exchange",
-  description: "Demex is the first fully decentralized platform that supports any type of financial market possible. It is set to run on the Switcheo TradeHub decentralized trading protocol.",
+  descriptor: "The Decentralized Mercantile Exchange.",
+  description: "Demex is a 2nd-generation derivatives DEX powered by the Switcheo TradeHub protocol. Trade any financial asset imaginable on the first exchange to integrate on-chain liquidity pools with order books.",
   link: Paths.demex,
   icon: DemexIcon,
   highlight: true,
   responsive: {
     md: 4, sm: 6,
   },
-}, {
+}, 
+{
+  title: "Switcheo Token",
+  descriptor: "The native token of Switcheo TradeHub.",
+  description: "SWTH is Switcheo TradeHub’s governance token with a staking functionality at its core. SWTH secures the protocol across a network of validators and is also used for transaction fees.",
+  link: Paths.swthToken,
+  icon: SwitcheoTokenIcon,
+  responsive: {
+    md: 4, sm: 6,
+  },
+}, 
+{
+  title: "ZilSwap",
+  descriptor: "A Decentralized Token Swap Protocol",
+  description: "Built by Switcheo Labs, ZilSwap is an on-chain DEX on Zilliqa. Swap assets directly or provide liquidity to earn passively. Switcheo TradeHub will soon integrate Zilliqa to leverage ZilSwap liquidity.",
+  link: Paths.zilswap,
+  icon: ZilswapIcon,
+  highlight: true,
+  responsive: {
+    md: 4, sm: 6,
+  },
+}, 
+{
   title: "Switcheo Foundation",
   descriptor: "An Initiative to Democratize Financial Markets.",
-  description: "Switcheo Foundation is a not-for-profit endeavor. Its mission is to champion the growth of a radically decentralized financial system that is truly open. ",
+  description: "Switcheo Foundation is an ambitious not-for-profit project that champions the growth of a radically decentralized financial system while serving as a neutral advisor to the Switcheo TradeHub protocol.",
   link: Paths.foundation,
   icon: FoundationIcon,
   responsive: {
     md: 4, sm: 6,
   },
-}];
+}, 
+{
+  title: "Switcheo Exchange (Deprecated)",
+  descriptor: "The first multi-chain DEX on Neo.",
+  description: "Switcheo Exchange was the first DEX on Neo to interoperate with Ethereum. Launched in 2018, Switcheo Exchange cemented Switcheo’s position as leading builders of decentralized protocols and trailblazers in unprecedented technology.",
+  link: Paths.exchange,
+  icon: SwitcheoIcon,
+  highlight: true,
+  responsive: {
+    md: 4, sm: 6,
+  },
+}
+];
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -69,6 +107,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
   },
   item: {
+    flexGrow: 1,
     "@media (max-width: 459.95px)": {
       maxWidth: "100%",
       flexBasis: "100%",
@@ -84,10 +123,10 @@ const OurProducts: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any)
       <Grid container>
         <Grid item sm={12} md={8} className={classes.introContainer}>
           <Box className={classes.intro}>
-            <Typography variant="h2" color="primary">Our ecosystem</Typography>
+            <Typography variant="h2" color="primary">Reimagine Decentralization</Typography>
             <Typography variant="body1" color="primary">
               As pioneers of the decentralized world, we constantly dive
-              headfirst into new realms, building unstoppable products
+              headfirst into new realms, building unstoppable platforms
               that enable a global financial ecosystem without unjust
               barriers and unnecessary intermediaries.
             </Typography>

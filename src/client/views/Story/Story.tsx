@@ -15,8 +15,8 @@ export type Team = {
 const TEAMS: Team[] = [{
   title: "Core team",
   description: [
-    "Our management, operational, and engineering team is based in our head office in Singapore.",
-    "We are supported by a round-the-clock community & support team to help you take your first step into trading, or make your first crypto purchase safely.",
+    "Our management, operational and engineering team are crypto natives, each holding years experience in their respective fields.",
+    "We work tirelessly with people, partners and projects bring out the best in decentralization.",
   ],
 }, {
   title: "Advisory and Community",
@@ -176,12 +176,10 @@ const Story: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
         <ContentTitle secondary>Our story</ContentTitle>
         <Divider className={classes.divider} />
         <Typography className={classes.description} variant="subtitle1" color="secondary">
-          You bring the possibilities. We bring the platforms that
-          enable finance without limits. Whether you’re here to make
-          your first purchase, or are a battle-weary trader, there’s
-          nothing cryptic about crypto on Switcheo. From humble
-          beginnings, we’ll keep going forward together. Let’s keep
-          living lives without limits. Together, nothing can stop us.
+          From spearheading the first atomic swap exchange, to leading the development of the foremost decentralized derivatives platform, 
+          we build powerful financial infrastructure for the Web3 world. <br/><br/>
+          We combine deep technological expertise with years of experience. 
+          Relentless and unstoppable, we’ll keep going forward together.
         </Typography>
 
         {TEAMS.map((team, index) => (

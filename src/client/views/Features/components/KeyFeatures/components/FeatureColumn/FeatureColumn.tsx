@@ -2,8 +2,9 @@ import { Box, BoxProps, Typography, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import cls from "classnames";
-import { SwitcheoLogo, ViewLink } from "../../../../../../components";
 import { minBlockHeight, Feature } from "../../../../../../constants";
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 export interface FeatureColumnProps extends BoxProps {
   feature: Feature;
@@ -73,15 +74,18 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.primary.main,
     marginBottom: theme.spacing(2),
     lineHeight: 1.25,
-    minHeight: 200,
+    minHeight: '16rem',
     [theme.breakpoints.down("sm")]: {
-      minHeight: 0,
+      minHeight: '9rem',
     },
+    [theme.breakpoints.down("xs")]: {
+      minHeight: '5rem',
+    }
   },
   head: {
-    minHeight: 200,
+    minHeight: 80,
     [theme.breakpoints.down("sm")]: {
-      minHeight: 100,
+      minHeight: 50,
     },
   },
   label: {
@@ -99,10 +103,13 @@ const useStyles = makeStyles(theme => ({
 }));
 const FeatureColumn: React.FC<FeatureColumnProps> = (props: any) => {
   const { children, feature, index, className, ...rest } = props;
+  const theme = useTheme();
+  const matchSM = useMediaQuery(theme.breakpoints.down('sm'));
+  const matchXS = useMediaQuery(theme.breakpoints.down('xs'))
   const Icon = feature.icon;
   const classes = useStyles(props);
 
-  const inversed = index === 2 || index === 4;
+  const inversed = matchSM && !matchXS ? (index === 2 || index === 3) : (index === 2 || index === 4);
   return (
     <Box {...rest} className={cls(classes.root, { [classes.inverse]: inversed }, className)}>
       <Box className={classes.container}>
@@ -110,12 +117,6 @@ const FeatureColumn: React.FC<FeatureColumnProps> = (props: any) => {
         <Divider className={classes.divider} />
         <Box className={classes.head}>
           <Typography className={classes.label} variant="body2">{feature.label}</Typography>
-          {feature.descriptors.map((descriptor: string, index: number) => (
-            <Typography className={classes.descriptor} variant="body2" key={index}>{descriptor}</Typography>
-          ))}
-          {!!feature.link && (
-            <ViewLink className={cls({ [classes.inverseLink]: inversed })} target="_blank" href={feature.link} />
-          )}
         </Box>
         <Typography className={classes.description} variant="body2">{feature.description}</Typography>
         <Divider className={cls(classes.divider, classes.mobileDownHide)} />

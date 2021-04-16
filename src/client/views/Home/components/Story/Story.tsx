@@ -40,10 +40,10 @@ const Story: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
   return (
     <ContentSection {...rest} className={cls(classes.root, className)}>
       <ContentTitle secondary>Our story</ContentTitle>
-      <Typography className={classes.bigNumber} color="secondary">42800</Typography>
-      <Typography variant="body1" color="secondary">Trusted by over 42800 traders around the world. And growing by the day.</Typography>
+      <Typography className={classes.bigNumber} color="secondary">96000</Typography>
+      <Typography variant="body1" color="secondary">Trusted by over 96000 users around the world. And growing by the day.</Typography>
       <Box flex={1} />
-      <CTAButton secondary href={Paths.story}>Learn more</CTAButton>
+      <CTAButton secondary href={Paths.story}>Our story</CTAButton>
     </ContentSection>
   );
 };
