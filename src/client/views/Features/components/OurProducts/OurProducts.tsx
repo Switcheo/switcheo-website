@@ -101,17 +101,26 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
   },
   intro: {
-    padding: theme.spacing(3),
+    padding: theme.spacing(3,3),
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(6,3)
+    }
+  },
+  title: {
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: theme.spacing(3)
+    },
   },
   item: {
     flexGrow: 1,
     "@media (max-width: 459.95px)": {
       maxWidth: "100%",
+      height: "36rem",
       flexBasis: "100%",
-      paddingBottom: theme.spacing(10),
+      // paddingBottom: theme.spacing(10),
     },
   }
 }));
@@ -123,7 +132,7 @@ const OurProducts: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any)
       <Grid container>
         <Grid item sm={12} md={8} className={classes.introContainer}>
           <Box className={classes.intro}>
-            <Typography variant="h2" color="primary">Reimagine Decentralization</Typography>
+            <Typography variant="h2" color="primary" className={classes.title}>Reimagine Decentralization</Typography>
             <Typography variant="body1" color="primary">
               As pioneers of the decentralized world, we constantly dive
               headfirst into new realms, building unstoppable platforms
