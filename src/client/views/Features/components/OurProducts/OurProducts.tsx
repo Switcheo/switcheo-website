@@ -7,6 +7,7 @@ import { Product } from "./components/ProductColumn/ProductColumn";
 import { ReactComponent as DemexIcon } from "./assets/demex-logo.svg";
 import { ReactComponent as SwitcheoIcon } from "./assets/switcheo-logo.svg";
 import { ReactComponent as ZilswapIcon } from "./assets/zilswap-logo.svg";
+import { ReactComponent as FoundationIcon } from "./assets/foundation-logo.svg";
 import { Paths } from "../../../../constants";
 
 const PRODUCTS: Product[] = [
@@ -42,16 +43,16 @@ const PRODUCTS: Product[] = [
      md: 4, sm: 6,
    },
  }, 
-// {
-//   title: "Switcheo Token",
-//   descriptor: "The native token of Switcheo TradeHub.",
-//   description: "SWTH is Switcheo TradeHub’s governance token with a staking functionality at its core. SWTH secures the protocol across a network of validators and is also used for transaction fees.",
-//   link: Paths.swthToken,
-//   icon: SwitcheoTokenIcon,
-//   responsive: {
-//     md: 4, sm: 6,
-//   },
-// }, 
+{
+  title: "Switcheo Development Fund",
+  descriptor: "Decentralizing Switcheo’s Development.",
+  description: "The Switcheo Development Fund (SDF) is an on-chain fund that empowers community developers to spearhead dev projects on Switcheo TradeHub, driving growth and decentralization of the entire protocol.",
+  link: Paths.governance,
+  icon: FoundationIcon,
+  responsive: {
+    md: 4, sm: 6,
+  },
+}, 
 ];
 
 const useStyles = makeStyles(theme => ({
