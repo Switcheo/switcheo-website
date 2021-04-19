@@ -7,7 +7,6 @@ import { ReactComponent as DemexIcon } from "./assets/demex-logo.svg";
 import { ReactComponent as FoundationIcon } from "./assets/foundation-logo.svg";
 import { ReactComponent as SwitcheoIcon } from "./assets/switcheo-logo.svg";
 import { ReactComponent as ZilswapIcon } from "./assets/zilswap-logo.svg";
-import { ReactComponent as SwitcheoTokenIcon } from "./assets/switcheo-token.svg";
 import ProductEntry from "./components";
 import { Paths } from "../../../../constants";
 
@@ -54,6 +53,9 @@ const useStyles = makeStyles(theme => ({
   products: {
     flex: 1,
     width: "100%",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 16,
+    },
   },
   ctaIcon: {
     marginLeft: theme.spacing(8),
