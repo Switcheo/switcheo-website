@@ -76,8 +76,8 @@ const NavMenu: React.FC<NavMenuProps> = (props: any) => {
         </Box>
 
         <Box className={classes.navContainer} display="flex" flexDirection="column">
-          <NavLink onClick={() => closeMenu()} href={Paths.features}>What we do</NavLink>
-          <NavLink onClick={() => closeMenu()} href={Paths.products}>Reimagine Decentralization</NavLink>
+          <NavLink onClick={() => closeMenu()} href={Paths.features}>About</NavLink>
+          <NavLink onClick={() => closeMenu()} href={Paths.products}>Our ecosystem</NavLink>
           <NavLink onClick={() => closeMenu()} href={Paths.story}>Our story</NavLink>
           <NavLink onClick={() => closeMenu()} href={Paths.culture}>Our culture</NavLink>
           <NavLink onClick={() => closeMenu()} href={Paths.press}>Press</NavLink>

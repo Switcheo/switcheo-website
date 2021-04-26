@@ -73,9 +73,9 @@ const Footer: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
               <FooterTitle>Sitemap</FooterTitle>
 
               <FooterLink href={Paths.home}>Home</FooterLink>
-              <FooterLink href={Paths.features}>What we do</FooterLink>
-              <FooterLink href={Paths.products}>Reimagine Decentralization</FooterLink>
-              <FooterLink href={Paths.story}>Our Story</FooterLink>
+              <FooterLink href={Paths.features}>About</FooterLink>
+              <FooterLink href={Paths.products}>Our ecosystem</FooterLink>
+              <FooterLink href={Paths.story}>Our story</FooterLink>
               <FooterLink href={Paths.partners}>Partners</FooterLink>
               <FooterLink href={Paths.culture}>Careers</FooterLink>
               <FooterLink href={Paths.press}>Press</FooterLink>
@@ -85,6 +85,9 @@ const Footer: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
               <FooterTitle>Resources</FooterTitle>
 
               <FooterLink href={Paths.api_docs} target="_blank">Developer</FooterLink>
+              <FooterLink href={Paths.tradehub_docs} target="_blank">TradeHub</FooterLink>
+              <FooterLink href={Paths.demex_docs} target="_blank">Demex</FooterLink>
+              <FooterLink href={Paths.zilswap_docs} target="_blank">ZilSwap</FooterLink>
               <FooterLink href={Paths.media_kit} target="_blank">Media Kit</FooterLink>
             </Grid>
             <Hidden smDown>

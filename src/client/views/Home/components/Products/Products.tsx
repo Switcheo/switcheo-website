@@ -17,8 +17,8 @@ const useStyles = makeStyles(theme => ({
     },
   },
   title: {
-    fontSize: "84px",
-    lineHeight: "84px",
+    fontSize: "64px",
+    lineHeight: "72px",
     letterSpacing: "-1px",
     [theme.breakpoints.down("md")]: {
       fontSize: "48px",
@@ -69,7 +69,7 @@ const Products: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) =>
   return (
     <ContentSection {...rest} className={cls(classes.root, className)}>
       <Box className={classes.container}>
-        <ContentTitle className={classes.title}>Reimagine decentralization</ContentTitle>
+        <ContentTitle className={classes.title}>Reimagining decentralization</ContentTitle>
         <Typography className={classes.description} color="primary" variant="body1">
           As pioneers of the decentralized world, we constantly
           dive headfirst into new realms. We build unstoppable
