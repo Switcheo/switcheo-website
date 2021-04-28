@@ -42,7 +42,7 @@ export const Paths = {
 
   // whitepaper: "https://switcheo.network/whitepaper_v1.pdf",
   api_docs: "docs.switcheo.org",
-  tradehub_docs: "docs.switcheo.org", //TODO: change when updated
+  tradehub_docs: "docs.switcheo.com", //TODO: change when updated
   demex_docs: "docs.dem.exchange",
   zilswap_docs: "docs.zilswap.org",
   apply_to_list: "https://docs.google.com/forms/d/1Uq01pZvqxG9FtFCpKMZeIT6uhu64VT2BrB2AS1XAXuQ/edit",
