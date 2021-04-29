@@ -1,11 +1,11 @@
-import { Box, Container, Grid, Hidden } from "@material-ui/core";
+import { Box, Container, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
 import { minBlockHeight, Paths } from "../../constants";
 import ContentSection from "../ContentSection";
 import SwitcheoBrand from "../SwitcheoBrand";
-import { FooterLink, FooterTitle, SocialLinkGroup, SubscribeBox } from "./components";
+import { FooterLink, FooterTitle, SocialLinkGroup } from "./components";
 
 
 
