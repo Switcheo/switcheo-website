@@ -119,13 +119,14 @@ const NavBar: React.FC<React.HTMLAttributes<HTMLDivElement>> = () => {
                   <HeaderLink href={Paths.features}>About</HeaderLink>
                 </Grid>
                 <Grid item xs={4}>
+                  <HeaderLink href={Paths.products}>Our ecosystem</HeaderLink>
                   <HeaderLink href={Paths.story}>Our story</HeaderLink>
-                  <HeaderLink href={Paths.culture}>Our culture</HeaderLink>
-                  <HeaderLink href={Paths.press}>Press</HeaderLink>
+                  <HeaderLink href={Paths.partners}>Our partners</HeaderLink>
                 </Grid>
                 <Grid item xs={4}>
+                  <HeaderLink href={Paths.culture}>Our culture</HeaderLink>
                   <HeaderLink href={Paths.blog} target="_blank">Blog</HeaderLink>
-                  <HeaderLink href={Paths.support} target="_blank">Support</HeaderLink>
+                  <HeaderLink href={Paths.press}>Press</HeaderLink>
                 </Grid>
               </Grid>
               <IconButton className={cls(classes.menuIcon, classes.expandIcon)} size="medium">
