@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     paddingBottom: theme.spacing(10),
     [theme.breakpoints.down("sm")]: {
-     paddingBottom: theme.spacing(2)
+     paddingBottom: 0
     }, 
   },
   switcheoIcon: {
@@ -55,23 +55,23 @@ const Home: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
         <Partners id="partners"/>
       </TwinSection>
 
-      <TwinSection hide="mdUp">
-        <Press id="press" />
-      </TwinSection>
-
       <TwinSection>
         <ImageCell src={urlImageCulture} hide="smDown" />
         <Culture id="culture" />
       </TwinSection>
 
       <TwinSection hide="smDown">
-        <Press id="press" />
+        <Blog id="blog" />
         <ImageCell src={urlImagePress} />
+      </TwinSection>
+
+      <TwinSection hide="mdUp">
+        <Blog id="blog" />
       </TwinSection>
       
      <TwinSection>
         <FeaturedIn id="featured" />
-        <Blog id="blog" />
+        <Press id="press" />
       </TwinSection> 
 
     </Box>

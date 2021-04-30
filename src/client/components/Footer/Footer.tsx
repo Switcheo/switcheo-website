@@ -1,11 +1,11 @@
-import { Box, Container, Grid, Hidden } from "@material-ui/core";
+import { Box, Container, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import cls from "classnames";
 import React from "react";
 import { minBlockHeight, Paths } from "../../constants";
 import ContentSection from "../ContentSection";
 import SwitcheoBrand from "../SwitcheoBrand";
-import { FooterLink, FooterTitle, SocialLinkGroup, SubscribeBox } from "./components";
+import { FooterLink, FooterTitle, SocialLinkGroup } from "./components";
 
 
 
@@ -64,35 +64,28 @@ const Footer: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any) => {
       <Container className={classes.container} maxWidth="lg">
         <ContentSection className={classes.content}>
           <Grid container className={classes.gridContainer}>
-            <Hidden mdUp>
-              <Grid item className={classes.cell} xs={12}>
-                <SubscribeBox />
-              </Grid>
-            </Hidden>
             <Grid item className={cls(classes.cell, classes.links)} md={3} xs={6}>
               <FooterTitle>Sitemap</FooterTitle>
 
               <FooterLink href={Paths.home}>Home</FooterLink>
-              <FooterLink href={Paths.features}>What we do</FooterLink>
-              <FooterLink href={Paths.products}>Reimagine Decentralization</FooterLink>
-              <FooterLink href={Paths.story}>Our Story</FooterLink>
+              <FooterLink href={Paths.governance}>Build with us</FooterLink>
+              <FooterLink href={Paths.features}>About</FooterLink>
+              <FooterLink href={Paths.products}>Our ecosystem</FooterLink>
+              <FooterLink href={Paths.story}>Our story</FooterLink>
               <FooterLink href={Paths.partners}>Partners</FooterLink>
-              <FooterLink href={Paths.culture}>Careers</FooterLink>
-              <FooterLink href={Paths.press}>Press</FooterLink>
+              <FooterLink href={Paths.culture}>Our culture</FooterLink>
               <FooterLink href={Paths.blog} target="_blank">Blog</FooterLink>
+              <FooterLink href={Paths.press}>Press</FooterLink>
             </Grid>
             <Grid item className={cls(classes.cell, classes.links)} md={3} xs={6}>
               <FooterTitle>Resources</FooterTitle>
 
-              <FooterLink href={Paths.api_docs} target="_blank">Developer</FooterLink>
+              <FooterLink href={Paths.tradehub_docs} target="_blank">Switcheo TradeHub Docs</FooterLink>
+              <FooterLink href={Paths.demex_docs} target="_blank">Demex Docs</FooterLink>
+              <FooterLink href={Paths.zilswap_docs} target="_blank">ZilSwap Docs</FooterLink>
+              <FooterLink href={Paths.tradehub_guide} target="_blank">Switcheo TradeHub Guide</FooterLink>
               <FooterLink href={Paths.media_kit} target="_blank">Media Kit</FooterLink>
             </Grid>
-            <Hidden smDown>
-              <Grid item xs={1} />
-              <Grid item className={classes.cell} xs={5}>
-                <SubscribeBox />
-              </Grid>
-            </Hidden>
           </Grid>
           <Box flex={1} />
           <Box className={classes.bottom}>

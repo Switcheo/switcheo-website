@@ -98,7 +98,7 @@ const OurProducts: React.FC<React.HTMLAttributes<HTMLDivElement>> = (props: any)
       <Grid container>
         <Grid item sm={12} md={8} className={classes.introContainer}>
           <Box className={classes.intro}>
-            <Typography variant="h2" color="primary" className={classes.title}>Reimagine Decentralization</Typography>
+            <Typography variant="h2" color="primary" className={classes.title}>Reimagining Decentralization</Typography>
             <Typography variant="body1" color="primary">
               As pioneers of the decentralized world, we constantly dive
               headfirst into new realms, building unstoppable platforms
