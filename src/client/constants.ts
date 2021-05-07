@@ -51,11 +51,11 @@ export const Paths = {
   social_discord: "https://discord.gg/SPh62Hf",
   social_github: "https://github.com/switcheo",
   social_telegram: "https://t.me/switcheo",
-  social_twitter: "https://twitter.com/switcheo",
+  social_twitter: "https://twitter.com/switcheonetwork",
   social_reddit: "https://www.reddit.com/r/Switcheo/",
   social_medium: "https://medium.com/switcheo",
   social_linkedin: "https://www.linkedin.com/company/switcheo/",
-  social_facebook: "https://www.facebook.com/Switcheo/",
+  social_facebook: "https://www.facebook.com/SwitcheoExchange/",
   social_youtube: "https://www.youtube.com/channel/UCqZ9sxvw-0UoHzno4-d97oQ/playlists",
 };
 
