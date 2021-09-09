@@ -1,8 +1,17 @@
 import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
-import React from "react";
+import React, { useMemo } from "react";
+import BlogCard from "src/components/Common/BlogCard";
+import { BlogEntry } from "src/utils/types";
 
-const DevelopersUpdate: React.FC = () => {
+interface Props {
+  posts: BlogEntry[],
+}
+
+const DevelopersUpdate: React.FC<Props> = (props: Props) => {
+  const { posts } = props;
   const classes = useStyles();
+
+  const updatePosts = useMemo(() => posts.filter((post) => post.title.includes("Update")), [posts]);
 
   return (
     <Box component="section" className={classes.root}>
@@ -13,6 +22,7 @@ const DevelopersUpdate: React.FC = () => {
               Developers Update
             </Typography>
           </Box>
+          {updatePosts.map((post) => <BlogCard key={post.title} layout="row" post={post} divider/>)}
         </Box>
       </Container>
     </Box>
@@ -25,14 +35,15 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   contentContainer: {
     position: "relative",
-    padding: theme.spacing(15, 5),
+    padding: theme.spacing(15, 12, 15, 5),
   },
   content: {
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: "column",
   },
   text: {
+    marginBottom: theme.spacing(5),
   },
 }));
 

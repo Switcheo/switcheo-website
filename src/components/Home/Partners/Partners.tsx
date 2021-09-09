@@ -87,7 +87,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginBottom: theme.spacing(3),
   },
   left: {
-    marginLeft: 100,
+    marginLeft: theme.spacing(15),
   },
 }));
 

@@ -20,28 +20,34 @@ const Stats: React.FC = () => {
           </Box>
           <Grid container xs={12} md={6} spacing={4}>
             <Grid item xs={6} sm={4} md={6} >
-              <Box className={classes.statNumber}>
-                96K
+              <Box className={classes.stat}>
+                <Box className={classes.statNumber}>
+                  96K
+                </Box>
+                <Typography variant="body1" color="inherit">
+                  Monthly Active Users
+                </Typography>
               </Box>
-              <Typography variant="body1" color="inherit">
-                Monthly Active Users
-              </Typography>
             </Grid>
             <Grid item xs={6} sm={4} md={6} >
-              <Box className={classes.statNumber}>
-                $10B
+              <Box className={classes.stat}>
+                <Box className={classes.statNumber}>
+                  $10B
+                </Box>
+                <Typography variant="body1" color="inherit">
+                  Value Transacted On-chain
+                </Typography>
               </Box>
-              <Typography variant="body1" color="inherit">
-                Value Transacted On-chain
-              </Typography>
             </Grid>
-            <Grid item xs={12} sm={4} md={12} >
-              <Box className={classes.statNumber}>
-                30+
+            <Grid item xs={12} sm={4} md={6} >
+              <Box className={classes.stat}>
+                <Box className={classes.statNumber}>
+                  30+
+                </Box>
+                <Typography variant="body1" color="inherit">
+                  Development Partners
+                </Typography>
               </Box>
-              <Typography variant="body1" color="inherit">
-                Development Partners
-              </Typography>
             </Grid>
           </Grid>
         </Box>
@@ -77,11 +83,16 @@ const useStyles = makeStyles((theme: Theme) => ({
   title: {
     marginBottom: theme.spacing(5),
   },
+  stat: {
+    maxWidth: "80%",
+    marginTop: theme.spacing(5),
+  },
   statNumber: {
     fontFamily: "IBM Plex Mono",
     color: theme.palette.secondary.main,
     fontSize: "80px",
     letterSpacing: "-0.04em",
+    marginBottom: theme.spacing(5),
   },
 }));
 

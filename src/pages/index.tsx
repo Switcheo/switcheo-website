@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { Blog, DeveloperUpdates, Hero, InnovationAreas, JoinUs, OurVision, Partners, Stats, WhoWeAre } from "src/components/Home";
+import BlogPosts from "src/utils/testdata/blogposts.json";
 
 const Home: NextPage = () => {
   return (
@@ -10,8 +11,8 @@ const Home: NextPage = () => {
       <InnovationAreas />
       <Partners />
       <WhoWeAre />
-      <Blog />
-      <DeveloperUpdates />
+      <Blog posts={BlogPosts} />
+      <DeveloperUpdates posts={BlogPosts} />
       <JoinUs />
     </>
   );
