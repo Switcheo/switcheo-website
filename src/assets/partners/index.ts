@@ -1,0 +1,13 @@
+export { default as BOLT } from "./BOLT.svg";
+export { default as DACM } from "./DACM.svg";
+export { default as DeFianceCapital } from "./DeFianceCapital.svg";
+export { default as DeFiCapital } from "./DeFiCapital.svg";
+export { default as DUSK } from "./DUSK.svg";
+export { default as HuobiPool } from "./HuobiPool.svg";
+export { default as NEO } from "./NEO.svg";
+export { default as NGC } from "./NGC.svg";
+export { default as O3Labs } from "./O3Labs.svg";
+export { default as PolyNetwork } from "./PolyNetwork.svg";
+export { default as StakeWithUs } from "./StakeWithUs.svg";
+export { default as ThreeArrowsCapital } from "./ThreeArrowsCapital.svg";
+export { default as Zilliqa } from "./Zilliqa.svg";

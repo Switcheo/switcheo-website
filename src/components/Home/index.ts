@@ -1,0 +1,9 @@
+export { default as Hero } from "./Hero";
+export { default as OurVision } from "./OurVision";
+export { default as Stats } from "./Stats";
+export { default as InnovationAreas } from "./InnovationAreas";
+export { default as Partners } from "./Partners";
+export { default as WhoWeAre } from "./WhoWeAre";
+export { default as Blog } from "./Blog";
+export { default as DeveloperUpdates } from "./DevelopersUpdate";
+export { default as JoinUs } from "./JoinUs";

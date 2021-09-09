@@ -1,3 +1,20 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "no-console": ["warn", {
+      "allow": ["warn", "error"]
+    }],
+    "semi": ["warn", "always"],
+    "quotes": ["warn", "double"],
+    "object-curly-spacing": ["warn", "always"],
+    "comma-spacing": ["warn", {
+      "before": false,
+      "after": true
+    }],
+    "comma-dangle": ["warn", "always-multiline"]
+  }
 }

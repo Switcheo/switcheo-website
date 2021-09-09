@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("./IBMPlexMono-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roobert-SemiBold";
+  src: url("./Roobert-SemiBold.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roobert-Medium";
+  src: url("./Roobert-Medium.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roobert";
+  src: url("./Roobert-Regular.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./Inter-Regular.ttf") format("truetype");
+  font-display: swap;
+}
