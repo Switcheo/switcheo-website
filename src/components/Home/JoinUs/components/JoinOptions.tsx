@@ -1,6 +1,5 @@
 import { Box, Divider, Grid, Theme, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Image from "next/image";
 import React from "react";
 
 import Careers from "src/assets/Careers.svg";
@@ -12,10 +11,10 @@ const JoinOptions: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <Grid container xs={12} spacing={6} className={classes.root}>
+    <Grid container spacing={6} className={classes.root}>
       <Grid item xs={12} md={4}>
         <Box className={classes.icon}>
-          <Image src={Careers} alt="Careers" />
+          <Careers />
         </Box>
         <Box className={classes.optionText}>
           <Typography variant="h4" color="textPrimary">
@@ -29,7 +28,7 @@ const JoinOptions: React.FC = () => {
       </Grid>
       <Grid item xs={12} md={4}>
         <Box className={classes.icon}>
-          <Image src={DevFund} alt="DevFund" />
+          <DevFund />
         </Box>
         <Box className={classes.optionText}>
           <Typography variant="h4" color="textPrimary">
@@ -43,7 +42,7 @@ const JoinOptions: React.FC = () => {
       </Grid>
       <Grid item xs={12} md={4}>
         <Box className={classes.icon}>
-          <Image src={SWTHToken} alt="SWTHToken" />
+          <SWTHToken />
         </Box>
         <Box className={classes.optionText}>
           <Typography variant="h4" color="textPrimary">

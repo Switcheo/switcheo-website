@@ -10,7 +10,7 @@ const CareersHero: React.FC = () => {
       <Container maxWidth="lg" className={classes.contentContainer}>
         <Box className={classes.title}>
           <Typography variant="h1" color="primary">
-            Let&apos;s build the trustless solutions of the future, together
+            Let’s build the trustless solutions of the future, together
           </Typography>
         </Box>
         <SwthButton>
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   title: {
     maxWidth: "58rem",
-    marginBottom: theme.spacing(3),
+    marginBottom: theme.spacing(5),
   },
   description: {
     maxWidth: "46rem",

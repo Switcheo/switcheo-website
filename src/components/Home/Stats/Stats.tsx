@@ -18,7 +18,7 @@ const Stats: React.FC = () => {
               True leaders don’t stop at the beginning. We don’t believe in just creating solutions to the problems of our time. Instead, we seed and nurture ecosystems to benefit generations to come.
             </Typography>
           </Box>
-          <Grid container xs={12} md={6} spacing={4}>
+          <Grid container spacing={4}>
             <Grid item xs={6} sm={4} md={6} >
               <Box className={classes.stat}>
                 <Box className={classes.statNumber}>
@@ -76,9 +76,11 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   description: {
     maxWidth: "40%",
+    marginRight: theme.spacing(15),
     [theme.breakpoints.down("sm")]: {
       maxWidth: "100%",
     },
+
   },
   title: {
     marginBottom: theme.spacing(5),

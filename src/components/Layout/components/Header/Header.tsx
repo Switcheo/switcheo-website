@@ -1,6 +1,5 @@
 import { Box, Container, Hidden, Theme, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Image from "next/image";
 import React from "react";
 import CaretDown from "src/assets/CaretDown.svg";
 import SwitcheoBrand from "src/assets/SwitcheoBrand.svg";
@@ -12,7 +11,7 @@ const Header: React.FC = () => {
   return (
     <Box className={classes.root}>
       <Container maxWidth="lg" className={classes.header}>
-        <Image src={SwitcheoBrand} alt="SwitcheoBrand" />
+        <SwitcheoBrand />
         <Hidden smDown>
           <Box className={classes.navTabs}>
             <Box className={classes.tab}>
@@ -20,7 +19,7 @@ const Header: React.FC = () => {
                 Ecosystem
               </Typography>
               <Box className={classes.caret}>
-                <Image src={CaretDown} alt="CaretDown" />
+                <CaretDown />
               </Box>
             </Box>
             <Box className={classes.tab}>
@@ -28,7 +27,7 @@ const Header: React.FC = () => {
                 Company
               </Typography>
               <Box className={classes.caret}>
-                <Image src={CaretDown} alt="CaretDown" />
+                <CaretDown />
               </Box>
             </Box>
             <Box className={classes.tab}>
@@ -36,7 +35,7 @@ const Header: React.FC = () => {
                 Newsroom
               </Typography>
               <Box className={classes.caret}>
-                <Image src={CaretDown} alt="CaretDown" />
+                <CaretDown />
               </Box>
             </Box>
             <Box className={classes.tab}>
@@ -44,7 +43,7 @@ const Header: React.FC = () => {
                 Developers
               </Typography>
               <Box className={classes.caret}>
-                <Image src={CaretDown} alt="CaretDown" />
+                <CaretDown />
               </Box>
             </Box>
             <Box className={classes.tab}>
@@ -55,7 +54,7 @@ const Header: React.FC = () => {
           </Box>
         </Hidden>
         <Hidden mdUp>
-          <Image src={MenuIcon} alt="MenuIcon" />
+          <MenuIcon />
         </Hidden>
       </Container>
     </Box>
@@ -94,10 +93,8 @@ const useStyles = makeStyles((theme: Theme) => ({
       padding: theme.spacing(1),
     },
     display: "flex",
-    alignItems: "center",
   },
   caret: {
-    marginTop: theme.spacing(0.5),
     marginLeft: theme.spacing(0.5),
   },
 }));

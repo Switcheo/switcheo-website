@@ -20,7 +20,7 @@ const OpenRoles: React.FC = () => {
             </Typography>
           </Box>
         </Box>
-        <Grid container xs={12} spacing={4}>
+        <Grid container spacing={6}>
           <Grid item xs={6} md={4}>
             <Box className={classes.role}>
               <Box className={classes.roleArea}>
@@ -128,13 +128,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   contentContainer: {
     position: "relative",
-    padding: theme.spacing(20, 5, 18),
+    padding: theme.spacing(18, 5),
   },
   content: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: theme.spacing(0, 15, 10),
+    padding: theme.spacing(0, 10, 10),
   },
   text: {
     marginBottom: theme.spacing(10),

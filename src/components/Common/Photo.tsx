@@ -30,7 +30,6 @@ const Photo: React.FC<Props> = (props: Props) => {
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    border: "1px",
     "& img": {
       borderRadius: 50,
     },

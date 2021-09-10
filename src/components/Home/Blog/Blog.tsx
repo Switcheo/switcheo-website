@@ -1,5 +1,4 @@
 import { Box, Container, Grid, makeStyles, Theme, Typography } from "@material-ui/core";
-import Image from "next/image";
 import React, { useMemo } from "react";
 import { BlogEntry } from "src/utils/types";
 import BlogPlaceholder from "src/assets/BlogPlaceholder.svg";
@@ -33,8 +32,8 @@ const Blog: React.FC<Props> = (props: Props) => {
         </Box>
         <Grid container spacing={2}>
           <Grid item xs={12} md={7}>
-            <Box marginRight={6} marginTop={6}>
-              <Image src={BlogPlaceholder} alt="BlogPlaceholder" />
+            <Box marginRight={6} marginTop={3} marginBottom={5}>
+              <BlogPlaceholder />
             </Box>
             <BlogCard post={spotlightPost} className={classes.spotlight}/>
           </Grid>
@@ -57,9 +56,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   text: {
     marginBottom: theme.spacing(20),
+    maxWidth: "70%",
   },
   spotlight: {
-    marginTop: theme.spacing(4),
     marginRight: theme.spacing(6),
     paddingLeft: theme.spacing(5),
     paddingRight: theme.spacing(20),

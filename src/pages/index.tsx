@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { Blog, DeveloperUpdates, Hero, InnovationAreas, JoinUs, OurVision, Partners, Stats, WhoWeAre } from "src/components/Home";
 import BlogPosts from "src/utils/testdata/blogposts.json";
+import Tweets from "src/utils/testdata/Tweets.json";
 
 const Home: NextPage = () => {
   return (
@@ -10,7 +11,7 @@ const Home: NextPage = () => {
       <Stats />
       <InnovationAreas />
       <Partners />
-      <WhoWeAre />
+      <WhoWeAre tweetData={Tweets} />
       <Blog posts={BlogPosts} />
       <DeveloperUpdates posts={BlogPosts} />
       <JoinUs />

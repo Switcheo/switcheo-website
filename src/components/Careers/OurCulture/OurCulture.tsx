@@ -17,7 +17,7 @@ const OurCulture: React.FC = () => {
             What’s it like working at Switcheo?
           </Typography>
         </Box>
-        <Grid container xs={12} spacing={4}>
+        <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <Box className={classes.gridContent}>
               <Box className={classes.count}>01</Box>
@@ -117,7 +117,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginBottom: theme.spacing(10),
   },
   gridContent: {
-    maxWidth: "90%",
+    maxWidth: "80%",
+    marginBottom: theme.spacing(10),
   },
   count: {
     fontFamily: "IBM Plex Mono",

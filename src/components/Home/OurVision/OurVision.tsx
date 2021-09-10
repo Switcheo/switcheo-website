@@ -1,6 +1,5 @@
 import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
 import React from "react";
-import Image from "next/image";
 import VisionAnimationPlaceholder from "src/assets/VisionAnimationPlaceholder.svg";
 
 const OurVision: React.FC = () => {
@@ -10,7 +9,7 @@ const OurVision: React.FC = () => {
     <Box component="section" className={classes.root}>
       <Container maxWidth="lg" className={classes.contentContainer}>
         <Box className={classes.content}>
-          <Image src={VisionAnimationPlaceholder} alt="VisionAnimationPlaceholder" />
+          <VisionAnimationPlaceholder />
           <Box className={classes.textSection}>
             <Typography variant="h5" color="primary" className={classes.text}>
               Our Vision

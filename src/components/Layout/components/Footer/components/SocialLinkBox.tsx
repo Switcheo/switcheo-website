@@ -1,6 +1,5 @@
 import { Box, Theme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Image from "next/image";
 import React from "react";
 import { Discord, Facebook, Linkedin, Medium, Reddit, Telegram, Twitter } from "src/assets/social";
 
@@ -10,25 +9,25 @@ const SocialLinkBox: React.FC = () => {
   return (
     <Box className={classes.root}>
       <Box className={classes.icon}>
-        <Image src={Discord} alt="Discord" />
+        <Discord />
       </Box>
       <Box className={classes.icon}>
-        <Image src={Telegram} alt="Telegram" />
+        <Telegram />
       </Box>
       <Box className={classes.icon}>
-        <Image src={Twitter} alt="Twitter" />
+        <Twitter />
       </Box>
       <Box className={classes.icon}>
-        <Image src={Reddit} alt="Reddit" />
+        <Reddit />
       </Box>
       <Box className={classes.icon}>
-        <Image src={Medium} alt="Medium" />
+        <Medium />
       </Box>
       <Box className={classes.icon}>
-        <Image src={Linkedin} alt="Linkedin" />
+        <Linkedin />
       </Box>
       <Box className={classes.icon}>
-        <Image src={Facebook} alt="Facebook" />
+        <Facebook />
       </Box>
     </Box>
   );

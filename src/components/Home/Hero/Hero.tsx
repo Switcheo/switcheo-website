@@ -1,6 +1,5 @@
 import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
 import React from "react";
-import Image from "next/image";
 import HeroAnimationPlaceholder from "src/assets/HeroAnimationPlaceholder.svg";
 
 const Hero: React.FC = () => {
@@ -21,7 +20,7 @@ const Hero: React.FC = () => {
             that thrives even without trust.
           </Typography>
         </Box>
-        <Image src={HeroAnimationPlaceholder} alt="HeroAnimationPlaceholder" />
+        <HeroAnimationPlaceholder />
       </Container>
     </Box>
   );

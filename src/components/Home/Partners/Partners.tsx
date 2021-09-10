@@ -1,6 +1,4 @@
 import { Box, Container, Grid, makeStyles, Theme, Typography } from "@material-ui/core";
-import clsx from "clsx";
-import Image from "next/image";
 import React from "react";
 import { BOLT, DACM, DeFianceCapital, DeFiCapital, DUSK, HuobiPool, NEO, NGC, O3Labs, PolyNetwork, StakeWithUs, ThreeArrowsCapital, Zilliqa } from "src/assets/partners";
 
@@ -18,43 +16,43 @@ const Partners: React.FC = () => {
           </Box>
           <Grid container spacing={4}>
             <Grid item xs={4} md={3} className={classes.icon}>
-              <Image src={ThreeArrowsCapital} alt="ThreeArrowsCapital" />
+              <ThreeArrowsCapital />
             </Grid>
             <Grid item xs={4} md={3} className={classes.icon}>
-              <Image src={DeFianceCapital} alt="DeFianceCapital" />
+              <DeFianceCapital />
             </Grid>
             <Grid item xs={4} md={3} className={classes.icon}>
-              <Image src={NGC} alt="NGC" />
+              <NGC />
             </Grid>
             <Grid item xs={4} md={3} className={classes.icon}>
-              <Image src={NEO} alt="NEO" />
-            </Grid>
-            <Grid item xs={4} md={2} className={clsx(classes.icon, classes.left)}>
-              <Image src={DeFiCapital} alt="DeFiCapital" />
-            </Grid>
-            <Grid item xs={4} md={2} className={classes.icon}>
-              <Image src={PolyNetwork} alt="PolyNetwork" />
-            </Grid>
-            <Grid item xs={4} md={2} className={classes.icon}>
-              <Image src={Zilliqa} alt="Zilliqa" />
-            </Grid>
-            <Grid item xs={4} md={2} className={classes.icon}>
-              <Image src={DACM} alt="DACM" />
-            </Grid>
-            <Grid item xs={4} md={2} className={classes.icon}>
-              <Image src={BOLT} alt="BOLT" />
+              <NEO />
             </Grid>
             <Grid item xs={4} md={3} className={classes.icon}>
-              <Image src={DUSK} alt="DUSK" />
+              <DeFiCapital />
             </Grid>
             <Grid item xs={4} md={3} className={classes.icon}>
-              <Image src={HuobiPool} alt="HuobiPool" />
+              <PolyNetwork />
             </Grid>
             <Grid item xs={4} md={3} className={classes.icon}>
-              <Image src={StakeWithUs} alt="StakeWithUs" />
+              <Zilliqa />
             </Grid>
-            <Grid item xs={12} md={3} className={classes.icon}>
-              <Image src={O3Labs} alt="O3Labs" />
+            <Grid item xs={4} md={3} className={classes.icon}>
+              <DACM />
+            </Grid>
+            <Grid item xs={4} md={3} className={classes.icon}>
+              <BOLT />
+            </Grid>
+            <Grid item xs={4} md={3} className={classes.icon}>
+              <DUSK />
+            </Grid>
+            <Grid item xs={4} md={3} className={classes.icon}>
+              <HuobiPool />
+            </Grid>
+            <Grid item xs={4} md={3} className={classes.icon}>
+              <StakeWithUs />
+            </Grid>
+            <Grid item xs={12} className={classes.icon}>
+              <O3Labs />
             </Grid>
           </Grid>
         </Box>

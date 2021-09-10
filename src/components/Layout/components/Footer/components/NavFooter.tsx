@@ -1,16 +1,15 @@
 import { Box, Grid, Theme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Image from "next/image";
 import React from "react";
-import SwitcheoBrandWhite from "src/assets/SwitcheoBrandWhite.svg";
+import SwitcheoBrand from "src/assets/SwitcheoBrand.svg";
 
 const NavFooter: React.FC = () => {
   const classes = useStyles();
 
   return (
     <Box className={classes.root}>
-      <Box marginLeft={5} width="50%">
-        <Image src={SwitcheoBrandWhite} alt="SwitcheoBrand" />
+      <Box marginLeft={5} marginTop={2} width="50%">
+        <SwitcheoBrand className={classes.img} />
       </Box>
       <Grid container spacing={2} justifyContent="flex-end">
         <Grid item xs={6} md={4}>
@@ -110,6 +109,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   img: {
     marginRight: theme.spacing(10),
+    "& path": {
+      fill: "#FFF",
+    },
   },
   text: {
     padding: theme.spacing(1),

@@ -1,6 +1,5 @@
 import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
 import React from "react";
-import Image from "next/image";
 import DecentralizedInfrastructures from "src/assets/DecentralizedInfrastructures.svg";
 import InnovativeDApps from "src/assets/InnovativeDApps.svg";
 import WhiteSpaces from "src/assets/WhiteSpaces.svg";
@@ -21,13 +20,13 @@ const InnovationAreas: React.FC = () => {
                 Innovation Areas
               </Typography>
               <Box className={classes.arrows}>
-                <Image src={ArrowLeft} alt="ArrowLeft" />
-                <Image src={ArrowRight} alt="ArrowRight" />
+                <ArrowLeft />
+                <ArrowRight />
               </Box>
             </Box>
             <Box className={classes.area}>
               <Box className={classes.icon}>
-                <Image src={DecentralizedInfrastructures} alt="DecentralizedInfrastructures" />
+                <DecentralizedInfrastructures />
               </Box>
               <Typography variant="h4" color="secondary">
                 Decentralized Infrastructures
@@ -35,7 +34,7 @@ const InnovationAreas: React.FC = () => {
             </Box>
             <Box className={classes.area}>
               <Box className={classes.icon}>
-                <Image src={InnovativeDApps} alt="InnovativeDApps" />
+                <InnovativeDApps />
               </Box>
               <Typography variant="h4" color="secondary">
                 Innovative dApps
@@ -43,7 +42,7 @@ const InnovationAreas: React.FC = () => {
             </Box>
             <Box className={classes.area}>
               <Box className={classes.icon}>
-                <Image src={WhiteSpaces} alt="WhiteSpaces" />
+                <WhiteSpaces />
               </Box>
               <Typography variant="h4" color="secondary">
                 White Spaces
@@ -51,7 +50,7 @@ const InnovationAreas: React.FC = () => {
             </Box>
           </Box>
         </Box>
-        <Image src={InnovationAreasPlaceholder} alt="InnovationAreasPlaceholder" />
+        <InnovationAreasPlaceholder className={classes.placeholder}/>
       </Container>
 	  </Box>
   );
@@ -100,6 +99,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginRight: theme.spacing(4),
     display: "flex",
     justifyContent: "center",
+  },
+  placeholder: {
+    marginRight: theme.spacing(-15),
   },
 }));
 
