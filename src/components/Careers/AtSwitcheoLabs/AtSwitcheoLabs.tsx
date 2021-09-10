@@ -35,7 +35,7 @@ const AtSwitcheoLabs: React.FC = () => {
             <Photo src="/assets/team5.jpg" alt="Team5" orientation="landscape" />
           </Grid>
           <Grid item xs={12} md={5}>
-            <Photo src="/assets/team3.jpg" alt="Team3" orientation="portrait" />
+            <Photo src="/assets/ivan.jpg" alt="Team3" orientation="portrait" />
           </Grid>
         </Grid>
       </Container>

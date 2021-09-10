@@ -11,3 +11,10 @@ export interface Tweet {
   name: string
   username: string
 }
+
+export interface JobRole {
+  area: string
+  title: string
+  type: string
+  url: string
+}

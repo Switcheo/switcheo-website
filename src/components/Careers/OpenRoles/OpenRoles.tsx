@@ -1,8 +1,15 @@
 import { Box, Container, Grid, makeStyles, Theme, Typography } from "@material-ui/core";
 import React from "react";
 import { SwthButton } from "src/components/Common";
+import { JobRole } from "src/utils/types";
+import { RoleCard } from "./components";
 
-const OpenRoles: React.FC = () => {
+interface Props {
+  jobRoles: JobRole[]
+}
+
+const OpenRoles: React.FC<Props> = (props: Props) => {
+  const { jobRoles } = props;
   const classes = useStyles();
 
   return (
@@ -21,96 +28,7 @@ const OpenRoles: React.FC = () => {
           </Box>
         </Box>
         <Grid container spacing={6}>
-          <Grid item xs={6} md={4}>
-            <Box className={classes.role}>
-              <Box className={classes.roleArea}>
-                Engineering
-              </Box>
-              <Box marginBottom={6} maxWidth="80%">
-                <Typography variant="h4" color="textSecondary">
-                  Blockchain & Smart Contract Developers
-                </Typography>
-              </Box>
-              <Typography variant="subtitle1" color="textSecondary">
-                Remote | Fulltime
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={6} md={4}>
-            <Box className={classes.role}>
-              <Box className={classes.roleArea}>
-                Engineering
-              </Box>
-              <Box marginBottom={6} maxWidth="80%">
-                <Typography variant="h4" color="textSecondary">
-                  Blockchain & Smart Contract Developers
-                </Typography>
-              </Box>
-              <Typography variant="subtitle1" color="textSecondary">
-                Remote | Fulltime
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={6} md={4}>
-            <Box className={classes.role}>
-              <Box className={classes.roleArea}>
-                Engineering
-              </Box>
-              <Box marginBottom={6} maxWidth="80%">
-                <Typography variant="h4" color="textSecondary">
-                  Blockchain & Smart Contract Developers
-                </Typography>
-              </Box>
-              <Typography variant="subtitle1" color="textSecondary">
-                Remote | Fulltime
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={6} md={4}>
-            <Box className={classes.role}>
-              <Box className={classes.roleArea}>
-                Engineering
-              </Box>
-              <Box marginBottom={6} maxWidth="80%">
-                <Typography variant="h4" color="textSecondary">
-                  Blockchain & Smart Contract Developers
-                </Typography>
-              </Box>
-              <Typography variant="subtitle1" color="textSecondary">
-                Remote | Fulltime
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={6} md={4}>
-            <Box className={classes.role}>
-              <Box className={classes.roleArea}>
-                Engineering
-              </Box>
-              <Box marginBottom={6} maxWidth="80%">
-                <Typography variant="h4" color="textSecondary">
-                  Blockchain & Smart Contract Developers
-                </Typography>
-              </Box>
-              <Typography variant="subtitle1" color="textSecondary">
-                Remote | Fulltime
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={6} md={4}>
-            <Box className={classes.role}>
-              <Box className={classes.roleArea}>
-                Engineering
-              </Box>
-              <Box marginBottom={6} maxWidth="80%">
-                <Typography variant="h4" color="textSecondary">
-                  Blockchain & Smart Contract Developers
-                </Typography>
-              </Box>
-              <Typography variant="subtitle1" color="textSecondary">
-                Remote | Fulltime
-              </Typography>
-            </Box>
-          </Grid>
+          {jobRoles.map((role) => <RoleCard key={role.url} jobRole={role} />)}
         </Grid>
         <Box className={classes.rolesButton}>
           <SwthButton>

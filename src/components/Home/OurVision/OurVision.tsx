@@ -9,7 +9,7 @@ const OurVision: React.FC = () => {
     <Box component="section" className={classes.root}>
       <Container maxWidth="lg" className={classes.contentContainer}>
         <Box className={classes.content}>
-          <VisionAnimationPlaceholder />
+          <VisionAnimationPlaceholder className={classes.placeholder} />
           <Box className={classes.textSection}>
             <Typography variant="h5" color="primary" className={classes.text}>
               Our Vision
@@ -38,6 +38,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   contentContainer: {
     position: "relative",
     padding: theme.spacing(15, 5),
+  },
+  placeholder: {
+    marginLeft: theme.spacing(-15),
   },
   content: {
     display: "flex",
