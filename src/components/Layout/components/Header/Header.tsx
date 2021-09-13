@@ -1,45 +1,180 @@
 import { Box, Container, Hidden, Theme, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import React from "react";
+import Link from "next/link";
+import React, { useState } from "react";
 import CaretDown from "src/assets/CaretDown.svg";
 import SwitcheoBrand from "src/assets/SwitcheoBrand.svg";
 import MenuIcon from "src/assets/MenuIcon.svg";
+import { Demex, Carbon, SwitcheoDevFund, Zilswap } from "src/assets/header";
+import clsx from "clsx";
+import { HeaderTab, HeaderTabContent } from "src/utils/types";
+import { HeaderMenu } from "./components";
 
 const Header: React.FC = () => {
   const classes = useStyles();
+  const [selectIndex, setSelectIndex] = useState(-1);
+
+  const onSelectTab = (index: HeaderTab) => {
+    if (index == selectIndex) {
+      setSelectIndex(-1);
+    } else {
+      setSelectIndex(index);
+    }
+  };
+
+  const headerTabs: HeaderTabContent[] = [
+    {
+      sectionTitle: "SwitcheoLabs Ecosystem Suite Of Innovations",
+      button: "This button is fake",
+      links: [
+        {
+          title: "Demex",
+          description: "Decentralized exchange that allows cross-chain trading and options",
+          icon: <Demex />,
+        },
+        {
+          title: "Carbon",
+          description: "Derivatives protocol that powers DeFi applications and smart contracts",
+          icon: <Carbon />,
+        },
+        {
+          title: "Zilswap",
+          description: "Zilliqa-based dynamic currency swap and liquidity pool solutions",
+          icon: <Zilswap />,
+        },
+        {
+          title: "Switcheo Development Fund",
+          description: "Funding new innovations building the future of blockchain applications",
+          icon: <SwitcheoDevFund />,
+        },
+      ],
+    },
+    {
+      sectionTitle: "SwitcheoLabs Ecosystem Suite Of Innovations",
+      button: "This button is fake",
+      links: [
+        {
+          title: "Demex",
+          description: "Decentralized exchange that allows cross-chain trading and options",
+          icon: <Demex />,
+        },
+        {
+          title: "Carbon",
+          description: "Derivatives protocol that powers DeFi applications and smart contracts",
+          icon: <Carbon />,
+        },
+        {
+          title: "Zilswap",
+          description: "Zilliqa-based dynamic currency swap and liquidity pool solutions",
+          icon: <Zilswap />,
+        },
+        {
+          title: "Switcheo Development Fund",
+          description: "Funding new innovations building the future of blockchain applications",
+          icon: <SwitcheoDevFund />,
+        },
+      ],
+    },
+    {
+      sectionTitle: "SwitcheoLabs Ecosystem Suite Of Innovations",
+      button: "This button is fake",
+      links: [
+        {
+          title: "Demex",
+          description: "Decentralized exchange that allows cross-chain trading and options",
+          icon: <Demex />,
+        },
+        {
+          title: "Carbon",
+          description: "Derivatives protocol that powers DeFi applications and smart contracts",
+          icon: <Carbon />,
+        },
+        {
+          title: "Zilswap",
+          description: "Zilliqa-based dynamic currency swap and liquidity pool solutions",
+          icon: <Zilswap />,
+        },
+        {
+          title: "Switcheo Development Fund",
+          description: "Funding new innovations building the future of blockchain applications",
+          icon: <SwitcheoDevFund />,
+        },
+      ],
+    },
+    {
+      sectionTitle: "SwitcheoLabs Ecosystem Suite Of Innovations",
+      button: "This button is fake",
+      links: [
+        {
+          title: "Demex",
+          description: "Decentralized exchange that allows cross-chain trading and options",
+          icon: <Demex />,
+        },
+        {
+          title: "Carbon",
+          description: "Derivatives protocol that powers DeFi applications and smart contracts",
+          icon: <Carbon />,
+        },
+        {
+          title: "Zilswap",
+          description: "Zilliqa-based dynamic currency swap and liquidity pool solutions",
+          icon: <Zilswap />,
+        },
+        {
+          title: "Switcheo Development Fund",
+          description: "Funding new innovations building the future of blockchain applications",
+          icon: <SwitcheoDevFund />,
+        },
+      ],
+    },
+  ];
 
   return (
     <Box className={classes.root}>
       <Container maxWidth="lg" className={classes.header}>
-        <SwitcheoBrand />
+        <Link href="/" passHref>
+          <SwitcheoBrand className={classes.brand} />
+        </Link>
         <Hidden smDown>
           <Box className={classes.navTabs}>
-            <Box className={classes.tab}>
-              <Typography variant="body2" color="textSecondary">
+            <Box 
+              onClick={() => onSelectTab(HeaderTab.Ecosystem)}
+              className={clsx(classes.tab, { [classes.selected]: selectIndex === HeaderTab.Ecosystem })}
+            >
+              <Typography variant="body1" color="textSecondary">
                 Ecosystem
               </Typography>
               <Box className={classes.caret}>
                 <CaretDown />
               </Box>
             </Box>
-            <Box className={classes.tab}>
-              <Typography variant="body2" color="textSecondary">
+            <Box 
+              onClick={() => onSelectTab(HeaderTab.Company)}
+              className={clsx(classes.tab, { [classes.selected]: selectIndex === HeaderTab.Company })}
+            >
+              <Typography variant="body1" color="textSecondary">
                 Company
               </Typography>
               <Box className={classes.caret}>
                 <CaretDown />
               </Box>
             </Box>
-            <Box className={classes.tab}>
-              <Typography variant="body2" color="textSecondary">
+            <Box 
+              onClick={() => onSelectTab(HeaderTab.Newsroom)}
+              className={clsx(classes.tab, { [classes.selected]: selectIndex === HeaderTab.Newsroom })}
+            >
+              <Typography variant="body1" color="textSecondary">
                 Newsroom
               </Typography>
               <Box className={classes.caret}>
                 <CaretDown />
               </Box>
             </Box>
-            <Box className={classes.tab}>
-              <Typography variant="body2" color="textSecondary">
+            <Box 
+              onClick={() => onSelectTab(HeaderTab.Developers)}
+              className={clsx(classes.tab, { [classes.selected]: selectIndex === HeaderTab.Developers })}
+            >
+              <Typography variant="body1" color="textSecondary">
                 Developers
               </Typography>
               <Box className={classes.caret}>
@@ -47,7 +182,7 @@ const Header: React.FC = () => {
               </Box>
             </Box>
             <Box className={classes.tab}>
-              <Typography variant="body2" color="textSecondary">
+              <Typography variant="body1" color="textSecondary">
                 Contact
               </Typography>
             </Box>
@@ -57,6 +192,11 @@ const Header: React.FC = () => {
           <MenuIcon />
         </Hidden>
       </Container>
+      <Hidden smDown>
+        {selectIndex !== -1 && (
+          <HeaderMenu selectedTab={headerTabs[selectIndex]} />
+        )}
+      </Hidden>
     </Box>
   );
 };
@@ -64,14 +204,15 @@ const Header: React.FC = () => {
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     backgroundColor: theme.palette.background.default,
-    position: "relative",
+    position: "sticky",
+    top: 0,
     width: "100%",
     zIndex: 100,
   },
   header: {
-    padding: theme.spacing(7, 15),
+    padding: theme.spacing(7, 15, 1, 5),
     [theme.breakpoints.only("md")]: {
-      padding: theme.spacing(3, 7),
+      padding: theme.spacing(7, 7, 0, 7),
     },
     [theme.breakpoints.only("sm")]: {
       padding: theme.spacing(3, 10),
@@ -81,21 +222,26 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center",
+  },
+  brand: {
+    marginTop: theme.spacing(1.5),
+    cursor: "pointer",
   },
   navTabs: {
     display: "flex",
     justifyContent: "space-between",
   },
   tab: {
-    padding: theme.spacing(1, 2),
-    [theme.breakpoints.down("md")]: {
-      padding: theme.spacing(1),
-    },
     display: "flex",
+    borderBottom: "4px solid transparent",
+    cursor: "pointer",
+    padding: theme.spacing(1, 2, 4, 2),
+  },
+  selected: {
+    borderBottom: "4px solid #B9D674",
   },
   caret: {
-    marginLeft: theme.spacing(0.5),
+    margin: theme.spacing(0.5),
   },
 }));
 

@@ -1,0 +1,10 @@
+export { default as DecentralizedInfrastructuresIcon } from "./DecentralizedInfrastructuresIcon.svg";
+export { default as DecentralizedInfrastructuresBg } from "./DecentralizedInfrastructuresBg.png";
+export { default as InnovativeDAppsIcon } from "./InnovativeDAppsIcon.svg";
+export { default as InnovativeDAppsBg } from "./InnovativeDAppsBg.png";
+export { default as WhiteSpacesIcon } from "./WhiteSpacesIcon.svg";
+export { default as WhiteSpacesBg } from "./WhiteSpacesBg.png";
+export { default as CarbonIcon } from "./CarbonIcon.svg";
+export { default as DemexIcon } from "./DemexIcon.svg";
+export { default as ZilswapIcon } from "./ZilswapIcon.svg";
+export { default as SwitcheoDevFundIcon } from "./SwitcheoDevFundIcon.svg";

@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   contentContainer: {
     position: "relative",
     padding: theme.spacing(15, 5),
-    marginTop: theme.spacing(15),
+    marginTop: theme.spacing(60),
   },
   content: {
     display: "flex",
@@ -76,7 +76,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexDirection: "column",
   },
   title: {
-    maxWidth: "70%",
+    maxWidth: "69%",
     marginBottom: theme.spacing(15),
   },
   icon: {

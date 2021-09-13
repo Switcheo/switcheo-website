@@ -1,9 +1,10 @@
-import { Button, makeStyles, Theme } from "@material-ui/core";
+import { Button, ButtonProps, makeStyles, Theme } from "@material-ui/core";
+import clsx from "clsx";
 import React from "react";
 import SwitcheoArrow from "src/assets/SwitcheoArrow.svg";
 
-const SwthButton: React.FC = (props) => {
-  const { children } = props;
+const SwthButton: React.FC<ButtonProps> = (props: ButtonProps) => {
+  const { className, children } = props;
   const classes = useStyles();
 
   return (
@@ -11,11 +12,11 @@ const SwthButton: React.FC = (props) => {
       variant="text"
       classes={{
         root: classes.root,
-        label: classes.label,
+        label: clsx(classes.label, className),
       }}
     >
       {children}
-      <SwitcheoArrow className={classes.arrow}/>
+      <SwitcheoArrow className={clsx(classes.arrow, className)}/>
     </Button>
   );
 };
@@ -33,8 +34,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   label: {
     display: "flex",
+    justifyContent: "space-between",
   },
   arrow: {
+    height: "1.75rem",
     marginLeft: theme.spacing(5),
   },
 }));

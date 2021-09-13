@@ -37,11 +37,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: theme.spacing(12),
+    marginTop: theme.spacing(14),
   },
   title: {
     maxWidth: "58rem",
-    marginBottom: theme.spacing(3),
+    marginBottom: theme.spacing(5),
   },
   description: {
     maxWidth: "46rem",

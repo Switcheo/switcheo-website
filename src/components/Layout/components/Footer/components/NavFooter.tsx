@@ -8,24 +8,22 @@ const NavFooter: React.FC = () => {
 
   return (
     <Box className={classes.root}>
-      <Box marginLeft={5} marginTop={2} width="50%">
+      <Box marginLeft={5} marginTop={2} width="60%">
         <SwitcheoBrand className={classes.img} />
       </Box>
       <Grid container spacing={2} justifyContent="flex-end">
         <Grid item xs={6} md={4}>
-          <Box className={classes.products}>
-            <Box className={classes.sectionTitle}>
-              Products
-            </Box>
-            <Box className={classes.navLink}>
-              Demex
-            </Box>
-            <Box className={classes.navLink}>
-              Zilswap
-            </Box>
-            <Box className={classes.navLink}>
-              Carbon
-            </Box>
+          <Box className={classes.sectionTitle}>
+            Products
+          </Box>
+          <Box className={classes.navLink}>
+            Demex
+          </Box>
+          <Box className={classes.navLink}>
+            Zilswap
+          </Box>
+          <Box className={classes.navLink}>
+            Carbon
           </Box>
         </Grid>
         <Grid item xs={6} md={4}>
@@ -42,7 +40,7 @@ const NavFooter: React.FC = () => {
             ZilSwap Docs
           </Box>
           <Box className={classes.navLink}>
-            Switcheo Tradehub Guide
+            Carbon Docs
           </Box>
           <Box className={classes.navLink}>
             Media Guide
@@ -108,7 +106,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     letterSpacing: "-0.02em",
   },
   img: {
-    marginRight: theme.spacing(10),
     "& path": {
       fill: "#FFF",
     },
@@ -119,7 +116,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   products: {
     display: "flex",
     flexDirection: "column",
-    paddingLeft: theme.spacing(10),
     marginBottom: theme.spacing(3),
   },
   sectionTitle: {

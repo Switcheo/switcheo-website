@@ -23,9 +23,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: theme.palette.background.default,
     display: "flex",
     flexDirection: "column",
+    overflowX: "hidden",
     position: "relative",
     maxWidth: "100%",
-    overflowX: "hidden",
+    userSelect: "none",
   },
 }));
 

@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 import { MainLayout } from "src/components/Layout";
 import { theme } from "../theme";
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const jssStyles = document.querySelector("#jss-server-side");
