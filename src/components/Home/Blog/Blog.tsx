@@ -1,8 +1,8 @@
-import { Box, Container, Grid, makeStyles, Theme, Typography } from "@material-ui/core";
+import { Box, Container, Divider, Grid, Hidden, makeStyles, Theme, Typography } from "@material-ui/core";
 import React, { useMemo } from "react";
 import { BlogEntry } from "src/utils/types";
 import BlogPlaceholder from "src/assets/BlogPlaceholder.svg";
-import BlogCard from "src/components/Common/BlogCard";
+import { BlogCard, MobileBlogCard } from "src/components/Common";
 
 interface Props {
   posts: BlogEntry[],
@@ -32,15 +32,21 @@ const Blog: React.FC<Props> = (props: Props) => {
         </Box>
         <Grid container spacing={2}>
           <Grid item xs={12} md={7}>
-            <Box marginRight={6} marginTop={3} marginBottom={5}>
-              <BlogPlaceholder />
-            </Box>
-            <BlogCard post={spotlightPost} className={classes.spotlight}/>
+            <BlogPlaceholder className={classes.img} />
+            <Hidden smDown>
+              <BlogCard post={spotlightPost} className={classes.spotlight}/>
+            </Hidden>
           </Grid>
-          <Grid item xs={12} md={5}>
-            {newsPosts.map((post) => <BlogCard key={post.title} post={post} divider />)}
-          </Grid>
+          <Hidden smDown>
+            <Grid item xs={12} md={5}>
+              {newsPosts.map((post) => <BlogCard key={post.title} post={post} divider />)}
+            </Grid>
+          </Hidden>
         </Grid>
+        <Hidden mdUp>
+          <MobileBlogCard posts={posts.filter((post) => !post.title.includes("Update"))} />
+          <Divider classes={{ root: classes.divider }} />
+        </Hidden>
       </Container>
     </Box>
   );
@@ -52,16 +58,48 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   contentContainer: {
     position: "relative",
-    padding: theme.spacing(5, 8, 0, 5),
+    padding: theme.spacing(2, 8, 0, 5),
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(8, 8, 0),
+    },
+    [theme.breakpoints.only("xs")]: {
+      padding: theme.spacing(5, 4, 0, 5),
+    },
   },
   text: {
-    marginBottom: theme.spacing(20),
+    marginBottom: theme.spacing(17),
     maxWidth: "70%",
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "90%",
+      marginBottom: theme.spacing(5),
+    },
+    [theme.breakpoints.only("xs")]: {
+      marginBottom: theme.spacing(3),
+    },
   },
   spotlight: {
     marginRight: theme.spacing(6),
     paddingLeft: theme.spacing(5),
     paddingRight: theme.spacing(20),
+  },
+  img: {
+    width: "90%",
+    margin: theme.spacing(3, 6, 5, 0),
+    [theme.breakpoints.down("sm")]: {
+      margin: theme.spacing(3, 6, 3, 0),
+    },
+    [theme.breakpoints.only("xs")]: {
+      margin: 0,
+    },
+  },
+  divider: {
+    marginTop: theme.spacing(5),
+    height: 3,
+    width: "90%",
+    [theme.breakpoints.only("xs")]: {
+      marginTop: theme.spacing(3),
+      height: 1,
+    },
   },
 }));
 

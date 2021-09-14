@@ -100,7 +100,13 @@ const typography = (theme: Theme): TypographyOptions => ({
   },
   body2: {
     fontSize: "1.25rem",
-    lineHeight: "1.75rem",
+    lineHeight: "140%",
+    [theme.breakpoints.only("sm")]: {
+      fontSize: "1.5rem",
+    },
+    [theme.breakpoints.only("xs")]: {
+      fontSize: "0.625rem",
+    },
   },
 });
   

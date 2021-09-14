@@ -13,9 +13,7 @@ const JoinOptions: React.FC = () => {
   return (
     <Grid container spacing={6} className={classes.root}>
       <Grid item xs={12} md={4}>
-        <Box className={classes.icon}>
-          <Careers />
-        </Box>
+        <Careers className={classes.icon}/>
         <Box className={classes.optionText}>
           <Typography variant="h4" color="textPrimary">
             Explore careers with us
@@ -27,9 +25,7 @@ const JoinOptions: React.FC = () => {
         </SwthButton>
       </Grid>
       <Grid item xs={12} md={4}>
-        <Box className={classes.icon}>
-          <DevFund />
-        </Box>
+        <DevFund className={classes.icon}/>
         <Box className={classes.optionText}>
           <Typography variant="h4" color="textPrimary">
             Apply for Development Fund
@@ -41,9 +37,7 @@ const JoinOptions: React.FC = () => {
         </SwthButton>
       </Grid>
       <Grid item xs={12} md={4}>
-        <Box className={classes.icon}>
-          <SWTHToken />
-        </Box>
+        <SWTHToken className={classes.icon}/>
         <Box className={classes.optionText}>
           <Typography variant="h4" color="textPrimary">
             Purchasing SWTH Token
@@ -67,11 +61,24 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: "Inter",
     letterSpacing: "-0.02em",
     fontSize: "0.875rem",
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(7, 5),
+      maxWidth: "100%",
+    },
+    [theme.breakpoints.only("xs")]: {
+      padding: theme.spacing(5, 0, 0, 2),
+    },
   },
   icon: {
     height: "3.75rem",
-    display: "flex",
-    alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      height: "6.25rem",
+      marginTop: theme.spacing(5),
+    },
+    [theme.breakpoints.only("xs")]: {
+      height: "2.5rem",
+      marginTop: 0,
+    },
   },
   option: {
     display: "flex",
@@ -82,6 +89,14 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginTop: theme.spacing(3),
     maxWidth: "90%",
     marginBottom: theme.spacing(4),
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "75%",
+      marginBottom: theme.spacing(8),
+    },
+    [theme.breakpoints.only("xs")]: {
+      maxWidth: "85%",
+      marginBottom: theme.spacing(4),
+    },
   },
 }));
 

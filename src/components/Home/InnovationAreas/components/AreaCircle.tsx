@@ -2,6 +2,7 @@ import { Box, makeStyles, Theme } from "@material-ui/core";
 import Image from "next/image";
 import React, { useMemo } from "react";
 import { InnovationAreaContent } from "src/utils/types";
+import ProductLabel from "./ProductLabel";
 
 interface Props {
   areas: InnovationAreaContent[]
@@ -24,14 +25,7 @@ const AreaCircle: React.FC<Props> = (props: Props) => {
             {selectedArea.description}
           </Box>
         </Box>
-        {selectedArea.products.map((product) => (
-          <Box key={product.name} className={classes.product}>
-            {product.icon}
-            <Box className={classes.productName}>
-              {product.name}
-            </Box>
-          </Box>
-        ))}
+        {selectedArea.products.map((product) => <ProductLabel key={product.name} product={product} />)}
       </Box>
     </Box>
   );

@@ -10,7 +10,7 @@ const JoinUs: React.FC = () => {
       <Container maxWidth="lg" className={classes.contentContainer}>
         <Box className={classes.content}>
           <Box className={classes.text}>
-            <Box marginBottom={5}>
+            <Box className={classes.title}>
               <Typography variant="h1" color="primary">
                 Take the future into your own hands
               </Typography>
@@ -34,6 +34,12 @@ const useStyles = makeStyles((theme: Theme) => ({
   contentContainer: {
     position: "relative",
     padding: theme.spacing(15, 5),
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(15, 10),
+    },
+    [theme.breakpoints.only("xs")]: {
+      padding: theme.spacing(5),
+    },
   },
   content: {
     display: "flex",
@@ -42,6 +48,24 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   text: {
     maxWidth: "70%",
+    marginBottom: theme.spacing(15),
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: theme.spacing(10),
+      maxWidth: "90%",
+    },
+    [theme.breakpoints.only("xs")]: {
+      marginBottom: theme.spacing(2),
+      maxWidth: "100%",
+    },
+  },
+  title: {
+    marginBottom: theme.spacing(5),
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: theme.spacing(3),
+    },
+    [theme.breakpoints.only("xs")]: {
+      marginBottom: theme.spacing(2),
+    },
   },
 }));
 

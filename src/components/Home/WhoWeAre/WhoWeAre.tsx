@@ -1,4 +1,4 @@
-import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
+import { Box, Container, Hidden, makeStyles, Theme, Typography } from "@material-ui/core";
 import React from "react";
 import { Photo, SwthButton } from "src/components/Common";
 import { Tweet } from "src/utils/types";
@@ -23,12 +23,12 @@ const WhoWeAre: React.FC<Props> = (props: Props) => {
           </Box>
           <Box className={classes.text}>
             <Box className={classes.title}>
-              <Typography variant="h2" color="primary" align="right">
+              <Typography variant="h2" color="primary" align="inherit">
                 Run by pioneers in decentralization
               </Typography>
             </Box>
             <Box className={classes.description}>
-              <Typography variant="body1" color="textSecondary" align="right">
+              <Typography variant="body1" color="textSecondary" align="inherit">
                 As pioneers in the DeFi realm,
                 Switcheo Labs has led the pack with multiple world-firsts.
                 Come experience the magic we have helped to create. 
@@ -37,20 +37,29 @@ const WhoWeAre: React.FC<Props> = (props: Props) => {
           </Box>
         </Box>
         <Box className={classes.images}>
-          <Box display="flex" flexDirection="column" >
+          <Box className={classes.column}>
             <Photo src="/assets/team1.jpg" alt="Team1" orientation="landscape" className={classes.photo} />
-            <Box height={240}>
+            <Hidden mdUp>
+              <Box className={classes.button}>
+                <SwthButton>
+                  Meet our Team
+                </SwthButton>
+              </Box>
+            </Hidden>
+            <Box>
               <TweetCard tweets={tweetData} />
             </Box>
           </Box>
-          <Box display="flex" flexDirection="column" marginTop={30}>
-            <Photo src="/assets/team2.jpg" alt="Team2" orientation="portrait" className={classes.photo} />
-            <Box marginTop={-5}>
-              <SwthButton>
-                Meet our Team
-              </SwthButton>
+          <Hidden smDown>
+            <Box display="flex" flexDirection="column" marginTop={30} marginLeft={10} width="40%">
+              <Photo src="/assets/team2.jpg" alt="Team2" orientation="portrait" className={classes.photo} />
+              <Box marginTop={-5}>
+                <SwthButton>
+                  Meet our Team
+                </SwthButton>
+              </Box>
             </Box>
-          </Box>
+          </Hidden>
         </Box>
       </Container>
     </Box>
@@ -64,35 +73,102 @@ const useStyles = makeStyles((theme: Theme) => ({
   contentContainer: {
     position: "relative",
     padding: theme.spacing(15, 8),
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(2, 8),
+    },
+    [theme.breakpoints.only("xs")]: {
+      padding: theme.spacing(0, 4),
+    },
   },
   content: {
     display: "flex",
     justifyContent: "space-between",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+    },
   },
   sectionTitle: {
     marginTop: theme.spacing(3),
     width: "30%",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+      margin: theme.spacing(0, 1),
+    },
+    [theme.breakpoints.only("xs")]: {
+      margin: theme.spacing(0, 0.5),
+    },
   },
   text: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "flex-end",
+    [theme.breakpoints.down("sm")]: {
+      alignItems: "flex-start",
+    },
   },
   title: {
     marginBottom: theme.spacing(5),
+    textAlign: "right",
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "left",
+      margin: theme.spacing(3, 2),
+    },
+    [theme.breakpoints.only("xs")]: {
+      margin: theme.spacing(2, 0.5),
+    },
   },
   description: {
     maxWidth: "60%",
+    textAlign: "right",
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "left",
+      maxWidth: "100%",
+      marginTop: theme.spacing(1),
+    },
+    [theme.breakpoints.only("xs")]: {
+      maxWidth: "90%",
+      marginTop: 0,
+    },
+  },
+  column: {
+    display: "flex",
+    flexDirection: "column",
+    width: "50%",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+    },
   },
   images: {
     display: "flex",
     justifyContent: "space-between",
     marginTop: theme.spacing(-12),
     marginRight: theme.spacing(5),
+    [theme.breakpoints.down("sm")]: {
+      marginTop: theme.spacing(6),
+    },
+    [theme.breakpoints.only("xs")]: {
+      marginTop: theme.spacing(4),
+      marginRight: 0,
+    },
   },
   photo: {
+    width: "100%",
     marginBottom: theme.spacing(10),
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: theme.spacing(8),
+    },
+    [theme.breakpoints.only("xs")]: {
+      marginBottom: theme.spacing(1),
+    },
+  },
+  button: {
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: theme.spacing(7),
+    [theme.breakpoints.only("xs")]: {
+      marginBottom: theme.spacing(3),
+    },
   },
 }));
 

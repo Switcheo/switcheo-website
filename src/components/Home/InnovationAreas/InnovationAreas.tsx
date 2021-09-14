@@ -1,7 +1,7 @@
 import { Box, Hidden, makeStyles, Theme } from "@material-ui/core";
 import React from "react";
 import { CarbonIcon, DecentralizedInfrastructuresBg, DemexIcon, DecentralizedInfrastructuresIcon, InnovativeDAppsBg, InnovativeDAppsIcon, SwitcheoDevFundIcon, WhiteSpacesBg, WhiteSpacesIcon, ZilswapIcon } from "src/assets/innovation";
-import { DesktopAreas } from "./components";
+import { DesktopAreas, MobileAreas } from "./components";
 import { InnovationArea, InnovationAreaContent } from "src/utils/types";
 
 const InnovationAreas: React.FC = () => {
@@ -50,6 +50,9 @@ const InnovationAreas: React.FC = () => {
     <Box className={classes.root}>
       <Hidden smDown>
         <DesktopAreas areas={areas} />
+      </Hidden>
+      <Hidden mdUp>
+        <MobileAreas areas={areas} />
       </Hidden>
     </Box>
   );

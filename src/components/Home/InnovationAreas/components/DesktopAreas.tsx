@@ -15,6 +15,14 @@ const InnovationAreas: React.FC<Props> = (props: Props) => {
   const classes = useStyles();
   const [selectIndex, setSelectIndex] = useState(0);
 
+  const onChangeIndex = (index: number) => {
+    if (index < 0) {
+      setSelectIndex(areas.length - 1);
+    } else {
+      setSelectIndex(index);
+    }
+  };
+
   return (
     <>
       <Box component="section" className={classes.section}>
@@ -26,10 +34,10 @@ const InnovationAreas: React.FC<Props> = (props: Props) => {
                   Innovation Areas
                 </Typography>
                 <Box display="flex">
-                  <Box onClick={() => setSelectIndex((selectIndex - 1) % 3)} className={classes.arrow} marginRight={3}>
+                  <Box onClick={() => onChangeIndex((selectIndex - 1) % areas.length)} className={classes.arrow} marginRight={3}>
                     <ArrowLeft />
                   </Box>
-                  <Box onClick={() => setSelectIndex((selectIndex + 1) % 3)} className={classes.arrow}>
+                  <Box onClick={() => onChangeIndex((selectIndex + 1) % areas.length)} className={classes.arrow}>
                     <ArrowRight />
                   </Box>
                 </Box>
@@ -107,9 +115,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginTop: theme.spacing(2),
     display: "flex",
     justifyContent: "center",
-  },
-  placeholder: {
-    marginRight: theme.spacing(-13),
   },
 }));
 

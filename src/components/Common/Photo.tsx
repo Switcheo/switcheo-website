@@ -33,6 +33,16 @@ const useStyles = makeStyles((theme: Theme) => ({
     "& img": {
       borderRadius: 50,
     },
+    [theme.breakpoints.down("sm")]: {
+      "& img": {
+        borderRadius: 30,
+      },
+    },
+    [theme.breakpoints.only("xs")]: {
+      "& img": {
+        borderRadius: 14,
+      },
+    },
     position: "relative",
   },
   portrait: {
@@ -42,6 +52,18 @@ const useStyles = makeStyles((theme: Theme) => ({
   landscape: {
     width: "35rem",
     height: "26.25rem",
+    [theme.breakpoints.down("lg")]: {
+      width: "35rem",
+      height: "26.25rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "36.5rem",
+      height: "29.1825rem",
+    },
+    [theme.breakpoints.only("xs")]: {
+      width: "15.8125rem",
+      height: "11.5rem",
+    },
   },
 }));
 

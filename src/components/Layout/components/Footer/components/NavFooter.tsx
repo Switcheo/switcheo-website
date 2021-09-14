@@ -112,6 +112,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     [theme.breakpoints.down("sm")]: {
       padding: theme.spacing(10, 0, 10, 10),
     },
+    [theme.breakpoints.only("xs")]: {
+      padding: theme.spacing(10, 0),
+    },
   },
   img: {
     "& path": {

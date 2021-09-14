@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     padding: theme.spacing(15, 3),
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
-      padding: theme.spacing(13, 8),
+      padding: theme.spacing(13, 8, 8),
     },
     [theme.breakpoints.only("xs")]: {
       maxWidth: "100%",

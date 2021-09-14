@@ -20,8 +20,8 @@ const Hero: React.FC = () => {
             that thrives even without trust.
           </Typography>
         </Box>
-        <HeroAnimationPlaceholder className={classes.placeholder} />
       </Container>
+      <HeroAnimationPlaceholder className={classes.placeholder} />
     </Box>
   );
 };

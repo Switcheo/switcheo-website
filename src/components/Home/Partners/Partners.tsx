@@ -51,7 +51,8 @@ const Partners: React.FC = () => {
             <Grid item xs={4} md={3} className={classes.icon}>
               <StakeWithUs />
             </Grid>
-            <Grid item xs={12} className={classes.icon}>
+            <Grid item xs={4} md={4} className={classes.icon} />
+            <Grid item xs={4} className={classes.icon}>
               <O3Labs />
             </Grid>
           </Grid>
@@ -64,10 +65,13 @@ const Partners: React.FC = () => {
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     position: "relative",
+    padding: theme.spacing(15, 5),
+    [theme.breakpoints.only("xs")]: {
+      padding: theme.spacing(8, 3),
+    },
   },
   contentContainer: {
     position: "relative",
-    padding: theme.spacing(15, 5),
   },
   content: {
     display: "flex",
@@ -77,11 +81,21 @@ const useStyles = makeStyles((theme: Theme) => ({
   title: {
     maxWidth: "69%",
     marginBottom: theme.spacing(15),
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "100%",
+      marginBottom: theme.spacing(10),
+    },
+    [theme.breakpoints.only("xs")]: {
+      marginBottom: theme.spacing(5),
+    },
   },
   icon: {
     display: "flex",
     justifyContent: "center",
     marginBottom: theme.spacing(3),
+    [theme.breakpoints.only("xs")]: {
+      marginBottom: 0,
+    },
   },
   left: {
     marginLeft: theme.spacing(15),

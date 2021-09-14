@@ -31,6 +31,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: "1.5625rem",
     textTransform: "none",
     color: "inherit",
+    [theme.breakpoints.only("xs")]: {
+      fontSize: "0.6875rem",
+    },
   },
   label: {
     display: "flex",
@@ -39,6 +42,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   arrow: {
     height: "1.75rem",
     marginLeft: theme.spacing(5),
+    [theme.breakpoints.only("xs")]: {
+      marginLeft: theme.spacing(2),
+      height: "0.8125rem",
+    },
   },
 }));
 

@@ -1,5 +1,6 @@
-import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
+import { Box, Container, Hidden, makeStyles, Theme, Typography } from "@material-ui/core";
 import React, { useMemo } from "react";
+import { MobileBlogCard } from "src/components/Common";
 import BlogCard from "src/components/Common/BlogCard";
 import { BlogEntry } from "src/utils/types";
 
@@ -22,7 +23,12 @@ const DevelopersUpdate: React.FC<Props> = (props: Props) => {
               Developers Update
             </Typography>
           </Box>
-          {updatePosts.map((post) => <BlogCard key={post.title} layout="row" post={post} divider/>)}
+          <Hidden smDown>
+            {updatePosts.map((post) => <BlogCard key={post.title} layout="row" post={post} divider/>)}
+          </Hidden>
+          <Hidden mdUp>
+            <MobileBlogCard posts={updatePosts} />
+          </Hidden>
         </Box>
       </Container>
     </Box>
@@ -36,6 +42,12 @@ const useStyles = makeStyles((theme: Theme) => ({
   contentContainer: {
     position: "relative",
     padding: theme.spacing(15, 12, 15, 5),
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(10, 8),
+    },
+    [theme.breakpoints.only("xs")]: {
+      padding: theme.spacing(5),
+    },
   },
   content: {
     display: "flex",
@@ -44,6 +56,12 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   text: {
     marginBottom: theme.spacing(5),
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: theme.spacing(4),
+    },
+    [theme.breakpoints.only("xs")]: {
+      marginBottom: 0,
+    },
   },
 }));
 
