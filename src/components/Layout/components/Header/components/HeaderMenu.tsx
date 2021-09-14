@@ -37,7 +37,7 @@ const HeaderMenu: React.FC<Props> = (props: Props) => {
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    position: "fixed",
+    position: "absolute",
     top: "8.5rem",
     width: "100%",
     zIndex: 100,

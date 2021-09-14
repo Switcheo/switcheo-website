@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
             that thrives even without trust.
           </Typography>
         </Box>
-        <HeroAnimationPlaceholder />
+        <HeroAnimationPlaceholder className={classes.placeholder} />
       </Container>
     </Box>
   );
@@ -38,14 +38,37 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: "center",
     alignItems: "center",
     marginTop: theme.spacing(14),
+    [theme.breakpoints.only("sm")]: {
+      marginTop: theme.spacing(8),
+    },
+    [theme.breakpoints.only("xs")]: {
+      marginTop: theme.spacing(2),
+    },
   },
   title: {
     maxWidth: "58rem",
     marginBottom: theme.spacing(5),
+    [theme.breakpoints.only("sm")]: {
+      maxWidth: "37rem",
+      marginBottom: theme.spacing(3),
+    },
+    [theme.breakpoints.only("xs")]: {
+      maxWidth: "16rem",
+      marginBottom: theme.spacing(1),
+    },
   },
   description: {
     maxWidth: "46rem",
     marginBottom: theme.spacing(3),
+    [theme.breakpoints.only("sm")]: {
+      maxWidth: "35rem",
+    },
+    [theme.breakpoints.only("xs")]: {
+      maxWidth: "16rem",
+    },
+  },
+  placeholder: {
+    width: "100%",
   },
 }));
 

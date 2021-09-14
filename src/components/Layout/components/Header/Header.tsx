@@ -8,11 +8,12 @@ import MenuIcon from "src/assets/MenuIcon.svg";
 import { Demex, Carbon, SwitcheoDevFund, Zilswap } from "src/assets/header";
 import clsx from "clsx";
 import { HeaderTab, HeaderTabContent } from "src/utils/types";
-import { HeaderMenu } from "./components";
+import { HeaderMenu, MobileMenu } from "./components";
 
 const Header: React.FC = () => {
   const classes = useStyles();
   const [selectIndex, setSelectIndex] = useState(-1);
+  const [openMenu, setOpenMenu] = useState(false);
 
   const onSelectTab = (index: HeaderTab) => {
     if (index == selectIndex) {
@@ -24,6 +25,8 @@ const Header: React.FC = () => {
 
   const headerTabs: HeaderTabContent[] = [
     {
+      tab: HeaderTab.Ecosystem,
+      tabTitle: "Ecosystem",
       sectionTitle: "SwitcheoLabs Ecosystem Suite Of Innovations",
       button: "This button is fake",
       links: [
@@ -50,6 +53,8 @@ const Header: React.FC = () => {
       ],
     },
     {
+      tab: HeaderTab.Company,
+      tabTitle: "Company",
       sectionTitle: "SwitcheoLabs Ecosystem Suite Of Innovations",
       button: "This button is fake",
       links: [
@@ -76,6 +81,8 @@ const Header: React.FC = () => {
       ],
     },
     {
+      tab: HeaderTab.Newsroom,
+      tabTitle: "Newsroom",
       sectionTitle: "SwitcheoLabs Ecosystem Suite Of Innovations",
       button: "This button is fake",
       links: [
@@ -102,6 +109,8 @@ const Header: React.FC = () => {
       ],
     },
     {
+      tab: HeaderTab.Developers,
+      tabTitle: "Developers",
       sectionTitle: "SwitcheoLabs Ecosystem Suite Of Innovations",
       button: "This button is fake",
       links: [
@@ -137,51 +146,19 @@ const Header: React.FC = () => {
         </Link>
         <Hidden smDown>
           <Box className={classes.navTabs}>
-            <Box 
-              onClick={() => onSelectTab(HeaderTab.Ecosystem)}
-              className={clsx(classes.tab, { [classes.selected]: selectIndex === HeaderTab.Ecosystem })}
-            >
-              <Typography variant="body1" color="textSecondary">
-                Ecosystem
-              </Typography>
-              <Box className={classes.caret}>
-                <CaretDown />
+            {headerTabs.map((tab) => (
+              <Box 
+                key={tab.tab}
+                onClick={() => onSelectTab(tab.tab)}
+                className={clsx(classes.tab, { [classes.selected]: selectIndex === tab.tab })}
+              >
+                <Typography variant="body1" color="textSecondary">
+                  {tab.tabTitle}
+                </Typography>
+                <CaretDown className={classes.caret} />
               </Box>
-            </Box>
-            <Box 
-              onClick={() => onSelectTab(HeaderTab.Company)}
-              className={clsx(classes.tab, { [classes.selected]: selectIndex === HeaderTab.Company })}
-            >
-              <Typography variant="body1" color="textSecondary">
-                Company
-              </Typography>
-              <Box className={classes.caret}>
-                <CaretDown />
-              </Box>
-            </Box>
-            <Box 
-              onClick={() => onSelectTab(HeaderTab.Newsroom)}
-              className={clsx(classes.tab, { [classes.selected]: selectIndex === HeaderTab.Newsroom })}
-            >
-              <Typography variant="body1" color="textSecondary">
-                Newsroom
-              </Typography>
-              <Box className={classes.caret}>
-                <CaretDown />
-              </Box>
-            </Box>
-            <Box 
-              onClick={() => onSelectTab(HeaderTab.Developers)}
-              className={clsx(classes.tab, { [classes.selected]: selectIndex === HeaderTab.Developers })}
-            >
-              <Typography variant="body1" color="textSecondary">
-                Developers
-              </Typography>
-              <Box className={classes.caret}>
-                <CaretDown />
-              </Box>
-            </Box>
-            <Box className={classes.tab}>
+            ))}
+            <Box className={classes.tab} onClick={() => setSelectIndex(-1)}>
               <Typography variant="body1" color="textSecondary">
                 Contact
               </Typography>
@@ -189,13 +166,23 @@ const Header: React.FC = () => {
           </Box>
         </Hidden>
         <Hidden mdUp>
-          <MenuIcon />
+          <Box onClick={() => setOpenMenu(true)} className={classes.menuIcon}>
+            <MenuIcon />
+          </Box>
         </Hidden>
       </Container>
       <Hidden smDown>
         {selectIndex !== -1 && (
           <HeaderMenu selectedTab={headerTabs[selectIndex]} />
         )}
+      </Hidden>
+
+      <Hidden mdUp>
+        <MobileMenu
+          tabs={headerTabs}
+          openMenu={openMenu}
+          setOpenMenu={setOpenMenu}
+        />
       </Hidden>
     </Box>
   );
@@ -212,36 +199,62 @@ const useStyles = makeStyles((theme: Theme) => ({
   header: {
     padding: theme.spacing(7, 15, 1, 5),
     [theme.breakpoints.only("md")]: {
-      padding: theme.spacing(7, 7, 0, 7),
+      padding: theme.spacing(7, 3, 0, 3),
     },
     [theme.breakpoints.only("sm")]: {
-      padding: theme.spacing(3, 10),
+      padding: theme.spacing(7, 8),
     },
-    [theme.breakpoints.down("xs")]: {
-      padding: theme.spacing(3, 5),
+    [theme.breakpoints.only("xs")]: {
+      padding: theme.spacing(3),
     },
     display: "flex",
     justifyContent: "space-between",
+    alignItems: "flex-start",
   },
   brand: {
-    marginTop: theme.spacing(1.5),
+    marginTop: theme.spacing(2),
     cursor: "pointer",
+    width: "10.375rem",
+    [theme.breakpoints.only("sm")]: {
+      width: "14.375rem",
+      marginTop: theme.spacing(1),
+      marginLeft: theme.spacing(2),
+    },
+    [theme.breakpoints.only("xs")]: {
+      width: "6rem",
+      marginTop: theme.spacing(0.75),
+      marginLeft: theme.spacing(2),
+    },
   },
   navTabs: {
     display: "flex",
     justifyContent: "space-between",
+    alignItems: "flex-start",
   },
   tab: {
     display: "flex",
     borderBottom: "4px solid transparent",
     cursor: "pointer",
     padding: theme.spacing(1, 2, 4, 2),
+    [theme.breakpoints.only("md")]: {
+      padding: theme.spacing(1, 1, 4, 1),
+    },
+    alignItems: "center",
   },
   selected: {
     borderBottom: "4px solid #B9D674",
   },
   caret: {
-    margin: theme.spacing(0.5),
+    margin: theme.spacing(1, 0.5, 0.5, 0.5),
+    width: "1.25rem",
+    height: "0.75rem",
+  },
+  menuIcon: {
+    cursor: "pointer",
+    width: "3.0625rem",
+    [theme.breakpoints.only("xs")]: {
+      width: "1.625rem",
+    },
   },
 }));
 

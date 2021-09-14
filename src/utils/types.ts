@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export enum HeaderTab {
   Ecosystem = 0,
   Company = 1,
@@ -6,6 +7,8 @@ export enum HeaderTab {
 }
 
 export interface HeaderTabContent {
+  tab: HeaderTab
+  tabTitle: string
   sectionTitle: string
   button: string
   links: HeaderLink[]
@@ -14,8 +17,27 @@ export interface HeaderTabContent {
 export interface HeaderLink {
   title: string
   description: string
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon: any
+}
+
+export enum InnovationArea {
+  DecentralizedInfrastructures = 0,
+  InnovativeDApps = 1,
+  WhiteSpaces = 2,
+}
+
+export interface InnovationAreaContent {
+  area: InnovationArea
+  title: string
+  icon: any
+  background: any
+  description: string
+  products: Product[]
+}
+
+export interface Product {
+  icon: any
+  name: string
 }
 
 export interface BlogEntry {

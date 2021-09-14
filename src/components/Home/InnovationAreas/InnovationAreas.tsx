@@ -1,130 +1,62 @@
-import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
-import React, { useState } from "react";
-import ArrowLeft from "src/assets/ArrowLeft.svg";
-import ArrowRight from "src/assets/ArrowRight.svg";
-import clsx from "clsx";
-import { DecentralizedInfrastructuresIcon, InnovativeDAppsIcon, WhiteSpacesIcon } from "src/assets/innovation";
-import { AreaCircle } from "./components";
+import { Box, Hidden, makeStyles, Theme } from "@material-ui/core";
+import React from "react";
+import { CarbonIcon, DecentralizedInfrastructuresBg, DemexIcon, DecentralizedInfrastructuresIcon, InnovativeDAppsBg, InnovativeDAppsIcon, SwitcheoDevFundIcon, WhiteSpacesBg, WhiteSpacesIcon, ZilswapIcon } from "src/assets/innovation";
+import { DesktopAreas } from "./components";
+import { InnovationArea, InnovationAreaContent } from "src/utils/types";
 
 const InnovationAreas: React.FC = () => {
   const classes = useStyles();
-  const [selectIndex, setSelectIndex] = useState(0);
+
+  const areas: InnovationAreaContent[] = [
+    {
+      area: InnovationArea.DecentralizedInfrastructures,
+      title: "Decentralized Infrastructures",
+      icon: DecentralizedInfrastructuresIcon,
+      background: DecentralizedInfrastructuresBg,
+      description: "We push the boundaries of DeFi by making the impossible a reality. If you have thought of something useful in DeFi that doesn’t exist yet, we are probably already building it.",
+      products: [{
+        icon: <CarbonIcon />,
+        name: "Carbon Protocol",
+      }],
+    },
+    {
+      area: InnovationArea.InnovativeDApps,
+      title: "Innovative dApps",
+      icon: InnovativeDAppsIcon,
+      background: InnovativeDAppsBg,
+      description: "We lay the groundwork for decentralized, censorship-resistant ecosystems to thrive on. We incubate networks and partnerships that empower the new movers and shakers of the future.",
+      products: [{
+        icon: <DemexIcon />,
+        name: "Demex",
+      }, {
+        icon: <ZilswapIcon />,
+        name: "Zilswap",
+      }],
+    },
+    {
+      area: InnovationArea.WhiteSpaces,
+      title: "White Spaces",
+      icon: WhiteSpacesIcon,
+      background: WhiteSpacesBg,
+      description: "We are unafraid to dive headfirst into new realms, do the unexpected and lead the charge to uncover new ground and new spaces. We don’t believe in competition because we create new demand.",
+      products: [{
+        icon: <SwitcheoDevFundIcon />,
+        name: "Switcheo Dev Fund",
+      }],
+    },
+  ];
 
   return (
     <Box className={classes.root}>
-      <Box component="section" className={classes.section}>
-        <Container maxWidth="lg" className={classes.contentContainer}>
-          <Box className={classes.content}>
-            <Box className={classes.areas}>
-              <Box className={classes.areaBar}>
-                <Typography variant="h5" color="secondary">
-                  Innovation Areas
-                </Typography>
-                <Box display="flex">
-                  <Box onClick={() => setSelectIndex((selectIndex - 1) % 3)} className={classes.arrow} marginRight={3}>
-                    <ArrowLeft />
-                  </Box>
-                  <Box onClick={() => setSelectIndex((selectIndex + 1) % 3)} className={classes.arrow}>
-                    <ArrowRight />
-                  </Box>
-                </Box>
-              </Box>
-              <Box className={classes.area}>
-                <Box className={classes.icon}>
-                  <DecentralizedInfrastructuresIcon />
-                </Box>
-                <Box className={clsx(classes.areaText, { [classes.selected]: selectIndex === 0 })}>
-                  <Typography variant="h4" color="inherit">
-                    Decentralized Infrastructures
-                  </Typography>
-                </Box>
-              </Box>
-              <Box className={classes.area}>
-                <Box className={classes.icon}>
-                  <InnovativeDAppsIcon />
-                </Box>
-                <Box className={clsx(classes.areaText, { [classes.selected]: selectIndex === 1 })}>
-                  <Typography variant="h4" color="inherit">
-                    Innovative dApps
-                  </Typography>
-                </Box>
-              </Box>
-              <Box className={classes.area}>
-                <Box className={classes.icon}>
-                  <WhiteSpacesIcon />
-                </Box>
-                <Box className={clsx(classes.areaText, { [classes.selected]: selectIndex === 2 })}>
-                  <Typography variant="h4" color="inherit">
-                    White Spaces
-                  </Typography>
-                </Box>
-              </Box>
-            </Box>
-          </Box>
-        </Container>
-      </Box>
-      <AreaCircle selectIndex={selectIndex} />
+      <Hidden smDown>
+        <DesktopAreas areas={areas} />
+      </Hidden>
     </Box>
   );
 };
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-  },
-  section: {
-    backgroundColor: theme.palette.primary.main,
-    position: "relative",
-    paddingTop: theme.spacing(10),
-    paddingBottom: theme.spacing(45),
-    zIndex: 0,
-  },
-  contentContainer: {
-    position: "relative",
-    display: "flex",
-    paddingLeft: theme.spacing(6),
-    zIndex: 100,
-  },
-  content: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
-  },
-  arrow: {
-    cursor: "pointer",
-  },
-  areas: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-  },
-  areaBar: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginBottom: theme.spacing(8),
-  },
-  area: {
-    display: "flex",
-    alignItems: "center",
-    margin: theme.spacing(1.5, 0),
-  },
-  areaText: {
-    color: "#C9D2D9",
-    opacity: 0.4,
-  },
-  selected: {
-    color: theme.palette.secondary.main,
-    opacity: 1,
-  },
-  icon: {
-    width: "5rem",
-    marginRight: theme.spacing(4),
-    marginTop: theme.spacing(2),
-    display: "flex",
-    justifyContent: "center",
-  },
-  placeholder: {
-    marginRight: theme.spacing(-13),
   },
 }));
 

@@ -68,7 +68,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   contentContainer: {
     position: "relative",
     padding: theme.spacing(15, 5),
-    marginTop: theme.spacing(60),
   },
   content: {
     display: "flex",

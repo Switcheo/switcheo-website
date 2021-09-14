@@ -1,6 +1,7 @@
 import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
+import Image from "next/image";
 import React from "react";
-import VisionAnimationPlaceholder from "src/assets/VisionAnimationPlaceholder.svg";
+import VisionAnimationPlaceholder from "src/assets/VisionAnimationPlaceholder.png";
 
 const OurVision: React.FC = () => {
   const classes = useStyles();
@@ -9,15 +10,17 @@ const OurVision: React.FC = () => {
     <Box component="section" className={classes.root}>
       <Container maxWidth="lg" className={classes.contentContainer}>
         <Box className={classes.content}>
-          <VisionAnimationPlaceholder className={classes.placeholder} />
+          <Box className={classes.img}>
+            <Image src={VisionAnimationPlaceholder} alt="VisionAnimationPlaceholder" />
+          </Box>
           <Box className={classes.textSection}>
-            <Typography variant="h5" color="primary" className={classes.text}>
+            <Typography variant="h5" color="primary" className={classes.heading}>
               Our Vision
             </Typography>
             <Typography variant="h3" color="textPrimary" className={classes.text}>
               A truly free world where the need for trust and reliance is eradicated
             </Typography>
-            <Typography variant="body1" color="textSecondary">
+            <Typography variant="body1" color="textSecondary" className={classes.description}>
               This is the future we are moving towards
               - a decentralized world marked by efficient insfrastructure
               where every person has the right to manage their wealth in a fair,
@@ -38,9 +41,15 @@ const useStyles = makeStyles((theme: Theme) => ({
   contentContainer: {
     position: "relative",
     padding: theme.spacing(15, 5),
+    [theme.breakpoints.only("sm")]: {
+      padding: theme.spacing(10),
+    },
+    [theme.breakpoints.only("xs")]: {
+      padding: theme.spacing(7, 5),
+    },
   },
-  placeholder: {
-    marginLeft: theme.spacing(-15),
+  img: {
+    maxWidth: "50%",
   },
   content: {
     display: "flex",
@@ -56,8 +65,23 @@ const useStyles = makeStyles((theme: Theme) => ({
       maxWidth: "100%",
     },
   },
+  heading: {
+    marginBottom: theme.spacing(5),
+    [theme.breakpoints.only("xs")]: {
+      marginBottom: theme.spacing(2),
+    },
+  },
   text: {
     marginBottom: theme.spacing(5),
+    [theme.breakpoints.only("sm")]: {
+      marginBottom: theme.spacing(3),
+    },
+    [theme.breakpoints.only("xs")]: {
+      marginBottom: theme.spacing(1),
+    },
+  },
+  description: {
+    maxWidth: "95%",
   },
 }));
 
