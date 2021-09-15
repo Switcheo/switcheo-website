@@ -1,5 +1,6 @@
-import { Box, Container, Grid, makeStyles, Theme, Typography } from "@material-ui/core";
+import { Box, Container, Grid, Hidden, makeStyles, Theme, Typography } from "@material-ui/core";
 import React from "react";
+import Slider from "react-slick";
 import { SwthButton } from "src/components/Common";
 import { JobRole } from "src/utils/types";
 import { RoleCard } from "./components";
@@ -12,30 +13,50 @@ const OpenRoles: React.FC<Props> = (props: Props) => {
   const { jobRoles } = props;
   const classes = useStyles();
 
+  const settings = {
+    centerMode: true,
+    infinite: true,
+    centerPadding: "55px",
+  };
+
   return (
     <Box component="section" className={classes.root}>
       <Container maxWidth="lg" className={classes.contentContainer}>
-        <Box className={classes.content}>
-          <Box className={classes.text}>
-            <Box marginBottom={5}>
-              <Typography variant="h5" color="primary">
-                Join the team
-              </Typography>
-            </Box>
-            <Typography variant="h2" color="primary">
-              Featured Open Roles
+        <Box className={classes.text}>
+          <Box className={classes.header}>
+            <Typography variant="h5" color="primary">
+              Join the team
             </Typography>
           </Box>
+          <Typography variant="h2" color="primary">
+            Featured Open Roles
+          </Typography>
         </Box>
-        <Grid container spacing={6}>
+        <Hidden only="xs">
+          <Grid container spacing={6}>
+            {jobRoles.map((role) => (
+              <Grid item key={role.url} xs={12} sm={6} md={4}>
+                <RoleCard jobRole={role} />
+              </Grid>
+            ))}
+          </Grid>
+          <Box className={classes.rolesButton}>
+            <SwthButton>
+              See all available roles
+            </SwthButton>
+          </Box>
+        </Hidden>
+      </Container>
+      <Hidden smUp>
+        <Slider {...settings}>
           {jobRoles.map((role) => <RoleCard key={role.url} jobRole={role} />)}
-        </Grid>
+        </Slider>
         <Box className={classes.rolesButton}>
           <SwthButton>
             See all available roles
           </SwthButton>
         </Box>
-      </Container>
+      </Hidden>
     </Box>
   );
 };
@@ -46,16 +67,31 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   contentContainer: {
     position: "relative",
-    padding: theme.spacing(18, 5),
-  },
-  content: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: theme.spacing(0, 10, 10),
+    padding: theme.spacing(18, 5, 0),
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(15, 5, 0),
+    },
+    [theme.breakpoints.only("xs")]: {
+      padding: theme.spacing(0, 5, 0),
+    },
   },
   text: {
-    marginBottom: theme.spacing(10),
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    padding: theme.spacing(0, 10, 20),
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(0, 10, 10),
+    },
+    [theme.breakpoints.only("xs")]: {
+      padding: theme.spacing(0, 2, 5),
+    },
+  },
+  header: {
+    marginBottom: theme.spacing(5),
+    [theme.breakpoints.only("xs")]: {
+      marginBottom: theme.spacing(2),
+    },
   },
   role: {
     backgroundColor: theme.palette.background.paper,
@@ -76,6 +112,14 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "flex",
     justifyContent: "center",
     marginTop: theme.spacing(12),
+    marginBottom: theme.spacing(18),
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: theme.spacing(20),
+    },
+    [theme.breakpoints.only("xs")]: {
+      marginTop: theme.spacing(5),
+      marginBottom: theme.spacing(10),
+    },
   },
 }));
 

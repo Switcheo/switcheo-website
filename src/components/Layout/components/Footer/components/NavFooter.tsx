@@ -107,13 +107,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: "space-between",
     padding: theme.spacing(30, 0, 10, 0),
     color: theme.palette.common.white,
-    fontFamily: "Inter",
-    letterSpacing: "-0.02em",
     [theme.breakpoints.down("sm")]: {
       padding: theme.spacing(10, 0, 10, 10),
     },
     [theme.breakpoints.only("xs")]: {
-      padding: theme.spacing(10, 0),
+      padding: theme.spacing(5, 0, 10),
     },
   },
   img: {
@@ -131,12 +129,32 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginBottom: theme.spacing(3),
   },
   sectionTitle: {
+    fontFamily: "Roobert-SemiBold",
+    letterSpacing: "-0.04em",
     fontSize: "1.25rem",
     marginBottom: theme.spacing(3),
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "2rem",
+      marginTop: theme.spacing(8),
+    },
+    [theme.breakpoints.only("xs")]: {
+      fontSize: "0.875rem",
+      marginTop: theme.spacing(2),
+      marginBottom: theme.spacing(2),
+    },
   },
   navLink: {
+    fontFamily: "Roobert",
+    letterSpacing: "-0.01em",
     fontSize: "1rem",
+    color: "#C9D2D9",
     marginBottom: theme.spacing(1.5),
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.8125rem",
+    },
+    [theme.breakpoints.only("xs")]: {
+      fontSize: "0.75rem",
+    },
   },
 }));
 

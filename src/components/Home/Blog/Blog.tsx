@@ -1,16 +1,28 @@
 import { Box, Container, Divider, Grid, Hidden, makeStyles, Theme, Typography } from "@material-ui/core";
 import React, { useMemo } from "react";
+import Slider from "react-slick";
+import Image from "next/image";
 import { BlogEntry } from "src/utils/types";
-import BlogPlaceholder from "src/assets/BlogPlaceholder.svg";
 import { BlogCard, MobileBlogCard } from "src/components/Common";
+
+import { DAppsUpdates, InfrastructureUpdates, WhiteSpacesUpdates } from "src/assets/blog";
 
 interface Props {
   posts: BlogEntry[],
 }
 
+const photos = [ InfrastructureUpdates, DAppsUpdates, WhiteSpacesUpdates ];
+
 const Blog: React.FC<Props> = (props: Props) => {
   const { posts } = props;
   const classes = useStyles();
+
+  const settings = {
+    infinite: true,
+    autoplay: true,
+    slidesToScroll: 1,
+    autoplaySpeed: 5000,
+  };
 
   const {
     newsPosts,
@@ -32,7 +44,15 @@ const Blog: React.FC<Props> = (props: Props) => {
         </Box>
         <Grid container spacing={2}>
           <Grid item xs={12} md={7}>
-            <BlogPlaceholder className={classes.img} />
+            <Box className={classes.highlights}>
+              <Slider {...settings}>
+                {photos.map((photo, index) => (
+                  <Box key={index} className={classes.img}>
+                    <Image src={photo} alt={index.toString()} />
+                  </Box>
+                ))}
+              </Slider>
+            </Box>
             <Hidden smDown>
               <BlogCard post={spotlightPost} className={classes.spotlight}/>
             </Hidden>
@@ -82,14 +102,22 @@ const useStyles = makeStyles((theme: Theme) => ({
     paddingLeft: theme.spacing(5),
     paddingRight: theme.spacing(20),
   },
-  img: {
+  highlights: {
     width: "90%",
+    "& img": {
+      borderRadius: 15,
+    },
     margin: theme.spacing(3, 6, 5, 0),
     [theme.breakpoints.down("sm")]: {
       margin: theme.spacing(3, 6, 3, 0),
     },
     [theme.breakpoints.only("xs")]: {
       margin: 0,
+    },
+  },
+  img: {
+    "& img": {
+      borderRadius: 15,
     },
   },
   divider: {

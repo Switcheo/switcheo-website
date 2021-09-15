@@ -47,6 +47,9 @@ const useStyles = makeStyles((theme: Theme) => ({
       flexDirection: "column",
       padding: theme.spacing(10),
     },
+    [theme.breakpoints.only("xs")]: {
+      padding: theme.spacing(5, 0, 8),
+    },
   },
   img: {
     "& path": {
@@ -54,6 +57,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     width: "10.625rem",
     marginBottom: theme.spacing(7),
+    [theme.breakpoints.only("xs")]: {
+      marginBottom: theme.spacing(4),
+      width: "6.25rem",
+    },
   },
   textSection: {
     display: "flex",

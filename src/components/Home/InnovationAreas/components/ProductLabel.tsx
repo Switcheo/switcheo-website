@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "flex",
     alignItems: "center",
     marginBottom: theme.spacing(2),
+    [theme.breakpoints.only("md")]: {
+      marginBottom: 0,
+    },
     [theme.breakpoints.only("xs")]: {
       marginBottom: theme.spacing(1),
     },

@@ -6,11 +6,11 @@ import React from "react";
 interface Props extends BoxProps {
   src: string
   alt: string
-  orientation: "portrait" | "landscape"
+  orientation?: "portrait" | "landscape"
 }
 
 const Photo: React.FC<Props> = (props: Props) => {
-  const { className, src, alt, orientation } = props;
+  const { className, src, alt, orientation = "landscape" } = props;
   const classes = useStyles();
 
   return (
@@ -23,6 +23,7 @@ const Photo: React.FC<Props> = (props: Props) => {
         alt={alt}
         layout="fill"
         objectFit="cover"
+        objectPosition="center top"
       />
     </Box>
   );

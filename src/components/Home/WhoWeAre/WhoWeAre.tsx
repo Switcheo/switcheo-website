@@ -38,7 +38,7 @@ const WhoWeAre: React.FC<Props> = (props: Props) => {
         </Box>
         <Box className={classes.images}>
           <Box className={classes.column}>
-            <Photo src="/assets/team1.jpg" alt="Team1" orientation="landscape" className={classes.photo} />
+            <Photo src="/assets/team1.jpg" alt="Team1" className={classes.landscape} />
             <Hidden mdUp>
               <Box className={classes.button}>
                 <SwthButton>
@@ -52,7 +52,7 @@ const WhoWeAre: React.FC<Props> = (props: Props) => {
           </Box>
           <Hidden smDown>
             <Box display="flex" flexDirection="column" marginTop={30} marginLeft={10} width="40%">
-              <Photo src="/assets/team2.jpg" alt="Team2" orientation="portrait" className={classes.photo} />
+              <Photo src="/assets/team2.jpg" alt="Team2" className={classes.portrait} />
               <Box marginTop={-5}>
                 <SwthButton>
                   Meet our Team
@@ -152,13 +152,27 @@ const useStyles = makeStyles((theme: Theme) => ({
       marginRight: 0,
     },
   },
-  photo: {
+  portrait: {
     width: "100%",
+    height: "min(50vw, 35rem)",
     marginBottom: theme.spacing(10),
     [theme.breakpoints.down("sm")]: {
       marginBottom: theme.spacing(8),
     },
     [theme.breakpoints.only("xs")]: {
+      marginBottom: theme.spacing(1),
+    },
+  },
+  landscape: {
+    width: "100%",
+    height: "min(40vw, 26.25rem)",
+    marginBottom: theme.spacing(10),
+    [theme.breakpoints.down("sm")]: {
+      height: "max(45vw, 29.1825rem)",
+      marginBottom: theme.spacing(8),
+    },
+    [theme.breakpoints.only("xs")]: {
+      height: "max(55vw, 11.5rem)",
       marginBottom: theme.spacing(1),
     },
   },

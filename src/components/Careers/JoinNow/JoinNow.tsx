@@ -9,12 +9,12 @@ const JoinNow: React.FC = () => {
 	  <Box component="section" className={classes.root}>
       <Container maxWidth="lg" className={classes.contentContainer}>
         <Box className={classes.content}>
-          <Box marginBottom={3}>
+          <Box className={classes.title}>
             <Typography variant="h2" color="inherit">
               Believe in a life without limits?
             </Typography>
           </Box>
-          <Box marginBottom={5}>
+          <Box className={classes.description}>
             <Typography variant="subtitle1" color="secondary">  
               Join our team of changemakers today. 
             </Typography>
@@ -23,7 +23,7 @@ const JoinNow: React.FC = () => {
             Insert button here
           </SwthButton>
         </Box>
-        <Photo src="/assets/team6.jpg" alt="Team6" orientation="portrait" className={classes.photo} />
+        <Photo src="/assets/team6.jpg" alt="Team6" className={classes.photo} />
       </Container>
 	  </Box>
   );
@@ -42,14 +42,51 @@ const useStyles = makeStyles((theme: Theme) => ({
     alignItems: "flex-end",
     marginTop: theme.spacing(-10),
     padding: theme.spacing(0, 10, 22, 10),
+    [theme.breakpoints.down("sm")]: {
+      marginTop: theme.spacing(-20),
+      padding: theme.spacing(0, 10, 12, 10),
+      flexDirection: "column-reverse",
+      alignItems: "flex-start",
+    },
+    [theme.breakpoints.only("xs")]: {
+      marginTop: theme.spacing(-8),
+      padding: theme.spacing(0, 5, 2, 5),
+    },
   },
   content: {
     maxWidth: "50%",
     paddingBottom: theme.spacing(5),
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "75%",
+      marginTop: theme.spacing(12),
+    },
+    [theme.breakpoints.only("xs")]: {
+      marginTop: theme.spacing(5),
+    },
   },
   photo: {
-    width: "490px",
+    width: "45%",
     height: "650px",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+      height: "max(40vw, 25.6875rem)",
+    },
+    [theme.breakpoints.only("xs")]: {
+      width: "100%",
+      height: "max(40vw, 10.625rem)",
+    },
+  },
+  title: {
+    marginBottom: theme.spacing(3),
+    [theme.breakpoints.only("xs")]: {
+      marginBottom: theme.spacing(1),
+    },
+  },
+  description: {
+    marginBottom: theme.spacing(5),
+    [theme.breakpoints.only("xs")]: {
+      marginBottom: theme.spacing(2),
+    },
   },
 }));
 

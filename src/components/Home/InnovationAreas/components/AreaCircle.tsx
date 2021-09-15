@@ -50,12 +50,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     borderRadius: "50%",
     width: "min(70vw, 62.5rem)",
     height: "min(70vw, 62.5rem)",
-    background: "linear-gradient(180deg, #222222 0%, rgba(34, 34, 34, 0) 100%);",
+    background: "linear-gradient(180deg, #222222 0%, rgba(34, 34, 34, 0) 100%)",
     mixBlendMode: "normal",
   },
   content: {
     zIndex: 100,
-    marginTop: "max(-55vw, -46rem)",
+    marginTop: "max(-56vw, -46rem)",
     marginLeft: "min(10vw, 9rem)",
     width: "55%",
   },
@@ -66,17 +66,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     [theme.breakpoints.only("md")]: {
       lineHeight: "120%",
     },
-  },
-  product: {
-    display: "flex",
-    alignItems: "center",
-    marginBottom: theme.spacing(2),
-  },
-  productName: {
-    color: theme.palette.secondary.main,
-    fontFamily: "Roobert-SemiBold",
-    fontSize: "1.3125rem",
-    marginLeft: theme.spacing(3),
   },
 }));
 

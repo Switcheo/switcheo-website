@@ -16,31 +16,41 @@ const WhatOthersSay: React.FC<Props> = (props: Props) => {
 
   const selectedTweet = useMemo(() => tweets[selectIndex], [tweets, selectIndex]);
 
+  const onChangeIndex = (index: number) => {
+    if (index < 0) {
+      setSelectIndex(tweets.length - 1);
+    } else {
+      setSelectIndex(index);
+    }
+  };
+
   return (
     <Box component="section" className={classes.root}>
       <Container maxWidth="lg" className={classes.contentContainer}>
-        <Box marginBottom={8} marginLeft={5}>
+        <Box className={classes.sectionTitle}>
           <Typography variant="h5" color="primary">
             What Others Say
           </Typography>
         </Box>
-        <Box display="flex" maxWidth="90%" marginBottom={3}>
+        <Box className={classes.quote}>
           <Box className={classes.quoteMarks} alignItems="flex-start">&ldquo;</Box>
           <Box className={classes.quoteText}>
             {selectedTweet.text}
           </Box>
           <Box className={classes.quoteMarks} alignItems="flex-end">&rdquo;</Box>
         </Box>
-        <Box display="flex" maxWidth="90%" justifyContent="space-between">
-          <Box display="flex" marginLeft={3}>
-            {tweets.map((tweet) => (
-              <Box key={tweet.id} className={classes.tweetIconBox}>
-                <Box className={classes.tweetIcon}>
-                  <Image src="/assets/TwitterIconPlaceholder.png" alt="TwitterIconPlaceholder" layout="fill" />
+        <Box className={classes.tweetItems}>
+          <Box className={classes.tweetDetails}>
+            <Box display="flex">
+              {tweets.map((tweet) => (
+                <Box key={tweet.id} className={classes.tweetIconBox}>
+                  <Box className={classes.tweetIcon}>
+                    <Image src="/assets/TwitterIconPlaceholder.png" alt="TwitterIconPlaceholder" layout="fill" />
+                  </Box>
                 </Box>
-              </Box>
-            ))}
-            <Box display="flex" flexDirection="column" justifyContent="center" marginLeft={8}>
+              ))}
+            </Box>
+            <Box className={classes.tweetUser}>
               <Typography variant="body1" color="textPrimary">
                 {selectedTweet.name}
               </Typography>
@@ -49,11 +59,11 @@ const WhatOthersSay: React.FC<Props> = (props: Props) => {
               </Typography>
             </Box>
           </Box>
-          <Box display="flex" alignItems="center" marginTop={5}>
-            <Box onClick={() => setSelectIndex((selectIndex - 1) % tweets.length)} className={classes.arrow}>
+          <Box className={classes.arrows}>
+            <Box onClick={() => onChangeIndex((selectIndex - 1) % tweets.length)} className={classes.arrow}>
               <ArrowLeft className={classes.arrowSvg} />
             </Box>
-            <Box onClick={() => setSelectIndex((selectIndex + 1) % tweets.length)} className={classes.arrow}>
+            <Box onClick={() => onChangeIndex((selectIndex + 1) % tweets.length)} className={classes.arrow}>
               <ArrowRight className={classes.arrowSvg} />
             </Box>
         </Box>
@@ -70,7 +80,29 @@ const useStyles = makeStyles((theme: Theme) => ({
   contentContainer: {
     position: "relative",
     padding: theme.spacing(20, 10, 10),
-    minHeight: "45rem",
+    [theme.breakpoints.only("xs")]: {
+      padding: theme.spacing(8, 5, 5),
+    },
+  },
+  sectionTitle: {
+    marginBottom: theme.spacing(8),
+    marginLeft: theme.spacing(5),
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: theme.spacing(5),
+      marginLeft: theme.spacing(4),
+    },
+    [theme.breakpoints.only("xs")]: {
+      marginBottom: theme.spacing(1),
+      marginLeft: theme.spacing(2),
+    },
+  },
+  quote: {
+    display: "flex",
+    maxWidth: "90%",
+    marginBottom: theme.spacing(3),
+    [theme.breakpoints.only("xs")]: {
+      marginBottom: 0,
+    },
   },
   quoteText: {
     fontFamily: "Roobert-SemiBold",
@@ -78,6 +110,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     lineHeight: "121%",
     color: theme.palette.text.secondary,
     padding: theme.spacing(0, 1, 4),
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.5rem",
+    },
+    [theme.breakpoints.only("xs")]: {
+      fontSize: "0.6875rem",
+      padding: theme.spacing(0, 1, 2),
+    },
   },
   quoteMarks: {
     fontFamily: "Arial",
@@ -85,14 +124,18 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: "4.25rem",
     color: "#C9D2D9",
     display: "flex",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "2.875rem",
+    },
+    [theme.breakpoints.only("xs")]: {
+      fontSize: "1.1875rem",
+    },
   },
   tweetIcon: {
     "& img": {
       borderRadius: "50%",
     },
     position: "relative",
-    borderRadius: "50%",
-    border: "1px solid #C6E579",
     height: "100%",
     width: "100%",
   },
@@ -103,6 +146,26 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: "6rem",
     padding: theme.spacing(0.5),
     margin: theme.spacing(2),
+    [theme.breakpoints.down("sm")]: {
+      height: "4rem",
+      width: "4rem",
+      margin: theme.spacing(1),
+    },
+    [theme.breakpoints.only("xs")]: {
+      height: "1.625rem",
+      width: "1.625rem",
+      padding: 2,
+      margin: theme.spacing(0.5),
+    },
+  },
+  arrows: {
+    display: "flex",
+    alignItems: "center",
+    marginTop: theme.spacing(5),
+    [theme.breakpoints.only("xs")]: {
+      marginTop: theme.spacing(2),
+      marginLeft: theme.spacing(2),
+    },
   },
   arrow: {
     cursor: "pointer",
@@ -111,6 +174,43 @@ const useStyles = makeStyles((theme: Theme) => ({
   arrowSvg: {
     "& path": {
       fill: theme.palette.primary.main,
+    },
+  },
+  tweetItems: {
+    display: "flex",
+    maxWidth: "90%",
+    justifyContent: "space-between",
+    [theme.breakpoints.only("xs")]: {
+      flexDirection: "column",
+    },
+  },
+  tweetDetails: {
+    display: "flex",
+    marginLeft: theme.spacing(3),
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column-reverse",
+      alignItems: "flex-start",
+    },
+    [theme.breakpoints.only("xs")]: {
+      flexDirection: "row-reverse",
+      alignItems: "center",
+      justifyContent: "flex-end",
+      marginLeft: theme.spacing(2),
+    },
+  },
+  tweetUser: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    marginLeft: theme.spacing(8),
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: theme.spacing(3),
+      marginBottom: theme.spacing(3),
+    },
+    [theme.breakpoints.only("xs")]: {
+      marginLeft: 0,
+      marginBottom: 0,
+      marginRight: theme.spacing(1),
     },
   },
 }));
