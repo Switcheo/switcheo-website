@@ -1,18 +1,22 @@
 import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
-import Image from "next/image";
 import React from "react";
-import VisionAnimationPlaceholder from "src/assets/VisionAnimationPlaceholder.png";
+import { useInView } from "react-intersection-observer";
+import { VisionAnimation } from "./components";
 
 const OurVision: React.FC = () => {
   const classes = useStyles();
 
+  const [sectionRef, sectionView] = useInView({
+    threshold: 0.8,
+    triggerOnce: true,
+  });
+
   return (
+    <div ref={sectionRef}>
     <Box component="section" className={classes.root}>
       <Container maxWidth="lg" className={classes.contentContainer}>
         <Box className={classes.content}>
-          <Box className={classes.img}>
-            <Image src={VisionAnimationPlaceholder} alt="VisionAnimationPlaceholder" />
-          </Box>
+          <VisionAnimation sectionView={sectionView} />
           <Box className={classes.textSection}>
             <Typography variant="h5" color="primary" className={classes.heading}>
               Our Vision
@@ -30,6 +34,7 @@ const OurVision: React.FC = () => {
         </Box>
       </Container>
     </Box>
+    </div>
   );
 };
 
@@ -40,12 +45,12 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   contentContainer: {
     position: "relative",
-    padding: theme.spacing(15, 5),
+    padding: theme.spacing(15, 5, 15, 0),
     [theme.breakpoints.only("sm")]: {
-      padding: theme.spacing(10),
+      padding: theme.spacing(5, 10, 15),
     },
     [theme.breakpoints.only("xs")]: {
-      padding: theme.spacing(7, 5),
+      padding: theme.spacing(2, 5, 5),
     },
   },
   img: {
@@ -57,6 +62,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     alignItems: "center",
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
+    },
+    [theme.breakpoints.only("xs")]: {
+      textAlign: "center",
     },
   },
   textSection: {
@@ -82,6 +90,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   description: {
     maxWidth: "95%",
+    [theme.breakpoints.only("xs")]: {
+      maxWidth: "100%",
+    },
   },
 }));
 
