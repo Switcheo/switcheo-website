@@ -30,7 +30,7 @@ module.exports = {
       path : '/var/www/switcheo-website-staging',
       'pre-deploy-local': '',
       'pre-setup' : 'sudo npm install pm2@latest -g; sudo npm install yarn -g; ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts;',
-      'post-deploy' : 'yarn install && yarn build && cp ~/.contentful.env /var/www/switcheo-website-staging/current/.env && pm2 startOrRestart ecosystem.config.js --env staging',
+      'post-deploy' : 'yarn install --ignore-engines && yarn build && cp ~/.contentful.env /var/www/switcheo-website-staging/current/.env && pm2 startOrRestart ecosystem.config.js --env staging',
     }
   }
 };
