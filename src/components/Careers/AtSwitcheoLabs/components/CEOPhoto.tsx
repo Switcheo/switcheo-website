@@ -38,7 +38,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   gradient: {
     borderRadius: 50,
     background: "linear-gradient(180deg, rgba(34, 34, 34, 0.4) 48.95%, rgba(34, 34, 34, 0.1) 80.2%, rgba(34, 34, 34, 0) 100%)",
-    mixBlendMode: "normal",
     marginTop: "max(-43.5vw, -35rem)",
     transform: "rotate(-180deg)",
     zIndex: 100,

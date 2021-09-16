@@ -12,20 +12,28 @@ const HomeFooter: React.FC = () => {
     <Box className={classes.root}>
       <Hidden smDown>
         <Box className={classes.textSection}>
-          <Box className={classes.text}>
-            Switcheo Labs
-          </Box>
-          <Box className={classes.text}>
-            Privacy Policy
-          </Box>
-          <Box className={classes.text}>
-            Terms & Conditions
-          </Box>
+          <Link href="/" passHref>
+            <Box className={classes.text}>
+              Switcheo Labs
+            </Box>
+          </Link>
+          <Link href="/" passHref>
+            <Box className={classes.text}>
+              Privacy Policy
+            </Box>
+          </Link>
+          <Link href="/" passHref>
+            <Box className={classes.text}>
+              Terms & Conditions
+            </Box>
+          </Link>
         </Box>
       </Hidden>
       <Hidden mdUp>
         <Link href="/" passHref>
-          <SwitcheoBrand className={classes.img} />
+          <Box>
+            <SwitcheoBrand className={classes.img} />
+          </Box>
         </Link>
       </Hidden>
       <SocialLinkBox />
@@ -61,6 +69,9 @@ const useStyles = makeStyles((theme: Theme) => ({
       marginBottom: theme.spacing(4),
       width: "6.25rem",
     },
+    "&:hover": {
+      cursor: "pointer",
+    },
   },
   textSection: {
     display: "flex",
@@ -68,6 +79,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     alignItems: "center",
   },
   text: {
+    "&:hover": {
+      cursor: "pointer",
+    },
     padding: theme.spacing(1),
   },
 }));

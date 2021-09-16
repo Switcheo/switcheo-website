@@ -33,7 +33,7 @@ const InnovationAreas: React.FC<Props> = (props: Props) => {
                 <Typography variant="h5" color="secondary">
                   Innovation Areas
                 </Typography>
-                <Box display="flex">
+                <Box display="flex" marginRight={3}>
                   <Box onClick={() => onChangeIndex((selectIndex - 1) % areas.length)} className={classes.arrow} marginRight={3}>
                     <ArrowLeft />
                   </Box>
@@ -84,6 +84,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   arrow: {
     cursor: "pointer",
+    zIndex: 100,
   },
   areas: {
     display: "flex",

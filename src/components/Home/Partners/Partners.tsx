@@ -15,45 +15,71 @@ const Partners: React.FC = () => {
             </Typography>
           </Box>
           <Grid container spacing={4}>
-            <Grid item xs={4} md={3} className={classes.icon}>
-              <ThreeArrowsCapital />
+            <Grid item xs={4} md={3}>
+              <Box className={classes.iconBox}>
+                <ThreeArrowsCapital className={classes.icon}/>
+              </Box>
             </Grid>
-            <Grid item xs={4} md={3} className={classes.icon}>
-              <DeFianceCapital />
+            <Grid item xs={4} md={3}>
+              <Box className={classes.iconBox}>
+                <DeFianceCapital className={classes.icon}/>
+              </Box>
             </Grid>
-            <Grid item xs={4} md={3} className={classes.icon}>
-              <NGC />
+            <Grid item xs={4} md={3}>
+              <Box className={classes.iconBox}>
+                <NGC className={classes.icon}/>
+              </Box>
             </Grid>
-            <Grid item xs={4} md={3} className={classes.icon}>
-              <NEO />
+            <Grid item xs={4} md={3}>
+              <Box className={classes.iconBox}>
+                <NEO className={classes.icon}/>
+              </Box>
             </Grid>
-            <Grid item xs={4} md={3} className={classes.icon}>
-              <DeFiCapital />
+            <Grid item xs={4} md={3}>
+              <Box className={classes.iconBox}>
+                <DeFiCapital className={classes.icon}/>
+              </Box>
             </Grid>
-            <Grid item xs={4} md={3} className={classes.icon}>
-              <PolyNetwork />
+            <Grid item xs={4} md={3}>
+              <Box className={classes.iconBox}>
+                <PolyNetwork className={classes.icon}/>
+              </Box>
             </Grid>
-            <Grid item xs={4} md={3} className={classes.icon}>
-              <Zilliqa />
+            <Grid item xs={4} md={3}>
+              <Box className={classes.iconBox}>
+                <Zilliqa className={classes.icon}/>
+              </Box>
             </Grid>
-            <Grid item xs={4} md={3} className={classes.icon}>
-              <DACM />
+            <Grid item xs={4} md={3}>
+              <Box className={classes.iconBox}>
+                <DACM className={classes.icon}/>
+              </Box>
             </Grid>
-            <Grid item xs={4} md={3} className={classes.icon}>
-              <BOLT />
+            <Grid item xs={4} md={3}>
+              <Box className={classes.iconBox}>
+                <BOLT className={classes.icon}/>
+              </Box>
             </Grid>
-            <Grid item xs={4} md={3} className={classes.icon}>
-              <DUSK />
+            <Grid item xs={4} md={3}>
+              <Box className={classes.iconBox}>
+                <DUSK className={classes.icon}/>
+              </Box>
             </Grid>
-            <Grid item xs={4} md={3} className={classes.icon}>
-              <HuobiPool />
+            <Grid item xs={4} md={3}>
+              <Box className={classes.iconBox}>
+                <HuobiPool className={classes.icon}/>
+              </Box>
             </Grid>
-            <Grid item xs={4} md={3} className={classes.icon}>
-              <StakeWithUs />
+            <Grid item xs={4} md={3}>
+              <Box className={classes.iconBox}>
+                <StakeWithUs className={classes.icon}/>
+              </Box>
             </Grid>
-            <Grid item xs={4} md={4} className={classes.icon} />
-            <Grid item xs={4} className={classes.icon}>
-              <O3Labs />
+            <Grid item xs={4} md={4} />
+            <Grid item xs={4}>
+              <Box className={classes.iconBox}>
+                <O3Labs className={classes.icon}/>
+              </Box>
             </Grid>
           </Grid>
         </Box>
@@ -90,8 +116,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   icon: {
+    width: "100%",
+  },
+  iconBox: {
     display: "flex",
-    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    height: "100%",
     marginBottom: theme.spacing(3),
     [theme.breakpoints.only("xs")]: {
       marginBottom: 0,

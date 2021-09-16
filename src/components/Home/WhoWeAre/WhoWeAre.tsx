@@ -41,7 +41,7 @@ const WhoWeAre: React.FC<Props> = (props: Props) => {
             <Photo src="/assets/team1.jpg" alt="Team1" className={classes.landscape} />
             <Hidden mdUp>
               <Box className={classes.button}>
-                <SwthButton>
+                <SwthButton href="/careers">
                   Meet our Team
                 </SwthButton>
               </Box>
@@ -54,7 +54,7 @@ const WhoWeAre: React.FC<Props> = (props: Props) => {
             <Box display="flex" flexDirection="column" marginTop={30} marginLeft={10} width="40%">
               <Photo src="/assets/team2.jpg" alt="Team2" className={classes.portrait} />
               <Box marginTop={-5}>
-                <SwthButton>
+                <SwthButton href="/careers">
                   Meet our Team
                 </SwthButton>
               </Box>

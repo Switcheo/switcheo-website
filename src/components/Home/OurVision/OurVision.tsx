@@ -12,9 +12,9 @@ const OurVision: React.FC = () => {
   });
 
   return (
-    <div ref={sectionRef}>
     <Box component="section" className={classes.root}>
       <Container maxWidth="lg" className={classes.contentContainer}>
+        <div ref={sectionRef}>
         <Box className={classes.content}>
           <VisionAnimation sectionView={sectionView} />
           <Box className={classes.textSection}>
@@ -32,9 +32,9 @@ const OurVision: React.FC = () => {
             </Typography>
           </Box>
         </Box>
+        </div>
       </Container>
     </Box>
-    </div>
   );
 };
 

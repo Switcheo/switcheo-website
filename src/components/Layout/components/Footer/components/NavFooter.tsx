@@ -3,99 +3,137 @@ import { makeStyles } from "@material-ui/core/styles";
 import Link from "next/link";
 import React from "react";
 import SwitcheoBrand from "src/assets/SwitcheoBrand.svg";
+import { Paths } from "src/utils/paths";
 
 const NavFooter: React.FC = () => {
   const classes = useStyles();
+
+  const navLinks = [
+    {
+      section: "Products",
+      links: [
+        {
+          title: "Demex",
+          url: Paths.demex,
+        },
+        {
+          title: "Zilswap",
+          url: Paths.zilswap,
+        },
+        {
+          title: "Carbon",
+          url: "/",
+        },
+      ],
+    },
+    {
+      section: "Developers",
+      links: [
+        {
+          title: "Switcheo Docs",
+          url: "/",
+        },
+        {
+          title: "Demex Docs",
+          url: Paths.demexDocs,
+        },
+        {
+          title: "Zilswap Docs",
+          url: Paths.zilswapDocs,
+        },
+        {
+          title: "Carbon Docs",
+          url: "/",
+        },
+        {
+          title: "Media Guide",
+          url: "/",
+        },
+      ],
+    },
+    {
+      section: "Learn",
+      links: [
+        {
+          title: "Guides",
+          url: "/",
+        },
+        {
+          title: "Terminologies",
+          url: "/",
+        },
+      ],
+    },
+    {
+      section: "Company",
+      links: [
+        {
+          title: "About",
+          url: "/",
+        },
+        {
+          title: "Our Ecosystem",
+          url: "/",
+        },
+        {
+          title: "Partners",
+          url: "/",
+        },
+        {
+          title: "Enterprise",
+          url: "/",
+        },
+      ],
+    },
+    {
+      section: "Support",
+      links: [
+        {
+          title: "Contact",
+          url: "/",
+        },
+        {
+          title: "Cookie Policy",
+          url: "/",
+        },
+        {
+          title: "Legal & Privacy",
+          url: "/",
+        },
+        {
+          title: "Sitemap",
+          url: "/",
+        },
+      ],
+    },
+  ];
 
   return (
     <Box className={classes.root}>
       <Hidden smDown>
         <Box marginLeft={5} marginTop={2} width="60%">
           <Link href="/" passHref>
-            <SwitcheoBrand className={classes.img} />
+            <Box>
+              <SwitcheoBrand className={classes.img} />
+            </Box>
           </Link>
         </Box>
       </Hidden>
       <Grid container spacing={2} justifyContent="flex-end">
-        <Grid item xs={6} md={4}>
-          <Box className={classes.sectionTitle}>
-            Products
-          </Box>
-          <Box className={classes.navLink}>
-            Demex
-          </Box>
-          <Box className={classes.navLink}>
-            Zilswap
-          </Box>
-          <Box className={classes.navLink}>
-            Carbon
-          </Box>
-        </Grid>
-        <Grid item xs={6} md={4}>
-          <Box className={classes.sectionTitle}>
-            Developers
-          </Box>
-          <Box className={classes.navLink}>
-            Switcheo Docs
-          </Box>
-          <Box className={classes.navLink}>
-            Demex Docs
-          </Box>
-          <Box className={classes.navLink}>
-            ZilSwap Docs
-          </Box>
-          <Box className={classes.navLink}>
-            Carbon Docs
-          </Box>
-          <Box className={classes.navLink}>
-            Media Guide
-          </Box>
-        </Grid>
-        <Grid item xs={6} md={4}>
-          <Box className={classes.sectionTitle}>
-            Learn
-          </Box>
-          <Box className={classes.navLink}>
-            Guides
-          </Box>
-          <Box className={classes.navLink}>
-            Terminologies
-          </Box>
-        </Grid>
-        <Grid item xs={6} md={4}>
-          <Box className={classes.sectionTitle}>
-            Company
-          </Box>
-          <Box className={classes.navLink}>
-            About
-          </Box>
-          <Box className={classes.navLink}>
-            Our Ecosystem
-          </Box>
-          <Box className={classes.navLink}>
-            Partners
-          </Box>
-          <Box className={classes.navLink}>
-            Enterprise
-          </Box>
-        </Grid>
-        <Grid item xs={6} md={4}>
-          <Box className={classes.sectionTitle}>
-            Support
-          </Box>
-          <Box className={classes.navLink}>
-            Contact
-          </Box>
-          <Box className={classes.navLink}>
-            Cookie Policy
-          </Box>
-          <Box className={classes.navLink}>
-            Legal & Privacy
-          </Box>
-          <Box className={classes.navLink}>
-            Sitemap
-          </Box>
-        </Grid>
+        {navLinks.map((section) => (
+          <Grid key={section.section} item xs={6} md={4}>
+            <Box className={classes.sectionTitle}>
+              {section.section}
+            </Box>
+            {section.links.map((link) => (
+              <Link key={link.title} href={link.url} passHref>
+                <Box className={classes.navLink}>
+                  {link.title}
+                </Box>
+              </Link>
+            ))}
+          </Grid>
+        ))}
       </Grid>
     </Box>
   );
@@ -117,6 +155,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   img: {
     "& path": {
       fill: "#FFF",
+    },
+    "&:hover": {
+      cursor: "pointer",
     },
     width: "10.625rem",
   },
@@ -144,6 +185,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   navLink: {
+    "&:hover": {
+      cursor: "pointer",
+    },
     fontFamily: "Roobert",
     letterSpacing: "-0.01em",
     fontSize: "1rem",

@@ -17,10 +17,10 @@ const AreaCircle: React.FC<Props> = (props: Props) => {
 
   return (
     <Box borderRadius="50%" className={classes.root}>
-      <Image src={selectedArea.background} alt={selectedArea.title} />
+      <Image priority src={selectedArea.background} alt={selectedArea.title} />
       <Box className={classes.gradient} />
       <Box className={classes.content}>
-        <Box marginBottom={4}>
+        <Box marginBottom={3}>
           <Box className={classes.description}>
             {selectedArea.description}
           </Box>
@@ -51,7 +51,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: "min(70vw, 62.5rem)",
     height: "min(70vw, 62.5rem)",
     background: "linear-gradient(180deg, #222222 0%, rgba(34, 34, 34, 0) 100%)",
-    mixBlendMode: "normal",
   },
   content: {
     zIndex: 100,

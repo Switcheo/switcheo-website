@@ -20,7 +20,7 @@ const JoinOptions: React.FC = () => {
           </Typography>
         </Box>
         <Divider />
-        <SwthButton>
+        <SwthButton href="/careers">
           Learn More
         </SwthButton>
       </Grid>
@@ -32,7 +32,7 @@ const JoinOptions: React.FC = () => {
           </Typography>
         </Box>
         <Divider />
-        <SwthButton>
+        <SwthButton href="/">
           Learn More
         </SwthButton>
       </Grid>
@@ -44,7 +44,7 @@ const JoinOptions: React.FC = () => {
           </Typography>
         </Box>
         <Divider />
-        <SwthButton>
+        <SwthButton href="/">
           Learn More
         </SwthButton>
       </Grid>

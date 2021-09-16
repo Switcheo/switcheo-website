@@ -16,7 +16,7 @@ const OpenRoles: React.FC<Props> = (props: Props) => {
   const settings = {
     centerMode: true,
     infinite: true,
-    centerPadding: "55px",
+    centerPadding: "60px",
   };
 
   return (
@@ -41,7 +41,7 @@ const OpenRoles: React.FC<Props> = (props: Props) => {
             ))}
           </Grid>
           <Box className={classes.rolesButton}>
-            <SwthButton>
+            <SwthButton href="/">
               See all available roles
             </SwthButton>
           </Box>
@@ -52,7 +52,7 @@ const OpenRoles: React.FC<Props> = (props: Props) => {
           {jobRoles.map((role) => <RoleCard key={role.url} jobRole={role} />)}
         </Slider>
         <Box className={classes.rolesButton}>
-          <SwthButton>
+          <SwthButton href="/">
             See all available roles
           </SwthButton>
         </Box>

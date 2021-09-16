@@ -22,7 +22,7 @@ const HeaderMenu: React.FC<Props> = (props: Props) => {
               {selectedTab.sectionTitle}
             </Typography>
           </Box>
-          <SwthButton className={classes.button}>
+          <SwthButton className={classes.button} href="/">
             {selectedTab.button}
           </SwthButton>
         </Box>
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: theme.spacing(6.5, 5),
+    padding: theme.spacing(7.5, 5),
   },
   title: {
     display: "flex",

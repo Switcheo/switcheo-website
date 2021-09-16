@@ -19,7 +19,7 @@ const JoinNow: React.FC = () => {
               Join our team of changemakers today. 
             </Typography>
           </Box>
-          <SwthButton>
+          <SwthButton href="/">
             Insert button here
           </SwthButton>
         </Box>

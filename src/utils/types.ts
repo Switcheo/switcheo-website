@@ -18,6 +18,7 @@ export interface HeaderLink {
   title: string
   description: string
   icon: any
+  url: string
 }
 
 export enum InnovationArea {

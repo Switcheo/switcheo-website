@@ -60,7 +60,6 @@ const BlogCard: React.FC<Props> = (props: Props) => {
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     "&:hover": {
-      backgroundColor: theme.palette.background.paper,
       cursor: "pointer",
     },
   },

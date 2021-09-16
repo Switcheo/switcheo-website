@@ -37,9 +37,11 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
     >
       <Box className={classes.mobileHeader}>
         <Link href="/" passHref>
-          <SwitcheoBrand className={classes.mobileBrand} />
+          <Box>
+            <SwitcheoBrand className={classes.mobileBrand} />
+          </Box>
         </Link>
-        <Box onClick={() => setOpenMenu(false)}>
+        <Box onClick={() => setOpenMenu(false)} className={classes.closeIcon}>
           <CloseIcon className={classes.closeIcon}/>
         </Box>
       </Box>
@@ -114,10 +116,12 @@ const useStyles = makeStyles((theme: Theme) => ({
       fill: "#FFF",
     },
     width: "14.375rem",
+    height: "2.125rem",
     marginTop: theme.spacing(0.5),
     marginLeft: theme.spacing(2),
     [theme.breakpoints.only("xs")]: {
       width: "6rem",
+      height: "0.875rem",
       marginTop: theme.spacing(0.25),
       marginLeft: 0,
     },
@@ -125,8 +129,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   closeIcon: {
     cursor: "pointer",
     width: "2.375rem",
+    height: "2.375rem",
     [theme.breakpoints.only("xs")]: {
       width: "0.875rem",
+      height: "0.875rem",
     },
   },
   noPadding: {

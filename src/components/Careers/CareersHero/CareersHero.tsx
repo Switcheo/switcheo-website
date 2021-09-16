@@ -14,7 +14,7 @@ const CareersHero: React.FC = () => {
           </Typography>
         </Box>
         <Box>
-          <SwthButton>
+          <SwthButton href="/">
             Insert Button Here
           </SwthButton>
         </Box>

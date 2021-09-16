@@ -9,6 +9,7 @@ import { Demex, Carbon, SwitcheoDevFund, Zilswap } from "src/assets/header";
 import clsx from "clsx";
 import { HeaderTab, HeaderTabContent } from "src/utils/types";
 import { HeaderMenu, MobileMenu } from "./components";
+import { Paths } from "src/utils/paths";
 
 const Header: React.FC = () => {
   const classes = useStyles();
@@ -34,21 +35,25 @@ const Header: React.FC = () => {
           title: "Demex",
           description: "Decentralized exchange that allows cross-chain trading and options",
           icon: <Demex />,
+          url: Paths.demex,
         },
         {
           title: "Carbon",
           description: "Derivatives protocol that powers DeFi applications and smart contracts",
           icon: <Carbon />,
+          url: "/",
         },
         {
           title: "Zilswap",
           description: "Zilliqa-based dynamic currency swap and liquidity pool solutions",
           icon: <Zilswap />,
+          url: Paths.zilswap,
         },
         {
           title: "Switcheo Development Fund",
           description: "Funding new innovations building the future of blockchain applications",
           icon: <SwitcheoDevFund />,
+          url: "/",
         },
       ],
     },
@@ -59,52 +64,42 @@ const Header: React.FC = () => {
       button: "This button is fake",
       links: [
         {
-          title: "Demex",
+          title: "About",
           description: "Decentralized exchange that allows cross-chain trading and options",
           icon: <Demex />,
+          url: "/",
         },
         {
-          title: "Carbon",
+          title: "Careers",
           description: "Derivatives protocol that powers DeFi applications and smart contracts",
           icon: <Carbon />,
-        },
-        {
-          title: "Zilswap",
-          description: "Zilliqa-based dynamic currency swap and liquidity pool solutions",
-          icon: <Zilswap />,
-        },
-        {
-          title: "Switcheo Development Fund",
-          description: "Funding new innovations building the future of blockchain applications",
-          icon: <SwitcheoDevFund />,
+          url: "/",
         },
       ],
     },
     {
       tab: HeaderTab.Newsroom,
-      tabTitle: "Newsroom",
+      tabTitle: "Blog",
       sectionTitle: "SwitcheoLabs Ecosystem Suite Of Innovations",
       button: "This button is fake",
       links: [
         {
-          title: "Demex",
+          title: "Blog",
           description: "Decentralized exchange that allows cross-chain trading and options",
           icon: <Demex />,
+          url: "/",
         },
         {
-          title: "Carbon",
+          title: "In The Press",
           description: "Derivatives protocol that powers DeFi applications and smart contracts",
           icon: <Carbon />,
+          url: "/",
         },
         {
-          title: "Zilswap",
+          title: "Brand Assets",
           description: "Zilliqa-based dynamic currency swap and liquidity pool solutions",
           icon: <Zilswap />,
-        },
-        {
-          title: "Switcheo Development Fund",
-          description: "Funding new innovations building the future of blockchain applications",
-          icon: <SwitcheoDevFund />,
+          url: "/",
         },
       ],
     },
@@ -115,24 +110,16 @@ const Header: React.FC = () => {
       button: "This button is fake",
       links: [
         {
-          title: "Demex",
+          title: "Documentation",
           description: "Decentralized exchange that allows cross-chain trading and options",
           icon: <Demex />,
+          url: "/",
         },
         {
-          title: "Carbon",
+          title: "Dev Fund",
           description: "Derivatives protocol that powers DeFi applications and smart contracts",
           icon: <Carbon />,
-        },
-        {
-          title: "Zilswap",
-          description: "Zilliqa-based dynamic currency swap and liquidity pool solutions",
-          icon: <Zilswap />,
-        },
-        {
-          title: "Switcheo Development Fund",
-          description: "Funding new innovations building the future of blockchain applications",
-          icon: <SwitcheoDevFund />,
+          url: "/",
         },
       ],
     },
@@ -142,7 +129,9 @@ const Header: React.FC = () => {
     <Box className={classes.root}>
       <Container maxWidth="lg" className={classes.header}>
         <Link href="/" passHref>
-          <SwitcheoBrand className={classes.brand} />
+          <Box>
+            <SwitcheoBrand className={classes.brand} />
+          </Box>
         </Link>
         <Hidden smDown>
           <Box className={classes.navTabs}>
@@ -197,9 +186,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     zIndex: 100,
   },
   header: {
-    padding: theme.spacing(7, 15, 1, 5),
+    padding: theme.spacing(7, 15, 1),
     [theme.breakpoints.only("md")]: {
-      padding: theme.spacing(7, 3, 0, 3),
+      padding: theme.spacing(7, 4, 0),
     },
     [theme.breakpoints.only("sm")]: {
       padding: theme.spacing(7, 8),
