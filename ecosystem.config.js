@@ -4,13 +4,16 @@ module.exports = {
     script: 'build/index.js',
     instances : "max",
     exec_mode : "cluster",
+    node_args: [
+      "--max_old_space_size=4096"
+    ],
     env_production : {
       "PORT": 5000,
       "ENV": "production",
       "NODE_ENV": "production"
     },
     env_staging : {
-      "PORT": 5001,
+      "PORT": 4000,
       "ENV": "production",
       "NODE_ENV": "production"
     },
@@ -35,7 +38,7 @@ module.exports = {
       path : '/var/www/switcheo-website-staging',
       'pre-deploy-local': '',
       'pre-setup' : 'sudo npm install pm2@latest -g; sudo npm install yarn -g; ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts;',
-      'post-deploy' : 'yarn install --ignore-engines && yarn build && cp ~/.contentful.env /var/www/switcheo-website-staging/current/.env && pm2 startOrRestart ecosystem.config.js --env staging',
+      'post-deploy' : 'yarn install && yarn build && cp ~/.contentful.env /var/www/switcheo-website-staging/current/.env && pm2 startOrRestart ecosystem.config.js --env staging',
     }
   }
 };
