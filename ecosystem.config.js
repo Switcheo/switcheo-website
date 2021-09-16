@@ -9,6 +9,11 @@ module.exports = {
       "ENV": "production",
       "NODE_ENV": "production"
     },
+    env_staging : {
+      "PORT": 5001,
+      "ENV": "production",
+      "NODE_ENV": "production"
+    },
   }],
 
   deploy : {
