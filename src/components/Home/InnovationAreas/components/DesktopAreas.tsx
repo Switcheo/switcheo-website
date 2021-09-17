@@ -1,5 +1,5 @@
 import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ArrowLeft from "src/assets/ArrowLeft.svg";
 import ArrowRight from "src/assets/ArrowRight.svg";
 import clsx from "clsx";
@@ -14,12 +14,27 @@ const InnovationAreas: React.FC<Props> = (props: Props) => {
   const { areas } = props;
   const classes = useStyles();
   const [selectIndex, setSelectIndex] = useState(0);
+  const [hideCircle, setHideCircle] = useState(false);
+
+  useEffect(() => {
+    if (hideCircle) {
+      setTimeout(() => {
+        setHideCircle(false);
+      }, 300);
+    }
+  }, [hideCircle]);
 
   const onChangeIndex = (index: number) => {
     if (index < 0) {
-      setSelectIndex(areas.length - 1);
+      setHideCircle(true);
+      setTimeout(() => {
+        setSelectIndex(areas.length - 1);
+      }, 300);
     } else {
-      setSelectIndex(index);
+      setHideCircle(true);
+      setTimeout(() => {
+        setSelectIndex(index);
+      }, 300);
     }
   };
 
@@ -47,7 +62,10 @@ const InnovationAreas: React.FC<Props> = (props: Props) => {
                   <Box className={classes.icon}>
                     {area.icon}
                   </Box>
-                  <Box className={clsx(classes.areaText, { [classes.selected]: selectIndex === area.area })}>
+                  <Box
+                    className={clsx(classes.areaText, { [classes.selected]: selectIndex === area.area })}
+                    onClick={() => onChangeIndex(area.area)}
+                  >
                     <Typography variant="h4" color="inherit">
                       {area.title}
                     </Typography>
@@ -58,7 +76,9 @@ const InnovationAreas: React.FC<Props> = (props: Props) => {
           </Box>
         </Container>
       </Box>
-      <AreaCircle selectIndex={selectIndex} areas={areas} />
+      <Box className={clsx(classes.circle, { hide: hideCircle })}>
+        <AreaCircle selectIndex={selectIndex} areas={areas} />
+      </Box>
     </>
   );
 };
@@ -105,8 +125,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   areaText: {
     color: "#C9D2D9",
     opacity: 0.4,
+    transition: "opacity 0.3s ease-in, color 0.3s ease-in",
+    "&:hover": {
+      cursor: "pointer",
+    },
   },
   selected: {
+    transition: "opacity 0.3s ease-in, color 0.3s ease-in",
     color: theme.palette.secondary.main,
     opacity: 1,
   },
@@ -116,6 +141,14 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginTop: theme.spacing(2),
     display: "flex",
     justifyContent: "center",
+  },
+  circle: {
+    opacity: 1,
+    transition: "opacity ease-in 0.3s",
+    "&.hide": {
+      transition: "opacity ease-in 0.3s",
+      opacity: 0,
+    },
   },
 }));
 

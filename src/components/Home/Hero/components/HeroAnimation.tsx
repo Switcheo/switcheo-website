@@ -11,39 +11,30 @@ const HeroAnimation: React.FC<Props> = (props: Props) => {
   const { sectionView } = props;
   const classes = useStyles();
 
+  const getTransition = (delay: number) => makeStyles(() => ({
+    transition: {
+      transition: `transform 0.4s ease-in ${delay}s`,
+      transform: "rotate(180deg)",
+    },
+  }));
+
+  const arrows = [];
+  for (let i = 10; i < 37; i++) {
+    arrows.push(
+      <Arrow key={i} className={clsx(classes.arrow, {
+        [getTransition(i / 10)().transition]: sectionView,
+        [classes.topRow]: i < 18,
+      })} />);
+  }
+  arrows.splice(17, 0, <Arrow key={1} className={clsx(classes.arrow, { [classes.middleArrow]: sectionView })} />);
+
   return (
     <>
       <Box className={clsx(classes.root, classes.gradient)}>
-        <Arrow className={clsx(classes.arrow, classes.topRow)} />
-        <Arrow className={clsx(classes.arrow, classes.topRow)} />
-        <Arrow className={clsx(classes.arrow, classes.topRow)} />
-        <Arrow className={clsx(classes.arrow, classes.topRow)} />
-        <Arrow className={clsx(classes.arrow, classes.topRow)} />
-        <Arrow className={clsx(classes.arrow, classes.topRow)} />
-        <Arrow className={clsx(classes.arrow, classes.topRow)} />
-        <Arrow className={classes.arrow} />
-        <Arrow className={classes.arrow} />
-        <Arrow className={clsx(classes.arrow, { [classes.sideArrow]: sectionView })} />
-        <Arrow className={clsx(classes.arrow, { [classes.sideArrow]: sectionView })} />
-        <Arrow className={clsx(classes.arrow, { [classes.sideArrow]: sectionView })} />
-        <Arrow className={classes.arrow} />
-        <Arrow className={classes.arrow} />
+        {arrows.slice(0, 14)}
       </Box>
       <Box className={classes.root}>
-        <Arrow className={classes.arrow} />
-        <Arrow className={classes.arrow} />
-        <Arrow className={clsx(classes.arrow, { [classes.sideArrow]: sectionView })} />
-        <Arrow className={clsx(classes.arrow, { [classes.middleArrow]: sectionView })} />
-        <Arrow className={clsx(classes.arrow, { [classes.sideArrow]: sectionView })} />
-        <Arrow className={classes.arrow} />
-        <Arrow className={classes.arrow} />
-        <Arrow className={classes.arrow} />
-        <Arrow className={classes.arrow} />
-        <Arrow className={clsx(classes.arrow, { [classes.sideArrow]: sectionView })} />
-        <Arrow className={clsx(classes.arrow, { [classes.sideArrow]: sectionView })} />
-        <Arrow className={clsx(classes.arrow, { [classes.sideArrow]: sectionView })} />
-        <Arrow className={classes.arrow} />
-        <Arrow className={classes.arrow} />
+        {arrows.slice(14)}
       </Box>
     </>
   );
@@ -77,15 +68,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       fill: theme.palette.primary.main,
     },
     transition: "transform 0.4s ease-in 0.5s",
-    transform: "rotate(-180deg)",
-  },
-  sideArrow: {
-    "& path": {
-      transition: "fill 0.4s ease-in 1s",
-      fill: theme.palette.primary.main,
-    },
-    transition: "transform 0.4s ease-in 1.5s",
-    transform: "rotate(-180deg)",
+    transform: "rotate(180deg)",
   },
 }));
 

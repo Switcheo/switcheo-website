@@ -48,7 +48,7 @@ const Blog: React.FC<Props> = (props: Props) => {
               <Slider {...settings}>
                 {photos.map((photo, index) => (
                   <Box key={index} className={classes.img}>
-                    <Image src={photo} alt={index.toString()} />
+                    <Image src={photo} alt={index.toString()} priority />
                   </Box>
                 ))}
               </Slider>
@@ -116,6 +116,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   img: {
+    padding: theme.spacing(1),
     "& img": {
       borderRadius: 15,
     },

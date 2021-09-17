@@ -26,7 +26,7 @@ const OurVision: React.FC = () => {
             </Typography>
             <Typography variant="body1" color="textSecondary" className={classes.description}>
               This is the future we are moving towards
-              - a decentralized world marked by efficient insfrastructure
+              - a decentralized world marked by efficient infrastructure
               where every person has the right to manage their wealth in a fair,
               transparent manner that is free of unjust barriers.
             </Typography>
