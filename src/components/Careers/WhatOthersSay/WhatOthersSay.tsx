@@ -1,9 +1,11 @@
 import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
 import React, { useMemo, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import ArrowLeft from "src/assets/ArrowLeft.svg";
 import ArrowRight from "src/assets/ArrowRight.svg";
 import { Tweet } from "src/utils/types";
+import clsx from "clsx";
 
 interface Props {
   tweets: Tweet[]
@@ -42,29 +44,39 @@ const WhatOthersSay: React.FC<Props> = (props: Props) => {
         <Box className={classes.tweetItems}>
           <Box className={classes.tweetDetails}>
             <Box display="flex">
-              {tweets.map((tweet) => (
-                <Box key={tweet.id} className={classes.tweetIconBox}>
+              {tweets.map((tweet, index) => (
+                <Box
+                  key={index}
+                  className={clsx(
+                    classes.tweetIconBox,
+                    classes.link,
+                    { [classes.selected]: index === selectIndex }
+                  )}
+                  onClick={() => onChangeIndex(index)}
+                >
                   <Box className={classes.tweetIcon}>
-                    <Image src="/assets/TwitterIconPlaceholder.png" alt="TwitterIconPlaceholder" layout="fill" />
+                    <Image src={tweet.iconHref} alt="TwitterIcon" layout="fill" />
                   </Box>
                 </Box>
               ))}
             </Box>
-            <Box className={classes.tweetUser}>
-              <Typography variant="body1" color="textPrimary">
-                {selectedTweet.name}
-              </Typography>
-              <Typography variant="body1" color="textPrimary">
-                {selectedTweet.username}
-              </Typography>
-            </Box>
+            <Link href={selectedTweet.url} passHref>
+              <Box className={clsx(classes.tweetUser, classes.link)}>
+                <Typography variant="body1" color="textPrimary">
+                  {selectedTweet.name}
+                </Typography>
+                <Typography variant="body1" color="textPrimary">
+                  {selectedTweet.username}
+                </Typography>
+              </Box>
+            </Link>
           </Box>
           <Box className={classes.arrows}>
-            <Box onClick={() => onChangeIndex((selectIndex - 1) % tweets.length)} className={classes.arrow}>
-              <ArrowLeft className={classes.arrowSvg} />
+            <Box onClick={() => onChangeIndex((selectIndex - 1) % tweets.length)} className={classes.leftArrow}>
+              <ArrowLeft className={clsx(classes.arrowSvg, classes.link)} />
             </Box>
-            <Box onClick={() => onChangeIndex((selectIndex + 1) % tweets.length)} className={classes.arrow}>
-              <ArrowRight className={classes.arrowSvg} />
+            <Box onClick={() => onChangeIndex((selectIndex + 1) % tweets.length)}>
+              <ArrowRight className={clsx(classes.arrowSvg, classes.link)} />
             </Box>
         </Box>
         </Box>
@@ -80,8 +92,11 @@ const useStyles = makeStyles((theme: Theme) => ({
   contentContainer: {
     position: "relative",
     padding: theme.spacing(20, 10, 10),
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(20, 5, 10, 10),
+    },
     [theme.breakpoints.only("xs")]: {
-      padding: theme.spacing(8, 5, 5),
+      padding: theme.spacing(8, 3, 5, 5),
     },
   },
   sectionTitle: {
@@ -157,23 +172,47 @@ const useStyles = makeStyles((theme: Theme) => ({
       padding: 2,
       margin: theme.spacing(0.5),
     },
+    transform: "scale(1)",
+    transition: "transform ease-in 0.3s",
+  },
+  selected: {
+    transform: "scale(1.1)",
+    transition: "transform ease-in 0.3s",
   },
   arrows: {
     display: "flex",
     alignItems: "center",
     marginTop: theme.spacing(5),
-    [theme.breakpoints.only("xs")]: {
-      marginTop: theme.spacing(2),
+    [theme.breakpoints.down("sm")]: {
+      marginRight: theme.spacing(2),
       marginLeft: theme.spacing(2),
     },
-  },
-  arrow: {
-    cursor: "pointer",
-    marginRight: theme.spacing(3),
+    [theme.breakpoints.only("xs")]: {
+      marginTop: theme.spacing(2),
+    },
   },
   arrowSvg: {
+    width: "2.5rem",
+    height: "2.5rem",
     "& path": {
       fill: theme.palette.primary.main,
+    },
+    [theme.breakpoints.down("sm")]: {
+      height: "3.375rem",
+      width: "3.375rem",
+    },
+    [theme.breakpoints.only("xs")]: {
+      height: "1.375rem",
+      width: "1.375rem",
+    },
+  },
+  leftArrow: {
+    marginRight: theme.spacing(4),
+    [theme.breakpoints.down("sm")]: {
+      marginRight: theme.spacing(8),
+    },
+    [theme.breakpoints.only("xs")]: {
+      marginRight: theme.spacing(4),
     },
   },
   tweetItems: {
@@ -188,14 +227,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "flex",
     marginLeft: theme.spacing(3),
     [theme.breakpoints.down("sm")]: {
+      marginLeft: theme.spacing(1),
       flexDirection: "column-reverse",
       alignItems: "flex-start",
     },
     [theme.breakpoints.only("xs")]: {
-      flexDirection: "row-reverse",
-      alignItems: "center",
-      justifyContent: "flex-end",
-      marginLeft: theme.spacing(2),
+      marginLeft: theme.spacing(1.5),
     },
   },
   tweetUser: {
@@ -203,14 +240,21 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     marginLeft: theme.spacing(8),
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("md")]: {
       marginLeft: theme.spacing(3),
+      marginRight: theme.spacing(3),
+    },
+    [theme.breakpoints.down("sm")]: {
       marginBottom: theme.spacing(3),
     },
     [theme.breakpoints.only("xs")]: {
-      marginLeft: 0,
-      marginBottom: 0,
-      marginRight: theme.spacing(4),
+      marginLeft: theme.spacing(1),
+      marginBottom: theme.spacing(1),
+    },
+  },
+  link: {
+    "&:hover": {
+      cursor: "pointer",
     },
   },
 }));

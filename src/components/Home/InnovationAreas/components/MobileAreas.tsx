@@ -22,27 +22,27 @@ const MobileAreas: React.FC<Props> = (props: Props) => {
               </Typography>
             </Box>
             {areas.map((area, index) => (
-              <>
-              <Box key={area.title} className={classes.area}>
-                <Box className={classes.areaHeading}>
-                  <Box className={classes.icon}>
-                    {area.icon}
+              <React.Fragment key={index} >
+                <Box className={classes.area}>
+                  <Box className={classes.areaHeading}>
+                    <Box className={classes.icon}>
+                      {area.icon}
+                    </Box>
+                    <Box className={classes.areaText}>
+                      {area.title}
+                    </Box>
                   </Box>
-                  <Box className={classes.areaText}>
-                    {area.title}
+                  <Box className={classes.description}>
+                    <Typography variant="body1" color="inherit">
+                      {area.description}
+                    </Typography>
                   </Box>
+                  {area.products.map((product) => <ProductLabel key={product.name} product={product} />)}
                 </Box>
-                <Box className={classes.description}>
-                  <Typography variant="body1" color="inherit">
-                    {area.description}
-                  </Typography>
-                </Box>
-                {area.products.map((product) => <ProductLabel key={product.name} product={product} />)}
-              </Box>
-              {index !== (areas.length - 1) && (
-                <Divider classes={{ root: classes.divider }} />
-              )}
-              </>
+                {index !== (areas.length - 1) && (
+                  <Divider classes={{ root: classes.divider }} />
+                )}
+              </React.Fragment>
             ))}
           </Box>
         </Box>

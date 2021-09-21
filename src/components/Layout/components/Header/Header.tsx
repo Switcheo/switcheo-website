@@ -1,4 +1,4 @@
-import { Box, Container, Hidden, Theme, Typography } from "@material-ui/core";
+import { Backdrop, Box, Container, Hidden, Theme, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -7,26 +7,25 @@ import SwitcheoBrand from "src/assets/SwitcheoBrand.svg";
 import MenuIcon from "src/assets/MenuIcon.svg";
 import { Demex, Carbon, SwitcheoDevFund, Zilswap } from "src/assets/header";
 import clsx from "clsx";
-import { HeaderTab, HeaderTabContent } from "src/utils/types";
+import { HeaderTabContent } from "src/utils/types";
 import { HeaderMenu, MobileMenu } from "./components";
 import { Paths } from "src/utils/paths";
 
 const Header: React.FC = () => {
   const classes = useStyles();
-  const [selectIndex, setSelectIndex] = useState(HeaderTab.Contact);
+  const [selectIndex, setSelectIndex] = useState(-1);
   const [openMenu, setOpenMenu] = useState(false);
 
-  const onSelectTab = (index: HeaderTab) => {
-    if (index == selectIndex) {
-      setSelectIndex(HeaderTab.Contact);
-    } else {
-      setSelectIndex(index);
+  const onSelectTab = (index: number) => {
+    const prevIndex = selectIndex;
+    setSelectIndex(-1);
+    if (index !== prevIndex) {
+      setTimeout(() => setSelectIndex(index), 100);
     }
   };
 
   const headerTabs: HeaderTabContent[] = [
     {
-      tab: HeaderTab.Ecosystem,
       tabTitle: "Ecosystem",
       sectionTitle: "SwitcheoLabs Ecosystem Suite Of Innovations",
       button: "This button is fake",
@@ -58,7 +57,6 @@ const Header: React.FC = () => {
       ],
     },
     {
-      tab: HeaderTab.Company,
       tabTitle: "Company",
       url: "/careers",
       sectionTitle: "",
@@ -66,7 +64,6 @@ const Header: React.FC = () => {
       links: [],
     },
     {
-      tab: HeaderTab.Newsroom,
       tabTitle: "Newsroom",
       sectionTitle: "SwitcheoLabs Ecosystem Suite Of Innovations",
       button: "This button is fake",
@@ -92,7 +89,6 @@ const Header: React.FC = () => {
       ],
     },
     {
-      tab: HeaderTab.Developers,
       tabTitle: "Developers",
       sectionTitle: "SwitcheoLabs Ecosystem Suite Of Innovations",
       button: "This button is fake",
@@ -112,7 +108,6 @@ const Header: React.FC = () => {
       ],
     },
     {
-      tab: HeaderTab.Contact,
       tabTitle: "Contact",
       url: "/",
       sectionTitle: "",
@@ -125,14 +120,14 @@ const Header: React.FC = () => {
     <Box className={classes.root}>
       <Container maxWidth="lg" className={classes.header}>
         <Link href="/" passHref>
-          <Box>
+          <Box onClick={() => setSelectIndex(-1)}>
             <SwitcheoBrand className={classes.brand} />
           </Box>
         </Link>
         <Hidden smDown>
           <Box className={classes.navTabs}>
-            {headerTabs.map((tab) => tab.url ? (
-              <Link href={tab.url} passHref>
+            {headerTabs.map((tab, index) => tab.url ? (
+              <Link key={index} href={tab.url} passHref>
                 <Box className={classes.tab} onClick={() => setSelectIndex(-1)}>
                   <Typography variant="body1" color="textSecondary">
                     {tab.tabTitle}
@@ -141,9 +136,9 @@ const Header: React.FC = () => {
               </Link>
             ) : (
               <Box 
-                key={tab.tab}
-                onClick={() => onSelectTab(tab.tab)}
-                className={clsx(classes.tab, { [classes.selected]: selectIndex === tab.tab })}
+                key={index}
+                onClick={() => onSelectTab(index)}
+                className={clsx(classes.tab, { [classes.selected]: selectIndex === index })}
               >
                 <Typography variant="body1" color="textSecondary">
                   {tab.tabTitle}
@@ -170,6 +165,7 @@ const Header: React.FC = () => {
           setOpenMenu={setOpenMenu}
         />
       </Hidden>
+      <Backdrop invisible open={headerTabs[selectIndex]?.links.length > 0} onClick={() => setSelectIndex(-1)} />
     </Box>
   );
 };
@@ -234,6 +230,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     margin: theme.spacing(1, 0.5, 0.5, 0.5),
     width: "1.25rem",
     height: "0.75rem",
+    "& path": {
+      fill: theme.palette.text.secondary,
+    },
   },
   menuIcon: {
     cursor: "pointer",

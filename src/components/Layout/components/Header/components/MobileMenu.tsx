@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import CaretDown from "src/assets/CaretDown.svg";
 import SwitcheoBrand from "src/assets/SwitcheoBrand.svg";
 import CloseIcon from "src/assets/CloseIcon.svg";
-import { HeaderTab, HeaderTabContent } from "src/utils/types";
+import { HeaderTabContent } from "src/utils/types";
 import clsx from "clsx";
 
 interface Props {
@@ -19,7 +19,7 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
   const classes = useStyles();
   const [selectIndex, setSelectIndex] = useState(-1);
 
-  const onSelectTab = (index: HeaderTab) => {
+  const onSelectTab = (index: number) => {
     if (index == selectIndex) {
       setSelectIndex(-1);
     } else {
@@ -37,7 +37,7 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
     >
       <Box className={classes.mobileHeader}>
         <Link href="/" passHref>
-          <Box>
+          <Box onClick={() => setOpenMenu(false)}>
             <SwitcheoBrand className={classes.mobileBrand} />
           </Box>
         </Link>
@@ -46,47 +46,56 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
         </Box>
       </Box>
       <MenuList>
-        {tabs.map((tab) => (
-          <Box key={tab.tab} className={classes.list}>
-            <MenuItem
-              className={clsx(classes.section, { [classes.selected]: selectIndex === tab.tab })}
-              classes={{
-                root: classes.noPadding,
-              }}
-              onClick={() => onSelectTab(tab.tab)}
-            >
-              {tab.tabTitle}
-              <CaretDown className={clsx(classes.caret, { [classes.rotate]: selectIndex === tab.tab })} />
-            </MenuItem>
-            <Collapse in={selectIndex === tab.tab} timeout="auto" unmountOnExit>
-              <MenuList 
-                classes={{
-                  root: classes.noPadding,
-                }}
-              >
-                {tab.links.map((link) => (
-                  <MenuItem
-                    className={classes.link}
+        {tabs.map((tab, index) => (
+          <Box key={index} className={classes.list}>
+            {tab.links.length > 0 ? (
+              <>
+                <MenuItem
+                  className={clsx(classes.section, { [classes.selected]: selectIndex === index })}
+                  classes={{
+                    root: classes.noPadding,
+                  }}
+                  onClick={() => onSelectTab(index)}
+                >
+                  {tab.tabTitle}
+                  <CaretDown className={clsx(classes.caret, { [classes.rotate]: selectIndex === index })} />
+                </MenuItem>
+                <Collapse in={selectIndex === index} timeout="auto" unmountOnExit>
+                  <MenuList 
                     classes={{
                       root: classes.noPadding,
                     }}
-                    key={link.title}
                   >
-                    {link.title}
-                  </MenuItem>
-                ))}
-              </MenuList>
-            </Collapse>
+                    {tab.links.map((link) => (
+                      <Link key={link.title} href={link.url} passHref>
+                        <MenuItem
+                          className={classes.link}
+                          classes={{
+                            root: classes.noPadding,
+                          }}
+                        >
+                          {link.title}
+                        </MenuItem>
+                      </Link>
+                    ))}
+                  </MenuList>
+                </Collapse>
+              </>
+            ) : (
+              <Link href={tab.url ?? "/"} passHref>
+                <MenuItem
+                  className={clsx(classes.section, { [classes.selected]: selectIndex === index })}
+                  classes={{
+                    root: classes.noPadding,
+                  }}
+                  onClick={() => setOpenMenu(false)}
+                >
+                  {tab.tabTitle}
+                </MenuItem>
+              </Link>
+            )}
           </Box>
         ))}
-        <MenuItem
-          className={classes.section}
-          classes={{
-            root: classes.noPadding,
-          }}
-        >
-          Contact
-        </MenuItem>
       </MenuList>
     </Drawer>
   );

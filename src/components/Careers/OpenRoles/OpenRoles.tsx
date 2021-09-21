@@ -34,8 +34,8 @@ const OpenRoles: React.FC<Props> = (props: Props) => {
         </Box>
         <Hidden only="xs">
           <Grid container spacing={6}>
-            {jobRoles.map((role) => (
-              <Grid item key={role.url} xs={12} sm={6} md={4}>
+            {jobRoles.map((role, index) => (
+              <Grid item key={index} xs={12} sm={6} md={4}>
                 <RoleCard jobRole={role} />
               </Grid>
             ))}

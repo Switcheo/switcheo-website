@@ -1,14 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export enum HeaderTab {
-  Ecosystem = 0,
-  Company = 1,
-  Newsroom = 2,
-  Developers = 3,
-  Contact = 4
-}
-
 export interface HeaderTabContent {
-  tab: HeaderTab
   tabTitle: string
   url?: string
   sectionTitle: string
@@ -23,14 +14,7 @@ export interface HeaderLink {
   url: string
 }
 
-export enum InnovationArea {
-  DecentralizedInfrastructures = 0,
-  InnovativeDApps = 1,
-  WhiteSpaces = 2,
-}
-
 export interface InnovationAreaContent {
-  area: InnovationArea
   title: string
   icon: any
   background: any
@@ -45,10 +29,10 @@ export interface Product {
 }
 
 export interface BlogEntry {
-  tag: string;
-  title: string;
-  preview: string;
-  url: string;
+  tag: string
+  title: string
+  preview: string
+  url: string
 }
 
 export interface Tweet {
@@ -56,6 +40,8 @@ export interface Tweet {
   text: string
   name: string
   username: string
+  iconHref: string
+  url: string
 }
 
 export interface JobRole {

@@ -17,6 +17,7 @@ const HeaderMenu: React.FC<Props> = (props: Props) => {
     <Collapse 
       classes={{ root: classes.root }}
       in={selectedTab?.links.length > 0}
+      unmountOnExit
     >
       <Container maxWidth="lg" className={classes.container}>
         {selectedTab?.links.length > 0 && (

@@ -48,23 +48,23 @@ const InnovationAreas: React.FC<Props> = (props: Props) => {
                 <Typography variant="h5" color="secondary">
                   Innovation Areas
                 </Typography>
-                <Box display="flex" marginRight={3}>
-                  <Box onClick={() => onChangeIndex((selectIndex - 1) % areas.length)} className={classes.arrow} marginRight={3}>
-                    <ArrowLeft />
+                <Box display="flex" marginRight={4}>
+                  <Box onClick={() => onChangeIndex((selectIndex - 1) % areas.length)} className={clsx(classes.arrow, classes.link)} marginRight={3}>
+                    <ArrowLeft className={classes.arrowSvg} />
                   </Box>
-                  <Box onClick={() => onChangeIndex((selectIndex + 1) % areas.length)} className={classes.arrow}>
-                    <ArrowRight />
+                  <Box onClick={() => onChangeIndex((selectIndex + 1) % areas.length)} className={clsx(classes.arrow, classes.link)}>
+                    <ArrowRight className={classes.arrowSvg} />
                   </Box>
                 </Box>
               </Box>
-              {areas.map((area) => (
-                <Box key={area.title} className={classes.area}>
+              {areas.map((area, index) => (
+                <Box key={index} className={classes.area}>
                   <Box className={classes.icon}>
                     {area.icon}
                   </Box>
                   <Box
-                    className={clsx(classes.areaText, { [classes.selected]: selectIndex === area.area })}
-                    onClick={() => onChangeIndex(area.area)}
+                    className={clsx(classes.areaText, classes.link, { [classes.selected]: selectIndex === index })}
+                    onClick={() => onChangeIndex(index)}
                   >
                     <Typography variant="h4" color="inherit">
                       {area.title}
@@ -103,8 +103,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     alignItems: "flex-start",
   },
   arrow: {
+    position: "relative",
     cursor: "pointer",
-    zIndex: 100,
+    zIndex: 1000,
+  },
+  arrowSvg: {
+    width: "1.75rem",
+    height: "1.75rem",
   },
   areas: {
     display: "flex",
@@ -126,9 +131,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: "#C9D2D9",
     opacity: 0.4,
     transition: "opacity 0.3s ease-in, color 0.3s ease-in",
-    "&:hover": {
-      cursor: "pointer",
-    },
   },
   selected: {
     transition: "opacity 0.3s ease-in, color 0.3s ease-in",
@@ -148,6 +150,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     "&.hide": {
       transition: "opacity ease-in 0.3s",
       opacity: 0,
+    },
+  },
+  link: {
+    "&:hover": {
+      cursor: "pointer",
     },
   },
 }));

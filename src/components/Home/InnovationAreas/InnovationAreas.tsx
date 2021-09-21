@@ -2,14 +2,13 @@ import { Box, Hidden } from "@material-ui/core";
 import React from "react";
 import { CarbonIcon, DecentralizedInfrastructuresBg, DemexIcon, DecentralizedInfrastructuresIcon, InnovativeDAppsBg, InnovativeDAppsIcon, SwitcheoDevFundIcon, WhiteSpacesBg, WhiteSpacesIcon, ZilswapIcon } from "src/assets/innovation";
 import { DesktopAreas, MobileAreas } from "./components";
-import { InnovationArea, InnovationAreaContent } from "src/utils/types";
+import { InnovationAreaContent } from "src/utils/types";
 import { Paths } from "src/utils/paths";
 
 const InnovationAreas: React.FC = () => {
 
   const areas: InnovationAreaContent[] = [
     {
-      area: InnovationArea.DecentralizedInfrastructures,
       title: "Decentralized Infrastructures",
       icon: DecentralizedInfrastructuresIcon,
       background: DecentralizedInfrastructuresBg,
@@ -21,7 +20,6 @@ const InnovationAreas: React.FC = () => {
       }],
     },
     {
-      area: InnovationArea.InnovativeDApps,
       title: "Innovative dApps",
       icon: InnovativeDAppsIcon,
       background: InnovativeDAppsBg,
@@ -37,7 +35,6 @@ const InnovationAreas: React.FC = () => {
       }],
     },
     {
-      area: InnovationArea.WhiteSpaces,
       title: "White Spaces",
       icon: WhiteSpacesIcon,
       background: WhiteSpacesBg,

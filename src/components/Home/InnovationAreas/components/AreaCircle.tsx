@@ -34,6 +34,7 @@ const AreaCircle: React.FC<Props> = (props: Props) => {
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     "& img": {
+      position: "relative",
       borderRadius: "50%",
       zIndex: -100,
     },
@@ -53,7 +54,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     background: "linear-gradient(180deg, #222222 0%, rgba(34, 34, 34, 0) 100%)",
   },
   content: {
-    zIndex: 100,
+    position: "relative",
+    zIndex: 1000,
     marginTop: "max(-56vw, -46rem)",
     marginLeft: "min(10vw, 9rem)",
     width: "55%",

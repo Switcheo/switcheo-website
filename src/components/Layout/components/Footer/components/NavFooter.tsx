@@ -111,7 +111,7 @@ const NavFooter: React.FC = () => {
   return (
     <Box className={classes.root}>
       <Hidden smDown>
-        <Box marginLeft={5} marginTop={2} width="60%">
+        <Box marginLeft={5} marginTop={1} width="60%">
           <Link href="/" passHref>
             <Box>
               <SwitcheoBrand className={classes.img} />
@@ -143,7 +143,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   root: {
     display: "flex",
     justifyContent: "space-between",
-    padding: theme.spacing(30, 0, 10, 0),
+    padding: theme.spacing(24, 0, 10, 0),
     color: theme.palette.common.white,
     [theme.breakpoints.down("sm")]: {
       padding: theme.spacing(10, 0, 10, 10),
@@ -190,7 +190,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     fontFamily: "Roobert",
     letterSpacing: "-0.01em",
-    fontSize: "1rem",
+    fontSize: "1.125rem",
     color: "#C9D2D9",
     marginBottom: theme.spacing(1.5),
     [theme.breakpoints.down("sm")]: {

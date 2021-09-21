@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: theme.spacing(5, 10, 3, 15),
+    padding: theme.spacing(5, 10),
     fontFamily: "Inter",
     letterSpacing: "-0.02em",
     fontSize: "0.875rem",

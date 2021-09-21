@@ -1,4 +1,6 @@
 import { Box, BoxProps, Hidden, makeStyles, Theme, Typography } from "@material-ui/core";
+import clsx from "clsx";
+import Link from "next/link";
 import React, { useMemo, useState } from "react";
 import ArrowLeft from "src/assets/ArrowLeft.svg";
 import ArrowRight from "src/assets/ArrowRight.svg";
@@ -30,26 +32,30 @@ const TweetCard: React.FC<Props> = (props: Props) => {
         &ldquo;{selectedTweet.text}&rdquo;
       </Box>
       <Hidden smDown>
-        <Typography variant="subtitle1" color="textSecondary">
-          {selectedTweet.username}
-        </Typography>
+        <Link href={selectedTweet.url} passHref>
+          <Typography variant="subtitle1" color="textSecondary" className={classes.link}>
+            {selectedTweet.username}
+          </Typography>
+        </Link>
       </Hidden>
       <Box className={classes.icons}>
         <Box display="flex">
-          <Box onClick={() => onChangeIndex((selectIndex - 1) % tweets.length)} className={classes.arrow}>
-            <ArrowLeft className={classes.arrowSvg} />
+          <Box onClick={() => onChangeIndex((selectIndex - 1) % tweets.length)} className={classes.leftArrow}>
+            <ArrowLeft className={clsx(classes.arrowSvg, classes.link)} />
           </Box>
           <Box onClick={() => onChangeIndex((selectIndex + 1) % tweets.length)}>
-            <ArrowRight className={classes.arrowSvg} />
+            <ArrowRight className={clsx(classes.arrowSvg, classes.link)} />
           </Box>
         </Box>
         <Box display="flex" alignItems="center">
           <TwitterIcon className={classes.bird} />
           <Hidden mdUp>
             <Box className={classes.username}>
-              <Typography variant="subtitle1" color="textSecondary">
-                {selectedTweet.username}
-              </Typography>
+              <Link href={selectedTweet.url} passHref>
+                <Typography variant="subtitle1" color="textSecondary" className={classes.link}>
+                  {selectedTweet.username}
+                </Typography>
+              </Link>
             </Box>
           </Hidden>
         </Box>
@@ -104,13 +110,25 @@ const useStyles = makeStyles((theme: Theme) => ({
       margin: theme.spacing(0, 1),
     },
   },
-  arrow: {
-    cursor: "pointer",
+  leftArrow: {
     marginRight: theme.spacing(3),
+    [theme.breakpoints.only("sm")]: {
+      marginRight: theme.spacing(6),
+    },
   },
   arrowSvg: {
+    width: "1.75rem",
+    height: "1.75rem",
     "& path": {
       fill: "#C9D2D9",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "2.625rem",
+      height: "2.625rem",
+    },
+    [theme.breakpoints.only("xs")]: {
+      width: "1.375rem",
+      height: "1.375rem",
     },
   },
   bird: {
@@ -128,6 +146,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     [theme.breakpoints.only("xs")]: {
       marginTop: 0,
       marginLeft: theme.spacing(1),
+    },
+  },
+  link: {
+    "&:hover": {
+      cursor: "pointer",
     },
   },
 }));

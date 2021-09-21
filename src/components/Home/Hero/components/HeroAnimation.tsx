@@ -8,17 +8,19 @@ const HeroAnimation: React.FC = () => {
   const classes = useStyles();
   const [scrollY, setScrollY] = useState(0);
   const [scrollStart, setScrollStart] = useState(-1);
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
 
   const [sectionRef, sectionView] = useInView({
-    threshold: 0.5,
+    threshold: 0.4,
     triggerOnce: true,
   });
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrollY(window.scrollY);
-    };
+    const onScroll = () => setScrollY(window.scrollY);
 
+    setWindowWidth(window.innerWidth);
+    setWindowHeight(window.innerHeight);
     window.addEventListener("scroll", onScroll);
 
     return () => {
@@ -27,7 +29,7 @@ const HeroAnimation: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (sectionView && scrollStart === -1) {
+    if (sectionView && scrollStart < 0) {
       setScrollStart(window.scrollY);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -36,7 +38,7 @@ const HeroAnimation: React.FC = () => {
   const getTransition = (delay: number) => makeStyles(() => {
     return {
       transition: {
-        transform: `rotate(max(0deg, min(${scrollY - scrollStart - delay}deg, 180deg)))`,
+        transform: `rotate(max(0deg, min(${scrollY - scrollStart - (windowWidth > windowHeight ? delay * 10 : delay)}deg, 180deg)))`,
       },
     };
   });
@@ -45,7 +47,7 @@ const HeroAnimation: React.FC = () => {
   for (let i = 10; i < 37; i++) {
     arrows.push(
       <Arrow key={i} className={clsx(classes.arrow, {
-        [getTransition(i * 5)().transition]: sectionView,
+        [getTransition(i)().transition]: sectionView,
         [classes.topRow]: i < 18,
       })} />);
   }
@@ -91,10 +93,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   middleArrow: {
     "& path": {
-      transition: "fill ease-in 0.4s",
+      transition: "fill ease-in 0.2s",
       fill: theme.palette.primary.main,
     },
-    transition: "transform 0.4s ease-in 0.5s",
+    transition: "transform 0.2s ease-in 0.3s",
     transform: "rotate(180deg)",
   },
 }));

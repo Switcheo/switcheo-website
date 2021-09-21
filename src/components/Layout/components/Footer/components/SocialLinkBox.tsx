@@ -59,10 +59,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     alignItems: "center",
   },
   icon: {
-    width: "2.5rem",
-    height: "2.5rem",
+    width: "1.875rem",
+    height: "1.875rem",
     borderRadius: "50%",
-    margin: theme.spacing(1),
+    margin: theme.spacing(0.5),
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -70,9 +70,19 @@ const useStyles = makeStyles((theme: Theme) => ({
     "&:hover": {
       cursor: "pointer",
     },
+    [theme.breakpoints.only("sm")]: {
+      width: "3.75rem",
+      height: "3.75rem",
+    },
     "& svg": {
+      width: "1rem",
+      height: "1rem",
       "& path": {
         fill: theme.palette.primary.main,
+      },
+      [theme.breakpoints.only("sm")]: {
+        width: "1.875rem",
+        height: "1.875rem",
       },
     },
   },

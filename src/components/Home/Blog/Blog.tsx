@@ -1,17 +1,30 @@
 import { Box, Container, Divider, Grid, Hidden, makeStyles, Theme, Typography } from "@material-ui/core";
 import React, { useMemo } from "react";
 import Slider from "react-slick";
+import Link from "next/link";
 import Image from "next/image";
 import { BlogEntry } from "src/utils/types";
 import { BlogCard, MobileBlogCard } from "src/components/Common";
-
 import { DAppsUpdates, InfrastructureUpdates, WhiteSpacesUpdates } from "src/assets/blog";
+
+const BlogBanners = [
+  {
+    img: InfrastructureUpdates,
+    url: "/",
+  },
+  {
+    img: DAppsUpdates,
+    url: "/",
+  },
+  {
+    img: WhiteSpacesUpdates,
+    url: "/",
+  },
+];
 
 interface Props {
   posts: BlogEntry[],
 }
-
-const photos = [ InfrastructureUpdates, DAppsUpdates, WhiteSpacesUpdates ];
 
 const Blog: React.FC<Props> = (props: Props) => {
   const { posts } = props;
@@ -46,10 +59,12 @@ const Blog: React.FC<Props> = (props: Props) => {
           <Grid item xs={12} md={7}>
             <Box className={classes.highlights}>
               <Slider {...settings}>
-                {photos.map((photo, index) => (
-                  <Box key={index} className={classes.img}>
-                    <Image src={photo} alt={index.toString()} priority />
-                  </Box>
+                {BlogBanners.map((banner, index) => (
+                  <Link key={index} href={banner.url} passHref>
+                    <Box className={classes.img}>
+                      <Image src={banner.img} alt={index.toString()} priority />
+                    </Box>
+                  </Link>
                 ))}
               </Slider>
             </Box>
@@ -119,6 +134,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     padding: theme.spacing(1),
     "& img": {
       borderRadius: 15,
+    },
+    "&:hover": {
+      cursor: "pointer",
     },
   },
   divider: {

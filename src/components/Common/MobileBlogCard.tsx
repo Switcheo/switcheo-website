@@ -41,7 +41,7 @@ const MobileBlogCard: React.FC<Props> = (props: Props) => {
         </Box>
       </Link>
       <Box className={classes.arrows}>
-        <Box onClick={() => onChangeIndex((selectIndex - 1) % posts.length)} className={classes.arrow}>
+        <Box onClick={() => onChangeIndex((selectIndex - 1) % posts.length)} className={classes.leftArrow}>
           <ArrowLeft className={classes.arrowSvg} />
         </Box>
         <Box onClick={() => onChangeIndex((selectIndex + 1) % posts.length)}>
@@ -80,13 +80,24 @@ const useStyles = makeStyles((theme: Theme) => ({
       marginTop: theme.spacing(3),
     },
   },
-  arrow: {
-    cursor: "pointer",
-    marginRight: theme.spacing(3),
-  },
   arrowSvg: {
+    width: "3.375rem",
+    height: "3.375rem",
     "& path": {
       fill: "#C9D2D9",
+    },
+    "&:hover": {
+      cursor: "pointer",
+    },
+    [theme.breakpoints.only("xs")]: {
+      width: "1.375rem",
+      height: "1.375rem",
+    },
+  },
+  leftArrow: {
+    marginRight: theme.spacing(8),
+    [theme.breakpoints.only("xs")]: {
+      marginRight: theme.spacing(4),
     },
   },
 }));
