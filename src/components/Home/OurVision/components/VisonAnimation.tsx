@@ -14,8 +14,9 @@ const VisionAnimation: React.FC<Props> = (props: Props) => {
   return (
     <Box className={classes.root}>
       <Glow className={clsx(classes.glow, { open: sectionView })} />
+      <Circle className={classes.circle} />
+      <Box className={clsx(classes.gradient, { open: sectionView })} />
       <GlobeBase className={classes.base} />
-      <Circle className={clsx(classes.circle, { open: sectionView })} />
       <ArrowGreen className={clsx(classes.arrow, { open: sectionView })} />
     </Box>
   );
@@ -40,31 +41,35 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: "100%",
     height: "100%",
     zIndex: -1,
-    opacity: 0,
-    transition: "opacity ease-in 0.3s",
-    "&.open": {
-      opacity: 1,
-    },
   },
   base: {
     width: "100%",
     height: "100%",
     marginLeft: "-100%",
+    zIndex: 100,
   },
   circle: {
     width: "76%",
     marginLeft: "-88%",
     marginTop: "-4%",
     zIndex: 100,
-    opacity: 0,
-    transition: "opacity ease-in 0.3s",
+  },
+  gradient: {
+    backgroundColor: theme.palette.background.paper,
+    width: "100%",
+    marginLeft: "-88%",
+    marginTop: "-4%",
+    zIndex: 100,
+    transform: "scale(1)",
+    transformOrigin: "top right",
+    transition: "transform ease-out 1s",
     "&.open": {
-      opacity: 1,
+      transform: "scale(0)",
     },
   },
   arrow: {
     width: "25%",
-    marginLeft: "-52%",
+    marginLeft: "-63%",
     marginTop: "-2%",
     zIndex: 100,
     opacity: 0,
