@@ -179,7 +179,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       marginTop: theme.spacing(8),
     },
     [theme.breakpoints.only("xs")]: {
-      fontSize: "0.875rem",
+      fontSize: "1.125rem",
       marginTop: theme.spacing(2),
       marginBottom: theme.spacing(2),
     },
@@ -197,7 +197,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       fontSize: "1.8125rem",
     },
     [theme.breakpoints.only("xs")]: {
-      fontSize: "0.75rem",
+      fontSize: "1rem",
     },
   },
 }));

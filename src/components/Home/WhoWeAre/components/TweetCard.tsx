@@ -89,7 +89,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       paddingBottom: theme.spacing(3),
     },
     [theme.breakpoints.only("xs")]: {
-      fontSize: "0.6875rem",
+      fontSize: "1rem",
     },
   },
   icons: {

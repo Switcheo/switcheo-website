@@ -126,12 +126,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   photo: {
     width: "100%",
   },
-  statNumber: {
-    fontFamily: "IBM Plex Mono",
-    color: theme.palette.secondary.main,
-    fontSize: "80px",
-    letterSpacing: "-0.04em",
-  },
 }));
 
 export default AtSwitcheoLabs;

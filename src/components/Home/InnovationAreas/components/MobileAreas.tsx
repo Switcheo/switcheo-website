@@ -108,7 +108,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginLeft: theme.spacing(3),
     maxWidth: "70%",
     [theme.breakpoints.only("xs")]: {
-      fontSize: "1.125rem",
+      fontSize: "1.375rem",
       marginLeft: theme.spacing(1),
     },
   },

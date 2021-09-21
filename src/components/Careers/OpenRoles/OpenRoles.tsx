@@ -100,14 +100,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     borderRadius: 15,
     padding: theme.spacing(6, 3, 4),
   },
-  roleArea: {
-    fontFamily: "IBM Plex Mono",
-    color: "#C6E579",
-    fontSize: "29px",
-    letterSpacing: "-0.04em",
-    textTransform: "uppercase",
-    marginBottom: theme.spacing(3),
-  },
   rolesButton: {
     display: "flex",
     justifyContent: "center",

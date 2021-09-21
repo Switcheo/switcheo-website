@@ -114,7 +114,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       fontSize: "1.5rem",
     },
     [theme.breakpoints.only("xs")]: {
-      fontSize: "0.6875rem",
+      fontSize: "1rem",
       padding: theme.spacing(0, 1, 2),
     },
   },
@@ -128,7 +128,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       fontSize: "2.875rem",
     },
     [theme.breakpoints.only("xs")]: {
-      fontSize: "1.1875rem",
+      fontSize: "1.375rem",
     },
   },
   tweetIcon: {
@@ -210,7 +210,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     [theme.breakpoints.only("xs")]: {
       marginLeft: 0,
       marginBottom: 0,
-      marginRight: theme.spacing(1),
+      marginRight: theme.spacing(4),
     },
   },
 }));

@@ -59,10 +59,22 @@ const useStyles = makeStyles((theme: Theme) => ({
     alignItems: "center",
   },
   icon: {
+    width: "2.5rem",
+    height: "2.5rem",
+    borderRadius: "50%",
+    margin: theme.spacing(1),
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: theme.palette.common.white,
     "&:hover": {
       cursor: "pointer",
     },
-    padding: theme.spacing(1.5),
+    "& svg": {
+      "& path": {
+        fill: theme.palette.primary.main,
+      },
+    },
   },
 }));
 

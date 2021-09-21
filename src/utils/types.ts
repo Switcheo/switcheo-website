@@ -3,12 +3,14 @@ export enum HeaderTab {
   Ecosystem = 0,
   Company = 1,
   Newsroom = 2,
-  Developers = 3
+  Developers = 3,
+  Contact = 4
 }
 
 export interface HeaderTabContent {
   tab: HeaderTab
   tabTitle: string
+  url?: string
   sectionTitle: string
   button: string
   links: HeaderLink[]
@@ -39,6 +41,7 @@ export interface InnovationAreaContent {
 export interface Product {
   icon: any
   name: string
+  url: string
 }
 
 export interface BlogEntry {

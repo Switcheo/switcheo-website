@@ -27,7 +27,7 @@ const typography = (theme: Theme): TypographyOptions => ({
       fontSize: "3.5625rem",
     },
     [theme.breakpoints.only("xs")]: {
-      fontSize: "1.5625rem",
+      fontSize: "2rem",
     },
   },
   h2: {
@@ -38,7 +38,7 @@ const typography = (theme: Theme): TypographyOptions => ({
       fontSize: "3.25rem",
     },
     [theme.breakpoints.only("xs")]: {
-      fontSize: "1.375rem",
+      fontSize: "1.625rem",
     },
   },
   h3: {
@@ -49,7 +49,7 @@ const typography = (theme: Theme): TypographyOptions => ({
       fontSize: "2.3125rem",
     },
     [theme.breakpoints.only("xs")]: {
-      fontSize: "0.9375rem",
+      fontSize: "1.25rem",
     },
   },
   h4: {
@@ -61,7 +61,7 @@ const typography = (theme: Theme): TypographyOptions => ({
       fontSize: "2.75rem",
     },
     [theme.breakpoints.only("xs")]: {
-      fontSize: "1.125rem",
+      fontSize: "1.375rem",
     },
   },
   h5: {
@@ -75,7 +75,7 @@ const typography = (theme: Theme): TypographyOptions => ({
       fontSize: "1.5rem",
     },
     [theme.breakpoints.only("xs")]: {
-      fontSize: "0.625rem",
+      fontSize: "0.875rem",
     },
   },
   subtitle1: {
@@ -85,7 +85,7 @@ const typography = (theme: Theme): TypographyOptions => ({
       fontSize: "1.375rem",
     },
     [theme.breakpoints.only("xs")]: {
-      fontSize: "0.625rem",
+      fontSize: "0.875rem",
     },
   },
   body1: {
@@ -95,7 +95,7 @@ const typography = (theme: Theme): TypographyOptions => ({
       fontSize: "1.375rem",
     },
     [theme.breakpoints.only("xs")]: {
-      fontSize: "0.625rem",
+      fontSize: "0.875rem",
     },
   },
   body2: {
@@ -105,7 +105,7 @@ const typography = (theme: Theme): TypographyOptions => ({
       fontSize: "1.5rem",
     },
     [theme.breakpoints.only("xs")]: {
-      fontSize: "0.625rem",
+      fontSize: "0.875rem",
     },
   },
 });

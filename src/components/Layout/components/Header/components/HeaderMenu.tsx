@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Theme, Typography } from "@material-ui/core";
+import { Box, Collapse, Container, Grid, Theme, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import { SwthButton } from "src/components/Common";
@@ -14,23 +14,30 @@ const HeaderMenu: React.FC<Props> = (props: Props) => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.root}>
+    <Collapse 
+      classes={{ root: classes.root }}
+      in={selectedTab?.links.length > 0}
+    >
       <Container maxWidth="lg" className={classes.container}>
-        <Box className={classes.title}>
-          <Box marginBottom={3}>
-            <Typography variant="h4" color="primary">
-              {selectedTab.sectionTitle}
-            </Typography>
-          </Box>
-          <SwthButton className={classes.button} href="/">
-            {selectedTab.button}
-          </SwthButton>
-        </Box>
-        <Grid container spacing={3}>
-          {selectedTab.links.map((link) => <HeaderLink key={link.title} link={link} />)}
-        </Grid>
+        {selectedTab?.links.length > 0 && (
+          <>
+            <Box className={classes.title}>
+              <Box marginBottom={3}>
+                <Typography variant="h4" color="primary">
+                  {selectedTab.sectionTitle}
+                </Typography>
+              </Box>
+              <SwthButton className={classes.button} href="/">
+                {selectedTab.button}
+              </SwthButton>
+            </Box>
+            <Grid container spacing={3}>
+              {selectedTab.links.map((link) => <HeaderLink key={link.title} link={link} />)}
+            </Grid>
+          </>
+        )}
       </Container>
-    </Box>
+    </Collapse>
   );
 };
 
@@ -40,7 +47,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     position: "absolute",
     top: "8.5rem",
     width: "100%",
-    zIndex: 100,
   },
   container: {
     display: "flex",

@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: theme.palette.text.secondary,
     margin: theme.spacing(2, 0, 3),
     [theme.breakpoints.only("xs")]: {
-      fontSize: "0.875rem",
+      fontSize: "1.125rem",
       margin: theme.spacing(1, 0, 2),
     },
   },

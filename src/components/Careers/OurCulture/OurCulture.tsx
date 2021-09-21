@@ -126,7 +126,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     [theme.breakpoints.only("xs")]: {
       marginBottom: theme.spacing(1),
-      fontSize: "1.125rem",
+      fontSize: "1.25rem",
     },
   },
   title: {
@@ -138,7 +138,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       fontSize: "2.125rem",
     },
     [theme.breakpoints.only("xs")]: {
-      fontSize: "1.125rem",
+      fontSize: "1.25rem",
     },
   },
   description: {
@@ -149,7 +149,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       fontSize: "1.375rem",
     },
     [theme.breakpoints.only("xs")]: {
-      fontSize: "0.625rem",
+      fontSize: "0.875rem",
     },
   },
   divider: {

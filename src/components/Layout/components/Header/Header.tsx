@@ -13,12 +13,12 @@ import { Paths } from "src/utils/paths";
 
 const Header: React.FC = () => {
   const classes = useStyles();
-  const [selectIndex, setSelectIndex] = useState(-1);
+  const [selectIndex, setSelectIndex] = useState(HeaderTab.Contact);
   const [openMenu, setOpenMenu] = useState(false);
 
   const onSelectTab = (index: HeaderTab) => {
     if (index == selectIndex) {
-      setSelectIndex(-1);
+      setSelectIndex(HeaderTab.Contact);
     } else {
       setSelectIndex(index);
     }
@@ -60,26 +60,14 @@ const Header: React.FC = () => {
     {
       tab: HeaderTab.Company,
       tabTitle: "Company",
-      sectionTitle: "SwitcheoLabs Ecosystem Suite Of Innovations",
-      button: "This button is fake",
-      links: [
-        {
-          title: "About",
-          description: "Decentralized exchange that allows cross-chain trading and options",
-          icon: <Demex />,
-          url: "/",
-        },
-        {
-          title: "Careers",
-          description: "Derivatives protocol that powers DeFi applications and smart contracts",
-          icon: <Carbon />,
-          url: "/",
-        },
-      ],
+      url: "/careers",
+      sectionTitle: "",
+      button: "",
+      links: [],
     },
     {
       tab: HeaderTab.Newsroom,
-      tabTitle: "Blog",
+      tabTitle: "Newsroom",
       sectionTitle: "SwitcheoLabs Ecosystem Suite Of Innovations",
       button: "This button is fake",
       links: [
@@ -123,6 +111,14 @@ const Header: React.FC = () => {
         },
       ],
     },
+    {
+      tab: HeaderTab.Contact,
+      tabTitle: "Contact",
+      url: "/",
+      sectionTitle: "",
+      button: "",
+      links: [],
+    },
   ];
 
   return (
@@ -135,7 +131,15 @@ const Header: React.FC = () => {
         </Link>
         <Hidden smDown>
           <Box className={classes.navTabs}>
-            {headerTabs.map((tab) => (
+            {headerTabs.map((tab) => tab.url ? (
+              <Link href={tab.url} passHref>
+                <Box className={classes.tab} onClick={() => setSelectIndex(-1)}>
+                  <Typography variant="body1" color="textSecondary">
+                    {tab.tabTitle}
+                  </Typography>
+                </Box>
+              </Link>
+            ) : (
               <Box 
                 key={tab.tab}
                 onClick={() => onSelectTab(tab.tab)}
@@ -147,11 +151,6 @@ const Header: React.FC = () => {
                 <CaretDown className={classes.caret} />
               </Box>
             ))}
-            <Box className={classes.tab} onClick={() => setSelectIndex(-1)}>
-              <Typography variant="body1" color="textSecondary">
-                Contact
-              </Typography>
-            </Box>
           </Box>
         </Hidden>
         <Hidden mdUp>
@@ -161,9 +160,7 @@ const Header: React.FC = () => {
         </Hidden>
       </Container>
       <Hidden smDown>
-        {selectIndex !== -1 && (
-          <HeaderMenu selectedTab={headerTabs[selectIndex]} />
-        )}
+        <HeaderMenu selectedTab={headerTabs[selectIndex]} />
       </Hidden>
 
       <Hidden mdUp>

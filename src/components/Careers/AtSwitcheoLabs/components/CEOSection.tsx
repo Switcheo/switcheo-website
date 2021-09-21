@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     lineHeight: "120%",
     marginBottom: theme.spacing(5),
     [theme.breakpoints.only("xs")]: {
-      fontSize: "0.6875rem",
+      fontSize: "1rem",
       marginBottom: theme.spacing(2),
     },
   },
@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: "1.5rem",
     lineHeight: "100%",
     [theme.breakpoints.only("xs")]: {
-      fontSize: "0.625rem",
+      fontSize: "0.875rem",
       lineHeight: "150%",
     },
   },

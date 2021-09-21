@@ -46,8 +46,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: theme.palette.text.secondary,
     [theme.breakpoints.only("xs")]: {
       padding: theme.spacing(3, 3, 2),
-      width: "11.25rem",
-      height: "11.25rem",
+      width: "12.5rem",
+      height: "12.5rem",
     },
   },
   roleArea: {
@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     [theme.breakpoints.only("xs")]: {
       marginBottom: theme.spacing(2),
-      fontSize: "0.625rem",
+      fontSize: "0.875rem",
     },
   },
   title: {
@@ -74,7 +74,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       fontSize: "1.75rem",
     },
     [theme.breakpoints.only("xs")]: {
-      fontSize: "1.125rem",
+      fontSize: "1.25rem",
     },
   },
   details: {

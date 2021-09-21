@@ -1,28 +1,51 @@
 import { Box, makeStyles, Theme } from "@material-ui/core";
 import clsx from "clsx";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import { Arrow } from "src/assets/animation";
 
-interface Props {
-  sectionView: boolean
-}
-
-const HeroAnimation: React.FC<Props> = (props: Props) => {
-  const { sectionView } = props;
+const HeroAnimation: React.FC = () => {
   const classes = useStyles();
+  const [scrollY, setScrollY] = useState(0);
+  const [scrollStart, setScrollStart] = useState(-1);
 
-  const getTransition = (delay: number) => makeStyles(() => ({
-    transition: {
-      transition: `transform 0.4s ease-in ${delay}s`,
-      transform: "rotate(180deg)",
-    },
-  }));
+  const [sectionRef, sectionView] = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (sectionView && scrollStart === -1) {
+      setScrollStart(window.scrollY);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sectionView]);
+
+  const getTransition = (delay: number) => makeStyles(() => {
+    return {
+      transition: {
+        transform: `rotate(max(0deg, min(${scrollY - scrollStart - delay}deg, 180deg)))`,
+      },
+    };
+  });
 
   const arrows = [];
   for (let i = 10; i < 37; i++) {
     arrows.push(
       <Arrow key={i} className={clsx(classes.arrow, {
-        [getTransition(i / 10)().transition]: sectionView,
+        [getTransition(i * 5)().transition]: sectionView,
         [classes.topRow]: i < 18,
       })} />);
   }
@@ -30,12 +53,16 @@ const HeroAnimation: React.FC<Props> = (props: Props) => {
 
   return (
     <>
-      <Box className={clsx(classes.root, classes.gradient)}>
-        {arrows.slice(0, 14)}
-      </Box>
-      <Box className={classes.root}>
-        {arrows.slice(14)}
-      </Box>
+      <div>
+        <Box className={clsx(classes.root, classes.gradient)}>
+          {arrows.slice(0, 14)}
+        </Box>
+      </div>
+      <div ref={sectionRef}>
+        <Box className={classes.root}>
+          {arrows.slice(14)}
+        </Box>
+      </div>
     </>
   );
 };

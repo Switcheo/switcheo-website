@@ -1,15 +1,9 @@
 import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
 import React from "react";
-import { useInView } from "react-intersection-observer";
 import { HeroAnimation } from "./components";
 
 const Hero: React.FC = () => {
   const classes = useStyles();
-
-  const [sectionRef, sectionView] = useInView({
-    threshold: 0.8,
-    triggerOnce: true,
-  });
 
   return (
     <Box component="section" className={classes.root}>
@@ -26,9 +20,7 @@ const Hero: React.FC = () => {
             that thrives even without trust.
           </Typography>
         </Box>
-        <div ref={sectionRef}>
-          <HeroAnimation sectionView={sectionView} />
-        </div>
+        <HeroAnimation />
       </Container>
     </Box>
   );
@@ -61,7 +53,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       marginBottom: theme.spacing(3),
     },
     [theme.breakpoints.only("xs")]: {
-      maxWidth: "16rem",
+      maxWidth: "20.5rem",
       marginBottom: theme.spacing(1),
     },
   },
@@ -72,7 +64,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       maxWidth: "35rem",
     },
     [theme.breakpoints.only("xs")]: {
-      maxWidth: "16rem",
+      maxWidth: "20rem",
     },
     zIndex: 90,
   },

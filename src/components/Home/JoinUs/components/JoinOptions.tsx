@@ -58,9 +58,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: "space-between",
     alignItems: "center",
     padding: theme.spacing(7, 0),
-    fontFamily: "Inter",
-    letterSpacing: "-0.02em",
-    fontSize: "0.875rem",
     [theme.breakpoints.down("sm")]: {
       padding: theme.spacing(7, 5),
       maxWidth: "100%",

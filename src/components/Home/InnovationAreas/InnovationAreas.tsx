@@ -3,6 +3,7 @@ import React from "react";
 import { CarbonIcon, DecentralizedInfrastructuresBg, DemexIcon, DecentralizedInfrastructuresIcon, InnovativeDAppsBg, InnovativeDAppsIcon, SwitcheoDevFundIcon, WhiteSpacesBg, WhiteSpacesIcon, ZilswapIcon } from "src/assets/innovation";
 import { DesktopAreas, MobileAreas } from "./components";
 import { InnovationArea, InnovationAreaContent } from "src/utils/types";
+import { Paths } from "src/utils/paths";
 
 const InnovationAreas: React.FC = () => {
 
@@ -16,6 +17,7 @@ const InnovationAreas: React.FC = () => {
       products: [{
         icon: <CarbonIcon />,
         name: "Carbon Protocol",
+        url: "/",
       }],
     },
     {
@@ -27,9 +29,11 @@ const InnovationAreas: React.FC = () => {
       products: [{
         icon: <DemexIcon />,
         name: "Demex",
+        url: Paths.demex,
       }, {
         icon: <ZilswapIcon />,
         name: "Zilswap",
+        url: Paths.zilswap,
       }],
     },
     {
@@ -41,6 +45,7 @@ const InnovationAreas: React.FC = () => {
       products: [{
         icon: <SwitcheoDevFundIcon />,
         name: "Switcheo Dev Fund",
+        url: "/",
       }],
     },
   ];

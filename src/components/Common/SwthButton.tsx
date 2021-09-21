@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     textTransform: "none",
     color: "inherit",
     [theme.breakpoints.only("xs")]: {
-      fontSize: "0.6875rem",
+      fontSize: "1rem",
     },
   },
   label: {
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginLeft: theme.spacing(5),
     [theme.breakpoints.only("xs")]: {
       marginLeft: theme.spacing(2),
-      height: "0.8125rem",
+      height: "1rem",
     },
   },
 }));
