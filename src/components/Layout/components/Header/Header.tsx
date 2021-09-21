@@ -59,31 +59,25 @@ const Header: React.FC = () => {
     {
       tabTitle: "Company",
       url: "/careers",
-      sectionTitle: "",
-      button: "",
-      links: [],
     },
     {
       tabTitle: "Newsroom",
-      sectionTitle: "SwitcheoLabs Ecosystem Suite Of Innovations",
+      sectionTitle: "News & Insights About Our Innovations",
       button: "This button is fake",
       links: [
         {
           title: "Blog",
-          description: "Decentralized exchange that allows cross-chain trading and options",
-          icon: <Demex />,
-          url: "/",
+          description: "Explore cutting-edge insights and product updates from our team",
+          url: Paths.blog,
         },
         {
           title: "In The Press",
-          description: "Derivatives protocol that powers DeFi applications and smart contracts",
-          icon: <Carbon />,
+          description: "Read about Switcheo’s innovations on your favourite publications",
           url: "/",
         },
         {
           title: "Brand Assets",
-          description: "Zilliqa-based dynamic currency swap and liquidity pool solutions",
-          icon: <Zilswap />,
+          description: "For partners & press: Download official brand assets for use",
           url: "/",
         },
       ],
@@ -94,15 +88,14 @@ const Header: React.FC = () => {
       button: "This button is fake",
       links: [
         {
-          title: "Documentation",
-          description: "Decentralized exchange that allows cross-chain trading and options",
-          icon: <Demex />,
-          url: "/",
+          title: "Github",
+          description: "Funding new innovations building the future of blockchain applications",
+          url: Paths.github,
         },
         {
           title: "Dev Fund",
-          description: "Derivatives protocol that powers DeFi applications and smart contracts",
-          icon: <Carbon />,
+          description: "Funding new innovations building the future of blockchain applications",
+          icon: <SwitcheoDevFund />,
           url: "/",
         },
       ],
@@ -110,9 +103,6 @@ const Header: React.FC = () => {
     {
       tabTitle: "Contact",
       url: "/",
-      sectionTitle: "",
-      button: "",
-      links: [],
     },
   ];
 
@@ -165,7 +155,7 @@ const Header: React.FC = () => {
           setOpenMenu={setOpenMenu}
         />
       </Hidden>
-      <Backdrop invisible open={headerTabs[selectIndex]?.links.length > 0} onClick={() => setSelectIndex(-1)} />
+      <Backdrop invisible open={!!headerTabs[selectIndex]?.links} onClick={() => setSelectIndex(-1)} />
     </Box>
   );
 };

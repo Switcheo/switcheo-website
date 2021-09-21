@@ -27,6 +27,11 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
     }
   };
 
+  const closeMenu = () => {
+    setSelectIndex(-1);
+    setOpenMenu(false);
+  };
+
   return ( 
     <Drawer
       anchor="top"
@@ -37,18 +42,18 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
     >
       <Box className={classes.mobileHeader}>
         <Link href="/" passHref>
-          <Box onClick={() => setOpenMenu(false)}>
+          <Box onClick={closeMenu}>
             <SwitcheoBrand className={classes.mobileBrand} />
           </Box>
         </Link>
-        <Box onClick={() => setOpenMenu(false)} className={classes.closeIcon}>
+        <Box onClick={closeMenu} className={classes.closeIcon}>
           <CloseIcon className={classes.closeIcon}/>
         </Box>
       </Box>
       <MenuList>
         {tabs.map((tab, index) => (
           <Box key={index} className={classes.list}>
-            {tab.links.length > 0 ? (
+            {tab.links ? (
               <>
                 <MenuItem
                   className={clsx(classes.section, { [classes.selected]: selectIndex === index })}
@@ -73,6 +78,7 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
                           classes={{
                             root: classes.noPadding,
                           }}
+                          onClick={closeMenu}
                         >
                           {link.title}
                         </MenuItem>
@@ -88,7 +94,7 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
                   classes={{
                     root: classes.noPadding,
                   }}
-                  onClick={() => setOpenMenu(false)}
+                  onClick={closeMenu}
                 >
                   {tab.tabTitle}
                 </MenuItem>

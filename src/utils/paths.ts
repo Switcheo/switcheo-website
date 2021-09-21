@@ -5,6 +5,9 @@ export const Paths = {
   zilswap: "https://zilswap.io/",
   zilswapDocs: "https://docs.zilswap.org",
 
+  blog: "https://blog.switcheo.network/",
+  github: "https://github.com/Switcheo",
+
   social: {
     discord: "https://discord.gg/SPh62Hf",
     telegram: "https://t.me/switcheo",

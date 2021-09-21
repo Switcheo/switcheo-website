@@ -16,11 +16,11 @@ const HeaderMenu: React.FC<Props> = (props: Props) => {
   return (
     <Collapse 
       classes={{ root: classes.root }}
-      in={selectedTab?.links.length > 0}
+      in={!!selectedTab?.links}
       unmountOnExit
     >
       <Container maxWidth="lg" className={classes.container}>
-        {selectedTab?.links.length > 0 && (
+        {!!selectedTab?.links && (
           <>
             <Box className={classes.title}>
               <Box marginBottom={3}>
@@ -28,9 +28,11 @@ const HeaderMenu: React.FC<Props> = (props: Props) => {
                   {selectedTab.sectionTitle}
                 </Typography>
               </Box>
-              <SwthButton className={classes.button} href="/">
-                {selectedTab.button}
-              </SwthButton>
+              {selectedTab?.button && (
+                <SwthButton className={classes.button} href={selectedTab.url ?? "/"}>
+                  {selectedTab.button}
+                </SwthButton>
+              )}
             </Box>
             <Grid container spacing={3}>
               {selectedTab.links.map((link) => <HeaderLink key={link.title} link={link} />)}

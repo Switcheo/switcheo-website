@@ -2,15 +2,15 @@
 export interface HeaderTabContent {
   tabTitle: string
   url?: string
-  sectionTitle: string
-  button: string
-  links: HeaderLink[]
+  sectionTitle?: string
+  button?: string
+  links?: HeaderLink[]
 }
 
 export interface HeaderLink {
   title: string
   description: string
-  icon: any
+  icon?: any
   url: string
 }
 

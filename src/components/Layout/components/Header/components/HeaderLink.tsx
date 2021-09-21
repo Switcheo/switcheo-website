@@ -16,7 +16,7 @@ const HeaderMenu: React.FC<Props> = (props: Props) => {
     <Grid item xs={6}>
       <Link href={link.url} passHref>
         <Box className={classes.root}>
-          <Box marginRight={2}>
+          <Box className={classes.icon}>
             {link.icon}
           </Box>
           <Box>
@@ -50,6 +50,11 @@ const useStyles = makeStyles((theme: Theme) => ({
   description: {
     fontFamily: "Roobert",
     fontSize: "1.0625rem",
+  },
+  icon: {
+    marginRight: theme.spacing(2),
+    width: "5rem",
+    height: "5rem",
   },
 }));
 
