@@ -16,16 +16,16 @@ const RoleCard: React.FC<Props> = (props: Props) => {
       <Box className={classes.role}>
         <Box className={classes.details}>
           <Box className={classes.roleArea}>
-            {jobRole.area}
+            {jobRole.category}
           </Box>
           <Box maxWidth="80%">
             <Box className={classes.title}>
-              {jobRole.title}
+              {jobRole.role}
             </Box>
           </Box>
         </Box>
         <Typography variant="subtitle1" color="textSecondary">
-          {jobRole.type}
+          {jobRole.extra}
         </Typography>
       </Box>
     </Link>

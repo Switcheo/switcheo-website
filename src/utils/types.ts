@@ -45,8 +45,8 @@ export interface Tweet {
 }
 
 export interface JobRole {
-  area: string
-  title: string
-  type: string
+  category: string
+  role: string
+  extra: string
   url: string
 }
