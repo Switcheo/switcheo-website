@@ -10,15 +10,17 @@ const HeroAnimation: React.FC = () => {
   const [scrollStart, setScrollStart] = useState(-1);
   const [windowWidth, setWindowWidth] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
+  const [triggerAnimation, setTriggerAnimation] = useState(false);
+  const [prevScroll, setPrevScroll] = useState(0);
 
   const [sectionRef, sectionView] = useInView({
     threshold: 0.4,
-    triggerOnce: true,
   });
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
 
+    setPrevScroll(window.scrollY);
     setWindowWidth(window.innerWidth);
     setWindowHeight(window.innerHeight);
     window.addEventListener("scroll", onScroll);
@@ -29,11 +31,15 @@ const HeroAnimation: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (sectionView && scrollStart < 0) {
-      setScrollStart(window.scrollY);
+    if (sectionView && scrollStart < 0 && (scrollY === 0 || scrollY > prevScroll)) {
+      setTriggerAnimation(true);
+      setScrollStart(scrollY);
+    }
+    if (!sectionView && !triggerAnimation) {
+      setPrevScroll(scrollY);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sectionView]);
+  }, [sectionView, scrollY]);
 
   const getTransition = (delay: number) => makeStyles(() => {
     return {
@@ -47,11 +53,11 @@ const HeroAnimation: React.FC = () => {
   for (let i = 10; i < 37; i++) {
     arrows.push(
       <Arrow key={i} className={clsx(classes.arrow, {
-        [getTransition(i)().transition]: sectionView,
+        [getTransition(i)().transition]: triggerAnimation,
         [classes.topRow]: i < 18,
       })} />);
   }
-  arrows.splice(17, 0, <Arrow key={1} className={clsx(classes.arrow, { [classes.middleArrow]: sectionView })} />);
+  arrows.splice(17, 0, <Arrow key={1} className={clsx(classes.arrow, { [classes.middleArrow]: triggerAnimation })} />);
 
   return (
     <>
