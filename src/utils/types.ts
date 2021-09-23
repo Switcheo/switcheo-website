@@ -29,7 +29,7 @@ export interface Product {
 }
 
 export interface BlogEntry {
-  tag: string
+  // tag: string
   title: string
   preview: string
   url: string

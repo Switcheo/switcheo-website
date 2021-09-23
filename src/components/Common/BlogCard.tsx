@@ -25,11 +25,11 @@ const BlogCard: React.FC<Props> = (props: Props) => {
       >
         <Grid container spacing={layout === "row" ? 4 : 2} direction={layout} alignItems="stretch">
           <Grid item xs={layout === "row" ? 1 : 12}>
-            <Typography variant="body2" color="primary">
+            {/* <Typography variant="body2" color="primary">
               {post.tag}
-            </Typography>
+            </Typography> */}
           </Grid>
-          <Grid item xs={layout === "row" ? 2 : 12}>
+          <Grid item xs={layout === "row" ? 3 : 12}>
             <Box 
               className={clsx(classes.blogTitle, {
                 [classes.rowTitle]: layout === "row",
@@ -39,7 +39,7 @@ const BlogCard: React.FC<Props> = (props: Props) => {
               {post.title}
             </Box>
           </Grid>
-          <Grid item xs={layout === "row" ? 8 : 12}>
+          <Grid item xs={layout === "row" ? 7 : 12}>
             <Box 
               className={clsx({
                 [classes.rowDescription]: layout === "row",

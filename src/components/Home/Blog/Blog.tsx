@@ -41,9 +41,10 @@ const Blog: React.FC<Props> = (props: Props) => {
     newsPosts,
     spotlightPost,
   } = useMemo(() => {
+    const filteredPosts = posts.filter((post) => !post.title.includes("Update"));
     return {
-      newsPosts: posts.filter((post) => post.tag === "News" && !post.title.includes("Update")).slice(0, 2),
-      spotlightPost: posts.find((post) => post.tag !== "News") ?? posts[0],
+      newsPosts: filteredPosts.slice(1, 3),
+      spotlightPost: filteredPosts[0],
     };
   }, [posts]);
 
@@ -116,13 +117,16 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginRight: theme.spacing(6),
     paddingLeft: theme.spacing(5),
     paddingRight: theme.spacing(20),
+    [theme.breakpoints.down("md")]: {
+      paddingRight: theme.spacing(5),
+    },
   },
   highlights: {
     width: "90%",
     "& img": {
       borderRadius: 15,
     },
-    margin: theme.spacing(3, 6, 5, 0),
+    margin: theme.spacing(3, 6, 0, 0),
     [theme.breakpoints.down("sm")]: {
       margin: theme.spacing(3, 6, 3, 0),
     },
