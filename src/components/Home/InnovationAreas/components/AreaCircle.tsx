@@ -17,7 +17,7 @@ const AreaCircle: React.FC<Props> = (props: Props) => {
 
   return (
     <Box borderRadius="50%" className={classes.root}>
-      <Image priority src={selectedArea.background} alt={selectedArea.title} />
+      <Image src={selectedArea.background} alt={selectedArea.title} />
       <Box className={classes.gradient} />
       <Box className={classes.content}>
         <Box marginBottom={3}>

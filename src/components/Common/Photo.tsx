@@ -10,7 +10,6 @@ const Photo: React.FC<ImageProps> = (props: ImageProps) => {
   return (
     <Box className={clsx(classes.root, className)}>
       <Image
-        priority
         src={src}
         alt={alt}
         layout="fill"

@@ -1,6 +1,6 @@
 import { CssBaseline, MuiThemeProvider } from "@material-ui/core";
 import type { AppProps } from "next/app";
-import Head from "next/head";
+import { DefaultSeo } from "next-seo";
 import React, { useEffect } from "react";
 import { MainLayout } from "src/components/Layout";
 import { theme } from "../theme";
@@ -19,11 +19,14 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Head>
-        <link rel="icon" href="/favicon/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charSet="utf-8" />
-      </Head>
+      <DefaultSeo
+        openGraph={{
+          type: "website",
+        }}
+        twitter={{
+          cardType: "summary_large_image",
+        }}
+      />
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <MainLayout>

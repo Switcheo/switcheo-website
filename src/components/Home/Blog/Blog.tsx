@@ -63,7 +63,7 @@ const Blog: React.FC<Props> = (props: Props) => {
                 {BlogBanners.map((banner, index) => (
                   <Link key={index} href={banner.url} passHref>
                     <Box className={classes.img}>
-                      <Image src={banner.img} alt={index.toString()} priority />
+                      <Image src={banner.img} alt={index.toString()} />
                     </Box>
                   </Link>
                 ))}
