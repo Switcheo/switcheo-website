@@ -1,5 +1,6 @@
 import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
 import React from "react";
+import { Team6 } from "src/assets/images";
 import { Photo, SwthButton } from "src/components/Common";
 
 const JoinNow: React.FC = () => {
@@ -23,7 +24,7 @@ const JoinNow: React.FC = () => {
             Insert button here
           </SwthButton>
         </Box>
-        <Photo src="/assets/team6.jpg" alt="Team6" className={classes.photo} />
+        <Photo src={Team6} alt="Team6" className={classes.photo} />
       </Container>
 	  </Box>
   );

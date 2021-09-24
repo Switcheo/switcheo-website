@@ -1,6 +1,7 @@
 import { Box, makeStyles, Theme } from "@material-ui/core";
 import clsx from "clsx";
 import React from "react";
+import { Ivan } from "src/assets/images";
 import { Photo } from "src/components/Common";
 
 const CEOSection: React.FC = () => {
@@ -8,7 +9,7 @@ const CEOSection: React.FC = () => {
 
   return (
     <Box className={classes.root}>
-      <Photo src="/assets/ivan.png" alt="Ivan" className={classes.portrait} />
+      <Photo src={Ivan} alt="Ivan" className={classes.portrait} />
       <Box className={clsx(classes.portrait, classes.gradient)}>
         <Box className={classes.text}>
           <Box className={classes.quote}>

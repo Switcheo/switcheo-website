@@ -22,7 +22,7 @@ const NavFooter: React.FC = () => {
         },
         {
           title: "Carbon",
-          url: "/",
+          url: Paths.carbon,
         },
       ],
     },

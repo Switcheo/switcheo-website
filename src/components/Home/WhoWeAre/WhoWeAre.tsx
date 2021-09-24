@@ -1,5 +1,6 @@
 import { Box, Container, Hidden, makeStyles, Theme, Typography } from "@material-ui/core";
 import React from "react";
+import { Team1, Team2 } from "src/assets/images";
 import { Photo, SwthButton } from "src/components/Common";
 import { Tweet } from "src/utils/types";
 import { TweetCard } from "./components";
@@ -38,7 +39,7 @@ const WhoWeAre: React.FC<Props> = (props: Props) => {
         </Box>
         <Box className={classes.images}>
           <Box className={classes.column}>
-            <Photo src="/assets/team1.jpg" alt="Team1" className={classes.landscape} />
+            <Photo src={Team1} alt="Team1" className={classes.landscape} />
             <Hidden mdUp>
               <Box className={classes.button}>
                 <SwthButton href="/careers">
@@ -52,7 +53,7 @@ const WhoWeAre: React.FC<Props> = (props: Props) => {
           </Box>
           <Hidden smDown>
             <Box display="flex" flexDirection="column" marginTop={30} marginLeft={10} width="40%">
-              <Photo src="/assets/team2.jpg" alt="Team2" className={classes.portrait} />
+              <Photo src={Team2} alt="Team2" className={classes.portrait} />
               <Box marginTop={-5}>
                 <SwthButton href="/careers">
                   Meet our Team

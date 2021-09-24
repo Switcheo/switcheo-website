@@ -16,7 +16,7 @@ const InnovationAreas: React.FC = () => {
       products: [{
         icon: <CarbonIcon />,
         name: "Carbon Protocol",
-        url: "/",
+        url: Paths.carbon,
       }],
     },
     {
@@ -42,7 +42,7 @@ const InnovationAreas: React.FC = () => {
       products: [{
         icon: <SwitcheoDevFundIcon />,
         name: "Switcheo Dev Fund",
-        url: "/",
+        url: Paths.devFund,
       }],
     },
   ];

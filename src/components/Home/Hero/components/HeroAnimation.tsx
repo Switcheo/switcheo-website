@@ -44,17 +44,17 @@ const HeroAnimation: React.FC = () => {
   const getTransition = (delay: number) => makeStyles(() => {
     return {
       transition: {
-        transform: `rotate(max(0deg, min(${scrollY - scrollStart - (windowWidth > windowHeight ? delay * 10 : delay)}deg, 180deg)))`,
+        transform: `rotate(max(0deg, min(${scrollY - scrollStart - (windowWidth > windowHeight ? delay * 5 : delay)}deg, 180deg)))`,
       },
     };
   });
 
   const arrows = [];
-  for (let i = 10; i < 37; i++) {
+  for (let i = 0; i < 27; i++) {
     arrows.push(
       <Arrow key={i} className={clsx(classes.arrow, {
         [getTransition(i)().transition]: triggerAnimation,
-        [classes.topRow]: i < 18,
+        [classes.topRow]: i < 8,
       })} />);
   }
   arrows.splice(17, 0, <Arrow key={1} className={clsx(classes.arrow, { [classes.middleArrow]: triggerAnimation })} />);

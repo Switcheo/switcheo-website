@@ -2,7 +2,7 @@ import { Box, Theme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Link from "next/link";
 import React from "react";
-import { Discord, Facebook, Linkedin, Medium, Reddit, Telegram, Twitter } from "src/assets/social";
+import { Discord, Facebook, Linkedin, Medium, Reddit, Telegram, Twitter, Youtube } from "src/assets/social";
 import { Paths } from "src/utils/paths";
 
 const SocialLinkBox: React.FC = () => {
@@ -36,6 +36,10 @@ const SocialLinkBox: React.FC = () => {
     {
       icon: <Facebook />,
       url: Paths.social.facebook,
+    },
+    {
+      icon: <Youtube />,
+      url: Paths.social.youtube,
     },
   ];
 

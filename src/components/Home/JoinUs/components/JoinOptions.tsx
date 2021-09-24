@@ -6,6 +6,7 @@ import Careers from "src/assets/Careers.svg";
 import DevFund from "src/assets/DevFund.svg";
 import SWTHToken from "src/assets/SWTHToken.svg";
 import { SwthButton } from "src/components/Common";
+import { Paths } from "src/utils/paths";
 
 const JoinOptions: React.FC = () => {
   const classes = useStyles();
@@ -32,7 +33,7 @@ const JoinOptions: React.FC = () => {
           </Typography>
         </Box>
         <Divider />
-        <SwthButton href="/">
+        <SwthButton href={Paths.devFund}>
           Learn More
         </SwthButton>
       </Grid>

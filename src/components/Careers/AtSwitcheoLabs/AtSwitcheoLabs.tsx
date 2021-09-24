@@ -1,5 +1,6 @@
 import { Box, Container, Hidden, makeStyles, Theme, Typography } from "@material-ui/core";
 import React from "react";
+import { Team3, Team4, Team5 } from "src/assets/images";
 import { Photo } from "src/components/Common";
 import { CEOPhoto, CEOSection } from "./components";
 
@@ -12,9 +13,9 @@ const AtSwitcheoLabs: React.FC = () => {
         <Container maxWidth="lg" className={classes.contentContainer}>
           <Box className={classes.row}>
             <Hidden smDown>
-              <Photo src="/assets/team3.jpg" alt="Team3" className={classes.portrait} />
+              <Photo src={Team3} alt="Team3" className={classes.portrait} />
             </Hidden>
-            <Photo src="/assets/team4.jpg" alt="Team4" className={classes.landscape} />
+            <Photo src={Team4} alt="Team4" className={classes.landscape} />
           </Box>
           <Box className={classes.row}>
             <Box className={classes.text}>
@@ -34,7 +35,7 @@ const AtSwitcheoLabs: React.FC = () => {
           </Box>
           <Hidden smDown>
             <Box className={classes.row}>
-              <Photo src="/assets/team5.jpg" alt="Team5" className={classes.landscape} />
+              <Photo src={Team5} alt="Team5" className={classes.landscape} />
               <CEOPhoto />
             </Box>
           </Hidden>
