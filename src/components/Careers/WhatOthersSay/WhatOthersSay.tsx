@@ -37,7 +37,7 @@ const WhatOthersSay: React.FC<Props> = (props: Props) => {
         <Box className={classes.quote}>
           <Box className={classes.quoteMarks} alignItems="flex-start">&ldquo;</Box>
           <Box className={classes.quoteText}>
-            {selectedTweet.text}
+            {selectedTweet.tweet}
           </Box>
           <Box className={classes.quoteMarks} alignItems="flex-end">&rdquo;</Box>
         </Box>
@@ -55,18 +55,18 @@ const WhatOthersSay: React.FC<Props> = (props: Props) => {
                   onClick={() => onChangeIndex(index)}
                 >
                   <Box className={classes.tweetIcon}>
-                    <Image src={tweet.iconHref} alt="TwitterIcon" layout="fill" />
+                    <Image src={tweet.userProfilePictureUrl} alt="TwitterIcon" layout="fill" />
                   </Box>
                 </Box>
               ))}
             </Box>
-            <Link href={selectedTweet.url} passHref>
+            <Link href={selectedTweet.tweetUrl} passHref>
               <Box className={clsx(classes.tweetUser, classes.link)}>
                 <Typography variant="body1" color="textPrimary">
                   {selectedTweet.name}
                 </Typography>
                 <Typography variant="body1" color="textPrimary">
-                  {selectedTweet.username}
+                  {selectedTweet.twitterHandle}
                 </Typography>
               </Box>
             </Link>

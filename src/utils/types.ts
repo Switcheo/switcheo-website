@@ -36,12 +36,11 @@ export interface BlogEntry {
 }
 
 export interface Tweet {
-  id: string
-  text: string
   name: string
-  username: string
-  iconHref: string
-  url: string
+  tweet: string
+  tweetUrl: string
+  twitterHandle: string
+  userProfilePictureUrl: string
 }
 
 export interface JobRole {

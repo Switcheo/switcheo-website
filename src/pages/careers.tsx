@@ -3,17 +3,16 @@ import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from "
 import absoluteUrl from "next-absolute-url";
 import { NextSeo } from "next-seo";
 import { AtSwitcheoLabs, CareersHero, JoinNow, OpenRoles, OurCulture, WhatOthersSay } from "src/components/Careers";
-import Tweets from "src/utils/testdata/Tweets.json";
 
-const Careers: NextPage = ({ origin, jobRoles }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Careers: NextPage = ({ origin, jobRoles, tweets }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <>
       <NextSeo
         title="Careers: Join Our Team | Switcheo Labs"
         description="Want to have a hand in nurturing a decentralized future powered by the blockchain? Explore our current openings at Switcheo Labs."
-        canonical={origin + "/careers"}
+        canonical={`${origin}/careers`}
         openGraph={{
-          url: origin,
+          url: `${origin}/careers`,
           title: "Careers: Join Our Team | Switcheo Labs",
           description: "Want to have a hand in nurturing a decentralized future powered by the blockchain? Explore our current openings at Switcheo Labs.",
           images: [{
@@ -25,7 +24,7 @@ const Careers: NextPage = ({ origin, jobRoles }: InferGetServerSidePropsType<typ
       <AtSwitcheoLabs />
       <OurCulture />
       <JoinNow />
-      <WhatOthersSay tweets={Tweets} />
+      <WhatOthersSay tweets={tweets} />
       <OpenRoles jobRoles={jobRoles} />
     </>
   );
@@ -50,7 +49,13 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
     limit: 100,
   });
 
+  const tweetResult = await client.getEntries({
+    content_type: "switcheoLabTweets",
+    limit: 3,
+  });
+
   const jobRoles = (jobOpeningResult.items.map((item) => item.fields));
+  const tweets = (tweetResult.items.map((item) => item.fields));
 
   const { origin } = absoluteUrl(req);
 
@@ -58,6 +63,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
     props: {
       origin,
       jobRoles,
+      tweets,
       revalidate: process.env.CONTENTFUL_TTL ?? 15,
     },
   };

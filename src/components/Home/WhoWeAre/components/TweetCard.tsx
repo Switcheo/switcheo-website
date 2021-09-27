@@ -29,12 +29,12 @@ const TweetCard: React.FC<Props> = (props: Props) => {
   return (
     <Box className={classes.root}>
       <Box className={classes.tweet}>
-        &ldquo;{selectedTweet.text}&rdquo;
+        &ldquo;{selectedTweet.tweet}&rdquo;
       </Box>
       <Hidden smDown>
-        <Link href={selectedTweet.url} passHref>
+        <Link href={selectedTweet.tweetUrl} passHref>
           <Typography variant="subtitle1" color="textSecondary" className={classes.link}>
-            {selectedTweet.username}
+            {selectedTweet.twitterHandle}
           </Typography>
         </Link>
       </Hidden>
@@ -51,9 +51,9 @@ const TweetCard: React.FC<Props> = (props: Props) => {
           <TwitterIcon className={classes.bird} />
           <Hidden mdUp>
             <Box className={classes.username}>
-              <Link href={selectedTweet.url} passHref>
+              <Link href={selectedTweet.tweetUrl} passHref>
                 <Typography variant="subtitle1" color="textSecondary" className={classes.link}>
-                  {selectedTweet.username}
+                  {selectedTweet.twitterHandle}
                 </Typography>
               </Link>
             </Box>

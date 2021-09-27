@@ -6,11 +6,11 @@ import { Tweet } from "src/utils/types";
 import { TweetCard } from "./components";
 
 interface Props {
-  tweetData: Tweet[]
+  tweets: Tweet[]
 }
 
 const WhoWeAre: React.FC<Props> = (props: Props) => {
-  const { tweetData } = props;
+  const { tweets } = props;
   const classes = useStyles();
 
   return (
@@ -48,7 +48,7 @@ const WhoWeAre: React.FC<Props> = (props: Props) => {
               </Box>
             </Hidden>
             <Box>
-              <TweetCard tweets={tweetData} />
+              <TweetCard tweets={tweets} />
             </Box>
           </Box>
           <Hidden smDown>
