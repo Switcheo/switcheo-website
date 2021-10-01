@@ -104,7 +104,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   arrow: {
     position: "relative",
-    cursor: "pointer",
     zIndex: 1000,
   },
   arrowSvg: {

@@ -1,10 +1,10 @@
 import { Box, BoxProps, makeStyles, Theme, Typography } from "@material-ui/core";
 import clsx from "clsx";
-import Link from "next/link";
 import React, { useMemo, useState } from "react";
 import ArrowLeft from "src/assets/ArrowLeft.svg";
 import ArrowRight from "src/assets/ArrowRight.svg";
 import { BlogEntry } from "src/utils/types";
+import { AnchorLink } from ".";
 
 interface Props extends BoxProps {
   posts: BlogEntry[]
@@ -27,7 +27,7 @@ const MobileBlogCard: React.FC<Props> = (props: Props) => {
 
   return (
     <Box className={clsx(classes.root, className)}>
-      <Link href={selectedPost.url} passHref>
+      <AnchorLink href={selectedPost.url}>
         <Box display="flex" flexDirection="column">
           <Typography variant="body2" color="primary">
             {selectedPost.tag}
@@ -39,7 +39,7 @@ const MobileBlogCard: React.FC<Props> = (props: Props) => {
             {selectedPost.preview}
           </Typography>
         </Box>
-      </Link>
+      </AnchorLink>
       <Box className={classes.arrows}>
         <Box onClick={() => onChangeIndex((selectIndex - 1) % posts.length)} className={classes.leftArrow}>
           <ArrowLeft className={classes.arrowSvg} />

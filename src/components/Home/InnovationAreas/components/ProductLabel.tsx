@@ -1,6 +1,6 @@
 import { Box, makeStyles, Theme } from "@material-ui/core";
-import Link from "next/link";
 import React from "react";
+import { AnchorLink } from "src/components/Common";
 import { Product } from "src/utils/types";
 
 interface Props {
@@ -12,7 +12,7 @@ const AreaCircle: React.FC<Props> = (props: Props) => {
   const classes = useStyles();
 
   return (
-    <Link href={product.url} passHref>
+    <AnchorLink href={product.url}>
       <Box className={classes.product}>
         <Box className={classes.icon}>
         {product.icon}
@@ -21,7 +21,7 @@ const AreaCircle: React.FC<Props> = (props: Props) => {
           {product.name}
         </Box>
       </Box>
-    </Link>
+    </AnchorLink>
   );
 };
 
@@ -35,9 +35,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     [theme.breakpoints.only("xs")]: {
       marginBottom: theme.spacing(1),
-    },
-    "&:hover": {
-      cursor: "pointer",
     },
   },
   productName: {

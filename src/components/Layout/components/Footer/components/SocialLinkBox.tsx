@@ -1,8 +1,8 @@
 import { Box, Theme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Link from "next/link";
 import React from "react";
 import { Discord, Linkedin, Reddit, Telegram, Twitter } from "src/assets/social";
+import { AnchorLink } from "src/components/Common";
 import { Paths } from "src/utils/paths";
 
 const SocialLinkBox: React.FC = () => {
@@ -34,11 +34,11 @@ const SocialLinkBox: React.FC = () => {
   return (
     <Box className={classes.root}>
       {socialLinks.map((link) => (
-        <Link key={link.url} href={link.url} passHref>
+        <AnchorLink key={link.url} href={link.url}>
           <Box className={classes.icon}>
             {link.icon}
           </Box>
-        </Link>
+        </AnchorLink>
       ))}
     </Box>
   );

@@ -1,10 +1,10 @@
 import { Box, BoxProps, Hidden, makeStyles, Theme, Typography } from "@material-ui/core";
 import clsx from "clsx";
-import Link from "next/link";
 import React, { useMemo, useState } from "react";
 import ArrowLeft from "src/assets/ArrowLeft.svg";
 import ArrowRight from "src/assets/ArrowRight.svg";
 import TwitterIcon from "src/assets/TwitterIcon.svg";
+import { AnchorLink } from "src/components/Common";
 import { Tweet } from "src/utils/types";
 
 interface Props extends BoxProps {
@@ -32,11 +32,11 @@ const TweetCard: React.FC<Props> = (props: Props) => {
         &ldquo;{selectedTweet.tweet}&rdquo;
       </Box>
       <Hidden smDown>
-        <Link href={selectedTweet.tweetUrl} passHref>
-          <Typography variant="subtitle1" color="textSecondary" className={classes.link}>
+        <AnchorLink href={selectedTweet.tweetUrl}>
+          <Typography variant="subtitle1" color="textSecondary">
             {selectedTweet.twitterHandle}
           </Typography>
-        </Link>
+        </AnchorLink>
       </Hidden>
       <Box className={classes.icons}>
         <Box display="flex">
@@ -51,11 +51,11 @@ const TweetCard: React.FC<Props> = (props: Props) => {
           <TwitterIcon className={classes.bird} />
           <Hidden mdUp>
             <Box className={classes.username}>
-              <Link href={selectedTweet.tweetUrl} passHref>
-                <Typography variant="subtitle1" color="textSecondary" className={classes.link}>
+              <AnchorLink href={selectedTweet.tweetUrl}>
+                <Typography variant="subtitle1" color="textSecondary">
                   {selectedTweet.twitterHandle}
                 </Typography>
-              </Link>
+              </AnchorLink>
             </Box>
           </Hidden>
         </Box>

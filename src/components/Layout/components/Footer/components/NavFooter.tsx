@@ -1,8 +1,8 @@
 import { Box, Grid, Hidden, Theme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Link from "next/link";
 import React from "react";
 import SwitcheoBrand from "src/assets/SwitcheoBrand.svg";
+import { AnchorLink } from "src/components/Common";
 import { Paths } from "src/utils/paths";
 
 const NavFooter: React.FC = () => {
@@ -83,11 +83,11 @@ const NavFooter: React.FC = () => {
     <Box className={classes.root}>
       <Hidden smDown>
         <Box marginLeft={3} marginTop={1} width="60%">
-          <Link href="/" passHref>
+          <AnchorLink href="/">
             <Box>
               <SwitcheoBrand className={classes.img} />
             </Box>
-          </Link>
+          </AnchorLink>
         </Box>
       </Hidden>
       <Grid container spacing={4}>
@@ -97,11 +97,11 @@ const NavFooter: React.FC = () => {
               {section.section}
             </Box>
             {section.links.map((link) => (
-              <Link key={link.title} href={link.url} passHref>
+              <AnchorLink key={link.title} href={link.url}>
                 <Box className={classes.navLink}>
                   {link.title}
                 </Box>
-              </Link>
+              </AnchorLink>
             ))}
           </Grid>
         ))}
@@ -126,9 +126,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   img: {
     "& path": {
       fill: "#FFF",
-    },
-    "&:hover": {
-      cursor: "pointer",
     },
     width: "10.625rem",
   },
@@ -156,9 +153,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   navLink: {
-    "&:hover": {
-      cursor: "pointer",
-    },
     fontFamily: "Roobert",
     letterSpacing: "-0.01em",
     fontSize: "1.125rem",

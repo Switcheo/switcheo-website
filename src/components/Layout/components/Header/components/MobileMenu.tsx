@@ -1,12 +1,12 @@
 import { Box, Collapse, Drawer, MenuItem, MenuList, Theme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Link from "next/link";
 import React, { useState } from "react";
 import CaretDown from "src/assets/CaretDown.svg";
 import SwitcheoBrand from "src/assets/SwitcheoBrand.svg";
 import CloseIcon from "src/assets/CloseIcon.svg";
 import { HeaderTabContent } from "src/utils/types";
 import clsx from "clsx";
+import { AnchorLink } from "src/components/Common";
 
 interface Props {
   tabs: HeaderTabContent[]
@@ -41,11 +41,11 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
       }}
     >
       <Box className={classes.mobileHeader}>
-        <Link href="/" passHref>
+        <AnchorLink href="/">
           <Box onClick={closeMenu}>
             <SwitcheoBrand className={classes.mobileBrand} />
           </Box>
-        </Link>
+        </AnchorLink>
         <Box onClick={closeMenu} className={classes.closeIcon}>
           <CloseIcon className={classes.closeIcon}/>
         </Box>
@@ -72,7 +72,7 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
                     }}
                   >
                     {tab.links.map((link) => (
-                      <Link key={link.title} href={link.url} passHref>
+                      <AnchorLink key={link.title} href={link.url}>
                         <MenuItem
                           className={classes.link}
                           classes={{
@@ -82,13 +82,13 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
                         >
                           {link.title}
                         </MenuItem>
-                      </Link>
+                      </AnchorLink>
                     ))}
                   </MenuList>
                 </Collapse>
               </>
             ) : (
-              <Link href={tab.url ?? "/"} passHref>
+              <AnchorLink href={tab.url ?? "/"}>
                 <MenuItem
                   className={clsx(classes.section, { [classes.selected]: selectIndex === index })}
                   classes={{
@@ -98,7 +98,7 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
                 >
                   {tab.tabTitle}
                 </MenuItem>
-              </Link>
+              </AnchorLink>
             )}
           </Box>
         ))}
@@ -142,7 +142,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   closeIcon: {
-    cursor: "pointer",
+    "&:hover": {
+      cursor: "pointer",
+    },
     width: "2.375rem",
     height: "2.375rem",
     [theme.breakpoints.only("xs")]: {
@@ -186,6 +188,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   link: {
     fontFamily: "Roobert",
     fontSize: "1.5625rem",
+    color: theme.palette.common.white,
     margin: theme.spacing(0.5, 2),
     [theme.breakpoints.only("xs")]: {
       fontSize: "1rem",

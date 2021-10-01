@@ -1,8 +1,8 @@
 import { Button, ButtonProps, makeStyles, Theme } from "@material-ui/core";
 import clsx from "clsx";
-import Link from "next/link";
 import React from "react";
 import SwitcheoArrow from "src/assets/SwitcheoArrow.svg";
+import { AnchorLink } from ".";
 
 interface Props extends ButtonProps {
   href: string
@@ -13,7 +13,7 @@ const SwthButton: React.FC<Props> = (props: Props) => {
   const classes = useStyles();
 
   return (
-    <Link href={href} passHref>
+    <AnchorLink href={href}>
       <Button
         variant="text"
         classes={{
@@ -24,7 +24,7 @@ const SwthButton: React.FC<Props> = (props: Props) => {
         {children}
         <SwitcheoArrow className={clsx(classes.arrow, className)}/>
       </Button>
-    </Link>
+    </AnchorLink>
   );
 };
 

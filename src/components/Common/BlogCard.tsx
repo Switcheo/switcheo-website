@@ -1,8 +1,8 @@
 import { Box, BoxProps, Grid, makeStyles, Theme, Typography } from "@material-ui/core";
 import clsx from "clsx";
-import Link from "next/link";
 import React from "react";
 import { BlogEntry } from "src/utils/types";
+import { AnchorLink } from ".";
 
 interface Props extends BoxProps {
   post: BlogEntry
@@ -15,7 +15,7 @@ const BlogCard: React.FC<Props> = (props: Props) => {
   const classes = useStyles();
 
   return (
-    <Link href={post.url} passHref>
+    <AnchorLink href={post.url}>
       <Box
         className={clsx(classes.root, {
           [classes.divider]: divider,
@@ -53,15 +53,12 @@ const BlogCard: React.FC<Props> = (props: Props) => {
           </Grid>
         </Grid>
       </Box>
-    </Link>
+    </AnchorLink>
   );
 };
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    "&:hover": {
-      cursor: "pointer",
-    },
   },
   divider: {
     borderTop: "1px solid #4C4C4C",

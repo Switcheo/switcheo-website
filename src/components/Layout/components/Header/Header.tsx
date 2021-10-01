@@ -1,6 +1,5 @@
 import { Backdrop, Box, Container, Hidden, Theme, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Link from "next/link";
 import React, { useState } from "react";
 import CaretDown from "src/assets/CaretDown.svg";
 import SwitcheoBrand from "src/assets/SwitcheoBrand.svg";
@@ -10,6 +9,7 @@ import clsx from "clsx";
 import { HeaderTabContent } from "src/utils/types";
 import { HeaderMenu, MobileMenu } from "./components";
 import { Paths } from "src/utils/paths";
+import { AnchorLink } from "src/components/Common";
 
 const Header: React.FC = () => {
   const classes = useStyles();
@@ -79,7 +79,7 @@ const Header: React.FC = () => {
     },
     {
       tabTitle: "Developers",
-      sectionTitle: "Resources For Developers",
+      sectionTitle: "Developer Resources",
       links: [
         {
           title: "Github",
@@ -104,21 +104,21 @@ const Header: React.FC = () => {
   return (
     <Box className={classes.root}>
       <Container maxWidth="lg" className={classes.header}>
-        <Link href="/" passHref>
+        <AnchorLink href="/">
           <Box onClick={() => setSelectIndex(-1)}>
             <SwitcheoBrand className={classes.brand} />
           </Box>
-        </Link>
+        </AnchorLink>
         <Hidden smDown>
           <Box className={classes.navTabs}>
             {headerTabs.map((tab, index) => tab.url ? (
-              <Link key={index} href={tab.url} passHref>
+              <AnchorLink key={index} href={tab.url}>
                 <Box className={classes.tab} onClick={() => setSelectIndex(-1)}>
                   <Typography variant="body1" color="textSecondary">
                     {tab.tabTitle}
                   </Typography>
                 </Box>
-              </Link>
+              </AnchorLink>
             ) : (
               <Box 
                 key={index}
@@ -180,7 +180,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   brand: {
     marginTop: theme.spacing(2),
-    cursor: "pointer",
     width: "10.375rem",
     [theme.breakpoints.only("sm")]: {
       width: "14.375rem",
@@ -201,7 +200,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   tab: {
     display: "flex",
     borderBottom: "4px solid transparent",
-    cursor: "pointer",
+    "&:hover": {
+      cursor: "pointer",
+    },
     padding: theme.spacing(1, 2, 4, 2),
     [theme.breakpoints.only("md")]: {
       padding: theme.spacing(1, 1, 4, 1),
@@ -220,7 +221,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   menuIcon: {
-    cursor: "pointer",
+    "&:hover": {
+      cursor: "pointer",
+    },
     width: "3.0625rem",
     [theme.breakpoints.only("xs")]: {
       width: "1.625rem",

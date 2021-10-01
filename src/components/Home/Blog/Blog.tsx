@@ -1,10 +1,9 @@
 import { Box, Container, Divider, Grid, Hidden, makeStyles, Theme, Typography } from "@material-ui/core";
 import React, { useMemo } from "react";
 import Slider from "react-slick";
-import Link from "next/link";
 import Image from "next/image";
 import { BlogEntry } from "src/utils/types";
-import { BlogCard, MobileBlogCard } from "src/components/Common";
+import { AnchorLink, BlogCard, MobileBlogCard } from "src/components/Common";
 
 interface Props {
   posts: BlogEntry[],
@@ -29,8 +28,7 @@ const Blog: React.FC<Props> = (props: Props) => {
     const bannerPosts: BlogEntry[] = [];
     const spotlightPost: BlogEntry[] = [];
     const newsPosts: BlogEntry[] = [];
-    const filteredPosts = posts.filter((post) => !post.title.includes("Update"));
-    filteredPosts.forEach((post) => {
+    posts.forEach((post) => {
       if (bannerPosts.length < 3 && post.banner?.fields?.file?.url) {
         bannerPosts.push(post);
       } else if (spotlightPost.length < 1) {
@@ -39,6 +37,12 @@ const Blog: React.FC<Props> = (props: Props) => {
         newsPosts.push(post);
       }
     });
+    if (spotlightPost.length < 1) {
+      spotlightPost.push(posts[0]);
+    }
+    if (newsPosts.length < 1) {
+      spotlightPost.push(posts[1]);
+    }
     return {
       bannerPosts,
       newsPosts,
@@ -59,11 +63,11 @@ const Blog: React.FC<Props> = (props: Props) => {
             <Box className={classes.highlights}>
               <Slider {...settings}>
                 {bannerPosts.map((post) => (
-                  <Link key={post.date} href={post.url} passHref>
+                  <AnchorLink key={post.date} href={post.url}>
                     <Box className={classes.img}>
                       <Image src={"https:" + post.banner?.fields?.file?.url} alt={post.title} layout="fill" objectFit="contain" />
                     </Box>
-                  </Link>
+                  </AnchorLink>
                 ))}
               </Slider>
             </Box>
@@ -139,9 +143,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     height: "min(40vw, 21.25rem)",
     "& img": {
       borderRadius: 15,
-    },
-    "&:hover": {
-      cursor: "pointer",
     },
   },
   divider: {

@@ -1,9 +1,9 @@
 import { Box, Hidden, Theme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Link from "next/link";
 import React from "react";
 import SocialLinkBox from "./SocialLinkBox";
 import SwitcheoBrand from "src/assets/SwitcheoBrand.svg";
+import { AnchorLink } from "src/components/Common";
 
 const HomeFooter: React.FC = () => {
   const classes = useStyles();
@@ -12,29 +12,29 @@ const HomeFooter: React.FC = () => {
     <Box className={classes.root}>
       <Hidden smDown>
         <Box className={classes.textSection}>
-          <Link href="/" passHref>
+          <AnchorLink href="/">
             <Box className={classes.text}>
               Switcheo Labs
             </Box>
-          </Link>
-          <Link href="/" passHref>
+          </AnchorLink>
+          <AnchorLink href="/">
             <Box className={classes.text}>
               Privacy Policy
             </Box>
-          </Link>
-          <Link href="/" passHref>
+          </AnchorLink>
+          <AnchorLink href="/">
             <Box className={classes.text}>
               Terms & Conditions
             </Box>
-          </Link>
+          </AnchorLink>
         </Box>
       </Hidden>
       <Hidden mdUp>
-        <Link href="/" passHref>
+        <AnchorLink href="/">
           <Box>
             <SwitcheoBrand className={classes.img} />
           </Box>
-        </Link>
+        </AnchorLink>
       </Hidden>
       <SocialLinkBox />
     </Box>
@@ -69,9 +69,6 @@ const useStyles = makeStyles((theme: Theme) => ({
       marginBottom: theme.spacing(4),
       width: "6.25rem",
     },
-    "&:hover": {
-      cursor: "pointer",
-    },
   },
   textSection: {
     display: "flex",
@@ -79,9 +76,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     alignItems: "center",
   },
   text: {
-    "&:hover": {
-      cursor: "pointer",
-    },
+    color: theme.palette.common.white,
     padding: theme.spacing(1),
   },
 }));

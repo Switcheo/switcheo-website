@@ -1,7 +1,7 @@
 import { Box, Grid, Theme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Link from "next/link";
 import React from "react";
+import { AnchorLink } from "src/components/Common";
 import { HeaderLink } from "src/utils/types";
 
 interface Props {
@@ -14,7 +14,7 @@ const HeaderMenu: React.FC<Props> = (props: Props) => {
 
   return (
     <Grid item xs={6}>
-      <Link href={link.url} passHref>
+      <AnchorLink href={link.url}>
         <Box className={classes.root}>
           <Box className={classes.icon}>
             {link.icon}
@@ -28,16 +28,13 @@ const HeaderMenu: React.FC<Props> = (props: Props) => {
             </Box>
           </Box>
         </Box>
-      </Link>
+      </AnchorLink>
     </Grid>
   );
 };
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    "&:hover": {
-      cursor: "pointer",
-    },
     display: "flex",
     justifyContent: "space-between",
     color: theme.palette.text.secondary,

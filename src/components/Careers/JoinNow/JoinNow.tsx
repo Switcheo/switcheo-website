@@ -1,8 +1,7 @@
 import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
-import Link from "next/link";
 import React from "react";
 import { Team6 } from "src/assets/images";
-import { Photo } from "src/components/Common";
+import { AnchorLink, Photo } from "src/components/Common";
 import SwitcheoArrow from "src/assets/SwitcheoArrow.svg";
 
 const JoinNow: React.FC = () => {
@@ -17,14 +16,14 @@ const JoinNow: React.FC = () => {
               Believe in a life without limits?
             </Typography>
           </Box>
-          <Link href="#openroles" passHref>
+          <AnchorLink href="#openroles">
             <Box className={classes.description}>
               <Typography variant="subtitle1" color="secondary">  
                 Join our team of changemakers today. 
               </Typography>
               <SwitcheoArrow className={classes.arrow}/>
             </Box>
-          </Link>
+          </AnchorLink>
         </Box>
         <Photo src={Team6} alt="Team6" className={classes.photo} />
       </Container>
@@ -91,9 +90,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: "flex",
     alignItems: "center",
     marginBottom: theme.spacing(5),
-    "&:hover": {
-      cursor: "pointer",
-    },
     [theme.breakpoints.only("xs")]: {
       marginBottom: theme.spacing(2),
     },

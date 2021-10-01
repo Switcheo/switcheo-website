@@ -1,11 +1,11 @@
 import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
 import React, { useMemo, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import ArrowLeft from "src/assets/ArrowLeft.svg";
 import ArrowRight from "src/assets/ArrowRight.svg";
 import { Tweet } from "src/utils/types";
 import clsx from "clsx";
+import { AnchorLink } from "src/components/Common";
 
 interface Props {
   tweets: Tweet[]
@@ -60,8 +60,8 @@ const WhatOthersSay: React.FC<Props> = (props: Props) => {
                 </Box>
               ))}
             </Box>
-            <Link href={selectedTweet.tweetUrl} passHref>
-              <Box className={clsx(classes.tweetUser, classes.link)}>
+            <AnchorLink href={selectedTweet.tweetUrl}>
+              <Box className={classes.tweetUser}>
                 <Typography variant="body1" color="textPrimary">
                   {selectedTweet.name}
                 </Typography>
@@ -69,7 +69,7 @@ const WhatOthersSay: React.FC<Props> = (props: Props) => {
                   {selectedTweet.twitterHandle}
                 </Typography>
               </Box>
-            </Link>
+            </AnchorLink>
           </Box>
           <Box className={classes.arrows}>
             <Box onClick={() => onChangeIndex((selectIndex - 1) % tweets.length)} className={classes.leftArrow}>

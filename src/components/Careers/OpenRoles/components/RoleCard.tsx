@@ -1,7 +1,7 @@
 import { Box, BoxProps, makeStyles, Theme, Typography } from "@material-ui/core";
 import React from "react";
-import Link from "next/link";
 import { JobRole } from "src/utils/types";
+import { AnchorLink } from "src/components/Common";
 
 interface Props extends BoxProps {
   jobRole: JobRole
@@ -12,7 +12,7 @@ const RoleCard: React.FC<Props> = (props: Props) => {
   const classes = useStyles();
 
   return (
-    <Link href={jobRole.url} passHref>
+    <AnchorLink href={jobRole.url}>
       <Box className={classes.role}>
         <Box className={classes.details}>
           <Box className={classes.roleArea}>
@@ -28,13 +28,12 @@ const RoleCard: React.FC<Props> = (props: Props) => {
           {jobRole.extra}
         </Typography>
       </Box>
-    </Link>
+    </AnchorLink>
   );
 };
 
 const useStyles = makeStyles((theme: Theme) => ({
   role: {
-    cursor: "pointer",
     backgroundColor: theme.palette.background.paper,
     width: "100%",
     height: "100%",
