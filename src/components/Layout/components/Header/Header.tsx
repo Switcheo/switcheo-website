@@ -47,12 +47,6 @@ const Header: React.FC = () => {
           icon: <Zilswap />,
           url: Paths.zilswap,
         },
-        {
-          title: "Switcheo Development Fund",
-          description: "Funding new innovations building the future of blockchain applications",
-          icon: <SwitcheoDevFund />,
-          url: Paths.devFund,
-        },
       ],
     },
     {
@@ -85,17 +79,17 @@ const Header: React.FC = () => {
     },
     {
       tabTitle: "Developers",
-      sectionTitle: "Switcheo Labs Ecosystem Suite Of Innovations",
+      sectionTitle: "Resources For Developers",
       links: [
         {
           title: "Github",
-          description: "Funding new innovations building the future of blockchain applications",
+          description: "Access repositories and codebases that inspire open collaboration",
           icon: <Github />,
           url: Paths.github,
         },
         {
-          title: "Dev Fund",
-          description: "Funding new innovations building the future of blockchain applications",
+          title: "Switcheo Development Fund",
+          description: "Supporting new innovations that pave the way for the future of decentralized finance",
           icon: <SwitcheoDevFund />,
           url: Paths.devFund,
         },

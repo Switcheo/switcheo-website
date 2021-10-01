@@ -5,22 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { BlogEntry } from "src/utils/types";
 import { BlogCard, MobileBlogCard } from "src/components/Common";
-import { DAppsUpdates, InfrastructureUpdates, WhiteSpacesUpdates } from "src/assets/blog";
-
-const BlogBanners = [
-  {
-    img: InfrastructureUpdates,
-    url: "/",
-  },
-  {
-    img: DAppsUpdates,
-    url: "/",
-  },
-  {
-    img: WhiteSpacesUpdates,
-    url: "/",
-  },
-];
 
 interface Props {
   posts: BlogEntry[],
@@ -38,13 +22,27 @@ const Blog: React.FC<Props> = (props: Props) => {
   };
 
   const {
+    bannerPosts,
     newsPosts,
     spotlightPost,
   } = useMemo(() => {
+    const bannerPosts: BlogEntry[] = [];
+    const spotlightPost: BlogEntry[] = [];
+    const newsPosts: BlogEntry[] = [];
     const filteredPosts = posts.filter((post) => !post.title.includes("Update"));
+    filteredPosts.forEach((post) => {
+      if (bannerPosts.length < 3 && post.banner?.fields?.file?.url) {
+        bannerPosts.push(post);
+      } else if (spotlightPost.length < 1) {
+        spotlightPost.push(post);
+      } else if (newsPosts.length < 2) {
+        newsPosts.push(post);
+      }
+    });
     return {
-      newsPosts: filteredPosts.slice(1, 3),
-      spotlightPost: filteredPosts[0],
+      bannerPosts,
+      newsPosts,
+      spotlightPost,
     };
   }, [posts]);
 
@@ -60,17 +58,17 @@ const Blog: React.FC<Props> = (props: Props) => {
           <Grid item xs={12} md={7}>
             <Box className={classes.highlights}>
               <Slider {...settings}>
-                {BlogBanners.map((banner, index) => (
-                  <Link key={index} href={banner.url} passHref>
+                {bannerPosts.map((post) => (
+                  <Link key={post.date} href={post.url} passHref>
                     <Box className={classes.img}>
-                      <Image src={banner.img} alt={index.toString()} />
+                      <Image src={"https:" + post.banner?.fields?.file?.url} alt={post.title} layout="fill" objectFit="contain" />
                     </Box>
                   </Link>
                 ))}
               </Slider>
             </Box>
             <Hidden smDown>
-              <BlogCard post={spotlightPost} className={classes.spotlight}/>
+              <BlogCard post={spotlightPost[0]} className={classes.spotlight}/>
             </Hidden>
           </Grid>
           <Hidden smDown>
@@ -80,7 +78,7 @@ const Blog: React.FC<Props> = (props: Props) => {
           </Hidden>
         </Grid>
         <Hidden mdUp>
-          <MobileBlogCard posts={posts.filter((post) => !post.title.includes("Update"))} />
+          <MobileBlogCard posts={spotlightPost.concat(newsPosts)} />
           <Divider classes={{ root: classes.divider }} />
         </Hidden>
       </Container>
@@ -136,6 +134,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   img: {
     padding: theme.spacing(1),
+    position: "relative",
+    width: "100%",
+    height: "min(40vw, 21.25rem)",
     "& img": {
       borderRadius: 15,
     },

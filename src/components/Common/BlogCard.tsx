@@ -24,10 +24,10 @@ const BlogCard: React.FC<Props> = (props: Props) => {
         }, className)}
       >
         <Grid container spacing={layout === "row" ? 4 : 2} direction={layout} alignItems="stretch">
-          <Grid item xs={layout === "row" ? 1 : 12}>
-            {/* <Typography variant="body2" color="primary">
+          <Grid item xs={layout === "row" ? 2 : 12}>
+            <Typography variant="body2" color="primary">
               {post.tag}
-            </Typography> */}
+            </Typography>
           </Grid>
           <Grid item xs={layout === "row" ? 3 : 12}>
             <Box 

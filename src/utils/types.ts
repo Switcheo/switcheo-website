@@ -29,10 +29,12 @@ export interface Product {
 }
 
 export interface BlogEntry {
-  // tag: string
+  date: string
+  tag: string
   title: string
   preview: string
   url: string
+  banner?: any
 }
 
 export interface Tweet {

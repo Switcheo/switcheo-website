@@ -10,6 +10,6 @@ module.exports = {
     return config;
   },
   images: {
-    domains: ["pbs.twimg.com"],
+    domains: ["pbs.twimg.com", "images.ctfassets.net"],
   },
 };

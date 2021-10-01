@@ -30,7 +30,7 @@ const MobileBlogCard: React.FC<Props> = (props: Props) => {
       <Link href={selectedPost.url} passHref>
         <Box display="flex" flexDirection="column">
           <Typography variant="body2" color="primary">
-            {/* {selectedPost.tag} */}
+            {selectedPost.tag}
           </Typography>
           <Box className={classes.blogTitle}>
             {selectedPost.title}

@@ -27,9 +27,11 @@ const HeaderMenu: React.FC<Props> = (props: Props) => {
                 {selectedTab.sectionTitle}
               </Box>
               {selectedTab?.button && (
-                <SwthButton className={classes.button} href={selectedTab.url ?? "/"}>
-                  {selectedTab.button}
-                </SwthButton>
+                <Box marginTop={3}>
+                  <SwthButton className={classes.button} href={selectedTab.url ?? "/"}>
+                    {selectedTab.button}
+                  </SwthButton>
+                </Box>
               )}
             </Box>
             <Grid container spacing={3}>
@@ -61,10 +63,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: "space-between",
     alignItems: "flex-start",
     maxWidth: "25%",
+    minWidth: "18.75rem",
     marginRight: theme.spacing(10),
   },
   titleText: {
-    marginBottom: theme.spacing(3),
     fontFamily: "Roobert-Medium",
     fontSize: "2.375rem",
     lineHeight: "120%",
