@@ -2,6 +2,7 @@ import { Box, Container, Grid, Hidden, makeStyles, Theme, Typography } from "@ma
 import React from "react";
 import Slider from "react-slick";
 import { SwthButton } from "src/components/Common";
+import { Paths } from "src/utils/paths";
 import { JobRole } from "src/utils/types";
 import { RoleCard } from "./components";
 
@@ -20,7 +21,7 @@ const OpenRoles: React.FC<Props> = (props: Props) => {
   };
 
   return (
-    <Box component="section" className={classes.root}>
+    <Box component="section" id="openroles" className={classes.root}>
       <Container maxWidth="lg" className={classes.contentContainer}>
         <Box className={classes.text}>
           <Box className={classes.header}>
@@ -41,7 +42,7 @@ const OpenRoles: React.FC<Props> = (props: Props) => {
             ))}
           </Grid>
           <Box className={classes.rolesButton}>
-            <SwthButton href="/">
+            <SwthButton href={Paths.jobs}>
               See all available roles
             </SwthButton>
           </Box>
@@ -52,7 +53,7 @@ const OpenRoles: React.FC<Props> = (props: Props) => {
           {jobRoles.map((role) => <RoleCard key={role.url} jobRole={role} />)}
         </Slider>
         <Box className={classes.rolesButton}>
-          <SwthButton href="/">
+          <SwthButton href={Paths.jobs}>
             See all available roles
           </SwthButton>
         </Box>

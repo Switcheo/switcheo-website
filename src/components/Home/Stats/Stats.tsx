@@ -12,7 +12,7 @@ const Stats: React.FC = () => {
           <Box className={classes.description}>
             <Box className={classes.title}>
               <Typography variant="h2" color="secondary">
-                We foster the future.
+                We foster the future
               </Typography>
             </Box>
             <Typography variant="body1" color="inherit">
@@ -26,24 +26,24 @@ const Stats: React.FC = () => {
                   96K
                 </Box>
                 <Typography variant="body1" color="inherit">
-                  Monthly Active Users
+                  Trusted Users
                 </Typography>
               </Box>
             </Grid>
             <Grid item xs={6} sm={4} md={6} >
               <Box className={classes.stat}>
                 <Box className={classes.statNumber}>
-                  $10B
+                  $130M
                 </Box>
                 <Typography variant="body1" color="inherit">
-                  Value Transacted On-chain
+                  Value Transacted On-Chain
                 </Typography>
               </Box>
             </Grid>
             <Grid item xs={6} sm={4} md={6} >
               <Box className={clsx(classes.stat, classes.rightStat)}>
                 <Box className={classes.statNumber}>
-                  30+
+                  25+
                 </Box>
                 <Typography variant="body1" color="inherit">
                   Development Partners

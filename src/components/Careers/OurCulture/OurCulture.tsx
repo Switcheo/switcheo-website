@@ -4,32 +4,32 @@ import React from "react";
 const points = [
   {
     count: "01",
-    title: "You will build game changers.",
+    title: "You will build game changers",
     description: "In this cutting-edge space, we champion true innovation and experimentation. You will be able to go ahead and create stuff no one has dared dream of before. We got you.",
   },
   {
     count: "02",
-    title: "You will take ownership.",
+    title: "You will take ownership",
     description: "We believe in ownership, not just in wealth but also in what you build. Make your mark in the world and own things that you can be proud of.",
   },
   {
     count: "03",
-    title: "We are flexible.",
+    title: "We are flexible",
     description: "What matters is the end result, so we don’t sweat the small stuff or watch you like a hawk. Bend the rules a little if that means you can be the best version of yourself.",
   },
   {
     count: "04",
-    title: "We are a start-up.",
+    title: "We are a start-up",
     description: "The learning curve will be steep and the journey will be rough. Don’t expect to find the solutions on Google. Keep at it though, and you wil be rewarded with a front seat view (beer in hand) to groundbreaking innovations.",
   },
   {
     count: "05",
-    title: "You will change the world.",
+    title: "You will change the world",
     description: "Making a positive and sustainable impact is why we exist. You’ll be working in a paradigm changing industry that will affect the world globally in the years ahead, and the centuries to come.",
   },
   {
     count: "06",
-    title: "We grow together.",
+    title: "We grow together",
     description: "We don’t work in silos. We are one in this journey, so expect to learn together and share the rewards. Equity is on the table if you prove yourself worthy.",
   },
 ];

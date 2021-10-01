@@ -1,6 +1,62 @@
 import { Box, Container, Grid, makeStyles, Theme, Typography } from "@material-ui/core";
+import Image from "next/image";
 import React from "react";
 import { BOLT, DACM, DeFianceCapital, DeFiCapital, DUSK, HuobiPool, NEO, NGC, O3Labs, PolyNetwork, StakeWithUs, ThreeArrowsCapital, Zilliqa } from "src/assets/partners";
+
+const PartnerIcons = [
+  {
+    src: ThreeArrowsCapital,
+    alt: "ThreeArrowsCapital",
+  },
+  {
+    src: DeFianceCapital,
+    alt: "DeFianceCapital",
+  },
+  {
+    src: NGC,
+    alt: "NGC",
+  },
+  {
+    src: NEO,
+    alt: "NEO",
+  },
+  {
+    src: DeFiCapital,
+    alt: "DeFiCapital",
+  },
+  {
+    src: PolyNetwork,
+    alt: "PolyNetwork",
+  },
+  {
+    src: Zilliqa,
+    alt: "Zilliqa",
+  },
+  {
+    src: DACM,
+    alt: "DACM",
+  },
+  {
+    src: BOLT,
+    alt: "BOLT",
+  },
+  {
+    src: DUSK,
+    alt: "DUSK",
+  },
+  {
+    src: HuobiPool,
+    alt: "HuobiPool",
+  },
+  {
+    src: StakeWithUs,
+    alt: "StakeWithUs",
+  },
+  {
+    src: O3Labs,
+    alt: "O3Labs",
+  },
+];
 
 const Partners: React.FC = () => {
   const classes = useStyles();
@@ -14,73 +70,14 @@ const Partners: React.FC = () => {
               Backed by some of the best in blockchain
             </Typography>
           </Box>
-          <Grid container spacing={4}>
-            <Grid item xs={4} md={3}>
-              <Box className={classes.iconBox}>
-                <ThreeArrowsCapital className={classes.icon}/>
-              </Box>
-            </Grid>
-            <Grid item xs={4} md={3}>
-              <Box className={classes.iconBox}>
-                <DeFianceCapital className={classes.icon}/>
-              </Box>
-            </Grid>
-            <Grid item xs={4} md={3}>
-              <Box className={classes.iconBox}>
-                <NGC className={classes.icon}/>
-              </Box>
-            </Grid>
-            <Grid item xs={4} md={3}>
-              <Box className={classes.iconBox}>
-                <NEO className={classes.icon}/>
-              </Box>
-            </Grid>
-            <Grid item xs={4} md={3}>
-              <Box className={classes.iconBox}>
-                <DeFiCapital className={classes.icon}/>
-              </Box>
-            </Grid>
-            <Grid item xs={4} md={3}>
-              <Box className={classes.iconBox}>
-                <PolyNetwork className={classes.icon}/>
-              </Box>
-            </Grid>
-            <Grid item xs={4} md={3}>
-              <Box className={classes.iconBox}>
-                <Zilliqa className={classes.icon}/>
-              </Box>
-            </Grid>
-            <Grid item xs={4} md={3}>
-              <Box className={classes.iconBox}>
-                <DACM className={classes.icon}/>
-              </Box>
-            </Grid>
-            <Grid item xs={4} md={3}>
-              <Box className={classes.iconBox}>
-                <BOLT className={classes.icon}/>
-              </Box>
-            </Grid>
-            <Grid item xs={4} md={3}>
-              <Box className={classes.iconBox}>
-                <DUSK className={classes.icon}/>
-              </Box>
-            </Grid>
-            <Grid item xs={4} md={3}>
-              <Box className={classes.iconBox}>
-                <HuobiPool className={classes.icon}/>
-              </Box>
-            </Grid>
-            <Grid item xs={4} md={3}>
-              <Box className={classes.iconBox}>
-                <StakeWithUs className={classes.icon}/>
-              </Box>
-            </Grid>
-            <Grid item xs={4} md={4} />
-            <Grid item xs={4}>
-              <Box className={classes.iconBox}>
-                <O3Labs className={classes.icon}/>
-              </Box>
-            </Grid>
+          <Grid container spacing={4} justifyContent="center">
+            {PartnerIcons.map((icon) => (
+              <Grid item xs={4} md={3} key={icon.alt}>
+                <Box className={classes.iconBox}>
+                  <Image src={icon.src} alt={icon.alt} layout="fill" objectFit="contain" />
+                </Box>
+              </Grid>
+            ))}
           </Grid>
         </Box>
       </Container>
@@ -121,10 +118,15 @@ const useStyles = makeStyles((theme: Theme) => ({
   iconBox: {
     display: "flex",
     alignItems: "center",
+    position: "relative",
     width: "100%",
-    height: "100%",
+    height: "6.25rem",
     marginBottom: theme.spacing(3),
+    [theme.breakpoints.down("sm")]: {
+      height: "3.125rem",
+    },
     [theme.breakpoints.only("xs")]: {
+      height: "1.875rem",
       marginBottom: 0,
     },
   },

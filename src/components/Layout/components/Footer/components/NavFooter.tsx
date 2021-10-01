@@ -10,61 +10,6 @@ const NavFooter: React.FC = () => {
 
   const navLinks = [
     {
-      section: "Products",
-      links: [
-        {
-          title: "Demex",
-          url: Paths.demex,
-        },
-        {
-          title: "Zilswap",
-          url: Paths.zilswap,
-        },
-        {
-          title: "Carbon",
-          url: Paths.carbon,
-        },
-      ],
-    },
-    {
-      section: "Developers",
-      links: [
-        {
-          title: "Switcheo Docs",
-          url: "/",
-        },
-        {
-          title: "Demex Docs",
-          url: Paths.demexDocs,
-        },
-        {
-          title: "Zilswap Docs",
-          url: Paths.zilswapDocs,
-        },
-        {
-          title: "Carbon Docs",
-          url: "/",
-        },
-        {
-          title: "Media Guide",
-          url: "/",
-        },
-      ],
-    },
-    {
-      section: "Learn",
-      links: [
-        {
-          title: "Guides",
-          url: "/",
-        },
-        {
-          title: "Terminologies",
-          url: "/",
-        },
-      ],
-    },
-    {
       section: "Company",
       links: [
         {
@@ -79,30 +24,56 @@ const NavFooter: React.FC = () => {
           title: "Partners",
           url: "/",
         },
+      ],
+    },
+    {
+      section: "Innovations",
+      links: [
         {
-          title: "Enterprise",
-          url: "/",
+          title: "Carbon",
+          url: Paths.carbon,
+        },
+        {
+          title: "Demex",
+          url: Paths.demex,
+        },
+        {
+          title: "Zilswap",
+          url: Paths.zilswap,
         },
       ],
     },
     {
-      section: "Support",
+      section: "Developers",
       links: [
         {
-          title: "Contact",
-          url: "/",
+          title: "Switcheo Development Fund",
+          url: Paths.devFund,
         },
         {
-          title: "Cookie Policy",
-          url: "/",
+          title: "Carbon Developer Documentation",
+          url: Paths.carbonDocs,
         },
         {
-          title: "Legal & Privacy",
-          url: "/",
+          title: "Github",
+          url: Paths.github,
+        },
+      ],
+    },
+    {
+      section: "Resources",
+      links: [
+        {
+          title: "Carbon Guide",
+          url: Paths.carbonGuide,
         },
         {
-          title: "Sitemap",
-          url: "/",
+          title: "Demex Guide",
+          url: Paths.demexGuide,
+        },
+        {
+          title: "Zilswap Guide",
+          url: Paths.zilswapGuide,
         },
       ],
     },
@@ -111,7 +82,7 @@ const NavFooter: React.FC = () => {
   return (
     <Box className={classes.root}>
       <Hidden smDown>
-        <Box marginLeft={5} marginTop={1} width="60%">
+        <Box marginLeft={3} marginTop={1} width="60%">
           <Link href="/" passHref>
             <Box>
               <SwitcheoBrand className={classes.img} />
@@ -119,9 +90,9 @@ const NavFooter: React.FC = () => {
           </Link>
         </Box>
       </Hidden>
-      <Grid container spacing={2} justifyContent="flex-end">
+      <Grid container spacing={4}>
         {navLinks.map((section) => (
-          <Grid key={section.section} item xs={6} md={4}>
+          <Grid key={section.section} item xs={6} md={3}>
             <Box className={classes.sectionTitle}>
               {section.section}
             </Box>
@@ -143,7 +114,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   root: {
     display: "flex",
     justifyContent: "space-between",
-    padding: theme.spacing(24, 0, 10, 0),
+    padding: theme.spacing(15, 0, 10, 0),
     color: theme.palette.common.white,
     [theme.breakpoints.down("sm")]: {
       padding: theme.spacing(10, 0, 10, 10),

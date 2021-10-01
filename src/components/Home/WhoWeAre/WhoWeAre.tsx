@@ -29,7 +29,7 @@ const WhoWeAre: React.FC<Props> = (props: Props) => {
               </Typography>
             </Box>
             <Box className={classes.description}>
-              <Typography variant="body1" color="textSecondary" align="inherit">
+              <Typography variant="body1" color="textSecondary" align="left">
                 As pioneers in the DeFi realm,
                 Switcheo Labs has led the pack with multiple world-firsts.
                 Come experience the magic we have helped to create. 
@@ -121,10 +121,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   description: {
     maxWidth: "60%",
-    textAlign: "right",
+    paddingLeft: theme.spacing(4),
     [theme.breakpoints.down("sm")]: {
-      textAlign: "left",
       maxWidth: "100%",
+      paddingLeft: 0,
       marginTop: theme.spacing(1),
     },
     [theme.breakpoints.only("xs")]: {

@@ -12,6 +12,7 @@ export default class MyDocument extends Document {
         <Head>
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link rel="stylesheet" href="/fonts/fonts.css" />
+          <link rel="icon" href="/favicon/favicon.ico" />
         </Head>
         <body>
           <Main />

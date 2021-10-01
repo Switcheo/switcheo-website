@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import CaretDown from "src/assets/CaretDown.svg";
 import SwitcheoBrand from "src/assets/SwitcheoBrand.svg";
 import MenuIcon from "src/assets/MenuIcon.svg";
-import { Demex, Carbon, SwitcheoDevFund, Zilswap } from "src/assets/header";
+import { Demex, Carbon, SwitcheoDevFund, Zilswap, Blog, InThePress, BrandAssets, Github } from "src/assets/header";
 import clsx from "clsx";
 import { HeaderTabContent } from "src/utils/types";
 import { HeaderMenu, MobileMenu } from "./components";
@@ -27,8 +27,7 @@ const Header: React.FC = () => {
   const headerTabs: HeaderTabContent[] = [
     {
       tabTitle: "Ecosystem",
-      sectionTitle: "SwitcheoLabs Ecosystem Suite Of Innovations",
-      button: "This button is fake",
+      sectionTitle: "Switcheo Labs Ecosystem Suite Of Innovations",
       links: [
         {
           title: "Demex",
@@ -63,33 +62,35 @@ const Header: React.FC = () => {
     {
       tabTitle: "Newsroom",
       sectionTitle: "News & Insights About Our Innovations",
-      button: "This button is fake",
       links: [
         {
           title: "Blog",
           description: "Explore cutting-edge insights and product updates from our team",
+          icon: <Blog />,
           url: Paths.blog,
         },
         {
           title: "In The Press",
           description: "Read about Switcheo’s innovations on your favourite publications",
+          icon: <InThePress />,
           url: "/",
         },
         {
           title: "Brand Assets",
           description: "For partners & press: Download official brand assets for use",
+          icon: <BrandAssets />,
           url: "/",
         },
       ],
     },
     {
       tabTitle: "Developers",
-      sectionTitle: "SwitcheoLabs Ecosystem Suite Of Innovations",
-      button: "This button is fake",
+      sectionTitle: "Switcheo Labs Ecosystem Suite Of Innovations",
       links: [
         {
           title: "Github",
           description: "Funding new innovations building the future of blockchain applications",
+          icon: <Github />,
           url: Paths.github,
         },
         {

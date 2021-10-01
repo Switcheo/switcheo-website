@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   optionText: {
     marginTop: theme.spacing(3),
-    maxWidth: "90%",
+    maxWidth: "85%",
     marginBottom: theme.spacing(4),
     [theme.breakpoints.down("sm")]: {
       maxWidth: "75%",

@@ -1,4 +1,4 @@
-import { Box, Collapse, Container, Grid, Theme, Typography } from "@material-ui/core";
+import { Box, Collapse, Container, Grid, Theme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import { SwthButton } from "src/components/Common";
@@ -23,10 +23,8 @@ const HeaderMenu: React.FC<Props> = (props: Props) => {
         {!!selectedTab?.links && (
           <>
             <Box className={classes.title}>
-              <Box marginBottom={3}>
-                <Typography variant="h4" color="primary">
-                  {selectedTab.sectionTitle}
-                </Typography>
+              <Box className={classes.titleText}>
+                {selectedTab.sectionTitle}
               </Box>
               {selectedTab?.button && (
                 <SwthButton className={classes.button} href={selectedTab.url ?? "/"}>
@@ -64,6 +62,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     alignItems: "flex-start",
     maxWidth: "25%",
     marginRight: theme.spacing(10),
+  },
+  titleText: {
+    marginBottom: theme.spacing(3),
+    fontFamily: "Roobert-Medium",
+    fontSize: "2.375rem",
+    lineHeight: "120%",
+    letterSpacing: "-0.04em",
   },
   button: {
     fontSize: "1.125rem",

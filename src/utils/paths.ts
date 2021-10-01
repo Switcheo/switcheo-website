@@ -1,15 +1,19 @@
 export const Paths = {
-  carbon: "https://staging.carbon.network/",
+  carbon: "https://carbon.network/",
+  carbonGuide: "https://guide.carbon.network",
+  carbonDocs: "https://docs.carbon.network",
 
   demex: "https://dem.exchange/",
-  demexDocs: "https://docs.dem.exchange",
+  demexGuide: "https://guide.dem.exchange",
 
   zilswap: "https://zilswap.io/",
-  zilswapDocs: "https://docs.zilswap.org",
+  zilswapGuide: "https://docs.zilswap.io",
 
   devFund: "https://forum.switcheo.foundation/topic/42/applying-for-project-grants-under-the-switcheo-development-fund",
   blog: "https://blog.switcheo.network/",
   github: "https://github.com/Switcheo",
+
+  jobs: "https://angel.co/company/switcheo-labs/jobs",
 
   social: {
     discord: "https://discord.gg/SPh62Hf",

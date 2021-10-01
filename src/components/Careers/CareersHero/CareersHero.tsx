@@ -1,6 +1,5 @@
 import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
 import React from "react";
-import { SwthButton } from "src/components/Common";
 
 const CareersHero: React.FC = () => {
   const classes = useStyles();
@@ -12,11 +11,6 @@ const CareersHero: React.FC = () => {
           <Typography variant="h1" color="primary">
             Let’s build the trustless solutions of the future, together
           </Typography>
-        </Box>
-        <Box>
-          <SwthButton href="/">
-            Insert Button Here
-          </SwthButton>
         </Box>
       </Container>
     </Box>

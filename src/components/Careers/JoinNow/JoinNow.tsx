@@ -1,7 +1,9 @@
 import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
+import Link from "next/link";
 import React from "react";
 import { Team6 } from "src/assets/images";
-import { Photo, SwthButton } from "src/components/Common";
+import { Photo } from "src/components/Common";
+import SwitcheoArrow from "src/assets/SwitcheoArrow.svg";
 
 const JoinNow: React.FC = () => {
   const classes = useStyles();
@@ -15,14 +17,14 @@ const JoinNow: React.FC = () => {
               Believe in a life without limits?
             </Typography>
           </Box>
-          <Box className={classes.description}>
-            <Typography variant="subtitle1" color="secondary">  
-              Join our team of changemakers today. 
-            </Typography>
-          </Box>
-          <SwthButton href="/">
-            Insert button here
-          </SwthButton>
+          <Link href="#openroles" passHref>
+            <Box className={classes.description}>
+              <Typography variant="subtitle1" color="secondary">  
+                Join our team of changemakers today. 
+              </Typography>
+              <SwitcheoArrow className={classes.arrow}/>
+            </Box>
+          </Link>
         </Box>
         <Photo src={Team6} alt="Team6" className={classes.photo} />
       </Container>
@@ -62,6 +64,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       marginTop: theme.spacing(12),
     },
     [theme.breakpoints.only("xs")]: {
+      maxWidth: "100%",
       marginTop: theme.spacing(5),
     },
   },
@@ -80,13 +83,27 @@ const useStyles = makeStyles((theme: Theme) => ({
   title: {
     marginBottom: theme.spacing(3),
     [theme.breakpoints.only("xs")]: {
+      maxWidth: "75%",
       marginBottom: theme.spacing(1),
     },
   },
   description: {
+    display: "flex",
+    alignItems: "center",
     marginBottom: theme.spacing(5),
+    "&:hover": {
+      cursor: "pointer",
+    },
     [theme.breakpoints.only("xs")]: {
       marginBottom: theme.spacing(2),
+    },
+  },
+  arrow: {
+    height: "1.5rem",
+    marginLeft: theme.spacing(2),
+    [theme.breakpoints.only("xs")]: {
+      marginLeft: theme.spacing(1),
+      height: "1rem",
     },
   },
 }));
