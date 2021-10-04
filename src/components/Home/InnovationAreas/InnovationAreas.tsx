@@ -23,7 +23,7 @@ const InnovationAreas: React.FC = () => {
       title: "Innovative dApps",
       icon: InnovativeDAppsIcon,
       background: InnovativeDAppsBg,
-      description: "We push the boundaries of DeFi by making the impossible a reality. If you have thought of something useful in DeFi that doesn't exist yet, we are probably already building it.",
+      description: "We push the boundaries of DeFi by making the impossible a reality. If you have thought of something useful in DeFi that doesn't exist yet, it's probably already in the works at Switcheo Labs.",
       products: [{
         icon: <DemexIcon />,
         name: "Demex",
