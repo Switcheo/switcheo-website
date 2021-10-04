@@ -44,7 +44,7 @@ const WhatOthersSay: React.FC<Props> = (props: Props) => {
         <Box className={classes.tweetItems}>
           <Box className={classes.tweetDetails}>
             <Box display="flex">
-              {tweets.map((tweet, index) => (
+              {tweets.map((tweet, index) => tweet.userProfilePictureUrl && (
                 <Box
                   key={index}
                   className={clsx(
@@ -54,9 +54,11 @@ const WhatOthersSay: React.FC<Props> = (props: Props) => {
                   )}
                   onClick={() => onChangeIndex(index)}
                 >
-                  <Box className={classes.tweetIcon}>
-                    <Image src={tweet.userProfilePictureUrl} alt="TwitterIcon" layout="fill" />
-                  </Box>
+                  {tweet.userProfilePictureUrl && (
+                    <Box className={classes.tweetIcon}>
+                      <Image src={tweet.userProfilePictureUrl} alt="TwitterIcon" layout="fill" />
+                    </Box>
+                  )}
                 </Box>
               ))}
             </Box>

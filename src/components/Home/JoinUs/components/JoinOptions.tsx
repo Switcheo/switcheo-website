@@ -4,7 +4,7 @@ import React from "react";
 
 import Careers from "src/assets/Careers.svg";
 import DevFund from "src/assets/DevFund.svg";
-import SWTHToken from "src/assets/SWTHToken.svg";
+import Community from "src/assets/Community.svg";
 import { SwthButton } from "src/components/Common";
 import { Paths } from "src/utils/paths";
 
@@ -38,14 +38,14 @@ const JoinOptions: React.FC = () => {
         </SwthButton>
       </Grid>
       <Grid item xs={12} md={4}>
-        <SWTHToken className={classes.icon}/>
+        <Community className={classes.icon}/>
         <Box className={classes.optionText}>
           <Typography variant="h4" color="textPrimary">
-            Purchasing SWTH Token
+            Join the community
           </Typography>
         </Box>
         <Divider />
-        <SwthButton href="/">
+        <SwthButton href={Paths.social.discord}>
           Learn More
         </SwthButton>
       </Grid>
@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   optionText: {
     marginTop: theme.spacing(3),
-    maxWidth: "85%",
+    maxWidth: "83%",
     marginBottom: theme.spacing(4),
     [theme.breakpoints.down("sm")]: {
       maxWidth: "75%",

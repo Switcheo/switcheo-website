@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       marginBottom: theme.spacing(7),
     },
     [theme.breakpoints.only("xs")]: {
-      width: "100%",
+      width: "80%",
       marginBottom: theme.spacing(2),
     },
     zIndex: 100,

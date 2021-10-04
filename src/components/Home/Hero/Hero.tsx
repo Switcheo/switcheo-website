@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
         <Box className={classes.description}>
           <Typography variant="subtitle1" align="center" color="textSecondary">
             Switcheo Labs is a creative and experimental think tank
-            that bootstraps and nurtures ecosystems moving towards a new world
+            that nurtures ecosystems which forms the foundations of a new decentralized world
             that thrives even without trust.
           </Typography>
         </Box>
@@ -58,10 +58,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   description: {
-    maxWidth: "46rem",
+    maxWidth: "48rem",
     marginBottom: theme.spacing(3),
     [theme.breakpoints.only("sm")]: {
-      maxWidth: "35rem",
+      maxWidth: "36rem",
     },
     [theme.breakpoints.only("xs")]: {
       maxWidth: "20rem",

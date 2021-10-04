@@ -12,7 +12,7 @@ const InnovationAreas: React.FC = () => {
       title: "Decentralized Infrastructures",
       icon: DecentralizedInfrastructuresIcon,
       background: DecentralizedInfrastructuresBg,
-      description: "We push the boundaries of DeFi by making the impossible a reality. If you have thought of something useful in DeFi that doesn’t exist yet, we are probably already building it.",
+      description: "We lay the groundwork for decentralized, censorship-resistant ecosystems to thrive on. We incubate networks and partnerships that empower the new movers and shakers of the future.",
       products: [{
         icon: <CarbonIcon />,
         name: "Carbon Protocol",
@@ -23,7 +23,7 @@ const InnovationAreas: React.FC = () => {
       title: "Innovative dApps",
       icon: InnovativeDAppsIcon,
       background: InnovativeDAppsBg,
-      description: "We lay the groundwork for decentralized, censorship-resistant ecosystems to thrive on. We incubate networks and partnerships that empower the new movers and shakers of the future.",
+      description: "We push the boundaries of DeFi by making the impossible a reality. If you have thought of something useful in DeFi that doesn't exist yet, we are probably already building it.",
       products: [{
         icon: <DemexIcon />,
         name: "Demex",
@@ -38,7 +38,7 @@ const InnovationAreas: React.FC = () => {
       title: "White Spaces",
       icon: WhiteSpacesIcon,
       background: WhiteSpacesBg,
-      description: "We are unafraid to dive headfirst into new realms, do the unexpected and lead the charge to uncover new ground and new spaces. We don’t believe in competition because we create new demand.",
+      description: "We are unafraid to dive headfirst into new realms, do the unexpected and lead the charge to uncover new ground and new spaces. We don't believe in competition, because we create new demand.",
       products: [{
         icon: <SwitcheoDevFundIcon />,
         name: "Switcheo Dev Fund",
