@@ -7,20 +7,17 @@ import { Arrow } from "src/assets/animation";
 const HeroAnimation: React.FC = () => {
   const classes = useStyles();
   const [scrollY, setScrollY] = useState(0);
-  const [scrollStart, setScrollStart] = useState(-1);
   const [windowWidth, setWindowWidth] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
-  const [triggerAnimation, setTriggerAnimation] = useState(false);
-  const [prevScroll, setPrevScroll] = useState(0);
 
   const [sectionRef, sectionView] = useInView({
     threshold: 0.4,
+    triggerOnce: true,
   });
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
 
-    setPrevScroll(window.scrollY);
     setWindowWidth(window.innerWidth);
     setWindowHeight(window.innerHeight);
     window.addEventListener("scroll", onScroll);
@@ -30,21 +27,10 @@ const HeroAnimation: React.FC = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (sectionView && scrollStart < 0 && (scrollY === 0 || scrollY > prevScroll)) {
-      setTriggerAnimation(true);
-      setScrollStart(scrollY);
-    }
-    if (!sectionView && !triggerAnimation) {
-      setPrevScroll(scrollY);
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sectionView, scrollY]);
-
   const getTransition = (delay: number) => makeStyles(() => {
     return {
       transition: {
-        transform: `rotate(max(0deg, min(${scrollY - scrollStart - (windowWidth > windowHeight ? delay * 5 : delay)}deg, 180deg)))`,
+        transform: `rotate(max(0deg, min(${scrollY - (windowWidth > windowHeight ? delay * 20 : delay)}deg, 180deg)))`,
       },
     };
   });
@@ -52,12 +38,12 @@ const HeroAnimation: React.FC = () => {
   const arrows = [];
   for (let i = 0; i < 27; i++) {
     arrows.push(
-      <Arrow key={i} className={clsx(classes.arrow, {
-        [getTransition(i)().transition]: triggerAnimation,
-        [classes.topRow]: i < 8,
-      })} />);
+      <Arrow key={i} className={clsx(classes.arrow, 
+        getTransition(i)().transition, 
+        { [classes.topRow]: i < 8 },
+      )} />);
   }
-  arrows.splice(17, 0, <Arrow key={1} className={clsx(classes.arrow, { [classes.middleArrow]: triggerAnimation })} />);
+  arrows.splice(17, 0, <Arrow key={1} className={clsx(classes.arrow, { [classes.middleArrow]: sectionView })} />);
 
   return (
     <>
@@ -99,10 +85,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   middleArrow: {
     "& path": {
-      transition: "fill ease-in 0.2s",
+      transition: "fill ease-in 0.3s",
       fill: theme.palette.primary.main,
     },
-    transition: "transform 0.2s ease-in 0.3s",
+    transition: "transform 0.4s ease-in 0.4s",
     transform: "rotate(180deg)",
   },
 }));

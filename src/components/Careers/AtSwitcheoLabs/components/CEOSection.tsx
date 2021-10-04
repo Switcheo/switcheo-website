@@ -1,5 +1,6 @@
 import { Box, Container, makeStyles, Theme } from "@material-ui/core";
 import React from "react";
+import { Ivan } from "src/assets/images";
 import { Photo } from "src/components/Common";
 
 const CEOSection: React.FC = () => {
@@ -9,7 +10,7 @@ const CEOSection: React.FC = () => {
     <Box component="section" className={classes.root}>
       <Container className={classes.contentContainer}>
         <Box className={classes.content}>
-          <Photo src="/assets/ivan.png" alt="Team3" className={classes.portrait} />
+          <Photo src={Ivan} alt="Ivan" className={classes.portrait} />
           <Box className={classes.textSection}>
             <Box className={classes.quote}>
               “We believe in putting power back into the hands of the individual, but we can’t do it alone. Change only happens when we collaborate.”
