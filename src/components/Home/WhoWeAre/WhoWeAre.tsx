@@ -2,6 +2,7 @@ import { Box, Container, Hidden, makeStyles, Theme, Typography } from "@material
 import React from "react";
 import { Team1, Team2 } from "src/assets/images";
 import { Photo, SwthButton } from "src/components/Common";
+import { Paths } from "src/utils/paths";
 import { Tweet } from "src/utils/types";
 import { TweetCard } from "./components";
 
@@ -42,7 +43,7 @@ const WhoWeAre: React.FC<Props> = (props: Props) => {
             <Photo src={Team1} alt="Team1" className={classes.landscape} />
             <Hidden mdUp>
               <Box className={classes.button}>
-                <SwthButton href="/careers">
+                <SwthButton href={Paths.careers}>
                   Meet our Team
                 </SwthButton>
               </Box>
@@ -55,7 +56,7 @@ const WhoWeAre: React.FC<Props> = (props: Props) => {
             <Box display="flex" flexDirection="column" marginTop={30} marginLeft={10} width="40%">
               <Photo src={Team2} alt="Team2" className={classes.portrait} />
               <Box marginTop={-5}>
-                <SwthButton href="/careers">
+                <SwthButton href={Paths.careers}>
                   Meet our Team
                 </SwthButton>
               </Box>

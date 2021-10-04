@@ -4,6 +4,7 @@ import React from "react";
 import SocialLinkBox from "./SocialLinkBox";
 import SwitcheoBrand from "src/assets/SwitcheoBrand.svg";
 import { AnchorLink } from "src/components/Common";
+import { Paths } from "src/utils/paths";
 
 const HomeFooter: React.FC = () => {
   const classes = useStyles();
@@ -12,25 +13,15 @@ const HomeFooter: React.FC = () => {
     <Box className={classes.root}>
       <Hidden smDown>
         <Box className={classes.textSection}>
-          <AnchorLink href="/">
+          <AnchorLink href={Paths.home}>
             <Box className={classes.text}>
               Switcheo Labs
-            </Box>
-          </AnchorLink>
-          <AnchorLink href="/">
-            <Box className={classes.text}>
-              Privacy Policy
-            </Box>
-          </AnchorLink>
-          <AnchorLink href="/">
-            <Box className={classes.text}>
-              Terms & Conditions
             </Box>
           </AnchorLink>
         </Box>
       </Hidden>
       <Hidden mdUp>
-        <AnchorLink href="/">
+        <AnchorLink href={Paths.home}>
           <Box>
             <SwitcheoBrand className={classes.img} />
           </Box>

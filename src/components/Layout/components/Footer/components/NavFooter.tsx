@@ -13,16 +13,8 @@ const NavFooter: React.FC = () => {
       section: "Company",
       links: [
         {
-          title: "About",
-          url: "/",
-        },
-        {
-          title: "Our Ecosystem",
-          url: "/",
-        },
-        {
-          title: "Partners",
-          url: "/",
+          title: "Careers",
+          url: Paths.careers,
         },
       ],
     },
@@ -83,7 +75,7 @@ const NavFooter: React.FC = () => {
     <Box className={classes.root}>
       <Hidden smDown>
         <Box marginLeft={3} marginTop={1} width="60%">
-          <AnchorLink href="/">
+          <AnchorLink href={Paths.home}>
             <Box>
               <SwitcheoBrand className={classes.img} />
             </Box>

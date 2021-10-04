@@ -21,7 +21,7 @@ const JoinOptions: React.FC = () => {
           </Typography>
         </Box>
         <Divider />
-        <SwthButton href="/careers">
+        <SwthButton href={Paths.careers}>
           Learn More
         </SwthButton>
       </Grid>

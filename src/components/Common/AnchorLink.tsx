@@ -4,10 +4,15 @@ import React from "react";
 
 const AnchorLink: React.FC<LinkProps> = (props: LinkProps) => {
   const { href, children, ...rest } = props;
+  const isExternal = href?.startsWith("https://");
 
   return (
     <Link href={href as string} passHref>
-      <MuiLink underline="none" {...rest}>
+      <MuiLink
+        underline="none"
+        target={isExternal ? "_blank" : undefined}
+        {...rest}
+      >
         {children}
       </MuiLink>
     </Link>

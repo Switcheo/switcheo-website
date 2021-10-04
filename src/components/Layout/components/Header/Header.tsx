@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import CaretDown from "src/assets/CaretDown.svg";
 import SwitcheoBrand from "src/assets/SwitcheoBrand.svg";
 import MenuIcon from "src/assets/MenuIcon.svg";
-import { Demex, Carbon, SwitcheoDevFund, Zilswap, Blog, InThePress, BrandAssets, Github } from "src/assets/header";
+import { Demex, Carbon, SwitcheoDevFund, Zilswap, Blog, Github } from "src/assets/header";
 import clsx from "clsx";
 import { HeaderTabContent } from "src/utils/types";
 import { HeaderMenu, MobileMenu } from "./components";
@@ -51,7 +51,7 @@ const Header: React.FC = () => {
     },
     {
       tabTitle: "Company",
-      url: "/careers",
+      url: Paths.careers,
     },
     {
       tabTitle: "Newsroom",
@@ -62,18 +62,6 @@ const Header: React.FC = () => {
           description: "Explore cutting-edge insights and product updates from our team",
           icon: <Blog />,
           url: Paths.blog,
-        },
-        {
-          title: "In The Press",
-          description: "Read about Switcheo’s innovations on your favourite publications",
-          icon: <InThePress />,
-          url: "/",
-        },
-        {
-          title: "Brand Assets",
-          description: "For partners & press: Download official brand assets for use",
-          icon: <BrandAssets />,
-          url: "/",
         },
       ],
     },
@@ -95,16 +83,12 @@ const Header: React.FC = () => {
         },
       ],
     },
-    {
-      tabTitle: "Contact",
-      url: "/",
-    },
   ];
 
   return (
     <Box className={classes.root}>
       <Container maxWidth="lg" className={classes.header}>
-        <AnchorLink href="/">
+        <AnchorLink href={Paths.home}>
           <Box onClick={() => setSelectIndex(-1)}>
             <SwitcheoBrand className={classes.brand} />
           </Box>
@@ -166,7 +150,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   header: {
     padding: theme.spacing(7, 15, 1),
     [theme.breakpoints.only("md")]: {
-      padding: theme.spacing(7, 4, 0),
+      padding: theme.spacing(7, 8, 1),
     },
     [theme.breakpoints.only("sm")]: {
       padding: theme.spacing(7, 8),

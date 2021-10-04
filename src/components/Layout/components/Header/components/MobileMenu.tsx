@@ -7,6 +7,7 @@ import CloseIcon from "src/assets/CloseIcon.svg";
 import { HeaderTabContent } from "src/utils/types";
 import clsx from "clsx";
 import { AnchorLink } from "src/components/Common";
+import { Paths } from "src/utils/paths";
 
 interface Props {
   tabs: HeaderTabContent[]
@@ -41,7 +42,7 @@ const MobileMenu: React.FC<Props> = (props: Props) => {
       }}
     >
       <Box className={classes.mobileHeader}>
-        <AnchorLink href="/">
+        <AnchorLink href={Paths.home}>
           <Box onClick={closeMenu}>
             <SwitcheoBrand className={classes.mobileBrand} />
           </Box>
