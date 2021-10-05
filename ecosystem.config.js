@@ -16,6 +16,7 @@ module.exports = {
     ],
     env_production: {
       "PORT": 5000,
+      "REACT_APP_GA_MEASUREMENT_ID": "UA-119697219-1",
       "ENV": "production",
       "NODE_ENV": "production",
     },
