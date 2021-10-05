@@ -1,9 +1,9 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import React from "react";
+import { Helmet } from "react-helmet";
 
 const GA_MEASUREMENT_ID = process.env.REACT_APP_GA_MEASUREMENT_ID;
 
-const GoogleAnalytics: React.FC<{}> = () => {
+const GoogleAnalytics: React.FC = () => {
   if (!GA_MEASUREMENT_ID) return null;
   return (
     <Helmet>

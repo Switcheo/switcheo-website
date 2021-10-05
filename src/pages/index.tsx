@@ -1,22 +1,21 @@
 import { createClient } from "contentful";
 import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from "next";
-import absoluteUrl from "next-absolute-url";
 import { NextSeo } from "next-seo";
 import { Blog, DeveloperUpdates, Hero, InnovationAreas, JoinUs, OurVision, Partners, Stats, WhoWeAre } from "src/components/Home";
 
-const Home: NextPage = ({ origin, blogEntries, tweets }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Home: NextPage = ({ blogEntries, tweets }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <>
       <NextSeo
         title="Switcheo Labs: Blockchain Innovation & Infrastructure"
         description="Switcheo Labs is a creative and experimental think tank that bootstraps & nurtures ecosystems moving towards a new world that thrives even without trust."
-        canonical={origin}
+        canonical="https://www.switcheo.com"
         openGraph={{
-          url: origin,
+          url: "https://www.switcheo.com",
           title: "Switcheo Labs: Blockchain Innovation & Infrastructure",
           description: "Switcheo Labs is a creative and experimental think tank that bootstraps & nurtures ecosystems moving towards a new world that thrives even without trust.",
           images: [{
-            url: `${origin}/assets/switcheo-finance-without-limits.png`,
+            url: "https://www.switcheo.com/assets/switcheo-finance-without-limits.png",
           }],
         }}
       />
@@ -33,7 +32,7 @@ const Home: NextPage = ({ origin, blogEntries, tweets }: InferGetServerSideProps
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const space = process.env.CONTENTFUL_SPACE_ID;
   const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
 
@@ -60,11 +59,8 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   const blogEntries = (blogEntryResult.items.map((item) => item.fields));
   const tweets = (tweetResult.items.map((item) => item.fields));
 
-  const { origin } = absoluteUrl(req);
-
   return {
     props: {
-      origin,
       blogEntries,
       tweets,
       revalidate: process.env.CONTENTFUL_TTL ?? 15,
