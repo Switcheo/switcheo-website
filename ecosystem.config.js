@@ -1,13 +1,7 @@
 module.exports = {
   apps: [{
     name: "switcheo-website-" + process.env.PM2_NAME,
-    ...process.env.PM2_NAME === "production" && {
-      script: "build/index.js",
-    },
-    ...process.env.PM2_NAME === "staging" && {
-      script: "yarn",
-      args: "start",
-    },
+    script: "yarn",
     args: "start",
     instances: "max",
     exec_mode: "cluster",

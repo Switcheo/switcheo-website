@@ -19,8 +19,8 @@ const GoogleAnalytics: React.FC = () => {
             dataLayer.push(arguments);
           }
 
-          gtag('js', new Date());
-          gtag('config', '${GA_MEASUREMENT_ID}');
+          gtag("js", new Date());
+          gtag("config", "${GA_MEASUREMENT_ID}");
         `}
       </script>
     </Helmet>
