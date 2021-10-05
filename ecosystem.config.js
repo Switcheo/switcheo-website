@@ -1,13 +1,7 @@
 module.exports = {
   apps: [{
     name: "switcheo-website-" + process.env.PM2_NAME,
-    ...process.env.PM2_NAME === "production" && {
-      script: "build/index.js",
-    },
-    ...process.env.PM2_NAME === "staging" && {
-      script: "yarn",
-      args: "start",
-    },
+    script: "yarn",
     args: "start",
     instances: "max",
     exec_mode: "cluster",
@@ -16,6 +10,7 @@ module.exports = {
     ],
     env_production: {
       "PORT": 5000,
+      "REACT_APP_GA_MEASUREMENT_ID": "UA-119697219-1",
       "ENV": "production",
       "NODE_ENV": "production",
     },
