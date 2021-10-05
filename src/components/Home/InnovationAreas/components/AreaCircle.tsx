@@ -20,10 +20,8 @@ const AreaCircle: React.FC<Props> = (props: Props) => {
       <Image src={selectedArea.background} alt={selectedArea.title} />
       <Box className={classes.gradient} />
       <Box className={classes.content}>
-        <Box marginBottom={3}>
-          <Box className={classes.description}>
-            {selectedArea.description}
-          </Box>
+        <Box className={classes.description}>
+          {selectedArea.description}
         </Box>
         {selectedArea.products.map((product) => <ProductLabel key={product.name} product={product} />)}
       </Box>
@@ -64,8 +62,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontFamily: "Roobert",
     fontSize: "1.8125rem",
     lineHeight: "160%",
+    marginBottom: theme.spacing(3),
     [theme.breakpoints.only("md")]: {
       lineHeight: "120%",
+      marginBottom: theme.spacing(1),
     },
   },
 }));

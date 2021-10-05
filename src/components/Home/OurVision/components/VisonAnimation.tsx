@@ -1,24 +1,24 @@
 import { Box, makeStyles, Theme } from "@material-ui/core";
 import clsx from "clsx";
 import React from "react";
+import { useInView } from "react-intersection-observer";
 import { ArrowGreen, Circle, GlobeBase, Glow } from "src/assets/animation";
 
-interface Props {
-  sectionView: boolean
-}
-
-const VisionAnimation: React.FC<Props> = (props: Props) => {
-  const { sectionView } = props;
+const VisionAnimation: React.FC = () => {
   const classes = useStyles();
+  const [sectionRef, sectionView] = useInView({
+    threshold: 0.8,
+    triggerOnce: true,
+  });
 
   return (
-    <Box className={classes.root}>
+    <div ref={sectionRef} className={classes.root}>
       <Glow className={clsx(classes.glow, { open: sectionView })} />
       <Circle className={classes.circle} />
       <Box className={clsx(classes.gradient, { open: sectionView })} />
       <GlobeBase className={classes.base} />
       <ArrowGreen className={clsx(classes.arrow, { open: sectionView })} />
-    </Box>
+    </div>
   );
 };
 

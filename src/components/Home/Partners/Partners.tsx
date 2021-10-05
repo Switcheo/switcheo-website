@@ -104,8 +104,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   title: {
     maxWidth: "69%",
     marginBottom: theme.spacing(15),
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("md")]: {
       maxWidth: "100%",
+    },
+    [theme.breakpoints.down("sm")]: {
       marginBottom: theme.spacing(10),
     },
     [theme.breakpoints.only("xs")]: {

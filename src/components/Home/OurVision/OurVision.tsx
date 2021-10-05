@@ -1,22 +1,15 @@
 import { Box, Container, makeStyles, Theme, Typography } from "@material-ui/core";
 import React from "react";
-import { useInView } from "react-intersection-observer";
 import { VisionAnimation } from "./components";
 
 const OurVision: React.FC = () => {
   const classes = useStyles();
 
-  const [sectionRef, sectionView] = useInView({
-    threshold: 0.8,
-    triggerOnce: true,
-  });
-
   return (
     <Box component="section" className={classes.root}>
       <Container maxWidth="lg" className={classes.contentContainer}>
-        <div ref={sectionRef}>
         <Box className={classes.content}>
-          <VisionAnimation sectionView={sectionView} />
+          <VisionAnimation />
           <Box className={classes.textSection}>
             <Typography variant="h5" color="primary" className={classes.heading}>
               Our Vision
@@ -32,7 +25,6 @@ const OurVision: React.FC = () => {
             </Typography>
           </Box>
         </Box>
-        </div>
       </Container>
     </Box>
   );

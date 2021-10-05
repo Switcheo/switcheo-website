@@ -20,7 +20,7 @@ const Stats: React.FC = () => {
             </Typography>
           </Box>
           <Grid container spacing={4}>
-            <Grid item xs={6} sm={4} md={6} >
+            <Grid item xs={6}>
               <Box className={classes.stat}>
                 <Box className={classes.statNumber}>
                   96K
@@ -30,7 +30,7 @@ const Stats: React.FC = () => {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={6} sm={4} md={6} >
+            <Grid item xs={6}>
               <Box className={classes.stat}>
                 <Box className={classes.statNumber}>
                   $130M
@@ -40,7 +40,7 @@ const Stats: React.FC = () => {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={6} sm={4} md={6} >
+            <Grid item xs={6}>
               <Box className={clsx(classes.stat, classes.rightStat)}>
                 <Box className={classes.statNumber}>
                   25+
@@ -83,6 +83,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   description: {
     maxWidth: "40%",
     marginRight: theme.spacing(15),
+    [theme.breakpoints.down("md")]: {
+      maxWidth: "45%",
+      marginRight: theme.spacing(5),
+    },
     [theme.breakpoints.down("sm")]: {
       maxWidth: "100%",
       margin: theme.spacing(0, 8, 10, 2),
@@ -115,13 +119,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     [theme.breakpoints.only("xs")]: {
       fontSize: "2.25rem",
-      marginBottom: theme.spacing(1),
+      marginBottom: theme.spacing(2),
     },
   },
   rightStat: {
-    [theme.breakpoints.only("sm")]: {
-      marginLeft: theme.spacing(4),
-    },
     [theme.breakpoints.only("xs")]: {
       marginTop: 0,
     },
