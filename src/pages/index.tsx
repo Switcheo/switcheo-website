@@ -15,7 +15,7 @@ const Home: NextPage = ({ blogEntries, tweets }: InferGetServerSidePropsType<typ
           title: "Switcheo Labs: Blockchain Innovation & Infrastructure",
           description: "Switcheo Labs is a creative and experimental think tank that bootstraps & nurtures ecosystems moving towards a new world that thrives even without trust.",
           images: [{
-            url: "https://www.switcheo.com/assets/switcheo-finance-without-limits.png",
+            url: "https://switcheo-assets.s3.ap-southeast-1.amazonaws.com/switcheo-finance-without-limits.png",
           }],
         }}
       />
