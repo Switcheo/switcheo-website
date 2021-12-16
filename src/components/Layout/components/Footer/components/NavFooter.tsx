@@ -30,7 +30,7 @@ const NavFooter: React.FC = () => {
           url: Paths.demex,
         },
         {
-          title: "Zilswap",
+          title: "ZilSwap",
           url: Paths.zilswap,
         },
       ],
@@ -64,7 +64,7 @@ const NavFooter: React.FC = () => {
           url: Paths.demexGuide,
         },
         {
-          title: "Zilswap Guide",
+          title: "ZilSwap Guide",
           url: Paths.zilswapGuide,
         },
       ],

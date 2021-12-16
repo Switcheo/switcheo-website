@@ -1,6 +1,6 @@
 import { Box, Hidden } from "@material-ui/core";
 import React from "react";
-import { CarbonIcon, DecentralizedInfrastructuresBg, DemexIcon, DecentralizedInfrastructuresIcon, InnovativeDAppsBg, InnovativeDAppsIcon, SwitcheoDevFundIcon, WhiteSpacesBg, WhiteSpacesIcon, ZilswapIcon } from "src/assets/innovation";
+import { CarbonIcon, DecentralizedInfrastructuresBg, DemexIcon, DecentralizedInfrastructuresIcon, InnovativeDAppsBg, InnovativeDAppsIcon, SwitcheoDevFundIcon, WhiteSpacesBg, WhiteSpacesIcon, ZilswapIcon, TBMIcon } from "src/assets/innovation";
 import { DesktopAreas, MobileAreas } from "./components";
 import { InnovationAreaContent } from "src/utils/types";
 import { Paths } from "src/utils/paths";
@@ -30,7 +30,7 @@ const InnovationAreas: React.FC = () => {
         url: Paths.demex,
       }, {
         icon: <ZilswapIcon />,
-        name: "Zilswap",
+        name: "ZilSwap",
         url: Paths.zilswap,
       }],
     },
@@ -43,6 +43,10 @@ const InnovationAreas: React.FC = () => {
         icon: <SwitcheoDevFundIcon />,
         name: "Switcheo Dev Fund",
         url: Paths.devFund,
+      }, {
+        icon: <TBMIcon />,
+        name: "The Bear Market",
+        url: Paths.tbm,
       }],
     },
   ];

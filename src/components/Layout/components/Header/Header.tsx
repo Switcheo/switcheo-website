@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import CaretDown from "src/assets/CaretDown.svg";
 import SwitcheoBrand from "src/assets/SwitcheoBrand.svg";
 import MenuIcon from "src/assets/MenuIcon.svg";
-import { Demex, Carbon, SwitcheoDevFund, Zilswap, Blog, Github } from "src/assets/header";
+import { Demex, Carbon, SwitcheoDevFund, Zilswap, Blog, Github, TBM } from "src/assets/header";
 import clsx from "clsx";
 import { HeaderTabContent } from "src/utils/types";
 import { HeaderMenu, MobileMenu } from "./components";
@@ -42,10 +42,16 @@ const Header: React.FC = () => {
           url: Paths.carbon,
         },
         {
-          title: "Zilswap",
+          title: "ZilSwap",
           description: "Zilliqa-based dynamic currency swap and liquidity pool solutions",
           icon: <Zilswap />,
           url: Paths.zilswap,
+        },
+        {
+          title: "The Bear Market",
+          description: "The inaugural NFT collection on ZilSwap's NFT Marketplace, ARKY",
+          icon: <TBM />,
+          url: Paths.tbm,
         },
       ],
     },
