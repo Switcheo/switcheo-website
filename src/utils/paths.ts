@@ -19,7 +19,7 @@ export const Paths = {
   jobs: "https://angel.co/company/switcheo-labs/jobs",
 
   social: {
-    twitter: "https://twitter.com/switcheonetwork",
+    twitter: "https://twitter.com/SwitcheoLabs",
     telegram: "https://t.me/switcheo",
     discord: "https://discord.gg/SPh62Hf",
     reddit: "https://www.reddit.com/r/Switcheo/",
