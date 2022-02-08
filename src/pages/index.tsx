@@ -8,12 +8,12 @@ const Home: NextPage = ({ blogEntries, tweets }: InferGetServerSidePropsType<typ
     <>
       <NextSeo
         title="Switcheo Labs: Blockchain Innovation & Infrastructure"
-        description="Switcheo Labs is a creative and experimental think tank that bootstraps & nurtures ecosystems moving towards a new world that thrives even without trust."
+        description="Switcheo Labs is a creative and experimental think tank that nurtures ecosystems which form the foundations of a new decentralized world."
         canonical="https://www.switcheo.com"
         openGraph={{
           url: "https://www.switcheo.com",
           title: "Switcheo Labs: Blockchain Innovation & Infrastructure",
-          description: "Switcheo Labs is a creative and experimental think tank that bootstraps & nurtures ecosystems moving towards a new world that thrives even without trust.",
+          description: "Switcheo Labs is a creative and experimental think tank that nurtures ecosystems which form the foundations of a new decentralized world.",
           images: [{
             url: "https://switcheo-assets.s3.ap-southeast-1.amazonaws.com/switcheo-finance-without-limits.png",
           }],
