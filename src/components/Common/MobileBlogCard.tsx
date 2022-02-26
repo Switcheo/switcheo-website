@@ -24,6 +24,7 @@ const MobileBlogCard: React.FC<Props> = (props: Props) => {
   };
 
   const selectedPost = useMemo(() => posts[selectIndex], [posts, selectIndex]);
+  if (!selectedPost) return null;
 
   return (
     <Box className={clsx(classes.root, className)}>
