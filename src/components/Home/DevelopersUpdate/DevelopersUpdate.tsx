@@ -12,7 +12,7 @@ const DevelopersUpdate: React.FC<Props> = (props: Props) => {
   const { posts } = props;
   const classes = useStyles();
 
-  const updatePosts = useMemo(() => posts.filter((post) => post.title.includes("Update")), [posts]);
+  const updatePosts = useMemo(() => posts.filter((post) => post.title.includes("Updates")), [posts]);
 
   return (
     <Box component="section" className={classes.root}>
