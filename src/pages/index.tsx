@@ -3,7 +3,7 @@ import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from "
 import { NextSeo } from "next-seo";
 import { Blog, DeveloperUpdates, Hero, InnovationAreas, JoinUs, OurVision, Partners, Stats, WhoWeAre } from "src/components/Home";
 
-const Home: NextPage = ({ blogEntries, tweets }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Home: NextPage = ({ blogEntries,tweets,updatesEntries }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <>
       <NextSeo
@@ -26,7 +26,7 @@ const Home: NextPage = ({ blogEntries, tweets }: InferGetServerSidePropsType<typ
       <Partners />
       <WhoWeAre tweets={tweets} />
       <Blog posts={blogEntries} />
-      <DeveloperUpdates posts={blogEntries} />
+      <DeveloperUpdates posts={updatesEntries} />
       <JoinUs />
     </>
   );
@@ -51,18 +51,27 @@ export const getServerSideProps: GetServerSideProps = async () => {
     limit: 10,
   });
 
+  //TODO: Make a section for Update Entries on Contentful
+  const updates = await client.getEntries({
+    content_type: "blogEntry",
+    order: "-fields.date,sys.createdAt",
+    limit: 100,
+  });
+
   const tweetResult = await client.getEntries({
     content_type: "switcheoLabTweets",
     limit: 3,
   });
 
   const blogEntries = (blogEntryResult.items.map((item) => item.fields));
+  const updatesEntries = (updates.items.map((item) => item.fields).filter((o:any) => o?.title?.includes('Update')));
   const tweets = (tweetResult.items.map((item) => item.fields));
 
   return {
     props: {
       blogEntries,
       tweets,
+      updatesEntries,
       revalidate: process.env.CONTENTFUL_TTL ?? 15,
     },
   };

@@ -12,8 +12,6 @@ const DevelopersUpdate: React.FC<Props> = (props: Props) => {
   const { posts } = props;
   const classes = useStyles();
 
-  const updatePosts = useMemo(() => posts.filter((post) => post.title.includes("Updates")), [posts]);
-
   return (
     <Box component="section" className={classes.root}>
       <Container maxWidth="lg" className={classes.contentContainer}>
@@ -24,10 +22,10 @@ const DevelopersUpdate: React.FC<Props> = (props: Props) => {
             </Typography>
           </Box>
           <Hidden smDown>
-            {updatePosts.map((post) => <BlogCard key={post.title} layout="row" post={post} divider/>)}
+            {posts.slice(0,5).map((post) => <BlogCard key={post.title} layout="row" post={post} divider/>)}
           </Hidden>
           <Hidden mdUp>
-            <MobileBlogCard posts={updatePosts} />
+            <MobileBlogCard posts={posts} />
           </Hidden>
         </Box>
       </Container>
