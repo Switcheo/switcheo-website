@@ -60,7 +60,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   const tweetResult = await client.getEntries({
     content_type: "switcheoLabTweets",
-    limit: 3,
+    limit: 10,
   });
 
   const blogEntries = (blogEntryResult.items.map((item) => item.fields));
