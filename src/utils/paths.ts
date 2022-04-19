@@ -12,8 +12,9 @@ export const Paths = {
   zilswap: "https://zilswap.io/",
   zilswapGuide: "https://docs.zilswap.io",
   tbm: "https://zilswap.io/arky/collections/zil167flx79fykulp57ykmh9gnf3curcnyux6dcj5e",
+  zolar: "https://zolar.io",
 
-  devFund: "https://forum.carbon.network/topic/42/applying-for-project-grants-under-the-switcheo-development-fund",
+  devFund: "https://commonwealth.im/carbon-protocol/discussion/4486-how-to-apply-for-a-grant-under-the-switcheo-development-fund",
   blog: "https://blog.switcheo.com/",
   github: "https://github.com/Switcheo",
 

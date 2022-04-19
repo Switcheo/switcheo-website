@@ -50,7 +50,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   const tweetResult = await client.getEntries({
     content_type: "switcheoLabTweets",
-    limit: 3,
+    limit: 10,
   });
 
   const jobRoles = (jobOpeningResult.items.map((item) => item.fields));

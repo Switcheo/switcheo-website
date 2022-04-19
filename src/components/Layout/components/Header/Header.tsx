@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import CaretDown from "src/assets/CaretDown.svg";
 import SwitcheoBrand from "src/assets/SwitcheoBrand.svg";
 import MenuIcon from "src/assets/MenuIcon.svg";
-import { Demex, Carbon, SwitcheoDevFund, Zilswap, Blog, Github, TBM } from "src/assets/header";
+import { Demex, Carbon, SwitcheoDevFund, Zilswap, Blog, Github, TBM, Zolar } from "src/assets/header";
 import clsx from "clsx";
 import { HeaderTabContent } from "src/utils/types";
 import { HeaderMenu, MobileMenu } from "./components";
@@ -52,6 +52,12 @@ const Header: React.FC = () => {
           description: "The inaugural NFT collection on ZilSwap's NFT Marketplace, ARKY",
           icon: <TBM />,
           url: Paths.tbm,
+        },
+        {
+          title: "Zolar",
+          description: "Zilliqa's leading play-to-earn game set to take the metaverse by storm ",
+          icon: <Zolar />,
+          url: Paths.zolar,
         },
       ],
     },
