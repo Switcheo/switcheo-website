@@ -9,3 +9,4 @@ export { default as DemexIcon } from "./DemexIcon.svg";
 export { default as ZilswapIcon } from "./ZilswapIcon.svg";
 export { default as SwitcheoDevFundIcon } from "./SwitcheoDevFundIcon.svg";
 export { default as TBMIcon } from "./TBMIcon.svg";
+export { default as ZolarIcon } from "./ZolarIcon.svg";

@@ -1,6 +1,6 @@
 import { Box, Hidden } from "@material-ui/core";
 import React from "react";
-import { CarbonIcon, DecentralizedInfrastructuresBg, DemexIcon, DecentralizedInfrastructuresIcon, InnovativeDAppsBg, InnovativeDAppsIcon, SwitcheoDevFundIcon, WhiteSpacesBg, WhiteSpacesIcon, ZilswapIcon, TBMIcon } from "src/assets/innovation";
+import { CarbonIcon, DecentralizedInfrastructuresBg, DemexIcon, DecentralizedInfrastructuresIcon, InnovativeDAppsBg, InnovativeDAppsIcon, SwitcheoDevFundIcon, WhiteSpacesBg, WhiteSpacesIcon, ZilswapIcon, TBMIcon, ZolarIcon } from "src/assets/innovation";
 import { DesktopAreas, MobileAreas } from "./components";
 import { InnovationAreaContent } from "src/utils/types";
 import { Paths } from "src/utils/paths";
@@ -47,6 +47,10 @@ const InnovationAreas: React.FC = () => {
         icon: <TBMIcon />,
         name: "The Bear Market",
         url: Paths.tbm,
+      }, {
+        icon: <ZolarIcon />,
+        name: "Zolar",
+        url: Paths.zolar,
       }],
     },
   ];
