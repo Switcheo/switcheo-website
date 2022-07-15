@@ -35,12 +35,12 @@ const NavFooter: React.FC = () => {
         },
         {
           title: "Zolar",
-          url: Paths.zolar
+          url: Paths.zolar,
         },
         {
           title: "Zolar Guide",
-          url: Paths.zolarGuide
-        }
+          url: Paths.zolarGuide,
+        },
       ],
     },
     {
