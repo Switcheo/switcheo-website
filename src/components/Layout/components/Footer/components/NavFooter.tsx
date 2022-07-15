@@ -33,6 +33,14 @@ const NavFooter: React.FC = () => {
           title: "ZilSwap",
           url: Paths.zilswap,
         },
+        {
+          title: "Zolar",
+          url: Paths.zolar
+        },
+        {
+          title: "Zolar Guide",
+          url: Paths.zolarGuide
+        }
       ],
     },
     {
