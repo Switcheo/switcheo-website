@@ -26,8 +26,8 @@ const Header: React.FC = () => {
 
   const headerTabs: HeaderTabContent[] = [
     {
-      tabTitle: "Ecosystem",
-      sectionTitle: "Switcheo Labs Ecosystem Suite Of Innovations",
+      tabTitle: "Showcase",
+      sectionTitle: "Innovations & Ecosystems by Switcheo Labs",
       links: [
         {
           title: "Demex",
@@ -37,13 +37,13 @@ const Header: React.FC = () => {
         },
         {
           title: "Carbon",
-          description: "Derivatives protocol that powers DeFi applications and smart contracts",
+          description: "Scalable, cross-chain derivatives protocol that that provides building blocks for all of DeFi",
           icon: <Carbon />,
           url: Paths.carbon,
         },
         {
           title: "ZilSwap",
-          description: "Zilliqa-based dynamic currency swap and liquidity pool solutions",
+          description: "The Home of Zilliqa, providing all of Zilliqa's core DeFi, NFT and metaverse infrastructure",
           icon: <Zilswap />,
           url: Paths.zilswap,
         },
@@ -55,45 +55,45 @@ const Header: React.FC = () => {
         },
         {
           title: "Zolar",
-          description: "Zilliqa's leading play-to-earn game set to take the metaverse by storm ",
+          description: "Zilliqa's leading NFT game that is set to take the metaverse by storm",
           icon: <Zolar />,
           url: Paths.zolar,
         },
       ],
     },
     {
-      tabTitle: "Company",
-      url: Paths.careers,
-    },
-    {
-      tabTitle: "Newsroom",
-      sectionTitle: "News & Insights About Our Innovations",
+      tabTitle: "Ecosystem",
+      sectionTitle: "Fostering Open & Collaborative Development",
       links: [
         {
-          title: "Blog",
-          description: "Explore cutting-edge insights and product updates from our team",
-          icon: <Blog />,
-          url: Paths.blog,
-        },
-      ],
-    },
-    {
-      tabTitle: "Developers",
-      sectionTitle: "Developer Resources",
-      links: [
-        {
-          title: "Github",
+          title: "Our Github",
           description: "Access repositories and codebases that inspire open collaboration",
           icon: <Github />,
           url: Paths.github,
         },
         {
           title: "Switcheo Development Fund",
-          description: "Supporting new innovations that pave the way for the future of decentralized finance",
+          description: "Supports new innovations that pave the way for the future of a decentralized world",
           icon: <SwitcheoDevFund />,
           url: Paths.devFund,
         },
       ],
+    },
+    {
+      tabTitle: "Newsroom",
+      sectionTitle: "Thoughts, Ideas & News From Us",
+      links: [
+        {
+          title: "Blog",
+          description: "Explore cutting-edge insights and news from Switcheo Labs & Switcheo Research",
+          icon: <Blog />,
+          url: Paths.blog,
+        },
+      ],
+    },
+    {
+      tabTitle: "Join Us",
+      url: Paths.careers,
     },
   ];
 
@@ -116,7 +116,7 @@ const Header: React.FC = () => {
                 </Box>
               </AnchorLink>
             ) : (
-              <Box 
+              <Box
                 key={index}
                 onClick={() => onSelectTab(index)}
                 className={clsx(classes.tab, { [classes.selected]: selectIndex === index })}

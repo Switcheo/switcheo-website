@@ -14,16 +14,8 @@ const SocialLinkBox: React.FC = () => {
       url: Paths.social.twitter,
     },
     {
-      icon: <Telegram />,
-      url: Paths.social.telegram,
-    },
-    {
       icon: <Discord />,
       url: Paths.social.discord,
-    },
-    {
-      icon: <Reddit />,
-      url: Paths.social.reddit,
     },
     {
       icon: <Linkedin />,

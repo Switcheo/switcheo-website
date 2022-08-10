@@ -1,6 +1,7 @@
 export const Paths = {
   home: "/",
   careers: "/careers",
+  contactUs: "mailto:hello@switcheo.network",
 
   carbon: "https://carbon.network/",
   carbonGuide: "https://guide.carbon.network",
@@ -23,9 +24,7 @@ export const Paths = {
 
   social: {
     twitter: "https://twitter.com/SwitcheoLabs",
-    telegram: "https://t.me/switcheo",
     discord: "https://discord.gg/SPh62Hf",
-    reddit: "https://www.reddit.com/r/Switcheo/",
     linkedin: "https://www.linkedin.com/company/switcheo/",
   },
 };

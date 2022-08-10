@@ -16,10 +16,27 @@ const NavFooter: React.FC = () => {
           title: "Careers",
           url: Paths.careers,
         },
+        {
+          title: "Build With Us",
+          url: Paths.contactUs,
+        },
       ],
     },
     {
-      section: "Innovations",
+      section: "Ecosystems",
+      links: [
+        {
+          title: "Check Our GitHub",
+          url: Paths.github,
+        },
+        {
+          title: "Switcheo Development Fund",
+          url: Paths.devFund,
+        },
+      ],
+    },
+    {
+      section: "Showcase",
       links: [
         {
           title: "Carbon",
@@ -40,24 +57,7 @@ const NavFooter: React.FC = () => {
       ],
     },
     {
-      section: "Developers",
-      links: [
-        {
-          title: "Switcheo Development Fund",
-          url: Paths.devFund,
-        },
-        {
-          title: "Carbon Developer Documentation",
-          url: Paths.carbonDocs,
-        },
-        {
-          title: "Github",
-          url: Paths.github,
-        },
-      ],
-    },
-    {
-      section: "Resources",
+      section: "More Info",
       links: [
         {
           title: "Carbon Guide",

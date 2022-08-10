@@ -27,8 +27,8 @@ const AtSwitcheoLabs: React.FC = () => {
               <Box className={classes.description}>
                 <Typography variant="body1" color="inherit">
                   You’ll be on the cutting edge of blockchain innovation
-                  in finance and at the forefront of all things new. 
-                  Most importantly, you’ll be making a positive change to society. 
+                  in finance and at the forefront of all things new.
+                  Most importantly, you’ll be making a positive change to society.
                 </Typography>
               </Box>
             </Box>
