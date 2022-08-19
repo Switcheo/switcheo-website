@@ -1,13 +1,9 @@
 import { Box, Container, Grid, makeStyles, Theme, Typography } from "@material-ui/core";
 import Image from "next/image";
 import React from "react";
-import { BOLT, DACM, DeFianceCapital, DeFiCapital, DUSK, HuobiPool, NEO, NGC, O3Labs, PolyNetwork, StakeWithUs, ThreeArrowsCapital, Zilliqa } from "src/assets/partners";
+import { BOLT, DACM, DeFianceCapital, DeFiCapital, DUSK, HuobiPool, NEO, NGC, O3Labs, PolyNetwork, StakeWithUs, Zilliqa } from "src/assets/partners";
 
 const PartnerIcons = [
-  {
-    src: ThreeArrowsCapital,
-    alt: "ThreeArrowsCapital",
-  },
   {
     src: DeFianceCapital,
     alt: "DeFianceCapital",

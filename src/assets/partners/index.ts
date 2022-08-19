@@ -9,5 +9,4 @@ export { default as NGC } from "./NGC.png";
 export { default as O3Labs } from "./O3Labs.png";
 export { default as PolyNetwork } from "./PolyNetwork.png";
 export { default as StakeWithUs } from "./StakeWithUs.png";
-export { default as ThreeArrowsCapital } from "./ThreeArrowsCapital.png";
 export { default as Zilliqa } from "./Zilliqa.png";
