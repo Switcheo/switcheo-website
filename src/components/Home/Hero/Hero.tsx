@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
         </Box>
         <Box className={classes.description}>
           <Typography variant="subtitle1" align="center" color="textSecondary">
-            Switcheo is an experimental think tank and cutting-edge software development lab that focuses on cultivating the foundations of a new, decentralized world.
+            Switcheo Labs is an experimental think tank and cutting-edge software development lab that focuses on cultivating the foundations of a new, decentralized world.
           </Typography>
         </Box>
         <HeroAnimation />
