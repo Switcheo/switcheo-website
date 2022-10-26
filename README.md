@@ -28,6 +28,27 @@ To change ports, use `yarn start -p <PORT>`.
 
 ## Deploying
 
+### From local machine via PM2 (recommended)
+
+Setup PM2 (first time only):
+
+```bash
+# install pm2
+npm i -g pm2
+# add host to ssh config
+vi ~/.ssh/config
+# Add:
+# Host switcheo-website
+#  User ubuntu
+#  Hostname 13.251.197.177
+```
+
+Deploy using PM2:
+
+```bash
+pm2 deploy ecosystem.config.js production
+```
+
 ### From instance
 
 SSH into the prod instance and deploy using PM2:
