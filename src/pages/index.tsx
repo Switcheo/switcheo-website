@@ -4,7 +4,7 @@ import { NextSeo } from "next-seo";
 import { Blog, DeveloperUpdates, Hero, InnovationAreas, JoinUs, OurVision, Partners, Stats, WhoWeAre } from "src/components/Home";
 import { BlogEntry } from "src/utils/types";
 
-const Home: NextPage = ({ blogEntries, tweets, updatesEntries }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Home: NextPage = ({ blogEntries, tweets, updatesEntries }: InferGetServerSidePropsType<GetServerSideProps>) => {
   return (
     <>
       <NextSeo

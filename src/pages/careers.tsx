@@ -3,7 +3,7 @@ import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from "
 import { NextSeo } from "next-seo";
 import { AtSwitcheoLabs, CareersHero, JoinNow, OpenRoles, OurCulture, WhatOthersSay } from "src/components/Careers";
 
-const Careers: NextPage = ({ jobRoles, tweets }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Careers: NextPage = ({ jobRoles, tweets }: InferGetServerSidePropsType<GetServerSideProps>) => {
   return (
     <>
       <NextSeo

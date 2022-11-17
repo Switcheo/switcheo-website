@@ -1,7 +1,7 @@
 import { Box, Theme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
-import { Discord, Linkedin, Reddit, Telegram, Twitter } from "src/assets/social";
+import { Discord, Linkedin, Twitter } from "src/assets/social";
 import { AnchorLink } from "src/components/Common";
 import { Paths } from "src/utils/paths";
 
