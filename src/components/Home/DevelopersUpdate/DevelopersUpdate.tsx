@@ -1,5 +1,5 @@
 import { Box, Container, Hidden, makeStyles, Theme, Typography } from "@material-ui/core";
-import React, { useMemo } from "react";
+import React from "react";
 import { MobileBlogCard } from "src/components/Common";
 import BlogCard from "src/components/Common/BlogCard";
 import { BlogEntry } from "src/utils/types";
@@ -22,7 +22,7 @@ const DevelopersUpdate: React.FC<Props> = (props: Props) => {
             </Typography>
           </Box>
           <Hidden smDown>
-            {posts.slice(0,5).map((post) => <BlogCard key={post.title} layout="row" post={post} divider/>)}
+            {posts.slice(0, 5).map((post) => <BlogCard key={post.title} layout="row" post={post} divider/>)}
           </Hidden>
           <Hidden mdUp>
             <MobileBlogCard posts={posts} />

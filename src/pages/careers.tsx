@@ -1,7 +1,7 @@
-import { createClient } from "contentful";
 import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from "next";
 import { NextSeo } from "next-seo";
 import { AtSwitcheoLabs, CareersHero, JoinNow, OpenRoles, OurCulture, WhatOthersSay } from "src/components/Careers";
+import ContentfulQuerier, { jobOpeningQuerier, tweetsQuerier } from "src/utils/contentful";
 
 const Careers: NextPage = ({ jobRoles, tweets }: InferGetServerSidePropsType<GetServerSideProps>) => {
   return (
@@ -30,31 +30,12 @@ const Careers: NextPage = ({ jobRoles, tweets }: InferGetServerSidePropsType<Get
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const space = process.env.CONTENTFUL_SPACE_ID;
-  const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
+  const jobOpeningResult = await jobOpeningQuerier.fetch({ limit: 100 });
 
-  if (!space) {
-    throw new Error("process.env.CONTENTFUL_SPACE_ID not set");
-  }
-  if (!accessToken) {
-    throw new Error("process.env.CONTENTFUL_ACCESS_TOKEN not set");
-  }
+  const tweetResult = await tweetsQuerier.fetch({ limit: 10 });
 
-  const client = createClient({ space, accessToken });
-
-  const jobOpeningResult = await client.getEntries({
-    content_type: "jobOpening",
-    order: "fields.order,sys.createdAt",
-    limit: 100,
-  });
-
-  const tweetResult = await client.getEntries({
-    content_type: "switcheoLabTweets",
-    limit: 10,
-  });
-
-  const jobRoles = (jobOpeningResult.items.map((item) => item.fields));
-  const tweets = (tweetResult.items.map((item) => item.fields));
+  const jobRoles = (jobOpeningResult.items.map((item: ContentfulQuerier.EntryCollection) => item.fields));
+  const tweets = (tweetResult.items.map((item: ContentfulQuerier.EntryCollection) => item.fields));
 
   return {
     props: {

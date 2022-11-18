@@ -1,7 +1,7 @@
-import { createClient } from "contentful";
 import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from "next";
 import { NextSeo } from "next-seo";
 import { Blog, DeveloperUpdates, Hero, InnovationAreas, JoinUs, OurVision, Partners, Stats, WhoWeAre } from "src/components/Home";
+import ContentfulQuerier, { blogEntryQuerier, tweetsQuerier } from "src/utils/contentful";
 import { BlogEntry } from "src/utils/types";
 
 const Home: NextPage = ({ blogEntries, tweets, updatesEntries }: InferGetServerSidePropsType<GetServerSideProps>) => {
@@ -34,39 +34,13 @@ const Home: NextPage = ({ blogEntries, tweets, updatesEntries }: InferGetServerS
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const space = process.env.CONTENTFUL_SPACE_ID;
-  const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
-
-  if (!space) {
-    throw new Error("process.env.CONTENTFUL_SPACE_ID not set");
-  }
-  if (!accessToken) {
-    throw new Error("process.env.CONTENTFUL_ACCESS_TOKEN not set");
-  }
-
-  const client = createClient({ space, accessToken });
-
-  const blogEntryResult = await client.getEntries<BlogEntry>({
-    content_type: "blogEntry",
-    order: "-fields.date,sys.createdAt",
-    limit: 10,
-  });
+  const blogEntryResult = await blogEntryQuerier.fetch({ limit: 100 });
+  const tweetResult = await tweetsQuerier.fetch({ limit: 10 });
 
   //TODO: Make a section for Update Entries on Contentful
-  const updates = await client.getEntries<BlogEntry>({
-    content_type: "blogEntry",
-    order: "-fields.date,sys.createdAt",
-    limit: 100,
-  });
-
-  const tweetResult = await client.getEntries({
-    content_type: "switcheoLabTweets",
-    limit: 10,
-  });
-
-  const blogEntries = (blogEntryResult.items.map((item) => item.fields)).filter((o: BlogEntry) => !o?.title?.includes("Update"));
-  const updatesEntries = (updates.items.map((item) => item.fields).filter((o: BlogEntry) => o?.title?.includes("Update")));
-  const tweets = (tweetResult.items.map((item) => item.fields));
+  const blogEntries = (blogEntryResult.items.map((item: ContentfulQuerier.EntryCollection) => item.fields)).filter((o: BlogEntry) => !o?.title?.includes("Update"));
+  const updatesEntries = (blogEntryResult.items.map((item: ContentfulQuerier.EntryCollection) => item.fields).filter((o: BlogEntry) => o?.title?.includes("Update")));
+  const tweets = (tweetResult.items.map((item: ContentfulQuerier.EntryCollection) => item.fields));
 
   return {
     props: {
