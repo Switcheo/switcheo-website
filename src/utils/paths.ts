@@ -10,6 +10,9 @@ export const Paths = {
   demex: "https://dem.exchange/",
   demexGuide: "https://guide.dem.exchange",
 
+  fluo: "https://fluofinance.com/",
+  fluoDocs: "https://docs.fluofinance.com/",
+
   zilswap: "https://zilswap.io/",
   zilswapGuide: "https://docs.zilswap.io",
   tbm: "https://zilswap.io/arky/collections/zil167flx79fykulp57ykmh9gnf3curcnyux6dcj5e",
