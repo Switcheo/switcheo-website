@@ -71,12 +71,6 @@ const Header: React.FC = () => {
           icon: <Github />,
           url: Paths.github,
         },
-        {
-          title: "Switcheo Development Fund",
-          description: "Supports new innovations that pave the way for the future of a decentralized world",
-          icon: <SwitcheoDevFund />,
-          url: Paths.devFund,
-        },
       ],
     },
     {

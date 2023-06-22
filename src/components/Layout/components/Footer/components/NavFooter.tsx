@@ -29,10 +29,6 @@ const NavFooter: React.FC = () => {
           title: "Check Our GitHub",
           url: Paths.github,
         },
-        {
-          title: "Switcheo Development Fund",
-          url: Paths.devFund,
-        },
       ],
     },
     {

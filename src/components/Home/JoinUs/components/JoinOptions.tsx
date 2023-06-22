@@ -14,7 +14,7 @@ const JoinOptions: React.FC = () => {
   return (
     <Grid container spacing={6} className={classes.root}>
       <Grid item xs={12} md={4}>
-        <Careers className={classes.icon}/>
+        <Careers className={classes.icon} />
         <Box className={classes.optionText}>
           <Typography variant="h4" color="textPrimary">
             Explore careers with us
@@ -25,7 +25,7 @@ const JoinOptions: React.FC = () => {
           Learn More
         </SwthButton>
       </Grid>
-      <Grid item xs={12} md={4}>
+      {/* <Grid item xs={12} md={4}>
         <DevFund className={classes.icon}/>
         <Box className={classes.optionText}>
           <Typography variant="h4" color="textPrimary">
@@ -48,7 +48,7 @@ const JoinOptions: React.FC = () => {
         <SwthButton href={Paths.social.discord}>
           Learn More
         </SwthButton>
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 };
