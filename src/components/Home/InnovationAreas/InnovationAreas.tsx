@@ -40,10 +40,6 @@ const InnovationAreas: React.FC = () => {
       background: WhiteSpacesBg,
       description: "We are unafraid to dive headfirst into new realms, do the unexpected and lead the charge to uncover new ground and new spaces. We don't believe in competition, because we create new demand.",
       products: [{
-        icon: <SwitcheoDevFundIcon />,
-        name: "Switcheo Dev Fund",
-        url: Paths.devFund,
-      }, {
         icon: <TBMIcon />,
         name: "The Bear Market",
         url: Paths.tbm,
