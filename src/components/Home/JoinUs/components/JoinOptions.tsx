@@ -3,8 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 
 import Careers from "src/assets/Careers.svg";
-import DevFund from "src/assets/DevFund.svg";
-import Community from "src/assets/Community.svg";
+import BuildWithUs from "src/assets/BuildWithUs.svg";
+import Ecosystem from "src/assets/Ecosystem.svg";
 import { SwthButton } from "src/components/Common";
 import { Paths } from "src/utils/paths";
 
@@ -25,30 +25,30 @@ const JoinOptions: React.FC = () => {
           Learn More
         </SwthButton>
       </Grid>
-      {/* <Grid item xs={12} md={4}>
-        <DevFund className={classes.icon}/>
+      <Grid item xs={12} md={4}>
+        <BuildWithUs className={classes.icon} />
         <Box className={classes.optionText}>
           <Typography variant="h4" color="textPrimary">
-            Apply for Development Fund
+            Build With Us
           </Typography>
         </Box>
         <Divider />
-        <SwthButton href={Paths.devFund}>
-          Learn More
+        <SwthButton href={Paths.contactUs}>
+          Contact
         </SwthButton>
       </Grid>
       <Grid item xs={12} md={4}>
-        <Community className={classes.icon}/>
+        <Ecosystem className={classes.icon} />
         <Box className={classes.optionText}>
           <Typography variant="h4" color="textPrimary">
-            Join the community
+            Ecosystems
           </Typography>
         </Box>
         <Divider />
-        <SwthButton href={Paths.social.discord}>
-          Learn More
+        <SwthButton href={Paths.github}>
+          Check our GitHub
         </SwthButton>
-      </Grid> */}
+      </Grid>
     </Grid>
   );
 };
@@ -68,13 +68,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   icon: {
-    height: "3.75rem",
+    width: "3.75rem",
     [theme.breakpoints.down("sm")]: {
-      height: "6.25rem",
+      width: "6.25rem",
       marginTop: theme.spacing(5),
     },
     [theme.breakpoints.only("xs")]: {
-      height: "2.5rem",
+      width: "2.5rem",
       marginTop: 0,
     },
   },
@@ -86,9 +86,11 @@ const useStyles = makeStyles((theme: Theme) => ({
   optionText: {
     marginTop: theme.spacing(3),
     maxWidth: "83%",
+    minHeight: "4.375rem",
     marginBottom: theme.spacing(4),
     [theme.breakpoints.down("sm")]: {
       maxWidth: "75%",
+      minHeight: "unset",
       marginBottom: theme.spacing(8),
     },
     [theme.breakpoints.only("xs")]: {
