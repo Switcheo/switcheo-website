@@ -20,6 +20,10 @@ const NavFooter: React.FC = () => {
           title: "Build With Us",
           url: Paths.contactUs,
         },
+        {
+          title: "Brand Assets",
+          url: Paths.brandAssets,
+        }
       ],
     },
     {
@@ -28,10 +32,6 @@ const NavFooter: React.FC = () => {
         {
           title: "Check Our GitHub",
           url: Paths.github,
-        },
-        {
-          title: "Switcheo Development Fund",
-          url: Paths.devFund,
         },
       ],
     },

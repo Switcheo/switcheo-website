@@ -2,6 +2,7 @@ export const Paths = {
   home: "/",
   careers: "/careers",
   contactUs: "mailto:hello@switcheo.network",
+  brandAssets: "https://www.notion.so/switcheo/Switcheo-Labs-Brand-Assets-33c5a59fd13d46e1af8dfd2e1cedbc03",
 
   carbon: "https://carbon.network/",
   carbonGuide: "https://guide.carbon.network",
