@@ -20,6 +20,10 @@ const NavFooter: React.FC = () => {
           title: "Build With Us",
           url: Paths.contactUs,
         },
+        {
+          title: "Brand Assets",
+          url: Paths.brandAssets,
+        }
       ],
     },
     {
