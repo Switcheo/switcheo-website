@@ -1,15 +1,15 @@
 import { Backdrop, Box, Container, Hidden, Theme, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
 import React, { useState } from "react";
 import CaretDown from "src/assets/CaretDown.svg";
-import SwitcheoBrand from "src/assets/SwitcheoBrand.svg";
 import MenuIcon from "src/assets/MenuIcon.svg";
-import { Demex, Carbon, SwitcheoDevFund, Zilswap, Blog, Github, TBM, Zolar } from "src/assets/header";
-import clsx from "clsx";
+import SwitcheoBrand from "src/assets/SwitcheoBrand.svg";
+import { Blog, Carbon, Demex, Github, TBM, Zilswap, Zolar } from "src/assets/header";
+import { AnchorLink } from "src/components/Common";
+import { Paths } from "src/utils/paths";
 import { HeaderTabContent } from "src/utils/types";
 import { HeaderMenu, MobileMenu } from "./components";
-import { Paths } from "src/utils/paths";
-import { AnchorLink } from "src/components/Common";
 
 const Header: React.FC = () => {
   const classes = useStyles();

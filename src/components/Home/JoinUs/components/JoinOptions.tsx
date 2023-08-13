@@ -12,42 +12,48 @@ const JoinOptions: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <Grid container spacing={6} className={classes.root}>
-      <Grid item xs={12} md={4}>
+    <Grid container className={classes.root}>
+      <Grid>
         <Careers className={classes.icon} />
         <Box className={classes.optionText}>
           <Typography variant="h4" color="textPrimary">
             Explore careers with us
           </Typography>
         </Box>
-        <Divider />
-        <SwthButton href={Paths.careers}>
-          Learn More
-        </SwthButton>
+        <Box className={classes.ctaSection}>
+          <Divider />
+          <SwthButton href={Paths.careers}>
+            Learn More
+          </SwthButton>
+        </Box>
       </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid>
         <BuildWithUs className={classes.icon} />
         <Box className={classes.optionText}>
           <Typography variant="h4" color="textPrimary">
             Build With Us
           </Typography>
         </Box>
-        <Divider />
-        <SwthButton href={Paths.contactUs}>
-          Contact
-        </SwthButton>
+        <Box className={classes.ctaSection}>
+          <Divider />
+          <SwthButton href={Paths.contactUs}>
+            Contact
+          </SwthButton>
+        </Box>
       </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid>
         <Ecosystem className={classes.icon} />
         <Box className={classes.optionText}>
           <Typography variant="h4" color="textPrimary">
             Ecosystems
           </Typography>
         </Box>
-        <Divider />
-        <SwthButton href={Paths.github}>
-          Check our GitHub
-        </SwthButton>
+        <Box className={classes.ctaSection}>
+          <Divider />
+          <SwthButton href={Paths.github}>
+            Check our GitHub
+          </SwthButton>
+        </Box>
       </Grid>
     </Grid>
   );
@@ -55,27 +61,26 @@ const JoinOptions: React.FC = () => {
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: theme.spacing(7, 0),
-    [theme.breakpoints.down("sm")]: {
-      padding: theme.spacing(7, 5),
-      maxWidth: "100%",
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr 1fr",
+    gap: theme.spacing(7),
+    "& > .MuiGrid-root": {
+      display: "grid",
     },
-    [theme.breakpoints.only("xs")]: {
-      padding: theme.spacing(5, 0, 0, 2),
+    [theme.breakpoints.down("sm")]: {
+      gridTemplateColumns: "1fr",
+      gap: theme.spacing(3),
     },
   },
   icon: {
-    width: "3.75rem",
+    height: "3.75rem",
     [theme.breakpoints.down("sm")]: {
-      width: "6.25rem",
-      marginTop: theme.spacing(5),
+      width: "4.75rem",
+      height: "unset",
+      marginTop: theme.spacing(3),
     },
     [theme.breakpoints.only("xs")]: {
       width: "2.5rem",
-      marginTop: 0,
     },
   },
   option: {
@@ -86,16 +91,18 @@ const useStyles = makeStyles((theme: Theme) => ({
   optionText: {
     marginTop: theme.spacing(3),
     maxWidth: "83%",
-    minHeight: "4.375rem",
     marginBottom: theme.spacing(4),
     [theme.breakpoints.down("sm")]: {
       maxWidth: "75%",
-      minHeight: "unset",
-      marginBottom: theme.spacing(8),
     },
     [theme.breakpoints.only("xs")]: {
       maxWidth: "85%",
-      marginBottom: theme.spacing(4),
+    },
+  },
+  ctaSection: {
+    alignSelf: "end",
+    "& > a > button": {
+      whiteSpace: "nowrap",
     },
   },
 }));
