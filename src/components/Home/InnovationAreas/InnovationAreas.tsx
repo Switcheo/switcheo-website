@@ -1,9 +1,9 @@
 import { Box, Hidden } from "@material-ui/core";
 import React from "react";
-import { CarbonIcon, DecentralizedInfrastructuresBg, DemexIcon, DecentralizedInfrastructuresIcon, InnovativeDAppsBg, InnovativeDAppsIcon, SwitcheoDevFundIcon, WhiteSpacesBg, WhiteSpacesIcon, ZilswapIcon, TBMIcon, ZolarIcon } from "src/assets/innovation";
-import { DesktopAreas, MobileAreas } from "./components";
-import { InnovationAreaContent } from "src/utils/types";
+import { CarbonIcon, DecentralizedInfrastructuresBg, DecentralizedInfrastructuresIcon, DemexIcon, InnovativeDAppsBg, InnovativeDAppsIcon, TBMIcon, WhiteSpacesBg, WhiteSpacesIcon, ZilswapIcon, ZolarIcon } from "src/assets/innovation";
 import { Paths } from "src/utils/paths";
+import { InnovationAreaContent } from "src/utils/types";
+import { DesktopAreas, MobileAreas } from "./components";
 
 const InnovationAreas: React.FC = () => {
 
