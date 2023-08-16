@@ -23,7 +23,7 @@ const NavFooter: React.FC = () => {
         {
           title: "Brand Assets",
           url: Paths.brandAssets,
-        }
+        },
       ],
     },
     {
