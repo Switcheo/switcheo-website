@@ -31,13 +31,13 @@ const Header: React.FC = () => {
       links: [
         {
           title: "Demex Chain",
-          description: "Scalable, cross-chain derivatives protocol that that provides building blocks for all of DeFi",
+          description: "A scalable, cross-chain derivatives protocol that that provides DeFi building blocks",
           icon: <Demex />,
           url: Paths.demex,
         },
         {
           title: "ZilSwap",
-          description: "The Home of Zilliqa, providing all of Zilliqa's core DeFi, NFT and metaverse infrastructure",
+          description: "The Home of Zilliqa, powering all of Zilliqa's core DeFi, NFT and metaverse infrastructure",
           icon: <Zilswap />,
           url: Paths.zilswap,
         },
@@ -47,12 +47,6 @@ const Header: React.FC = () => {
           icon: <TBM />,
           url: Paths.tbm,
         },
-      ],
-    },
-    {
-      tabTitle: "Ecosystem",
-      sectionTitle: "Fostering Open & Collaborative Development",
-      links: [
         {
           title: "Our Github",
           description: "Access repositories and codebases that inspire open collaboration",
@@ -61,6 +55,18 @@ const Header: React.FC = () => {
         },
       ],
     },
+    // {
+    //   tabTitle: "Ecosystem",
+    //   sectionTitle: "Fostering Open & Collaborative Development",
+    //   links: [
+    //     {
+    //       title: "Our Github",
+    //       description: "Access repositories and codebases that inspire open collaboration",
+    //       icon: <Github />,
+    //       url: Paths.github,
+    //     },
+    //   ],
+    // },
     {
       tabTitle: "Newsroom",
       sectionTitle: "Thoughts, Ideas & News From Us",
