@@ -20,71 +20,71 @@ const NavFooter: React.FC = () => {
           title: "Build With Us",
           url: Paths.contactUs,
         },
-        {
-          title: "Brand Assets",
-          url: Paths.brandAssets,
-        },
-      ],
-    },
-    {
-      section: "Ecosystems",
-      links: [
-        {
-          title: "Check Our GitHub",
-          url: Paths.github,
-        },
       ],
     },
     {
       section: "Showcase",
       links: [
         {
-          title: "Carbon",
-          url: Paths.carbon,
+          title: "Github",
+          url: Paths.github,
         },
         {
-          title: "Demex",
-          url: Paths.demex,
-        },
-        {
-          title: "Fluo",
-          url: Paths.fluo,
-        },
-        {
-          title: "ZilSwap",
-          url: Paths.zilswap,
-        },
-        {
-          title: "Zolar",
-          url: Paths.zolar,
+          title: "Brand Assets",
+          url: Paths.brandAssets,
         },
       ],
     },
-    {
-      section: "More Info",
-      links: [
-        {
-          title: "Carbon Guide",
-          url: Paths.carbonGuide,
-        },
-        {
-          title: "Demex Guide",
-          url: Paths.demexGuide,
-        },
-        {
-          title: "Fluo Docs",
-          url: Paths.fluoDocs,
-        },
-        {
-          title: "ZilSwap Guide",
-          url: Paths.zilswapGuide,
-        },
-        {
-          title: "Zolar Guide",
-          url: Paths.zolarGuide,
-        },
-      ],
-    },
+    // {
+    //   section: "Showcase",
+    //   links: [
+    //     {
+    //       title: "Carbon",
+    //       url: Paths.carbon,
+    //     },
+    //     {
+    //       title: "Demex",
+    //       url: Paths.demex,
+    //     },
+    //     {
+    //       title: "Fluo",
+    //       url: Paths.fluo,
+    //     },
+    //     {
+    //       title: "ZilSwap",
+    //       url: Paths.zilswap,
+    //     },
+    //     {
+    //       title: "Zolar",
+    //       url: Paths.zolar,
+    //     },
+    //   ],
+    // },
+    // {
+    //   section: "More Info",
+    //   links: [
+    //     {
+    //       title: "Carbon Guide",
+    //       url: Paths.carbonGuide,
+    //     },
+    //     {
+    //       title: "Demex Guide",
+    //       url: Paths.demexGuide,
+    //     },
+    //     {
+    //       title: "Fluo Docs",
+    //       url: Paths.fluoDocs,
+    //     },
+    //     {
+    //       title: "ZilSwap Guide",
+    //       url: Paths.zilswapGuide,
+    //     },
+    //     {
+    //       title: "Zolar Guide",
+    //       url: Paths.zolarGuide,
+    //     },
+    //   ],
+    // },
   ];
 
   return (

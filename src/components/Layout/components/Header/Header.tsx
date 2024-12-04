@@ -30,16 +30,10 @@ const Header: React.FC = () => {
       sectionTitle: "Innovations & Ecosystems by Switcheo Labs",
       links: [
         {
-          title: "Demex",
-          description: "Decentralized exchange that allows cross-chain trading and options",
+          title: "Demex Chain",
+          description: "Scalable, cross-chain derivatives protocol that that provides building blocks for all of DeFi",
           icon: <Demex />,
           url: Paths.demex,
-        },
-        {
-          title: "Carbon",
-          description: "Scalable, cross-chain derivatives protocol that that provides building blocks for all of DeFi",
-          icon: <Carbon />,
-          url: Paths.carbon,
         },
         {
           title: "ZilSwap",
@@ -52,12 +46,6 @@ const Header: React.FC = () => {
           description: "The inaugural NFT collection on ZilSwap's NFT Marketplace, ARKY",
           icon: <TBM />,
           url: Paths.tbm,
-        },
-        {
-          title: "Zolar",
-          description: "Zilliqa's leading NFT game that is set to take the metaverse by storm",
-          icon: <Zolar />,
-          url: Paths.zolar,
         },
       ],
     },

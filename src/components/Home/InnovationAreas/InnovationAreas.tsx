@@ -1,6 +1,6 @@
 import { Box, Hidden } from "@material-ui/core";
 import React from "react";
-import { CarbonIcon, DecentralizedInfrastructuresBg, DecentralizedInfrastructuresIcon, DemexIcon, InnovativeDAppsBg, InnovativeDAppsIcon, TBMIcon, WhiteSpacesBg, WhiteSpacesIcon, ZilswapIcon, ZolarIcon } from "src/assets/innovation";
+import { DecentralizedInfrastructuresBg, DecentralizedInfrastructuresIcon, DemexIcon, InnovativeDAppsBg, InnovativeDAppsIcon, TBMIcon, WhiteSpacesBg, WhiteSpacesIcon, ZilswapIcon, ZolarIcon } from "src/assets/innovation";
 import { Paths } from "src/utils/paths";
 import { InnovationAreaContent } from "src/utils/types";
 import { DesktopAreas, MobileAreas } from "./components";
@@ -14,9 +14,9 @@ const InnovationAreas: React.FC = () => {
       background: DecentralizedInfrastructuresBg,
       description: "We lay the groundwork for decentralized, censorship-resistant ecosystems to thrive on. We incubate networks and partnerships that empower the new movers and shakers of the future.",
       products: [{
-        icon: <CarbonIcon />,
-        name: "Carbon Protocol",
-        url: Paths.carbon,
+        icon: <DemexIcon />,
+        name: "Demex Chain",
+        url: Paths.demex,
       }],
     },
     {
@@ -25,10 +25,6 @@ const InnovationAreas: React.FC = () => {
       background: InnovativeDAppsBg,
       description: "We push the boundaries of DeFi by making the impossible a reality. If you have thought of something useful in DeFi that doesn't exist yet, it's probably already in the works at Switcheo Labs.",
       products: [{
-        icon: <DemexIcon />,
-        name: "Demex",
-        url: Paths.demex,
-      }, {
         icon: <ZilswapIcon />,
         name: "ZilSwap",
         url: Paths.zilswap,
@@ -43,10 +39,6 @@ const InnovationAreas: React.FC = () => {
         icon: <TBMIcon />,
         name: "The Bear Market",
         url: Paths.tbm,
-      }, {
-        icon: <ZolarIcon />,
-        name: "Zolar",
-        url: Paths.zolar,
       }],
     },
   ];

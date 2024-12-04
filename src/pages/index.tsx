@@ -8,13 +8,13 @@ const Home: NextPage = ({ blogEntries, tweets, updatesEntries }: InferGetServerS
   return (
     <>
       <NextSeo
-        title="Switcheo Labs: Blockchain Innovation & Infrastructure"
-        description="Switcheo Labs is an experimental think tank and cutting-edge software development lab that focuses on cultivating the foundations of a new, decentralized world."
+        title="Switcheo Labs"
+        description="Switcheo Labs is a cutting edge software development lab that has world class expertise in decentralized technologies."
         canonical="https://www.switcheo.com"
         openGraph={{
           url: "https://www.switcheo.com",
-          title: "Switcheo Labs: Blockchain Innovation & Infrastructure",
-          description: "Switcheo Labs is an experimental think tank and cutting-edge software development lab that focuses on cultivating the foundations of a new, decentralized world.",
+          title: "Switcheo Labs",
+          description: "Switcheo Labs is a cutting edge software development lab that has world class expertise in decentralized technologies.",
           images: [{
             url: "https://switcheo-assets.s3.ap-southeast-1.amazonaws.com/switcheo-finance-without-limits.png",
           }],
@@ -24,7 +24,6 @@ const Home: NextPage = ({ blogEntries, tweets, updatesEntries }: InferGetServerS
       <OurVision />
       <Stats />
       <InnovationAreas />
-      <Partners />
       <WhoWeAre tweets={tweets} />
       <Blog posts={blogEntries} />
       <DeveloperUpdates posts={updatesEntries} />

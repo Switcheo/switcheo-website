@@ -23,7 +23,7 @@ const Stats: React.FC = () => {
             <Grid item xs={6}>
               <Box className={classes.stat}>
                 <Box className={classes.statNumber}>
-                  96K
+                  100K+
                 </Box>
                 <Typography variant="body1" color="inherit">
                   Trusted Users
@@ -33,10 +33,10 @@ const Stats: React.FC = () => {
             <Grid item xs={6}>
               <Box className={classes.stat}>
                 <Box className={classes.statNumber}>
-                  $130M
+                  10+
                 </Box>
                 <Typography variant="body1" color="inherit">
-                  Value Transacted On-Chain
+                  Projects Completed
                 </Typography>
               </Box>
             </Grid>

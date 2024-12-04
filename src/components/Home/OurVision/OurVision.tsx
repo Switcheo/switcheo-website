@@ -15,12 +15,10 @@ const OurVision: React.FC = () => {
               Our Vision
             </Typography>
             <Typography variant="h3" color="textPrimary" className={classes.text}>
-              A truly free world where the need for trust and reliance is eradicated
+              A world where everyone is truly free in every aspect
             </Typography>
             <Typography variant="body1" color="textSecondary" className={classes.description}>
-              This is the future we are moving towards. <br />
-              A decentralized world marked by efficient infrastructure
-              where every person has the right to manage their wealth in a fair,
+              We feel that every person has the right to manage their wealth in a fair,
               transparent manner that is free of unjust barriers.
             </Typography>
           </Box>
