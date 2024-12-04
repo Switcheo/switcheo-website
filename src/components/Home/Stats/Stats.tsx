@@ -16,7 +16,7 @@ const Stats: React.FC = () => {
               </Typography>
             </Box>
             <Typography variant="body1" color="inherit">
-              True leaders don’t stop at the beginning. We don’t believe in just creating solutions to the problems of our time. Instead, we seed and nurture ecosystems to benefit generations to come.
+              True leaders don’t stop at the beginning. We don’t believe in just creating solutions to the problems of our time. We help you nurture ecosystems that benefit the generations to come.
             </Typography>
           </Box>
           <Grid container spacing={4}>
