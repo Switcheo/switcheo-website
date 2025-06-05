@@ -46,7 +46,7 @@ const InnovationAreas: React.FC<Props> = (props: Props) => {
             <Box className={classes.areas}>
               <Box className={classes.areaBar}>
                 <Typography variant="h5" color="secondary">
-                  Innovation Areas
+                  Past Projects
                 </Typography>
                 <Box display="flex" marginRight={4}>
                   <Box onClick={() => onChangeIndex((selectIndex - 1) % areas.length)} className={clsx(classes.arrow, classes.link)} marginRight={3}>

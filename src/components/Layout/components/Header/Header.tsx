@@ -27,7 +27,7 @@ const Header: React.FC = () => {
   const headerTabs: HeaderTabContent[] = [
     {
       tabTitle: "Showcase",
-      sectionTitle: "Innovations & Ecosystems by Switcheo Labs",
+      sectionTitle: "Project Showcase",
       links: [
         {
           title: "Demex Chain",

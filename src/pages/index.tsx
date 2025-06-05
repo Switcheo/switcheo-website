@@ -25,8 +25,8 @@ const Home: NextPage = ({ blogEntries, tweets, updatesEntries }: InferGetServerS
       <Stats />
       <InnovationAreas />
       <WhoWeAre tweets={tweets} />
-      <Blog posts={blogEntries} />
-      <DeveloperUpdates posts={updatesEntries} />
+      {/* <Blog posts={blogEntries} />
+      <DeveloperUpdates posts={updatesEntries} /> */}
       <JoinUs />
     </>
   );

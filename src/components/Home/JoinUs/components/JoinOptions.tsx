@@ -17,7 +17,7 @@ const JoinOptions: React.FC = () => {
         <Careers className={classes.icon} />
         <Box className={classes.optionText}>
           <Typography variant="h4" color="textPrimary">
-            Explore careers with us
+            Join Us
           </Typography>
         </Box>
         <Box className={classes.ctaSection}>
@@ -37,7 +37,7 @@ const JoinOptions: React.FC = () => {
         <Box className={classes.ctaSection}>
           <Divider />
           <SwthButton href={Paths.contactUs}>
-            Contact
+            Email
           </SwthButton>
         </Box>
       </Grid>
@@ -45,13 +45,13 @@ const JoinOptions: React.FC = () => {
         <Ecosystem className={classes.icon} />
         <Box className={classes.optionText}>
           <Typography variant="h4" color="textPrimary">
-            Ecosystems
+            Code With Us
           </Typography>
         </Box>
         <Box className={classes.ctaSection}>
           <Divider />
           <SwthButton href={Paths.github}>
-            Check our GitHub
+            GitHub
           </SwthButton>
         </Box>
       </Grid>

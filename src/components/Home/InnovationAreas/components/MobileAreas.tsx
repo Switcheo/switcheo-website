@@ -18,7 +18,7 @@ const MobileAreas: React.FC<Props> = (props: Props) => {
           <Box className={classes.areas}>
             <Box className={classes.areaBar}>
               <Typography variant="h5" color="secondary">
-                Innovation Areas
+                Past Projects
               </Typography>
             </Box>
             {areas.map((area, index) => (

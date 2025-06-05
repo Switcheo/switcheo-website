@@ -12,11 +12,11 @@ const Stats: React.FC = () => {
           <Box className={classes.description}>
             <Box className={classes.title}>
               <Typography variant="h2" color="secondary">
-                We foster the future
+                Foster the future
               </Typography>
             </Box>
             <Typography variant="body1" color="inherit">
-              True leaders don’t stop at the beginning. We don’t believe in just creating solutions to the problems of our time. We help you nurture ecosystems that benefit the generations to come.
+              We don’t believe in just creating solutions to the problems of our time. We help you nurture ecosystems that benefit the generations to come.
             </Typography>
           </Box>
           <Grid container spacing={4}>
@@ -26,7 +26,7 @@ const Stats: React.FC = () => {
                   100K+
                 </Box>
                 <Typography variant="body1" color="inherit">
-                  Trusted Users
+                  Project Users
                 </Typography>
               </Box>
             </Grid>

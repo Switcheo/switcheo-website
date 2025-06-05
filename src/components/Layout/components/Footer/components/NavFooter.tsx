@@ -17,7 +17,7 @@ const NavFooter: React.FC = () => {
           url: Paths.careers,
         },
         {
-          title: "Build With Us",
+          title: "Contact",
           url: Paths.contactUs,
         },
       ],
