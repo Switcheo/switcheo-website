@@ -67,18 +67,18 @@ const Header: React.FC = () => {
     //     },
     //   ],
     // },
-    {
-      tabTitle: "Newsroom",
-      sectionTitle: "Thoughts, Ideas & News From Us",
-      links: [
-        {
-          title: "Blog",
-          description: "Explore cutting-edge insights and news from Switcheo Labs & Switcheo Research",
-          icon: <Blog />,
-          url: Paths.blog,
-        },
-      ],
-    },
+    // {
+    //   tabTitle: "Newsroom",
+    //   sectionTitle: "Thoughts, Ideas & News From Us",
+    //   links: [
+    //     {
+    //       title: "Blog",
+    //       description: "Explore cutting-edge insights and news from Switcheo Labs & Switcheo Research",
+    //       icon: <Blog />,
+    //       url: Paths.blog,
+    //     },
+    //   ],
+    // },
     {
       tabTitle: "Join Us",
       url: Paths.careers,
