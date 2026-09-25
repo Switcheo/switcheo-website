@@ -15,7 +15,7 @@ const Careers: NextPage = ({ jobRoles, tweets }: InferGetServerSidePropsType<Get
           title: "Careers: Join Our Team | Switcheo Labs",
           description: "Want to have a hand in nurturing a decentralized future powered by the blockchain? Explore our current openings at Switcheo Labs.",
           images: [{
-            url: "https://switcheo-assets.s3.ap-southeast-1.amazonaws.com/switcheo-finance-without-limits.png",
+            url: "https://assets.switcheo.network/switcheo-finance-without-limits.png",
           }],
         }}
       />
