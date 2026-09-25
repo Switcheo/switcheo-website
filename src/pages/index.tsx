@@ -16,7 +16,7 @@ const Home: NextPage = ({ blogEntries, tweets, updatesEntries }: InferGetServerS
           title: "Switcheo Labs",
           description: "Switcheo Labs is a cutting edge software development lab that has world class expertise in decentralized technologies.",
           images: [{
-            url: "https://switcheo-assets.s3.ap-southeast-1.amazonaws.com/switcheo-finance-without-limits.png",
+            url: "https://assets.switcheo.network/switcheo-finance-without-limits.png",
           }],
         }}
       />
